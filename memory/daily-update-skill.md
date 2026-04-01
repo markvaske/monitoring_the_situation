@@ -57,17 +57,24 @@ For price data, pre-fetch before opening Claude to eliminate web search calls:
 
 Open a new session (not `--continue`). This is the free equivalent of `/compact`.
 
-### Step 2 — Web Search
+### Step 2 — Run the prep script (fetches prices automatically)
 
-Search for real news covering the target date(s):
-- `"Iran Israel war [date] 2026"`
-- `"Strait of Hormuz [date] 2026"`
-- `"[country] [date] 2026"` for specific countries
-- Financial data: Brent/WTI crude price, gold spot price for the date
+```bash
+node scripts/prep-update.js             # today
+node scripts/prep-update.js 2026-04-02  # specific date
+```
 
-### Step 3 — Generate the JSON update file
+This creates `updates/YYYY-MM-DD.json` with `date`, `oil`, and `gold` already populated from Yahoo Finance. If the market is closed (weekend/holiday), it carries the last known values forward automatically.
 
-Ask Claude to produce a completed `updates/YYYY-MM-DD.json` based on the template at `scripts/update-template.json`. Claude should fill every field — you verify and save the file.
+The script also prints the exact Claude prompt to use — copy it.
+
+### Step 3 — Give Claude the pre-filled file to complete
+
+Paste the prompt printed by the prep script into a **new Claude session**. Claude only needs to:
+- Search for news (2 searches)
+- Fill in: `escalation_score`, `headline`, `sub`, `suez`, `insurance`, `notam`, `casualties`, `displacement`, `news[]`, `hz_events[]`, `milestones[]`, `posture_updates`
+
+Claude should return the completed JSON. Save it to `updates/YYYY-MM-DD.json`.
 
 Required fields:
 | Field | Notes |
