@@ -4,8 +4,14 @@ Follow V3.0 Spec (Notes DB) for all standard procedures.
 
 ## Project-Specific Conventions
 
+### CRITICAL — Data Integrity
+- MTS tracks **real-world events only**. This is NOT a hypothetical or fictional scenario.
+- Every news item, casualty figure, price, milestone, and posture update must be sourced from verifiable real-world reporting.
+- When running daily updates, always use web search to find actual events. Never invent, extrapolate, or fabricate data.
+- If a data point cannot be verified, omit it rather than estimate.
+
 ### Architecture
-- Single-file HTML/CSS/JS artifact: `index.html` (~8,000 lines). No build step.
+- Multi-file structure: `index.html` (HTML shell), `styles.css`, `src/data.js`, `src/map.js`, `src/main.js`.
 - Canvas context variable is `ctx2` (NOT `ctx` — conflicts with DOM element `#ctx`).
 - Country polygons from Natural Earth 50m GeoJSON (real data). Bahrain hand-drawn (too small).
 - Uniform-scale Mercator projection. `lx(ln)`/`ly(lt)` for coordinate transforms.
@@ -17,8 +23,8 @@ Follow V3.0 Spec (Notes DB) for all standard procedures.
 - Dark/OPSEC theme only. No light mode.
 
 ### Data Layer
-- All data embedded in `index.html` (sandbox blocks network).
-- `days[]` = Feb 25–Mar 25, 2026. `daysSet` for O(1) lookups.
+- Data lives in `src/data.js` (extracted from monolith 2026-04-01).
+- `days[]` = Feb 25–Mar 27, 2026 (last updated). `daysSet` for O(1) lookups.
 - Daily data structures: see `memory/daily-update-skill.md` for the full list.
 - Faction system: `countryFaction{}`, `FACTION_DETAIL{}`, `COUNTRY_ECON{}`, `conflictSides{}`, `countryPosture{}`, `countryFlags{}`.
 - New faction country checklist: add entries to all 6 structures above.
@@ -27,10 +33,10 @@ Follow V3.0 Spec (Notes DB) for all standard procedures.
 - When user says "update" → follow `memory/daily-update-skill.md`.
 - After data updates, also update `countryPosture{}` (one paragraph per country max).
 
-### Sandbox Constraints
-- No CDN dependencies (except Google Fonts @import).
-- Must call `upload_artifact` after every edit to preview.
-- Blocked: `git`, `npm`, `python`, `curl`, `rm`, `tar`, `zip`, network tools.
+### Deployment
+- Live at: https://markvaske.github.io/monitoring_the_situation
+- Repo: https://github.com/markvaske/monitoring_the_situation
+- Deploy: `git add -A && git commit -m "message" && git push` — Pages updates automatically.
 
 ## Counters & State
 - Prompt counter: 3
