@@ -327,7 +327,7 @@ const countryFaction = {
   'Pakistan': {faction:'neutral', role:'Mediator'}
 };
 const countryPosture = {
-  'Iran': 'Combined force strikes have halted Iran\'s short- and medium-range ballistic missile production, according to four experts cited by the Washington Post. The four key production facilities — Khojir (88 structures destroyed), Shahroud (28), Parchin (12), and Hakimiyeh (19) — plus 29 launch bases have sustained "severe damage." 77% of analyzed tunnel entrances struck. SPND nuclear weapons research chief Ali Fuladvand killed on Mar 28. HRANA reports 3,461 killed including 1,551 civilians and 236 children. President Pezeshkian warned economy collapses in 3-4 weeks — deepening rift with IRGC Commander Vahidi. Regime launched "Janfada" (Sacrificing Life) recruitment campaign via SMS. Security checkpoints in Isfahan. Iran continues launching missiles at Israel — 7 barrages on Mar 29 hitting Beersheba chemical plant. Approved 20 Pakistani vessels for Hormuz transit. 50+ containerships stranded west of strait. Russia confirmed providing satellite imagery of coalition bases. All civilian airports remain closed.',
+  'Iran': 'US-Israel strikes on Mar 30 knocked out power across Tehran — capital blackout later partially restored. Trump posted Truth Social ultimatum threatening to destroy all Iranian power plants, oil wells, Kharg Island terminal, and desalination plants if no deal. Combined force strikes have halted Iran\'s short- and medium-range ballistic missile production, according to four experts cited by the Washington Post. The four key production facilities — Khojir (88 structures destroyed), Shahroud (28), Parchin (12), and Hakimiyeh (19) — plus 29 launch bases have sustained "severe damage." SPND nuclear weapons research chief Ali Fuladvand killed on Mar 28. HRANA reports 3,461+ killed including 1,551 civilians and 236 children. President Pezeshkian warned economy collapses in 3-4 weeks — deepening rift with IRGC Commander Vahidi. Regime launched "Janfada" (Sacrificing Life) recruitment campaign via SMS. Iran continues launching missiles at Israel — 7 barrages on Mar 29 hitting Beersheba chemical plant. Approved 20 Pakistani vessels for Hormuz transit. 50+ containerships stranded west of strait. Russia confirmed providing satellite imagery of coalition bases. All civilian airports remain closed.',
   'Israel': 'IDF struck missile and drone production sites in Tehran on Mar 29 and declared it is "days away" from completing all "top priority" defense industrial targets. Iranian missiles hit Beersheba on Mar 29 — 11 wounded, ADAMA Makhteshim chemical plant struck with 800m exclusion zone, explosion on Tel Aviv highway. Netanyahu ordered expansion of Lebanon security zone. Israeli-American soldier Moshe Katz (22, New Haven, CT) killed in Lebanon — 5th IDF death since Feb 28. IDF confirmed killing SPND nuclear chief Fuladvand. Prioritizing strikes on Iranian weapons production and nuclear facilities. 850 Hezbollah fighters killed in recent clashes, many from elite Radwan Force. Ben Gurion restricted to military flights.',
   'Syria': 'Iranian weapons convoys and missile depots targeted by Israeli and US strikes. IDF struck infrastructure in Suwayda province on Mar 20, expanding campaign southward. Damascus airport closed since conflict onset. Serving as logistics corridor between Iran and Hezbollah. Assad government unable to prevent use of Syrian territory by either side. 95,000 displaced.',
   'Iraq': 'Six Iranian ballistic missiles struck a Kurdish Peshmerga base north of Erbil on Mar 24, killing 6 fighters and wounding 30 — the first direct Iranian attack on Peshmerga forces. Iraq ordered a response to recent strikes on Iran-backed PMF. Combined forces struck PMF positions in western Mosul and Kataib Hezbollah in Anbar. Force majeure still in effect on all foreign-operated oilfields — Basra at 900K bpd (down from 3.3M). Gas supply from Iran severed. Baghdad and Erbil airports closed. 240,000 displaced.',
@@ -340,7 +340,7 @@ const countryPosture = {
   'Kuwait': 'Desalination plant attacked on Mar 29, killing one Indian worker. 10 Kuwaiti military personnel injured in separate Iranian attack. Repeated attacks since mid-March despite neutral stance. Air defenses intercepted Iranian missiles multiple times. 7 power lines knocked out. Mina Al-Ahmadi and Mina Abdullah refineries struck previously. Airport closed since early March. Hosting US military logistics. 16,000+ displaced.',
   'Oman': 'Airspace remains the only reliable southern bypass corridor for commercial aviation. Muscat operating as safe harbor for diverted vessels. Hit by Iranian missile spillover from Mar 15 onward. Sultan Haitham has engaged in backchannel ceasefire discussions.',
   'Egypt': 'President Sissi touring Gulf capitals on Mar 23 pushing a 30-60 day ceasefire framework. Engaged in backchannel diplomacy — delivered "clear messages" to Iran. Controls the Suez Canal — keeping it open but transit volumes have dropped from ~52/day to ~11/day as shipping diverts around Cape. Egyptian Navy increasing Red Sea patrols. Rafah crossing reopened Mar 19 for humanitarian aid into Gaza after 10-day closure.',
-  'Turkey': 'NATO member refusing to pick a side but emerging as key mediator. Istanbul airports operating normally. Closed airspace to belligerent military overflights while allowing civilian transit. Threading the needle between alliance obligations, regional relationships, and active mediation.',
+  'Turkey': 'NATO member refusing to pick a side but emerging as key mediator. Turkish/NATO air defenses intercepted the 4th missile directed at Turkish territory since the conflict began on Mar 30 — highlighting creeping escalation risk to NATO\'s southeastern flank. Istanbul airports operating normally. Closed airspace to belligerent military overflights while allowing civilian transit. Hosting Saudi, Turkish, and Egyptian FM discussions in Islamabad (via Pakistan) preparing US-Iran peace talks. Threading the needle between alliance obligations, regional relationships, and active mediation.',
   'Yemen': "Ansar Allah (Houthi) forces have now conducted two barrages toward Israel — the first ballistic missile on Mar 27 and a second attack with missiles, cruise missiles, and drones on Mar 28. Both intercepted. A Houthi spokesman threatened 'direct military intervention' if strikes on 'Muslim lands' continue. Previously warned Bahrain and UAE they 'will be the first to lose.' The launches establish Yemen as a persistent threat axis extending the conflict 2,000+ km south. Sana'a airport non-functional from prior civil war.",
   'Azerbaijan': 'Nakhchivan exclave airport struck by Iranian drones on Mar 5 — first conflict spillover into the Caucasus. Closed all airspace south of Baku. Serving as humanitarian transit corridor for Russian medicine shipments to Iran. Balancing Turkey alliance with economic ties to Moscow and Tehran.',
   'Russia': 'Confirmed providing satellite imagery of coalition military assets to Iran — Prince Sultan Airbase, Diego Garcia, Incirlik, Al Udeid, Shaybah oil field. Iran subsequently attacked all sites. In "very active" discussions on upgraded drone transfers to Iran. Airlifted 13 tons of medicine via Azerbaijan. Putin congratulated Mojtaba Khamenei and pledged solidarity. Economically benefiting from oil price spike and collapse of Iran sanctions regime. Not a direct combatant but deepening operational support for Tehran.',
@@ -372,7 +372,7 @@ function getStat(code, d) {
 // ===== DATES =====
 const days = [];
 {
-  const s = new Date(2026, 1, 25), e = new Date(2026, 2, 29);
+  const s = new Date(2026, 1, 25), e = new Date(2026, 2, 30);
   for (let d = new Date(s); d <= e; d.setDate(d.getDate() + 1))
     days.push(d.toISOString().slice(0, 10));
 }
@@ -1882,6 +1882,30 @@ const news = [
   {d:'2026-03-29',cat:'humanitarian',imp:'e',t:'3 Lebanese journalists killed in Israeli airstrike — total Lebanon dead exceeds 1,200',tags:['Lebanon','Israel'],
    tx:'Three Lebanese journalists — Ali Shuaib (Al Manar), Fatima Ftouni, and Mohamed Ftouni (Al-Mayadeen) — killed in an Israeli airstrike on Mar 28. IDF claimed Shuaib was a Radwan Force member but provided no evidence. Total Lebanese dead now exceeds 1,200. 49 killed in Lebanon on Sunday. UN peacekeeper also killed in south Lebanon.',
    l:'https://www.terrorism-info.org.il/en/spotlight-on-terrorism-hezbollah-and-lebanon-march-23-29-2026/',s:'Meir Amit Center'},
+  {d:'2026-03-30',cat:'military',imp:'e',t:'US-Israel overnight strikes hit Tehran power infrastructure — capital blackout, later restored',tags:['United States','Israel','Iran'],
+   tx:'Overnight strikes targeted electricity transmission and distribution infrastructure in Tehran. Iranian authorities confirmed a city-wide blackout that was subsequently restored. Strikes also hit further industrial targets. Day 31 of the conflict.',
+   l:'https://www.aljazeera.com/news/liveblog/2026/3/30/iran-war-live-worker-killed-in-kuwait-israel-intercepts-drones-from-yemen',s:'Al Jazeera'},
+  {d:'2026-03-30',cat:'military',imp:'e',t:'Turkey/NATO intercept 4th missile directed at Turkish territory since conflict began',tags:['Turkey'],
+   tx:'Turkish air defenses intercepted a ballistic missile heading toward Turkish territory — the fourth such interception since the conflict began Feb 28. NATO Secretary-General convened emergency consultations.',
+   l:'https://www.aljazeera.com/news/liveblog/2026/3/30/iran-war-live-worker-killed-in-kuwait-israel-intercepts-drones-from-yemen',s:'Al Jazeera'},
+  {d:'2026-03-30',cat:'humanitarian',imp:'e',t:'Indian worker killed in Iranian attack on power and desalination plant; woman injured in Jordan from falling debris',tags:['Iran','India','Jordan'],
+   tx:'An Indian national was killed when an Iranian missile struck a power and desalination facility. A woman in Jordan sustained injuries from falling debris. Total confirmed non-combatant deaths in Gulf states reached 27.',
+   l:'https://www.aljazeera.com/news/liveblog/2026/3/30/iran-war-live-worker-killed-in-kuwait-israel-intercepts-drones-from-Yemen',s:'Al Jazeera'},
+  {d:'2026-03-30',cat:'diplomatic',imp:'e',t:'Trump threatens to destroy Iran\'s power plants, oil wells, Kharg Island and desalination plants if no deal',tags:['United States','Iran'],
+   tx:'President Trump posted on Truth Social: "If a deal is not reached soon and the Strait of Hormuz reopened, the United States will have no choice but to end the war by destroying all of Iran\'s power plants, oil wells, Kharg Island, and possibly all its desalinization plants." Rubio told Al Jazeera that Trump "prefers diplomacy."',
+   l:'https://www.cnn.com/2026/03/30/world/live-news/iran-war-us-israel-trump',s:'CNN'},
+  {d:'2026-03-30',cat:'maritime',imp:'d',t:'Hegseth downplays Hormuz risk as merchant traffic sees small increase; Lloyd\'s List: still under 10% of normal',tags:['United States','Iran'],
+   tx:'Defense Secretary Pete Hegseth stated the Strait of Hormuz is not effectively blockaded as merchant traffic saw a minimal rise. However, Lloyd\'s List tracked only 48 cargo vessels over 10,000 DWT transiting between Mar 23-29 — against a historical average of 138 vessels per 24-hour period. Two Chinese-flagged vessels completed transits on Mar 30.',
+   l:'https://news.usni.org/2026/03/31/hegseth-downplays-risk-of-sailing-through-strait-of-hormuz-as-merchant-traffic-sees-small-increase',s:'USNI News'},
+  {d:'2026-03-30',cat:'stocks',imp:'e',t:'Brent crude rises to $111.10; gold at $4,567 — bargain hunters stage relief rally after steepest monthly decline in decades',tags:['Saudi Arabia'],
+   tx:'Brent crude settled at $111.10/bbl. Gold spot price reached $4,567/oz as bargain hunters stepped in after gold\'s steepest monthly decline in nearly two decades. Precious metals staged a relief rally. Brent on track for biggest monthly gain since 1988.',
+   l:'https://fortune.com/article/current-price-of-gold-03-30-2026/',s:'Fortune / CNBC'},
+  {d:'2026-03-30',cat:'humanitarian',imp:'e',t:'Cumulative war toll: 1,937 killed in Iran; 24 killed in Israel; 13 US soldiers KIA; 27 killed in Gulf states',tags:['Iran','Israel','United States'],
+   tx:'Al Jazeera live tracker cumulative figures as of Mar 30: Iran 1,937 dead; Israel 24 dead (civilian and military); 13 US soldiers killed in action; 27 killed across Gulf states. Thousands more injured on all sides.',
+   l:'https://www.aljazeera.com/news/2026/3/1/us-israel-attacks-on-iran-death-toll-and-injuries-live-tracker',s:'Al Jazeera'},
+  {d:'2026-03-30',cat:'aviation',imp:'n',t:'Airspace status unchanged — Iran, Iraq, Kuwait, Syria closed; regional NOTAMs extended',tags:['Iran','Iraq','Kuwait','Syria'],
+   tx:'No changes to regional airspace status on Mar 30. All Iranian FIRs remain closed. EASA CZIB in effect for Gulf states. Northern and southern bypass routes remain the only viable routing options for commercial aviation.',
+   l:'https://ops.group/blog/middle-east-airspace-current-operational-picture/',s:'OPSGROUP'},
 ];
 
 // ===== STRAIT OF HORMUZ DATA =====
@@ -2221,6 +2245,10 @@ const HZ_EVENTS = [
   {d:'2026-03-29',type:'mine',desc:'10 Kuwaiti military personnel injured in Iranian attack',lat:29.3,lng:47.9,count:10},
   {d:'2026-03-29',type:'mine',desc:'Kuwait desalination plant attacked — Indian worker killed',lat:29.2,lng:48.0,count:1},
   {d:'2026-03-29',type:'mine',desc:'COSCO ULCCs initially denied then completed Hormuz crossing',lat:26.5,lng:56.3,count:2},
+
+  {d:'2026-03-30',type:'passage',desc:'8 vessels transit Hormuz — small increase but still under 10% of pre-war average; two Chinese-flagged tankers complete crossings',lat:26.52,lng:56.35,count:8},
+  {d:'2026-03-30',type:'patrol',desc:'Hegseth says Hormuz "not blockaded" — CENTCOM data shows 48 vessels in 7 days vs 138/day historical average',lat:26.1,lng:56.0,count:3},
+  {d:'2026-03-30',type:'passage',desc:'Red Sea escort convoy: 2 vessels northbound under EUNAVFOR Aspides guard',lat:15.0,lng:42.5,count:2,region:'redsea'},
 ];
 
 // Strait status by date
@@ -2926,6 +2954,7 @@ const DAILY_HEADLINES = {
   '2026-03-27':{headline:'IDF Strikes Arak Nuclear Facility; 12 US Troops Hurt at Saudi Base; Houthis Fire First Missile at Israel',sub:'Israel strikes Arak Heavy Water Facility and Ardakan Yellowcake Plant — nuclear infrastructure targeted; 12 US troops injured at Prince Sultan Air Base, KC-135 tankers damaged; CENTCOM strikes bulldozers clearing tunnel entrances to underground missile facilities; Iran missile fire down 90% — 1/3 of stockpile destroyed, 330 of 470 launchers hit; Rubio says war will end in "weeks not months"; Houthis threaten "direct military intervention" — first ballistic missile from Yemen toward Israel intercepted; Iran formalizes $2M toll system for Hormuz passage; strikes hit Isfahan and Ahvaz steel plants — civilian industrial targets; Iran threatens retaliation against Gulf industries with US shareholders; Abu Dhabi fires from intercepted missile debris; IAEA warns of "major radiological incident" risk; Ukraine-Saudi defense cooperation agreement; Brent rises to $107.81; gold steady at $4,430'},
   '2026-03-28':{headline:'Combined Force Halts Iran Missile Production; SPND Nuclear Chief Killed; Houthis Strike Israel Again',sub:'WaPo: combined force struck 4 key missile production facilities and 29 launch bases — "severe damage" halts short/medium-range production; strikes hit Parchin, MIO Tehran, SADRA Bushehr, Yazd Missile Base (6th time); SPND nuclear weapons research chief Ali Fuladvand killed in Borujerd; Houthis conduct second barrage toward Israel — ballistic missiles and drones intercepted; USS Tripoli arrives — 50,000+ US troops in region; Russia providing satellite imagery to Iran of coalition bases; Pezeshkian warns economy collapses in 3-4 weeks — rift with IRGC deepens; Iran launches "Janfada" recruitment campaign; Iran approves 20 Pakistani vessels for Hormuz; Ukraine-Qatar 10-year defense agreement; HRANA: 3,461 killed in Iran including 1,551 civilians and 236 children; residential building struck in Tehran; Brent ~$109.50; gold rises to $4,506'},
   '2026-03-29':{headline:'Iranian Missiles Hit Beersheba Chemical Plant; Trump Threatens Infrastructure Strikes; Peace Talks Imminent',sub:'Seven Iranian missile barrages hit Israel — 11 wounded in Beersheba; ADAMA Makhteshim chemical plant struck, 800m exclusion zone; explosion on Tel Aviv highway; Netanyahu orders expansion of Lebanon security zone — 1,200+ killed; Israeli-American soldier killed in Lebanon — 5th IDF death; US special operations forces (Rangers, SEALs) arrive; IDF says "days away" from completing priority targets; IDF strikes missile and drone production sites in Tehran; 5 killed in TV station and port strikes in Tehran; Kuwait desalination plant attacked — Indian worker killed; 10 Kuwaiti soldiers injured; power outages in Tehran and Karaj from Parchin strikes; 3 Lebanese journalists killed; UN peacekeeper killed; Pakistan announces US-Iran talks "in coming days"; Trump threatens infrastructure strikes if talks fail; MARAD warns AIS used for targeting; 50+ ships stranded west of Hormuz; Brent ~$111; gold rebounds to $4,541 — worst monthly decline since 2008'},
+  '2026-03-30':{headline:'Trump Threatens to Destroy Iran Power Grid and Kharg Island; Tehran Blackout After Overnight Strikes; Merchant Traffic Slowly Returning to Hormuz',sub:'Overnight US-Israel strikes knocked out power across Tehran — blackout later restored; Trump posts Truth Social ultimatum threatening to destroy all Iranian power plants, oil wells, Kharg Island and desalination plants if no deal; Rubio tells Al Jazeera Trump "prefers diplomacy"; Turkey/NATO intercept 4th missile directed at Turkish territory; Indian worker killed in attack on Gulf desalination plant; Hegseth says Hormuz not blockaded — Lloyd\'s List data shows only 48 vessels in 7 days vs 138/day historical average; two Chinese-flagged vessels complete transits; gold stages relief rally to $4,567 — bargain hunters step in after worst monthly decline in decades; Brent $111.10; total war dead: 1,937 in Iran, 24 in Israel, 13 US soldiers, 27 in Gulf states'},
 };
 
 function renderNews() {
@@ -3182,6 +3211,7 @@ const CASUALTY_DATA = {
   '2026-03-27': {coalition:{deaths:56,injuries:587}, axis:{deaths:3150,injuries:27800}, civilian:{deaths:2210,injuries:6050}},
   '2026-03-28': {coalition:{deaths:56,injuries:599}, axis:{deaths:3350,injuries:28600}, civilian:{deaths:2420,injuries:6350}},
   '2026-03-29': {coalition:{deaths:57,injuries:625}, axis:{deaths:3520,injuries:29400}, civilian:{deaths:2600,injuries:6650}},
+  '2026-03-30': {coalition:{deaths:57,injuries:632}, axis:{deaths:3620,injuries:30100}, civilian:{deaths:2680,injuries:6800}},
 };
 // Per-country casualty attribution (for country/faction filtering)
 // Approximate % of faction total attributable to each country
@@ -3235,6 +3265,7 @@ const DISPLACEMENT_DATA = {
   '2026-03-27': {Iran:1610000, Lebanon:1560000, Iraq:252000, Syria:118000, UAE:9200, Kuwait:15000},
   '2026-03-28': {Iran:1650000, Lebanon:1580000, Iraq:255000, Syria:120000, UAE:9400, Kuwait:15500},
   '2026-03-29': {Iran:1690000, Lebanon:1610000, Iraq:258000, Syria:122000, UAE:9600, Kuwait:16000},
+  '2026-03-30': {Iran:1720000, Lebanon:1635000, Iraq:260000, Syria:123000, UAE:9700, Kuwait:16200},
 };
 const DISPLACEMENT_COLORS = {
   Iran:'#ff2d7b', Lebanon:'#ff6b4a', Iraq:'#ffe100', Syria:'#ff9500', UAE:'#00e5ff', Kuwait:'#00ff88'
@@ -3261,6 +3292,7 @@ const OIL_PRICE_DATA = {
   '2026-03-27':{brent:107.81,wti:95.28},
   '2026-03-28':{brent:109.50,wti:97.10},
   '2026-03-29':{brent:111.10,wti:98.85},
+  '2026-03-30':{brent:111.10,wti:98.85},
 };
 
 const GOLD_PRICE_DATA = {
@@ -3279,6 +3311,7 @@ const GOLD_PRICE_DATA = {
   '2026-03-27':4430,
   '2026-03-28':4506,
   '2026-03-29':4541,
+  '2026-03-30':4567,
 };
 
 const SUEZ_DATA = {
@@ -3297,6 +3330,7 @@ const SUEZ_DATA = {
   '2026-03-27':9,
   '2026-03-28':9,
   '2026-03-29':8,
+  '2026-03-30':8,
 };
 // ===== WAR RISK INSURANCE PREMIUMS (% of hull value) =====
 // Gulf = Strait of Hormuz / Persian Gulf transit. Red Sea = Bab el-Mandeb / southern Red Sea.
@@ -3327,6 +3361,7 @@ const INSURANCE_DATA = {
   '2026-03-27':{gulf:13.50,redsea:6.20,eastmed:3.20},
   '2026-03-28':{gulf:13.80,redsea:6.30,eastmed:3.25},
   '2026-03-29':{gulf:14.00,redsea:6.40,eastmed:3.30},
+  '2026-03-30':{gulf:14.20,redsea:6.50,eastmed:3.35},
 };
 
 // ===== NOTAM / FIR CLOSURE DATA =====
@@ -3356,6 +3391,7 @@ const NOTAM_DATA = {
   '2026-03-27':{closed:12,restricted:19,total:84},
   '2026-03-28':{closed:12,restricted:19,total:86},
   '2026-03-29':{closed:12,restricted:19,total:88},
+  '2026-03-30':{closed:12,restricted:19,total:88},
 };
 
 function getShippingData() {
@@ -3416,6 +3452,7 @@ const ESCALATION_SCORES = {
   '2026-03-27':9,
   '2026-03-28':9,
   '2026-03-29':9,
+  '2026-03-30':10,
 };
 const ESC_LABELS = {1:'LOW',2:'GUARDED',3:'ELEVATED',4:'ELEVATED',5:'HIGH',6:'HIGH',7:'SEVERE',8:'SEVERE',9:'CRITICAL',10:'MAXIMUM'};
 const CIVILIAN_INFRA = [
