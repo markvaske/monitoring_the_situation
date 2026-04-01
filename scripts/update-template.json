@@ -1,0 +1,64 @@
+{
+  "_notes": [
+    "Copy this file to updates/YYYY-MM-DD.json and fill it in.",
+    "Remove this _notes key before running the script.",
+    "All casualty/displacement figures are CUMULATIVE (never decrease).",
+    "escalation_score: 1=low, 10=maximum. See memory/daily-update-skill.md for guidance.",
+    "news[].imp: 'e'=escalation, 'd'=de-escalation, 'n'=neutral",
+    "news[].cat: military | aviation | maritime | diplomatic | stocks | humanitarian | general",
+    "hz_events[].type: mine | cleared | patrol | passage | houthi",
+    "milestones[]: only for major turning points — leave empty [] if nothing qualifies"
+  ],
+
+  "date": "YYYY-MM-DD",
+
+  "escalation_score": 8,
+
+  "headline": "Short headline — lead story of the day",
+  "sub": "Full sub-headline with key events, prices, and figures. Include: major strikes, diplomatic moves, Brent price, gold price, casualty totals.",
+
+  "oil": { "brent": 0.0, "wti": 0.0 },
+  "gold": 0,
+  "suez": 0,
+
+  "insurance": { "gulf": 0.0, "redsea": 0.0, "eastmed": 0.0 },
+  "notam": { "closed": 0, "restricted": 0, "total": 0 },
+
+  "casualties": {
+    "coalition": { "deaths": 0, "injuries": 0 },
+    "axis":      { "deaths": 0, "injuries": 0 },
+    "civilian":  { "deaths": 0, "injuries": 0 }
+  },
+
+  "displacement": {
+    "Iran": 0, "Lebanon": 0, "Iraq": 0, "Syria": 0, "UAE": 0, "Kuwait": 0
+  },
+
+  "news": [
+    {
+      "cat": "military",
+      "imp": "e",
+      "t": "Headline of the news item",
+      "tx": "Body text with more detail — 2-4 sentences. Include specific figures, locations, named officials where possible.",
+      "tags": ["Country1", "Country2"],
+      "l": "https://source-url.com/article",
+      "s": "Source Name (Reuters, AP, Al Jazeera, etc.)"
+    }
+  ],
+
+  "hz_events": [
+    {
+      "type": "passage",
+      "desc": "Description of the maritime event",
+      "lat": 26.52,
+      "lng": 56.35,
+      "count": 0
+    }
+  ],
+
+  "milestones": [],
+
+  "posture_updates": {
+    "Iran": "One paragraph max describing Iran's current military/political posture as of this date."
+  }
+}

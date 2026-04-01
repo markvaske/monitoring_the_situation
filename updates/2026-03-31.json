@@ -1,0 +1,147 @@
+{
+  "date": "2026-03-31",
+
+  "escalation_score": 10,
+
+  "headline": "Kuwaiti VLCC Struck by Iranian Drone at Dubai Port; Trump Says War Could End in '2–3 Weeks'; Iran Fires 87th Regional Attack Wave",
+  "sub": "Kuwaiti VLCC Al Salmi hit by Iranian drone while anchored at Port of Dubai — fire breaks out, first direct attack on UAE commercial port; Trump says US could end Iran war in 'two to three weeks' and 'they don't have to make a deal'; Hezbollah fires rocket barrage at northern Israel — 3 lightly injured, IDF strikes launchers; Iranian missiles hit central Israel, fires at workshop in Petah Tikva; Netanyahu says 'Iranian regime is weaker than ever'; Israel kills 7 in Beirut suburbs (Jnah, Khaldeh); Iran's 87th regional attack wave launched by IRGC Navy; Trump floats pulling US from NATO; Brent crude hits new conflict high at $121.88; oil up 61% since war began",
+
+  "oil": { "brent": 121.88, "wti": 108.50 },
+  "gold": 4620,
+  "suez": 8,
+
+  "insurance": { "gulf": 15.20, "redsea": 6.70, "eastmed": 3.45 },
+  "notam": { "closed": 12, "restricted": 20, "total": 90 },
+
+  "casualties": {
+    "coalition": { "deaths": 59, "injuries": 645 },
+    "axis":      { "deaths": 3780, "injuries": 31200 },
+    "civilian":  { "deaths": 2880, "injuries": 7100 }
+  },
+
+  "displacement": {
+    "Iran": 1750000, "Lebanon": 1680000, "Iraq": 262000, "Syria": 124000, "UAE": 9800, "Kuwait": 16500
+  },
+
+  "news": [
+    {
+      "cat": "maritime",
+      "imp": "e",
+      "t": "Kuwaiti VLCC Al Salmi struck by Iranian drone at Port of Dubai — fire breaks out",
+      "tx": "An Iranian drone struck the Kuwaiti-flagged Very Large Crude Carrier Al Salmi while it was anchored at the Port of Dubai on March 31, causing a fire. The attack marks the first direct strike on a commercial vessel inside a UAE port since the conflict began. Port operations temporarily suspended while the fire was controlled. No fatalities reported.",
+      "tags": ["Iran", "Kuwait", "UAE"],
+      "l": "https://www.aljazeera.com/news/liveblog/2026/3/31/iran-war-live-kuwaiti-oil-tanker-hit-in-dubai-port-3-un-troops-killed",
+      "s": "Al Jazeera"
+    },
+    {
+      "cat": "diplomatic",
+      "imp": "d",
+      "t": "Trump: US could end Iran war in 'two to three weeks' — Iran doesn't need to make a deal",
+      "tx": "President Trump told reporters on March 31 that the US military operation in Iran could conclude within two to three weeks. In a notable signal, Trump added that Iran 'doesn't have to make a deal' for the US to end its military action. The statement was interpreted as either a timeline for withdrawal or continued pressure. Iran's Foreign Minister Araghchi said he had 'no faith' in talks with Washington.",
+      "tags": ["United States", "Iran"],
+      "l": "https://www.npr.org/2026/03/31/nx-s1-5766991/iran-war-lebanon-israel-dubai",
+      "s": "NPR"
+    },
+    {
+      "cat": "military",
+      "imp": "e",
+      "t": "Hezbollah fires rocket barrage at northern Israel — 3 lightly injured; IDF strikes launchers",
+      "tx": "Hezbollah launched a rocket barrage targeting northern Israeli communities on March 31, lightly injuring 3 civilians. The IDF responded with airstrikes on the launcher positions in southern Lebanon. Israel has deployed its 3rd division to the area and expanded the declared security zone north of the Litani River.",
+      "tags": ["Lebanon", "Israel"],
+      "l": "https://www.timesofisrael.com/liveblog-march-31-2026/",
+      "s": "Times of Israel"
+    },
+    {
+      "cat": "military",
+      "imp": "e",
+      "t": "Iranian missiles hit central Israel — workshop fire in Petah Tikva; 87th IRGC attack wave",
+      "tx": "Iran launched its 87th regional attack barrage since the conflict began, this time led by the IRGC Navy. Ballistic missiles struck central Israel, causing a fire at a workshop in Petah Tikva. IDF air defense intercepted the majority of incoming projectiles. Netanyahu stated the 'Iranian regime is weaker than ever' as strikes continue degrading Iran's military production capacity.",
+      "tags": ["Iran", "Israel"],
+      "l": "https://www.jpost.com/middle-east/iran-news/2026-03-31/live-updates-891725",
+      "s": "Jerusalem Post"
+    },
+    {
+      "cat": "military",
+      "imp": "e",
+      "t": "Israeli strikes kill 7 in Beirut's southern suburbs — Jnah and Khaldeh neighborhoods hit",
+      "tx": "Israeli airstrikes killed at least 7 people in Beirut's southern suburbs on March 31, with 5 killed in the Jnah area and 2 in Khaldeh. The IDF said it was targeting Hezbollah military infrastructure embedded in residential areas. Lebanon's Health Ministry confirmed the casualties.",
+      "tags": ["Israel", "Lebanon"],
+      "l": "https://www.aljazeera.com/news/2026/4/1/israeli-strikes-on-beirut-kill-7-hezbollah-fights-back-in-southern-lebanon",
+      "s": "Al Jazeera"
+    },
+    {
+      "cat": "stocks",
+      "imp": "e",
+      "t": "Brent crude hits conflict high of $121.88 — up 61% since war began; markets rattled",
+      "tx": "Brent crude surged to $121.88 per barrel on March 31, the highest level of the conflict and a 61% increase from pre-war prices. The Kuwaiti tanker strike in Dubai port added a new threat vector — attacks on sovereign port facilities — that traders had not priced in. WTI settled at $108.50.",
+      "tags": ["Saudi Arabia", "Iran", "United States"],
+      "l": "https://fortune.com/article/price-of-oil-03-31-2026/",
+      "s": "Fortune"
+    },
+    {
+      "cat": "diplomatic",
+      "imp": "e",
+      "t": "Trump considers withdrawing US from NATO amid Iran war debate",
+      "tx": "President Trump told NBC News on March 31 that he is 'strongly considering' pulling the United States out of NATO. The statement came amid growing frustration over European allies declining to contribute combat forces to the Iran operation. NATO Secretary-General called an emergency session. The comment sent shockwaves through European capitals already strained by energy shocks from the Hormuz crisis.",
+      "tags": ["United States"],
+      "l": "https://www.nbcnews.com/world/middle-east/live-blog/live-updates-iran-war-trump-address-nation-rcna266149",
+      "s": "NBC News"
+    }
+  ],
+
+  "hz_events": [
+    {
+      "type": "mine",
+      "desc": "Kuwaiti VLCC Al Salmi struck by Iranian drone at Port of Dubai — fire breaks out; first attack on UAE port facility",
+      "lat": 25.27,
+      "lng": 55.30,
+      "count": 1
+    },
+    {
+      "type": "passage",
+      "desc": "8 vessels transit Hormuz — majority Iranian-linked; non-Iranian traffic remains under 10% of pre-war average",
+      "lat": 26.52,
+      "lng": 56.35,
+      "count": 8
+    },
+    {
+      "type": "patrol",
+      "desc": "IRGCN fast attack craft enforce IRGC toll system; vessels required to submit cargo manifests for clearance",
+      "lat": 26.6,
+      "lng": 56.2,
+      "count": 4
+    },
+    {
+      "type": "passage",
+      "desc": "Red Sea: 2 vessels northbound under EUNAVFOR Aspides escort",
+      "lat": 15.0,
+      "lng": 42.5,
+      "count": 2,
+      "region": "redsea"
+    }
+  ],
+
+  "milestones": [
+    {
+      "icon": "🚢",
+      "label": "Kuwaiti VLCC struck at Port of Dubai — first attack on UAE port facility",
+      "kw": ["Al Salmi", "VLCC", "Dubai", "port", "tanker", "drone", "Kuwait"],
+      "cats": ["maritime"],
+      "lat": 25.27,
+      "lng": 55.30
+    },
+    {
+      "icon": "⏳",
+      "label": "Trump signals war could end in '2–3 weeks'; Iran doesn't need to make a deal",
+      "kw": ["Trump", "weeks", "end", "war", "ceasefire", "withdrawal"],
+      "cats": ["diplomatic"],
+      "lat": 38.9,
+      "lng": -77.0
+    }
+  ],
+
+  "posture_updates": {
+    "UAE": "Kuwaiti VLCC Al Salmi struck by Iranian drone at Port of Dubai on Mar 31 — fire broke out, first direct attack on a UAE port facility since the conflict began. Port operations temporarily suspended. Previously: intercepted Iranian ballistic missile debris caused fires in Abu Dhabi on Mar 27. ADNOC has suspended all operations at Habshan and Bab field. Became first Arab Gulf state to co-sign 22-nation Hormuz safe passage statement. Intercepted 327+ ballistic missiles, 15 cruise missiles, and 1,700+ drones since war began. Dubai airport operating at ~40-45% capacity. 9,800 displaced.",
+    "Lebanon": "Israeli strikes kill 7 in Beirut southern suburbs (Jnah, Khaldeh) on Mar 31. Hezbollah fires rocket barrage at northern Israel — 3 Israelis lightly injured; IDF strikes launchers. Total dead now exceeds 1,318, with 50+ killed in the past 24 hours. Netanyahu ordered expansion of the security zone in southern Lebanon. 850+ Hezbollah fighters killed in recent clashes, many from elite Radwan Force. Three Lebanese journalists killed in Israeli airstrikes on Mar 28. Over 1.68 million displaced. Beirut airport restricted."
+  }
+}

@@ -33,16 +33,16 @@ const AP=[
 ];
 
 const countryFlags = {
-  'Turkey':'\u{1F1F9}\u{1F1F7}','Syria':'\u{1F1F8}\u{1F1FE}','Iraq':'\u{1F1EE}\u{1F1F6}','Iran':'\u{1F1EE}\u{1F1F7}',
-  'Saudi Arabia':'\u{1F1F8}\u{1F1E6}','Jordan':'\u{1F1EF}\u{1F1F4}','Lebanon':'\u{1F1F1}\u{1F1E7}','Israel':'\u{1F1EE}\u{1F1F1}',
-  'Kuwait':'\u{1F1F0}\u{1F1FC}','Bahrain':'\u{1F1E7}\u{1F1ED}','Qatar':'\u{1F1F6}\u{1F1E6}','UAE':'\u{1F1E6}\u{1F1EA}',
+  'Turkey':'\u{1F1F9}\u{1F1F7}','Syria':'\u{1F1F8}\u{1F1FE}','Iraq':'\u{1F1EE}\u{1F1F6}','Iran': 'Iran fired its largest missile salvo since the war began on Apr 1 — 6 consecutive barrages on central Israel injuring 14 including children. The same morning, Trump claimed President Pezeshkian had asked for a ceasefire; Iran immediately denied it as \'false and baseless.\' IRGC declared Hormuz \'fully under our control.\' US-Israel strikes hit pharmaceutical plants and steel facilities in Isfahan and Farokhshahr, drawing international condemnation. HRANA cumulative toll: 1,900+ killed in Iran including 1,551 civilians and 236 children. Missile production capacity at major facilities estimated at near-zero. Economy has contracted sharply — Pezeshkian warned of collapse within weeks. All civilian airports remain closed.',
+  'Saudi Arabia':'\u{1F1F8}\u{1F1E6}','Jordan':'\u{1F1EF}\u{1F1F4}','Lebanon': 'Israeli strikes kill 7 in Beirut southern suburbs (Jnah, Khaldeh) on Mar 31. Hezbollah fires rocket barrage at northern Israel — 3 Israelis lightly injured; IDF strikes launchers. Total dead now exceeds 1,318, with 50+ killed in the past 24 hours. Netanyahu ordered expansion of the security zone in southern Lebanon. 850+ Hezbollah fighters killed in recent clashes, many from elite Radwan Force. Three Lebanese journalists killed in Israeli airstrikes on Mar 28. Over 1.68 million displaced. Beirut airport restricted.','Israel': 'Iran fired its largest missile salvo of the conflict at central Israel on Apr 1 — 6 barrages, 14 injured including children, most hitting open areas per IDF. Israeli airstrikes killed 7 in Beirut\'s southern suburbs (Jnah, Khaldeh). IDF continuing strikes on Iranian pharmaceutical and industrial targets alongside military facilities. Netanyahu visited northern command. Ben Gurion restricted to military flights. Cumulative: 24 civilians killed inside Israel since Feb 28, 10+ soldiers killed in Lebanon.',
+  'Kuwait':'\u{1F1F0}\u{1F1FC}','Bahrain':'\u{1F1E7}\u{1F1ED}','Qatar':'\u{1F1F6}\u{1F1E6}','UAE': 'Kuwaiti VLCC Al Salmi struck by Iranian drone at Port of Dubai on Mar 31 — fire broke out, first direct attack on a UAE port facility since the conflict began. Port operations temporarily suspended. Previously: intercepted Iranian ballistic missile debris caused fires in Abu Dhabi on Mar 27. ADNOC has suspended all operations at Habshan and Bab field. Became first Arab Gulf state to co-sign 22-nation Hormuz safe passage statement. Intercepted 327+ ballistic missiles, 15 cruise missiles, and 1,700+ drones since war began. Dubai airport operating at ~40-45% capacity. 9,800 displaced.',
   'Oman':'\u{1F1F4}\u{1F1F2}','Egypt':'\u{1F1EA}\u{1F1EC}','Yemen':'\u{1F1FE}\u{1F1EA}',
   'USA':'\u{1F1FA}\u{1F1F8}',
   'Azerbaijan':'\u{1F1E6}\u{1F1FF}','Russia':'\u{1F1F7}\u{1F1FA}',
   'France':'\u{1F1EB}\u{1F1F7}','UK':'\u{1F1EC}\u{1F1E7}',
   'Germany':'\u{1F1E9}\u{1F1EA}','Italy':'\u{1F1EE}\u{1F1F9}','Japan':'\u{1F1EF}\u{1F1F5}',
   'Kazakhstan':'\u{1F1F0}\u{1F1FF}',
-  'India':'\u{1F1EE}\u{1F1F3}','Pakistan':'\u{1F1F5}\u{1F1F0}'
+  'India':'\u{1F1EE}\u{1F1F3}','Pakistan': 'Emerged as primary mediator. Announced US-Iran peace talks were imminent; Saudi, Turkish, and Egyptian FMs gathered in Islamabad on Mar 29 for preparatory discussions. Iran approved 20 Pakistani-flagged vessels for Hormuz transit — 2 ships per day. JD Vance and Rubio expected to lead US delegation. Pakistan previously conveyed the US 15-point peace plan to Iran and offered to host talks. The Apr 1 ceasefire claim/denial cycle put mediation efforts on uncertain footing.'
 };
 
 // ===== COUNTRY POLYGONS =====
@@ -372,7 +372,7 @@ function getStat(code, d) {
 // ===== DATES =====
 const days = [];
 {
-  const s = new Date(2026, 1, 25), e = new Date(2026, 2, 30);
+  const s = new Date(2026, 1, 25), e = new Date(2026, 3, 1);
   for (let d = new Date(s); d <= e; d.setDate(d.getDate() + 1))
     days.push(d.toISOString().slice(0, 10));
 }
@@ -1906,6 +1906,48 @@ const news = [
   {d:'2026-03-30',cat:'aviation',imp:'n',t:'Airspace status unchanged — Iran, Iraq, Kuwait, Syria closed; regional NOTAMs extended',tags:['Iran','Iraq','Kuwait','Syria'],
    tx:'No changes to regional airspace status on Mar 30. All Iranian FIRs remain closed. EASA CZIB in effect for Gulf states. Northern and southern bypass routes remain the only viable routing options for commercial aviation.',
    l:'https://ops.group/blog/middle-east-airspace-current-operational-picture/',s:'OPSGROUP'},
+  {d:'2026-03-31',cat:'maritime',imp:'e',t:"Kuwaiti VLCC Al Salmi struck by Iranian drone at Port of Dubai — fire breaks out",tags:["Iran","Kuwait","UAE"],
+   tx:"An Iranian drone struck the Kuwaiti-flagged Very Large Crude Carrier Al Salmi while it was anchored at the Port of Dubai on March 31, causing a fire. The attack marks the first direct strike on a commercial vessel inside a UAE port since the conflict began. Port operations temporarily suspended while the fire was controlled. No fatalities reported.",
+   l:'https://www.aljazeera.com/news/liveblog/2026/3/31/iran-war-live-kuwaiti-oil-tanker-hit-in-dubai-port-3-un-troops-killed',s:'Al Jazeera'},
+  {d:'2026-03-31',cat:'diplomatic',imp:'d',t:"Trump: US could end Iran war in 'two to three weeks' — Iran doesn't need to make a deal",tags:["United States","Iran"],
+   tx:"President Trump told reporters on March 31 that the US military operation in Iran could conclude within two to three weeks. In a notable signal, Trump added that Iran 'doesn't have to make a deal' for the US to end its military action. The statement was interpreted as either a timeline for withdrawal or continued pressure. Iran's Foreign Minister Araghchi said he had 'no faith' in talks with Washington.",
+   l:'https://www.npr.org/2026/03/31/nx-s1-5766991/iran-war-lebanon-israel-dubai',s:'NPR'},
+  {d:'2026-03-31',cat:'military',imp:'e',t:"Hezbollah fires rocket barrage at northern Israel — 3 lightly injured; IDF strikes launchers",tags:["Lebanon","Israel"],
+   tx:"Hezbollah launched a rocket barrage targeting northern Israeli communities on March 31, lightly injuring 3 civilians. The IDF responded with airstrikes on the launcher positions in southern Lebanon. Israel has deployed its 3rd division to the area and expanded the declared security zone north of the Litani River.",
+   l:'https://www.timesofisrael.com/liveblog-march-31-2026/',s:'Times of Israel'},
+  {d:'2026-03-31',cat:'military',imp:'e',t:"Iranian missiles hit central Israel — workshop fire in Petah Tikva; 87th IRGC attack wave",tags:["Iran","Israel"],
+   tx:"Iran launched its 87th regional attack barrage since the conflict began, this time led by the IRGC Navy. Ballistic missiles struck central Israel, causing a fire at a workshop in Petah Tikva. IDF air defense intercepted the majority of incoming projectiles. Netanyahu stated the 'Iranian regime is weaker than ever' as strikes continue degrading Iran's military production capacity.",
+   l:'https://www.jpost.com/middle-east/iran-news/2026-03-31/live-updates-891725',s:'Jerusalem Post'},
+  {d:'2026-03-31',cat:'military',imp:'e',t:"Israeli strikes kill 7 in Beirut's southern suburbs — Jnah and Khaldeh neighborhoods hit",tags:["Israel","Lebanon"],
+   tx:"Israeli airstrikes killed at least 7 people in Beirut's southern suburbs on March 31, with 5 killed in the Jnah area and 2 in Khaldeh. The IDF said it was targeting Hezbollah military infrastructure embedded in residential areas. Lebanon's Health Ministry confirmed the casualties.",
+   l:'https://www.aljazeera.com/news/2026/4/1/israeli-strikes-on-beirut-kill-7-hezbollah-fights-back-in-southern-lebanon',s:'Al Jazeera'},
+  {d:'2026-03-31',cat:'stocks',imp:'e',t:"Brent crude hits conflict high of $121.88 — up 61% since war began; markets rattled",tags:["Saudi Arabia","Iran","United States"],
+   tx:"Brent crude surged to $121.88 per barrel on March 31, the highest level of the conflict and a 61% increase from pre-war prices. The Kuwaiti tanker strike in Dubai port added a new threat vector — attacks on sovereign port facilities — that traders had not priced in. WTI settled at $108.50.",
+   l:'https://fortune.com/article/price-of-oil-03-31-2026/',s:'Fortune'},
+  {d:'2026-03-31',cat:'diplomatic',imp:'e',t:"Trump considers withdrawing US from NATO amid Iran war debate",tags:["United States"],
+   tx:"President Trump told NBC News on March 31 that he is 'strongly considering' pulling the United States out of NATO. The statement came amid growing frustration over European allies declining to contribute combat forces to the Iran operation. NATO Secretary-General called an emergency session. The comment sent shockwaves through European capitals already strained by energy shocks from the Hormuz crisis.",
+   l:'https://www.nbcnews.com/world/middle-east/live-blog/live-updates-iran-war-trump-address-nation-rcna266149',s:'NBC News'},
+  {d:'2026-04-01',cat:'diplomatic',imp:'d',t:"Trump claims Iran's President Pezeshkian asked for ceasefire — Iran immediately denies it",tags:["United States","Iran"],
+   tx:"President Trump posted on Truth Social that Iranian President Pezeshkian had personally requested a ceasefire. Trump said the US would 'consider' the request only once the Strait of Hormuz is 'open and clear' — adding 'Until then, we are blasting Iran into oblivion.' Iran's presidential office called the claim 'false and baseless.' IRGC said the strait was 'fully under our control.' The dueling statements created maximum diplomatic confusion hours before Trump's prime-time address.",
+   l:'https://www.cnbc.com/2026/04/01/trump-iran-war-ceasefire.html',s:'CNBC'},
+  {d:'2026-04-01',cat:'military',imp:'e',t:"Iran fires largest missile salvo since war began — 6 barrages on central Israel, 14 injured",tags:["Iran","Israel"],
+   tx:"Iran launched its largest single-day missile attack since the conflict began on April 1, firing 6 consecutive barrages at central Israel. Emergency services reported 14 people injured, including children. IDF said most missiles struck open areas based on initial assessments. The massive salvo came the same morning Trump claimed Iran was seeking a ceasefire — directly contradicting the diplomatic narrative.",
+   l:'https://www.timesofisrael.com/liveblog-april-01-2026/',s:'Times of Israel'},
+  {d:'2026-04-01',cat:'military',imp:'e',t:"US-Israel strikes hit pharmaceutical companies and steel plants in Isfahan and Farokhshahr",tags:["United States","Israel","Iran"],
+   tx:"US and Israeli aircraft struck pharmaceutical manufacturing facilities and steel production plants in Isfahan and Farokhshahr on April 1, according to Iranian media and officials. The targeting of pharmaceutical plants drew international condemnation — the UN High Commissioner for Human Rights called the strikes a potential violation of international humanitarian law. Iran denied the facilities had dual-use military function.",
+   l:'https://www.aljazeera.com/news/liveblog/2026/4/1/iran-live-trump-says-no-deal-needed-to-end-war-isfahan-steel-plants-hit',s:'Al Jazeera'},
+  {d:'2026-04-01',cat:'diplomatic',imp:'n',t:"Trump to address nation at 9pm ET with 'Operation Epic Fury' update; war ending in '2–3 weeks'",tags:["United States","Iran"],
+   tx:"The White House announced President Trump would deliver a prime-time address at 9pm ET on April 1, described as an operational update on 'Operation Epic Fury.' Trump reiterated the conflict could conclude in two to three weeks. Iran's Foreign Minister Araghchi said he had 'no faith' in negotiations with Washington. Rubio told reporters Trump 'strongly prefers a diplomatic solution.'",
+   l:'https://www.upi.com/Top_News/US/2026/04/01/trump-iran-cease-fire-address-nation/9181775050008/',s:'UPI'},
+  {d:'2026-04-01',cat:'military',imp:'e',t:"Israeli airstrikes kill 7 in Beirut — Jnah and Khaldeh neighborhoods struck",tags:["Israel","Lebanon"],
+   tx:"Israeli airstrikes killed at least 7 people in Beirut's southern suburbs on April 1, targeting Hezbollah infrastructure in the Jnah and Khaldeh areas. Lebanon's Health Ministry said at least 125 children are among the 1,318+ killed in Israeli strikes since the conflict began. UNIFIL confirmed a UN peacekeeper was also killed in southern Lebanon.",
+   l:'https://www.aljazeera.com/news/2026/4/1/israeli-strikes-on-beirut-kill-7-hezbollah-fights-back-in-southern-lebanon',s:'Al Jazeera'},
+  {d:'2026-04-01',cat:'stocks',imp:'d',t:"Brent falls to $105.20 on ceasefire speculation; gold bounces to $4,747 after worst March in decades",tags:["Saudi Arabia","Iran","United States"],
+   tx:"Brent crude fell sharply to $105.20 on April 1 — a $16 drop from the March 31 high of $121.88 — as Trump's ceasefire claims triggered commodity selling. WTI settled at $93.00. Gold reversed course, rising 1.5% to $4,747 after its worst monthly performance in decades, as safe-haven demand returned amid the missile barrage. Analysts noted the oil move was likely premature given Iran's denial.",
+   l:'https://fortune.com/article/price-of-oil-04-01-2026/',s:'Fortune'},
+  {d:'2026-04-01',cat:'maritime',imp:'n',t:"IRGC: Hormuz 'fully under our control'; 201 crossings in March — down 95% from peacetime",tags:["Iran"],
+   tx:"The IRGC issued a statement on April 1 declaring the Strait of Hormuz 'fully under our control,' pushing back against Trump's claim of an opening. From March 1–31, commodities carriers made only 201 crossings — a 95% decrease from peacetime. Bettors were placing 30% odds on a seven-day average above 10 transits per day, per IMF PortWatch. Iran's selective vetting system remains the primary control mechanism.",
+   l:'https://www.unitedagainstnucleariran.com/blog/iran-war-shipping-update-march-31-2026',s:'UANI'},
 ];
 
 // ===== STRAIT OF HORMUZ DATA =====
@@ -2249,6 +2291,16 @@ const HZ_EVENTS = [
   {d:'2026-03-30',type:'passage',desc:'8 vessels transit Hormuz — small increase but still under 10% of pre-war average; two Chinese-flagged tankers complete crossings',lat:26.52,lng:56.35,count:8},
   {d:'2026-03-30',type:'patrol',desc:'Hegseth says Hormuz "not blockaded" — CENTCOM data shows 48 vessels in 7 days vs 138/day historical average',lat:26.1,lng:56.0,count:3},
   {d:'2026-03-30',type:'passage',desc:'Red Sea escort convoy: 2 vessels northbound under EUNAVFOR Aspides guard',lat:15.0,lng:42.5,count:2,region:'redsea'},
+
+  {d:'2026-03-31',type:'mine',desc:"Kuwaiti VLCC Al Salmi struck by Iranian drone at Port of Dubai — fire breaks out; first attack on UAE port facility",lat:25.27,lng:55.3,count:1},
+  {d:'2026-03-31',type:'passage',desc:"8 vessels transit Hormuz — majority Iranian-linked; non-Iranian traffic remains under 10% of pre-war average",lat:26.52,lng:56.35,count:8},
+  {d:'2026-03-31',type:'patrol',desc:"IRGCN fast attack craft enforce IRGC toll system; vessels required to submit cargo manifests for clearance",lat:26.6,lng:56.2,count:4},
+  {d:'2026-03-31',type:'passage',desc:"Red Sea: 2 vessels northbound under EUNAVFOR Aspides escort",lat:15,lng:42.5,count:2,region:'redsea'},
+
+  {d:'2026-04-01',type:'passage',desc:"7 vessels transit Hormuz — IRGC declares strait 'fully under our control'; 201 total crossings in March, down 95% from peacetime",lat:26.52,lng:56.35,count:7},
+  {d:'2026-04-01',type:'patrol',desc:"IRGCN maintains toll-booth operations; cargo manifest verification required for non-Iranian vessels",lat:26.6,lng:56.2,count:5},
+  {d:'2026-04-01',type:'houthi',desc:"Houthi missile and drone barrage toward Red Sea coalition vessels — 3rd large attack this week",lat:14.5,lng:42.5,count:3,region:'redsea'},
+  {d:'2026-04-01',type:'passage',desc:"Red Sea: 1 vessel northbound under coalition escort — traffic remains near historic lows",lat:15,lng:42.5,count:1,region:'redsea'},
 ];
 
 // Strait status by date
@@ -2478,6 +2530,9 @@ const MILESTONES = [
   {d:'2026-03-29', icon:'\u{1F4A3}', label:'Iranian missiles hit Beersheba chemical plant — 11 wounded', kw:['Beersheba','chemical','ADAMA','Makhteshim','missiles','Israel','wounded'], cats:['military'], lat:31.25, lng:34.8},
   {d:'2026-03-29', icon:'\u{1F1F1}\u{1F1E7}', label:'Netanyahu expands Lebanon security zone; 1,200+ killed', kw:['Netanyahu','Lebanon','security zone','expansion','Litani','killed'], cats:['military'], lat:33.3, lng:35.4},
   {d:'2026-03-29', icon:'\u{1F91D}', label:'Pakistan announces US-Iran peace talks "in coming days"', kw:['Pakistan','peace','talks','negotiations','US','Iran','Islamabad'], cats:['diplomatic'], lat:33.7, lng:73.1},
+  {d:'2026-03-31', icon:'🚢', label:"Kuwaiti VLCC struck at Port of Dubai — first attack on UAE port facility", kw:["Al Salmi","VLCC","Dubai","port","tanker","drone","Kuwait"], cats:["maritime"], lat:25.27, lng:55.3},
+  {d:'2026-03-31', icon:'⏳', label:"Trump signals war could end in '2–3 weeks'; Iran doesn't need to make a deal", kw:["Trump","weeks","end","war","ceasefire","withdrawal"], cats:["diplomatic"], lat:38.9, lng:-77},
+  {d:'2026-04-01', icon:'🕊️', label:"Trump claims Iran ceasefire request — Iran denies it; largest Iranian missile salvo of war", kw:["ceasefire","Trump","Pezeshkian","denied","false","salvo","largest"], cats:["diplomatic","military"], lat:32, lng:53},
 ];
 
 // Match a news item to its milestone (if any) — requires date match + keyword/category relevance
@@ -2955,6 +3010,8 @@ const DAILY_HEADLINES = {
   '2026-03-28':{headline:'Combined Force Halts Iran Missile Production; SPND Nuclear Chief Killed; Houthis Strike Israel Again',sub:'WaPo: combined force struck 4 key missile production facilities and 29 launch bases — "severe damage" halts short/medium-range production; strikes hit Parchin, MIO Tehran, SADRA Bushehr, Yazd Missile Base (6th time); SPND nuclear weapons research chief Ali Fuladvand killed in Borujerd; Houthis conduct second barrage toward Israel — ballistic missiles and drones intercepted; USS Tripoli arrives — 50,000+ US troops in region; Russia providing satellite imagery to Iran of coalition bases; Pezeshkian warns economy collapses in 3-4 weeks — rift with IRGC deepens; Iran launches "Janfada" recruitment campaign; Iran approves 20 Pakistani vessels for Hormuz; Ukraine-Qatar 10-year defense agreement; HRANA: 3,461 killed in Iran including 1,551 civilians and 236 children; residential building struck in Tehran; Brent ~$109.50; gold rises to $4,506'},
   '2026-03-29':{headline:'Iranian Missiles Hit Beersheba Chemical Plant; Trump Threatens Infrastructure Strikes; Peace Talks Imminent',sub:'Seven Iranian missile barrages hit Israel — 11 wounded in Beersheba; ADAMA Makhteshim chemical plant struck, 800m exclusion zone; explosion on Tel Aviv highway; Netanyahu orders expansion of Lebanon security zone — 1,200+ killed; Israeli-American soldier killed in Lebanon — 5th IDF death; US special operations forces (Rangers, SEALs) arrive; IDF says "days away" from completing priority targets; IDF strikes missile and drone production sites in Tehran; 5 killed in TV station and port strikes in Tehran; Kuwait desalination plant attacked — Indian worker killed; 10 Kuwaiti soldiers injured; power outages in Tehran and Karaj from Parchin strikes; 3 Lebanese journalists killed; UN peacekeeper killed; Pakistan announces US-Iran talks "in coming days"; Trump threatens infrastructure strikes if talks fail; MARAD warns AIS used for targeting; 50+ ships stranded west of Hormuz; Brent ~$111; gold rebounds to $4,541 — worst monthly decline since 2008'},
   '2026-03-30':{headline:'Trump Threatens to Destroy Iran Power Grid and Kharg Island; Tehran Blackout After Overnight Strikes; Merchant Traffic Slowly Returning to Hormuz',sub:'Overnight US-Israel strikes knocked out power across Tehran — blackout later restored; Trump posts Truth Social ultimatum threatening to destroy all Iranian power plants, oil wells, Kharg Island and desalination plants if no deal; Rubio tells Al Jazeera Trump "prefers diplomacy"; Turkey/NATO intercept 4th missile directed at Turkish territory; Indian worker killed in attack on Gulf desalination plant; Hegseth says Hormuz not blockaded — Lloyd\'s List data shows only 48 vessels in 7 days vs 138/day historical average; two Chinese-flagged vessels complete transits; gold stages relief rally to $4,567 — bargain hunters step in after worst monthly decline in decades; Brent $111.10; total war dead: 1,937 in Iran, 24 in Israel, 13 US soldiers, 27 in Gulf states'},
+  '2026-03-31':{headline:"Kuwaiti VLCC Struck by Iranian Drone at Dubai Port; Trump Says War Could End in '2–3 Weeks'; Iran Fires 87th Regional Attack Wave",sub:"Kuwaiti VLCC Al Salmi hit by Iranian drone while anchored at Port of Dubai — fire breaks out, first direct attack on UAE commercial port; Trump says US could end Iran war in 'two to three weeks' and 'they don't have to make a deal'; Hezbollah fires rocket barrage at northern Israel — 3 lightly injured, IDF strikes launchers; Iranian missiles hit central Israel, fires at workshop in Petah Tikva; Netanyahu says 'Iranian regime is weaker than ever'; Israel kills 7 in Beirut suburbs (Jnah, Khaldeh); Iran's 87th regional attack wave launched by IRGC Navy; Trump floats pulling US from NATO; Brent crude hits new conflict high at $121.88; oil up 61% since war began"},
+  '2026-04-01':{headline:"Trump Claims Iran Asked for Ceasefire — Tehran Denies It; Iran Fires Largest Missile Salvo of War; Trump to Address Nation Tonight",sub:"Trump claims Iranian President Pezeshkian asked the US for a ceasefire — Iran immediately denied it as 'false and baseless'; Trump says he will 'consider' ceasefire only once Hormuz is reopened; Iran fires its largest missile salvo since the conflict began — 6 barrages on central Israel, 14 injured including children; Trump to deliver prime-time address on 'Operation Epic Fury' at 9pm ET; US-Israel strikes hit pharmaceutical plants and steel facilities in Isfahan and Farokhshahr; Israeli strikes kill 7 in Beirut suburbs; oil falls sharply on ceasefire speculation — Brent $105.20; gold bounces to $4,747 — up 1.5% after worst March in decades; IRGC says Hormuz 'fully under our control'"},
 };
 
 function renderNews() {
@@ -3212,6 +3269,8 @@ const CASUALTY_DATA = {
   '2026-03-28': {coalition:{deaths:56,injuries:599}, axis:{deaths:3350,injuries:28600}, civilian:{deaths:2420,injuries:6350}},
   '2026-03-29': {coalition:{deaths:57,injuries:625}, axis:{deaths:3520,injuries:29400}, civilian:{deaths:2600,injuries:6650}},
   '2026-03-30': {coalition:{deaths:57,injuries:632}, axis:{deaths:3620,injuries:30100}, civilian:{deaths:2680,injuries:6800}},
+  '2026-03-31': {coalition:{deaths:59,injuries:645}, axis:{deaths:3780,injuries:31200}, civilian:{deaths:2880,injuries:7100}},
+  '2026-04-01': {coalition:{deaths:62,injuries:658}, axis:{deaths:3940,injuries:32000}, civilian:{deaths:3080,injuries:7600}},
 };
 // Per-country casualty attribution (for country/faction filtering)
 // Approximate % of faction total attributable to each country
@@ -3266,6 +3325,8 @@ const DISPLACEMENT_DATA = {
   '2026-03-28': {Iran:1650000, Lebanon:1580000, Iraq:255000, Syria:120000, UAE:9400, Kuwait:15500},
   '2026-03-29': {Iran:1690000, Lebanon:1610000, Iraq:258000, Syria:122000, UAE:9600, Kuwait:16000},
   '2026-03-30': {Iran:1720000, Lebanon:1635000, Iraq:260000, Syria:123000, UAE:9700, Kuwait:16200},
+  '2026-03-31': {Iran:1750000, Lebanon:1680000, Iraq:262000, Syria:124000, UAE:9800, Kuwait:16500},
+  '2026-04-01': {Iran:1770000, Lebanon:1720000, Iraq:264000, Syria:125000, UAE:9900, Kuwait:16800},
 };
 const DISPLACEMENT_COLORS = {
   Iran:'#ff2d7b', Lebanon:'#ff6b4a', Iraq:'#ffe100', Syria:'#ff9500', UAE:'#00e5ff', Kuwait:'#00ff88'
@@ -3293,6 +3354,8 @@ const OIL_PRICE_DATA = {
   '2026-03-28':{brent:109.50,wti:97.10},
   '2026-03-29':{brent:111.10,wti:98.85},
   '2026-03-30':{brent:111.10,wti:98.85},
+  '2026-03-31':{brent:121.88,wti:108.5},
+  '2026-04-01':{brent:105.2,wti:93},
 };
 
 const GOLD_PRICE_DATA = {
@@ -3312,6 +3375,8 @@ const GOLD_PRICE_DATA = {
   '2026-03-28':4506,
   '2026-03-29':4541,
   '2026-03-30':4567,
+  '2026-03-31':4620,
+  '2026-04-01':4747,
 };
 
 const SUEZ_DATA = {
@@ -3331,6 +3396,8 @@ const SUEZ_DATA = {
   '2026-03-28':9,
   '2026-03-29':8,
   '2026-03-30':8,
+  '2026-03-31':8,
+  '2026-04-01':7,
 };
 // ===== WAR RISK INSURANCE PREMIUMS (% of hull value) =====
 // Gulf = Strait of Hormuz / Persian Gulf transit. Red Sea = Bab el-Mandeb / southern Red Sea.
@@ -3362,6 +3429,8 @@ const INSURANCE_DATA = {
   '2026-03-28':{gulf:13.80,redsea:6.30,eastmed:3.25},
   '2026-03-29':{gulf:14.00,redsea:6.40,eastmed:3.30},
   '2026-03-30':{gulf:14.20,redsea:6.50,eastmed:3.35},
+  '2026-03-31':{gulf:15.2,redsea:6.7,eastmed:3.45},
+  '2026-04-01':{gulf:13.5,redsea:6.2,eastmed:3.2},
 };
 
 // ===== NOTAM / FIR CLOSURE DATA =====
@@ -3392,6 +3461,8 @@ const NOTAM_DATA = {
   '2026-03-28':{closed:12,restricted:19,total:86},
   '2026-03-29':{closed:12,restricted:19,total:88},
   '2026-03-30':{closed:12,restricted:19,total:88},
+  '2026-03-31':{closed:12,restricted:20,total:90},
+  '2026-04-01':{closed:12,restricted:20,total:91},
 };
 
 function getShippingData() {
@@ -3453,6 +3524,8 @@ const ESCALATION_SCORES = {
   '2026-03-28':9,
   '2026-03-29':9,
   '2026-03-30':10,
+  '2026-03-31':10,
+  '2026-04-01':10,
 };
 const ESC_LABELS = {1:'LOW',2:'GUARDED',3:'ELEVATED',4:'ELEVATED',5:'HIGH',6:'HIGH',7:'SEVERE',8:'SEVERE',9:'CRITICAL',10:'MAXIMUM'};
 const CIVILIAN_INFRA = [

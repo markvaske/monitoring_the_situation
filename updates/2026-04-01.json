@@ -1,0 +1,141 @@
+{
+  "date": "2026-04-01",
+
+  "escalation_score": 10,
+
+  "headline": "Trump Claims Iran Asked for Ceasefire — Tehran Denies It; Iran Fires Largest Missile Salvo of War; Trump to Address Nation Tonight",
+  "sub": "Trump claims Iranian President Pezeshkian asked the US for a ceasefire — Iran immediately denied it as 'false and baseless'; Trump says he will 'consider' ceasefire only once Hormuz is reopened; Iran fires its largest missile salvo since the conflict began — 6 barrages on central Israel, 14 injured including children; Trump to deliver prime-time address on 'Operation Epic Fury' at 9pm ET; US-Israel strikes hit pharmaceutical plants and steel facilities in Isfahan and Farokhshahr; Israeli strikes kill 7 in Beirut suburbs; oil falls sharply on ceasefire speculation — Brent $105.20; gold bounces to $4,747 — up 1.5% after worst March in decades; IRGC says Hormuz 'fully under our control'",
+
+  "oil": { "brent": 105.20, "wti": 93.00 },
+  "gold": 4747,
+  "suez": 7,
+
+  "insurance": { "gulf": 13.50, "redsea": 6.20, "eastmed": 3.20 },
+  "notam": { "closed": 12, "restricted": 20, "total": 91 },
+
+  "casualties": {
+    "coalition": { "deaths": 62, "injuries": 658 },
+    "axis":      { "deaths": 3940, "injuries": 32000 },
+    "civilian":  { "deaths": 3080, "injuries": 7600 }
+  },
+
+  "displacement": {
+    "Iran": 1770000, "Lebanon": 1720000, "Iraq": 264000, "Syria": 125000, "UAE": 9900, "Kuwait": 16800
+  },
+
+  "news": [
+    {
+      "cat": "diplomatic",
+      "imp": "d",
+      "t": "Trump claims Iran's President Pezeshkian asked for ceasefire — Iran immediately denies it",
+      "tx": "President Trump posted on Truth Social that Iranian President Pezeshkian had personally requested a ceasefire. Trump said the US would 'consider' the request only once the Strait of Hormuz is 'open and clear' — adding 'Until then, we are blasting Iran into oblivion.' Iran's presidential office called the claim 'false and baseless.' IRGC said the strait was 'fully under our control.' The dueling statements created maximum diplomatic confusion hours before Trump's prime-time address.",
+      "tags": ["United States", "Iran"],
+      "l": "https://www.cnbc.com/2026/04/01/trump-iran-war-ceasefire.html",
+      "s": "CNBC"
+    },
+    {
+      "cat": "military",
+      "imp": "e",
+      "t": "Iran fires largest missile salvo since war began — 6 barrages on central Israel, 14 injured",
+      "tx": "Iran launched its largest single-day missile attack since the conflict began on April 1, firing 6 consecutive barrages at central Israel. Emergency services reported 14 people injured, including children. IDF said most missiles struck open areas based on initial assessments. The massive salvo came the same morning Trump claimed Iran was seeking a ceasefire — directly contradicting the diplomatic narrative.",
+      "tags": ["Iran", "Israel"],
+      "l": "https://www.timesofisrael.com/liveblog-april-01-2026/",
+      "s": "Times of Israel"
+    },
+    {
+      "cat": "military",
+      "imp": "e",
+      "t": "US-Israel strikes hit pharmaceutical companies and steel plants in Isfahan and Farokhshahr",
+      "tx": "US and Israeli aircraft struck pharmaceutical manufacturing facilities and steel production plants in Isfahan and Farokhshahr on April 1, according to Iranian media and officials. The targeting of pharmaceutical plants drew international condemnation — the UN High Commissioner for Human Rights called the strikes a potential violation of international humanitarian law. Iran denied the facilities had dual-use military function.",
+      "tags": ["United States", "Israel", "Iran"],
+      "l": "https://www.aljazeera.com/news/liveblog/2026/4/1/iran-live-trump-says-no-deal-needed-to-end-war-isfahan-steel-plants-hit",
+      "s": "Al Jazeera"
+    },
+    {
+      "cat": "diplomatic",
+      "imp": "n",
+      "t": "Trump to address nation at 9pm ET with 'Operation Epic Fury' update; war ending in '2–3 weeks'",
+      "tx": "The White House announced President Trump would deliver a prime-time address at 9pm ET on April 1, described as an operational update on 'Operation Epic Fury.' Trump reiterated the conflict could conclude in two to three weeks. Iran's Foreign Minister Araghchi said he had 'no faith' in negotiations with Washington. Rubio told reporters Trump 'strongly prefers a diplomatic solution.'",
+      "tags": ["United States", "Iran"],
+      "l": "https://www.upi.com/Top_News/US/2026/04/01/trump-iran-cease-fire-address-nation/9181775050008/",
+      "s": "UPI"
+    },
+    {
+      "cat": "military",
+      "imp": "e",
+      "t": "Israeli airstrikes kill 7 in Beirut — Jnah and Khaldeh neighborhoods struck",
+      "tx": "Israeli airstrikes killed at least 7 people in Beirut's southern suburbs on April 1, targeting Hezbollah infrastructure in the Jnah and Khaldeh areas. Lebanon's Health Ministry said at least 125 children are among the 1,318+ killed in Israeli strikes since the conflict began. UNIFIL confirmed a UN peacekeeper was also killed in southern Lebanon.",
+      "tags": ["Israel", "Lebanon"],
+      "l": "https://www.aljazeera.com/news/2026/4/1/israeli-strikes-on-beirut-kill-7-hezbollah-fights-back-in-southern-lebanon",
+      "s": "Al Jazeera"
+    },
+    {
+      "cat": "stocks",
+      "imp": "d",
+      "t": "Brent falls to $105.20 on ceasefire speculation; gold bounces to $4,747 after worst March in decades",
+      "tx": "Brent crude fell sharply to $105.20 on April 1 — a $16 drop from the March 31 high of $121.88 — as Trump's ceasefire claims triggered commodity selling. WTI settled at $93.00. Gold reversed course, rising 1.5% to $4,747 after its worst monthly performance in decades, as safe-haven demand returned amid the missile barrage. Analysts noted the oil move was likely premature given Iran's denial.",
+      "tags": ["Saudi Arabia", "Iran", "United States"],
+      "l": "https://fortune.com/article/price-of-oil-04-01-2026/",
+      "s": "Fortune"
+    },
+    {
+      "cat": "maritime",
+      "imp": "n",
+      "t": "IRGC: Hormuz 'fully under our control'; 201 crossings in March — down 95% from peacetime",
+      "tx": "The IRGC issued a statement on April 1 declaring the Strait of Hormuz 'fully under our control,' pushing back against Trump's claim of an opening. From March 1–31, commodities carriers made only 201 crossings — a 95% decrease from peacetime. Bettors were placing 30% odds on a seven-day average above 10 transits per day, per IMF PortWatch. Iran's selective vetting system remains the primary control mechanism.",
+      "tags": ["Iran"],
+      "l": "https://www.unitedagainstnucleariran.com/blog/iran-war-shipping-update-march-31-2026",
+      "s": "UANI"
+    }
+  ],
+
+  "hz_events": [
+    {
+      "type": "passage",
+      "desc": "7 vessels transit Hormuz — IRGC declares strait 'fully under our control'; 201 total crossings in March, down 95% from peacetime",
+      "lat": 26.52,
+      "lng": 56.35,
+      "count": 7
+    },
+    {
+      "type": "patrol",
+      "desc": "IRGCN maintains toll-booth operations; cargo manifest verification required for non-Iranian vessels",
+      "lat": 26.6,
+      "lng": 56.2,
+      "count": 5
+    },
+    {
+      "type": "houthi",
+      "desc": "Houthi missile and drone barrage toward Red Sea coalition vessels — 3rd large attack this week",
+      "lat": 14.5,
+      "lng": 42.5,
+      "count": 3,
+      "region": "redsea"
+    },
+    {
+      "type": "passage",
+      "desc": "Red Sea: 1 vessel northbound under coalition escort — traffic remains near historic lows",
+      "lat": 15.0,
+      "lng": 42.5,
+      "count": 1,
+      "region": "redsea"
+    }
+  ],
+
+  "milestones": [
+    {
+      "icon": "🕊️",
+      "label": "Trump claims Iran ceasefire request — Iran denies it; largest Iranian missile salvo of war",
+      "kw": ["ceasefire", "Trump", "Pezeshkian", "denied", "false", "salvo", "largest"],
+      "cats": ["diplomatic", "military"],
+      "lat": 32.0,
+      "lng": 53.0
+    }
+  ],
+
+  "posture_updates": {
+    "Iran": "Iran fired its largest missile salvo since the war began on Apr 1 — 6 consecutive barrages on central Israel injuring 14 including children. The same morning, Trump claimed President Pezeshkian had asked for a ceasefire; Iran immediately denied it as 'false and baseless.' IRGC declared Hormuz 'fully under our control.' US-Israel strikes hit pharmaceutical plants and steel facilities in Isfahan and Farokhshahr, drawing international condemnation. HRANA cumulative toll: 1,900+ killed in Iran including 1,551 civilians and 236 children. Missile production capacity at major facilities estimated at near-zero. Economy has contracted sharply — Pezeshkian warned of collapse within weeks. All civilian airports remain closed.",
+    "Israel": "Iran fired its largest missile salvo of the conflict at central Israel on Apr 1 — 6 barrages, 14 injured including children, most hitting open areas per IDF. Israeli airstrikes killed 7 in Beirut's southern suburbs (Jnah, Khaldeh). IDF continuing strikes on Iranian pharmaceutical and industrial targets alongside military facilities. Netanyahu visited northern command. Ben Gurion restricted to military flights. Cumulative: 24 civilians killed inside Israel since Feb 28, 10+ soldiers killed in Lebanon.",
+    "Pakistan": "Emerged as primary mediator. Announced US-Iran peace talks were imminent; Saudi, Turkish, and Egyptian FMs gathered in Islamabad on Mar 29 for preparatory discussions. Iran approved 20 Pakistani-flagged vessels for Hormuz transit — 2 ships per day. JD Vance and Rubio expected to lead US delegation. Pakistan previously conveyed the US 15-point peace plan to Iran and offered to host talks. The Apr 1 ceasefire claim/denial cycle put mediation efforts on uncertain footing."
+  }
+}
