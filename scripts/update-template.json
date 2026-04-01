@@ -7,7 +7,11 @@
     "news[].imp: 'e'=escalation, 'd'=de-escalation, 'n'=neutral",
     "news[].cat: military | aviation | maritime | diplomatic | stocks | humanitarian | general",
     "hz_events[].type: mine | cleared | patrol | passage | houthi",
-    "milestones[]: only for major turning points — leave empty [] if nothing qualifies"
+    "milestones[]: only for major turning points — leave empty [] if nothing qualifies",
+    "CANONICAL TAGS — use these exact strings or tags create spurious country buttons:",
+    "  USA (not 'United States'), UK (not 'United Kingdom'), Saudi Arabia, UAE, Iran, Israel,",
+    "  Lebanon, Syria, Iraq, Yemen, Jordan, Qatar, Bahrain, Kuwait, Oman, Egypt, Turkey,",
+    "  Azerbaijan, Russia, Germany, Italy, France, Japan, India, Pakistan, North Korea, Cyprus"
   ],
 
   "date": "YYYY-MM-DD",

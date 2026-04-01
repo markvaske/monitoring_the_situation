@@ -38,7 +38,7 @@
       "imp": "d",
       "t": "Trump: US could end Iran war in 'two to three weeks' — Iran doesn't need to make a deal",
       "tx": "President Trump told reporters on March 31 that the US military operation in Iran could conclude within two to three weeks. In a notable signal, Trump added that Iran 'doesn't have to make a deal' for the US to end its military action. The statement was interpreted as either a timeline for withdrawal or continued pressure. Iran's Foreign Minister Araghchi said he had 'no faith' in talks with Washington.",
-      "tags": ["United States", "Iran"],
+      "tags": ["USA", "Iran"],
       "l": "https://www.npr.org/2026/03/31/nx-s1-5766991/iran-war-lebanon-israel-dubai",
       "s": "NPR"
     },
@@ -74,7 +74,7 @@
       "imp": "e",
       "t": "Brent crude hits conflict high of $121.88 — up 61% since war began; markets rattled",
       "tx": "Brent crude surged to $121.88 per barrel on March 31, the highest level of the conflict and a 61% increase from pre-war prices. The Kuwaiti tanker strike in Dubai port added a new threat vector — attacks on sovereign port facilities — that traders had not priced in. WTI settled at $108.50.",
-      "tags": ["Saudi Arabia", "Iran", "United States"],
+      "tags": ["Saudi Arabia", "Iran", "USA"],
       "l": "https://fortune.com/article/price-of-oil-03-31-2026/",
       "s": "Fortune"
     },
@@ -83,7 +83,7 @@
       "imp": "e",
       "t": "Trump considers withdrawing US from NATO amid Iran war debate",
       "tx": "President Trump told NBC News on March 31 that he is 'strongly considering' pulling the United States out of NATO. The statement came amid growing frustration over European allies declining to contribute combat forces to the Iran operation. NATO Secretary-General called an emergency session. The comment sent shockwaves through European capitals already strained by energy shocks from the Hormuz crisis.",
-      "tags": ["United States"],
+      "tags": ["USA"],
       "l": "https://www.nbcnews.com/world/middle-east/live-blog/live-updates-iran-war-trump-address-nation-rcna266149",
       "s": "NBC News"
     }

@@ -1909,7 +1909,7 @@ const news = [
   {d:'2026-03-31',cat:'maritime',imp:'e',t:"Kuwaiti VLCC Al Salmi struck by Iranian drone at Port of Dubai — fire breaks out",tags:["Iran","Kuwait","UAE"],
    tx:"An Iranian drone struck the Kuwaiti-flagged Very Large Crude Carrier Al Salmi while it was anchored at the Port of Dubai on March 31, causing a fire. The attack marks the first direct strike on a commercial vessel inside a UAE port since the conflict began. Port operations temporarily suspended while the fire was controlled. No fatalities reported.",
    l:'https://www.aljazeera.com/news/liveblog/2026/3/31/iran-war-live-kuwaiti-oil-tanker-hit-in-dubai-port-3-un-troops-killed',s:'Al Jazeera'},
-  {d:'2026-03-31',cat:'diplomatic',imp:'d',t:"Trump: US could end Iran war in 'two to three weeks' — Iran doesn't need to make a deal",tags:["United States","Iran"],
+  {d:'2026-03-31',cat:'diplomatic',imp:'d',t:"Trump: US could end Iran war in 'two to three weeks' — Iran doesn't need to make a deal",tags:["USA","Iran"],
    tx:"President Trump told reporters on March 31 that the US military operation in Iran could conclude within two to three weeks. In a notable signal, Trump added that Iran 'doesn't have to make a deal' for the US to end its military action. The statement was interpreted as either a timeline for withdrawal or continued pressure. Iran's Foreign Minister Araghchi said he had 'no faith' in talks with Washington.",
    l:'https://www.npr.org/2026/03/31/nx-s1-5766991/iran-war-lebanon-israel-dubai',s:'NPR'},
   {d:'2026-03-31',cat:'military',imp:'e',t:"Hezbollah fires rocket barrage at northern Israel — 3 lightly injured; IDF strikes launchers",tags:["Lebanon","Israel"],
@@ -1921,28 +1921,28 @@ const news = [
   {d:'2026-03-31',cat:'military',imp:'e',t:"Israeli strikes kill 7 in Beirut's southern suburbs — Jnah and Khaldeh neighborhoods hit",tags:["Israel","Lebanon"],
    tx:"Israeli airstrikes killed at least 7 people in Beirut's southern suburbs on March 31, with 5 killed in the Jnah area and 2 in Khaldeh. The IDF said it was targeting Hezbollah military infrastructure embedded in residential areas. Lebanon's Health Ministry confirmed the casualties.",
    l:'https://www.aljazeera.com/news/2026/4/1/israeli-strikes-on-beirut-kill-7-hezbollah-fights-back-in-southern-lebanon',s:'Al Jazeera'},
-  {d:'2026-03-31',cat:'stocks',imp:'e',t:"Brent crude hits conflict high of $121.88 — up 61% since war began; markets rattled",tags:["Saudi Arabia","Iran","United States"],
+  {d:'2026-03-31',cat:'stocks',imp:'e',t:"Brent crude hits conflict high of $121.88 — up 61% since war began; markets rattled",tags:["Saudi Arabia","Iran","USA"],
    tx:"Brent crude surged to $121.88 per barrel on March 31, the highest level of the conflict and a 61% increase from pre-war prices. The Kuwaiti tanker strike in Dubai port added a new threat vector — attacks on sovereign port facilities — that traders had not priced in. WTI settled at $108.50.",
    l:'https://fortune.com/article/price-of-oil-03-31-2026/',s:'Fortune'},
-  {d:'2026-03-31',cat:'diplomatic',imp:'e',t:"Trump considers withdrawing US from NATO amid Iran war debate",tags:["United States"],
+  {d:'2026-03-31',cat:'diplomatic',imp:'e',t:"Trump considers withdrawing US from NATO amid Iran war debate",tags:["USA"],
    tx:"President Trump told NBC News on March 31 that he is 'strongly considering' pulling the United States out of NATO. The statement came amid growing frustration over European allies declining to contribute combat forces to the Iran operation. NATO Secretary-General called an emergency session. The comment sent shockwaves through European capitals already strained by energy shocks from the Hormuz crisis.",
    l:'https://www.nbcnews.com/world/middle-east/live-blog/live-updates-iran-war-trump-address-nation-rcna266149',s:'NBC News'},
-  {d:'2026-04-01',cat:'diplomatic',imp:'d',t:"Trump claims Iran's President Pezeshkian asked for ceasefire — Iran immediately denies it",tags:["United States","Iran"],
+  {d:'2026-04-01',cat:'diplomatic',imp:'d',t:"Trump claims Iran's President Pezeshkian asked for ceasefire — Iran immediately denies it",tags:["USA","Iran"],
    tx:"President Trump posted on Truth Social that Iranian President Pezeshkian had personally requested a ceasefire. Trump said the US would 'consider' the request only once the Strait of Hormuz is 'open and clear' — adding 'Until then, we are blasting Iran into oblivion.' Iran's presidential office called the claim 'false and baseless.' IRGC said the strait was 'fully under our control.' The dueling statements created maximum diplomatic confusion hours before Trump's prime-time address.",
    l:'https://www.cnbc.com/2026/04/01/trump-iran-war-ceasefire.html',s:'CNBC'},
   {d:'2026-04-01',cat:'military',imp:'e',t:"Iran fires largest missile salvo since war began — 6 barrages on central Israel, 14 injured",tags:["Iran","Israel"],
    tx:"Iran launched its largest single-day missile attack since the conflict began on April 1, firing 6 consecutive barrages at central Israel. Emergency services reported 14 people injured, including children. IDF said most missiles struck open areas based on initial assessments. The massive salvo came the same morning Trump claimed Iran was seeking a ceasefire — directly contradicting the diplomatic narrative.",
    l:'https://www.timesofisrael.com/liveblog-april-01-2026/',s:'Times of Israel'},
-  {d:'2026-04-01',cat:'military',imp:'e',t:"US-Israel strikes hit pharmaceutical companies and steel plants in Isfahan and Farokhshahr",tags:["United States","Israel","Iran"],
+  {d:'2026-04-01',cat:'military',imp:'e',t:"US-Israel strikes hit pharmaceutical companies and steel plants in Isfahan and Farokhshahr",tags:["USA","Israel","Iran"],
    tx:"US and Israeli aircraft struck pharmaceutical manufacturing facilities and steel production plants in Isfahan and Farokhshahr on April 1, according to Iranian media and officials. The targeting of pharmaceutical plants drew international condemnation — the UN High Commissioner for Human Rights called the strikes a potential violation of international humanitarian law. Iran denied the facilities had dual-use military function.",
    l:'https://www.aljazeera.com/news/liveblog/2026/4/1/iran-live-trump-says-no-deal-needed-to-end-war-isfahan-steel-plants-hit',s:'Al Jazeera'},
-  {d:'2026-04-01',cat:'diplomatic',imp:'n',t:"Trump to address nation at 9pm ET with 'Operation Epic Fury' update; war ending in '2–3 weeks'",tags:["United States","Iran"],
+  {d:'2026-04-01',cat:'diplomatic',imp:'n',t:"Trump to address nation at 9pm ET with 'Operation Epic Fury' update; war ending in '2–3 weeks'",tags:["USA","Iran"],
    tx:"The White House announced President Trump would deliver a prime-time address at 9pm ET on April 1, described as an operational update on 'Operation Epic Fury.' Trump reiterated the conflict could conclude in two to three weeks. Iran's Foreign Minister Araghchi said he had 'no faith' in negotiations with Washington. Rubio told reporters Trump 'strongly prefers a diplomatic solution.'",
    l:'https://www.upi.com/Top_News/US/2026/04/01/trump-iran-cease-fire-address-nation/9181775050008/',s:'UPI'},
   {d:'2026-04-01',cat:'military',imp:'e',t:"Israeli airstrikes kill 7 in Beirut — Jnah and Khaldeh neighborhoods struck",tags:["Israel","Lebanon"],
    tx:"Israeli airstrikes killed at least 7 people in Beirut's southern suburbs on April 1, targeting Hezbollah infrastructure in the Jnah and Khaldeh areas. Lebanon's Health Ministry said at least 125 children are among the 1,318+ killed in Israeli strikes since the conflict began. UNIFIL confirmed a UN peacekeeper was also killed in southern Lebanon.",
    l:'https://www.aljazeera.com/news/2026/4/1/israeli-strikes-on-beirut-kill-7-hezbollah-fights-back-in-southern-lebanon',s:'Al Jazeera'},
-  {d:'2026-04-01',cat:'stocks',imp:'d',t:"Brent falls to $105.20 on ceasefire speculation; gold bounces to $4,747 after worst March in decades",tags:["Saudi Arabia","Iran","United States"],
+  {d:'2026-04-01',cat:'stocks',imp:'d',t:"Brent falls to $105.20 on ceasefire speculation; gold bounces to $4,747 after worst March in decades",tags:["Saudi Arabia","Iran","USA"],
    tx:"Brent crude fell sharply to $105.20 on April 1 — a $16 drop from the March 31 high of $121.88 — as Trump's ceasefire claims triggered commodity selling. WTI settled at $93.00. Gold reversed course, rising 1.5% to $4,747 after its worst monthly performance in decades, as safe-haven demand returned amid the missile barrage. Analysts noted the oil move was likely premature given Iran's denial.",
    l:'https://fortune.com/article/price-of-oil-04-01-2026/',s:'Fortune'},
   {d:'2026-04-01',cat:'maritime',imp:'n',t:"IRGC: Hormuz 'fully under our control'; 201 crossings in March — down 95% from peacetime",tags:["Iran"],
@@ -3020,18 +3020,18 @@ function renderNews() {
   nb.innerHTML = '';
 
   // Build country filter buttons grouped by conflict parties
-  const allTags = [...new Set(news.flatMap(n => n.tags))].sort();
+  const allTags = [...new Set(news.flatMap(n => n.tags).map(t => canonCo(t)))].sort();
   const fGroups = {coalition:[], axis:[], neutral:[]};
   const sideCountries = {};
   for (const [key, group] of Object.entries(conflictSides)) {
     group.countries.forEach(co => { sideCountries[co] = key; fGroups[key].push(co); });
   }
-  // Add any tagged countries not already in conflictSides
+  // Add any tagged countries not already in conflictSides — known countries only
   allTags.forEach(co => {
     if (sideCountries[co]) return; // already added
     const fi = countryFaction[co];
-    if (fi && fGroups[fi.faction]) { fGroups[fi.faction].push(co); sideCountries[co] = fi.faction; }
-    else { fGroups.neutral.push(co); sideCountries[co] = 'neutral'; }
+    if (fi) { fGroups[fi.faction].push(co); sideCountries[co] = fi.faction; }
+    // Unknown tags (North Korea, Cyprus, etc.) are skipped — they appear in news but don't get filter buttons
   });
   const nfC = document.getElementById('nfCountries');
   if (nfC) {
