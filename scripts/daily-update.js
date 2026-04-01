@@ -84,9 +84,18 @@ function extendDays(content, dateStr) {
 // ── countryPosture replace ────────────────────────────────────────────────────
 
 function updatePosture(content, country, newText) {
+  // Anchor the search to within countryPosture to avoid clobbering countryFlags
+  // (countryFlags is defined before countryPosture and shares many key names)
+  const startRe = /const\s+countryPosture\s*=\s*\{/;
+  const sm = startRe.exec(content);
+  if (!sm) throw new Error('countryPosture not found in data.js');
+  const postureStart = sm.index + sm[0].length;
+  const postureEnd   = findCloseIdx(content, 'countryPosture');
+  const slice        = content.slice(postureStart, postureEnd);
+
   const safeKey = country.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const keyRe   = new RegExp(`'${safeKey}'\\s*:\\s*'`);
-  const km      = keyRe.exec(content);
+  const km      = keyRe.exec(slice);
   if (!km) {
     console.warn(`  [WARN] countryPosture key not found: ${country} — skipping`);
     return content;
@@ -94,14 +103,15 @@ function updatePosture(content, country, newText) {
 
   // Scan forward from after the opening quote to find the unescaped closing quote
   let i = km.index + km[0].length;
-  while (i < content.length) {
-    if (content[i] === '\\') { i += 2; continue; }
-    if (content[i] === "'")  break;
+  while (i < slice.length) {
+    if (slice[i] === '\\') { i += 2; continue; }
+    if (slice[i] === "'")  break;
     i++;
   }
 
-  const escaped = newText.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-  return content.slice(0, km.index) + `'${country}': '${escaped}'` + content.slice(i + 1);
+  const escaped  = newText.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+  const newSlice = slice.slice(0, km.index) + `'${country}': '${escaped}'` + slice.slice(i + 1);
+  return content.slice(0, postureStart) + newSlice + content.slice(postureEnd);
 }
 
 // ── Formatters ────────────────────────────────────────────────────────────────

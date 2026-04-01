@@ -42,7 +42,7 @@ const countryFlags = {
   'France':'\u{1F1EB}\u{1F1F7}','UK':'\u{1F1EC}\u{1F1E7}',
   'Germany':'\u{1F1E9}\u{1F1EA}','Italy':'\u{1F1EE}\u{1F1F9}','Japan':'\u{1F1EF}\u{1F1F5}',
   'Kazakhstan':'\u{1F1F0}\u{1F1FF}',
-  'India':'\u{1F1EE}\u{1F1F3}','Pakistan': 'Emerged as primary mediator. Announced US-Iran peace talks were imminent; Saudi, Turkish, and Egyptian FMs gathered in Islamabad on Mar 29 for preparatory discussions. Iran approved 20 Pakistani-flagged vessels for Hormuz transit — 2 ships per day. JD Vance and Rubio expected to lead US delegation. Pakistan previously conveyed the US 15-point peace plan to Iran and offered to host talks. The Apr 1 ceasefire claim/denial cycle put mediation efforts on uncertain footing.'
+  'India':'\u{1F1EE}\u{1F1F3}','Pakistan':'\u{1F1F5}\u{1F1F0}'
 };
 
 // ===== COUNTRY POLYGONS =====
@@ -350,7 +350,7 @@ const countryPosture = {
   'Italy': 'Declined Trump\'s initial call for NATO warships alongside Germany and other European allies. Joined the six-nation joint statement on Mar 19 pledging readiness to help secure Hormuz. Co-signed EU statement demanding a moratorium on energy and water infrastructure strikes. Part of the five-nation group (France, Germany, UK, Italy, Spain) that called Israel\'s ground offensive toward Bint Jbeil a "red line." No combat forces deployed.',
   'Japan': 'Deeply exposed as the world\'s fourth-largest oil importer, heavily dependent on Gulf energy. Container shipping rates from Asia to Europe doubled. Factory shutdowns reported due to delayed raw materials. Iran offered to let Japanese-flagged ships through Hormuz on Mar 21, expanding its selective vetting system — Japan acknowledged the communication but declined to comment. Joined the six-nation joint statement on Hormuz. Trump drew a "Pearl Harbor" comparison in a call with the Japanese PM, drawing criticism from historians.',
   'India': 'The world\'s third-largest oil importer, sourcing 60% from the Gulf. India released three seized Iranian oil tankers in exchange for safe passage of two Indian LPG tankers through Hormuz on Mar 16. Maintaining independent diplomatic channels with Tehran and refusing to join the coalition naval campaign. INS Vikrant carrier group deployed to Arabian Sea for "presence operations." New Delhi prioritizing energy security over alliance signaling.',
-  'Pakistan': 'Announced US-Iran peace talks "in coming days" on Mar 29, with Saudi, Turkish, and Egyptian foreign ministers gathering in Islamabad for preparatory discussions. Iran approved 20 Pakistani-flagged vessels for Hormuz transit — 2 ships per day. Previously conveyed the US 15-point peace plan to Iran and offered to host talks. JD Vance and Marco Rubio expected to lead negotiations. Emerging as the primary mediator. Shares a 959 km border with Iran. Gwadar port faces direct economic exposure from the Hormuz blockade. ISI maintains intelligence channels with IRGC.'
+  'Pakistan': 'Emerged as primary mediator. Announced US-Iran peace talks were imminent; Saudi, Turkish, and Egyptian FMs gathered in Islamabad on Mar 29 for preparatory discussions. Iran approved 20 Pakistani-flagged vessels for Hormuz transit — 2 ships per day. JD Vance and Rubio expected to lead US delegation. Pakistan previously conveyed the US 15-point peace plan to Iran and offered to host talks. The Apr 1 ceasefire claim/denial cycle put mediation efforts on uncertain footing.'
 };
 
 // ===== AIRPORT STATUS =====
