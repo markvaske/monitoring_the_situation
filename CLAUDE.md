@@ -39,7 +39,7 @@ Follow V3.0 Spec (Notes DB) for all standard procedures.
 - Deploy: `git add -A && git commit -m "message" && git push` — Pages updates automatically.
 
 ## Counters & State
-- Prompt counter: 3
+- Prompt counter: 4
 - Next maintenance: prompt 10
 - Concept learning queue: (empty)
 - Current version: v1.0.0

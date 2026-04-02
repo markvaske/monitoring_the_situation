@@ -8,6 +8,8 @@
  * Usage:
  *   node scripts/prep-update.js              # today's date
  *   node scripts/prep-update.js 2026-04-02   # specific date
+ *   node scripts/prep-update.js --force      # overwrite existing completed file
+ *   node scripts/prep-update.js 2026-04-02 --force
  *
  * Output:
  *   updates/YYYY-MM-DD.json  — pre-filled with date + prices
@@ -25,16 +27,24 @@ const path = require('path');
 const UPDATES_DIR  = path.resolve(__dirname, '../updates');
 const TEMPLATE_FILE = path.resolve(__dirname, 'update-template.json');
 
+// ── Args ──────────────────────────────────────────────────────────────────────
+
+function parseArgs() {
+  const args = process.argv.slice(2);
+  let dateArg = null;
+  let force = false;
+  for (const a of args) {
+    if (a === '--force' || a === '-f') { force = true; }
+    else if (/^\d{4}-\d{2}-\d{2}$/.test(a)) { dateArg = a; }
+    else { console.error(`Unknown argument: ${a}\nUsage: node prep-update.js [YYYY-MM-DD] [--force]`); process.exit(1); }
+  }
+  return { dateArg, force };
+}
+
 // ── Date ──────────────────────────────────────────────────────────────────────
 
 function resolveDate(arg) {
-  if (arg) {
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(arg)) {
-      console.error('Date must be YYYY-MM-DD');
-      process.exit(1);
-    }
-    return arg;
-  }
+  if (arg) return arg;
   // Default: today in local time
   const now = new Date();
   const y = now.getFullYear();
@@ -65,47 +75,65 @@ async function fetchPrice(symbol) {
 
 async function fetchPrices() {
   const symbols = { brent: 'BZ=F', wti: 'CL=F', gold: 'GC=F' };
-  const results = {};
-
-  for (const [key, sym] of Object.entries(symbols)) {
-    process.stdout.write(`  Fetching ${key.padEnd(6)} (${sym}) ... `);
-    try {
-      results[key] = await fetchPrice(sym);
-      console.log(`$${results[key]}`);
-    } catch (err) {
-      console.log(`FAILED — ${err.message}`);
-      results[key] = null;
-    }
-  }
-
-  return results;
+  // Fetch all in parallel
+  const entries = await Promise.all(
+    Object.entries(symbols).map(async ([key, sym]) => {
+      process.stdout.write(`  Fetching ${key.padEnd(6)} (${sym}) ... `);
+      try {
+        const price = await fetchPrice(sym);
+        console.log(`$${price}`);
+        return [key, price];
+      } catch (err) {
+        console.log(`FAILED — ${err.message}`);
+        return [key, null];
+      }
+    })
+  );
+  return Object.fromEntries(entries);
 }
 
-// ── Last known values (fallback for weekends / market closures) ───────────────
+// ── Price cache (persists last known prices across runs) ──────────────────────
 
-function getLastKnownPrices(dateStr) {
+const CACHE_FILE = path.resolve(__dirname, '../updates/prices-cache.json');
+
+function loadPriceCache() {
+  try {
+    return JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
+  } catch {
+    return {};
+  }
+}
+
+function savePriceCache(prices) {
+  const cache = loadPriceCache();
+  for (const [k, v] of Object.entries(prices)) {
+    if (v != null) cache[k] = v;
+  }
+  cache._updated = new Date().toISOString();
+  fs.mkdirSync(path.dirname(CACHE_FILE), { recursive: true });
+  fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2) + '\n');
+}
+
+function getLastKnownPrices() {
+  // Try cache file first (fast, no regex)
+  const cache = loadPriceCache();
+  if (cache.brent && cache.wti && cache.gold) return cache;
+
+  // Fallback: regex scan of data.js (legacy path)
   const dataFile = path.resolve(__dirname, '../src/data.js');
   const content  = fs.readFileSync(dataFile, 'utf8');
-
-  // Find the last entry in OIL_PRICE_DATA
   const oilMatches = [...content.matchAll(/'(\d{4}-\d{2}-\d{2})':\s*\{brent:([\d.]+),wti:([\d.]+)\}/g)];
-  const goldMatches = [...content.matchAll(/'(\d{4}-\d{2}-\d{2})':\s*([\d.]+),/g)];
-
   let lastBrent = null, lastWti = null, lastGold = null;
-
   if (oilMatches.length) {
     const last = oilMatches.at(-1);
     lastBrent = parseFloat(last[2]);
     lastWti   = parseFloat(last[3]);
   }
-
-  // Gold is trickier since the pattern is shared — find last in GOLD_PRICE_DATA block
   const goldBlock = content.match(/const GOLD_PRICE_DATA\s*=\s*\{([\s\S]*?)\};/);
   if (goldBlock) {
     const gm = [...goldBlock[1].matchAll(/'[\d-]+':\s*([\d.]+)/g)];
     if (gm.length) lastGold = parseFloat(gm.at(-1)[1]);
   }
-
   return { brent: lastBrent, wti: lastWti, gold: lastGold };
 }
 
@@ -167,26 +195,33 @@ function buildUpdateFile(dateStr, prices, lastKnown) {
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 async function run() {
-  const dateStr    = resolveDate(process.argv[2]);
+  const { dateArg, force } = parseArgs();
+  const dateStr    = resolveDate(dateArg);
   const outputFile = path.join(UPDATES_DIR, `${dateStr}.json`);
 
   console.log(`\nMTS prep-update for ${dateStr}\n`);
 
-  // Guard: don't overwrite completed files
-  if (fs.existsSync(outputFile)) {
+  // Guard: don't overwrite completed files (bypass with --force)
+  if (fs.existsSync(outputFile) && !force) {
     const existing = JSON.parse(fs.readFileSync(outputFile, 'utf8'));
     if (!existing._instructions && existing.news?.length > 0) {
       console.error(`updates/${dateStr}.json already exists and looks complete.`);
-      console.error('Delete it first if you want to regenerate.');
+      console.error('Use --force to overwrite.');
       process.exit(1);
     }
     console.log(`  Note: updates/${dateStr}.json exists but is incomplete — overwriting.\n`);
   }
+  if (force && fs.existsSync(outputFile)) {
+    console.log(`  --force: overwriting existing updates/${dateStr}.json\n`);
+  }
 
-  // Fetch live prices
+  // Fetch live prices in parallel
   console.log('Fetching prices from Yahoo Finance...');
   const prices    = await fetchPrices();
-  const lastKnown = getLastKnownPrices(dateStr);
+  const lastKnown = getLastKnownPrices();
+
+  // Save successful fetches to cache
+  savePriceCache(prices);
 
   // Fill in any failures with last known
   let carriedForward = false;
@@ -196,18 +231,25 @@ async function run() {
       carriedForward = true;
     }
   }
-  if (carriedForward) console.log('\n  (Some prices carried forward from last known values)');
+  if (carriedForward) console.log('\n  (Some prices carried forward from cache/last known)');
 
   // Write output
   const update = buildUpdateFile(dateStr, prices, lastKnown);
   fs.mkdirSync(UPDATES_DIR, { recursive: true });
   fs.writeFileSync(outputFile, JSON.stringify(update, null, 2) + '\n');
 
-  // Summary
+  // Summary table
+  const brentSrc = prices.brent != null ? 'live' : 'cache';
+  const wtiSrc   = prices.wti   != null ? 'live' : 'cache';
+  const goldSrc  = prices.gold  != null ? 'live' : 'cache';
   console.log(`\n✓ Created updates/${dateStr}.json`);
-  console.log(`\n  Brent : $${update.oil.brent}`);
-  console.log(`  WTI   : $${update.oil.wti}`);
-  console.log(`  Gold  : $${update.gold}`);
+  console.log(`\n  ┌─────────┬───────────┬────────┐`);
+  console.log(`  │ Price   │ Value     │ Source │`);
+  console.log(`  ├─────────┼───────────┼────────┤`);
+  console.log(`  │ Brent   │ $${String(update.oil.brent).padEnd(8)} │ ${brentSrc.padEnd(6)} │`);
+  console.log(`  │ WTI     │ $${String(update.oil.wti).padEnd(8)} │ ${wtiSrc.padEnd(6)} │`);
+  console.log(`  │ Gold    │ $${String(update.gold).padEnd(8)} │ ${goldSrc.padEnd(6)} │`);
+  console.log(`  └─────────┴───────────┴────────┘`);
   console.log('\nNext: give Claude this prompt:');
   console.log('─'.repeat(60));
   console.log(`Fill in updates/${dateStr}.json for ${dateStr}.`);

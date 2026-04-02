@@ -57,9 +57,9 @@ h2{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400}
 .pp-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-lg);align-items:start}
 .pp-col{display:flex;flex-direction:column;gap:8px}
 .pp-col-header{font-size:.8rem;font-weight:700;padding:6px 10px;border-radius:8px;margin-bottom:4px;display:flex;align-items:center;gap:6px}
-.pp-col-header.coalition{background:rgba(0,229,255,.08);color:#00e5ff;border:1px solid rgba(0,229,255,.2)}
-.pp-col-header.axis{background:rgba(255,45,123,.08);color:#ff2d7b;border:1px solid rgba(255,45,123,.2)}
-.pp-col-header.neutral{background:rgba(255,225,0,.08);color:#ffe100;border:1px solid rgba(255,225,0,.2)}
+.pp-col-header.coalition{background:rgba(0,229,255,.08);color:var(--neon-cyan);border:1px solid rgba(0,229,255,.2)}
+.pp-col-header.axis{background:rgba(255,45,123,.08);color:var(--neon-pink);border:1px solid rgba(255,45,123,.2)}
+.pp-col-header.neutral{background:rgba(255,225,0,.08);color:var(--neon-yellow);border:1px solid rgba(255,225,0,.2)}
 .pp-col.dimmed{opacity:.3;pointer-events:none}
 .pp-card{display:flex;gap:10px;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.02);transition:border-color .2s,opacity .2s}
 .pp-card:hover{border-color:rgba(255,255,255,.12)}
@@ -70,8 +70,8 @@ h2{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400}
 .pp-desc{font-size:.68rem;color:var(--text2);line-height:1.4;margin-top:4px}
 .pp-status{font-size:.62rem;font-weight:600;padding:1px 5px;border-radius:3px;margin-left:4px}
 .pp-status.killed{background:rgba(255,45,123,.15);color:#ff6b9d}
-.pp-status.active{background:rgba(0,255,136,.1);color:#00ff88}
-.pp-status.unknown{background:rgba(255,225,0,.12);color:#ffe100}
+.pp-status.active{background:rgba(0,255,136,.1);color:var(--neon-green)}
+.pp-status.unknown{background:rgba(255,225,0,.12);color:var(--neon-yellow)}
 @media(max-width:768px){.pp-cols{grid-template-columns:1fr}}
 @media(max-width:520px){.people-overlay{padding:10px 16px}}
 .cal-trend-col{display:flex;flex-direction:column;gap:10px;width:280px}
@@ -315,13 +315,13 @@ h2{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400}
 #countryPopup .cp-posture{font-size:.74rem;color:var(--text2);line-height:1.45;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--border)}
 .cp-tags{display:flex;gap:6px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
 .cp-faction{font-size:.65rem;font-weight:600;padding:2px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px;font-family:'DM Sans',sans-serif}
-.cp-faction-coalition{background:rgba(0,229,255,.15);color:#00e5ff;border:1px solid rgba(0,229,255,.3)}
-.cp-faction-axis{background:rgba(255,45,123,.12);color:#ff2d7b;border:1px solid rgba(255,45,123,.3)}
-.cp-faction-neutral{background:rgba(255,225,0,.1);color:#ffe100;border:1px solid rgba(255,225,0,.25)}
+.cp-faction-coalition{background:rgba(0,229,255,.15);color:var(--neon-cyan);border:1px solid rgba(0,229,255,.3)}
+.cp-faction-axis{background:rgba(255,45,123,.12);color:var(--neon-pink);border:1px solid rgba(255,45,123,.3)}
+.cp-faction-neutral{background:rgba(255,225,0,.1);color:var(--neon-yellow);border:1px solid rgba(255,225,0,.25)}
 .cp-status{font-size:.65rem;font-weight:600;padding:2px 8px;border-radius:10px;font-family:'DM Sans',sans-serif}
-.cp-status-war{background:rgba(255,45,123,.15);color:#ff2d7b;border:1px solid rgba(255,45,123,.3)}
-.cp-status-attack{background:rgba(255,225,0,.12);color:#ffe100;border:1px solid rgba(255,225,0,.25)}
-.cp-status-peace{background:rgba(0,255,136,.1);color:#00ff88;border:1px solid rgba(0,255,136,.25)}
+.cp-status-war{background:rgba(255,45,123,.15);color:var(--neon-pink);border:1px solid rgba(255,45,123,.3)}
+.cp-status-attack{background:rgba(255,225,0,.12);color:var(--neon-yellow);border:1px solid rgba(255,225,0,.25)}
+.cp-status-peace{background:rgba(0,255,136,.1);color:var(--neon-green);border:1px solid rgba(0,255,136,.25)}
 .cp-role{font-size:.68rem;color:var(--text3);font-style:italic}
 .co-grid{width:100%;border-collapse:collapse;font-size:.7rem}
 .co-grid th{font-weight:600;color:var(--text3);padding:3px 5px;text-align:center;border-bottom:1px solid var(--border);white-space:nowrap}
@@ -558,9 +558,9 @@ h2{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400}
 .cas-legend span:hover{color:var(--text)}
 .cas-legend span.cl-dimmed{opacity:.3}
 .cas-legend span::before{content:'';display:inline-block;width:10px;height:10px;border-radius:50%}
-.cas-legend .cl-coalition::before{background:#00e5ff}
-.cas-legend .cl-axis::before{background:#ff2d7b}
-.cas-legend .cl-civilian::before{background:#ffe100}
+.cas-legend .cl-coalition::before{background:var(--neon-cyan)}
+.cas-legend .cl-axis::before{background:var(--neon-pink)}
+.cas-legend .cl-civilian::before{background:var(--neon-yellow)}
 .cl-row-label{font-size:.55rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text3);opacity:.6;padding-right:2px;cursor:default;white-space:nowrap}
 .cl-row-label::before{display:none}
 .cas-mode-toggle{display:flex;gap:1px;background:var(--hover-bg);border-radius:5px;padding:1px}
@@ -600,7 +600,7 @@ h2{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400}
 .oil-legend span{display:flex;align-items:center;gap:4px;border-radius:4px;padding:1px 4px}
 .oil-legend span::before{content:'';display:inline-block;width:10px;height:3px;border-radius:1px}
 .oil-legend .ol-brent::before{background:#ff9500}
-.oil-legend .ol-wti::before{background:#00e5ff}
+.oil-legend .ol-wti::before{background:var(--neon-cyan)}
 
 /* Shipping chart */
 .ship-chart-wrap{position:relative;width:100%;height:180px}
@@ -616,7 +616,7 @@ h2{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400}
 .ship-legend span{display:flex;align-items:center;gap:4px;border-radius:4px;padding:1px 4px}
 .ship-legend span::before{content:'';display:inline-block;width:10px;height:3px;border-radius:1px}
 .ship-legend .sl-hormuz::before{background:#ff9500}
-.ship-legend .sl-redsea::before{background:#ff2d7b}
+.ship-legend .sl-redsea::before{background:var(--neon-pink)}
 .ship-legend .sl-suez::before{background:#c084fc}
 
 /* Insurance premium chart */
@@ -632,9 +632,9 @@ h2{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400}
 .ins-legend{display:flex;gap:6px;flex-wrap:wrap;font-size:.65rem;color:var(--text2)}
 .ins-legend span{display:flex;align-items:center;gap:4px;border-radius:4px;padding:1px 4px}
 .ins-legend span::before{content:'';display:inline-block;width:10px;height:3px;border-radius:1px}
-.ins-legend .il-gulf::before{background:#ff2d7b}
+.ins-legend .il-gulf::before{background:var(--neon-pink)}
 .ins-legend .il-redsea::before{background:#ff9500}
-.ins-legend .il-eastmed::before{background:#00e5ff}
+.ins-legend .il-eastmed::before{background:var(--neon-cyan)}
 
 /* NOTAM/FIR closure chart */
 .notam-chart-wrap{position:relative;width:100%;height:180px}
@@ -649,8 +649,8 @@ h2{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400}
 .notam-legend{display:flex;gap:6px;flex-wrap:wrap;font-size:.65rem;color:var(--text2)}
 .notam-legend span{display:flex;align-items:center;gap:4px;border-radius:4px;padding:1px 4px}
 .notam-legend span::before{content:'';display:inline-block;width:10px;height:3px;border-radius:1px}
-.notam-legend .nl-closed::before{background:#ff2d7b}
-.notam-legend .nl-restricted::before{background:#ffe100}
+.notam-legend .nl-closed::before{background:var(--neon-pink)}
+.notam-legend .nl-restricted::before{background:var(--neon-yellow)}
 .notam-legend .nl-total::before{background:rgba(255,255,255,.3)}
 
 /* Flight disruptions chart */
@@ -666,9 +666,9 @@ h2{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400}
 .flight-legend{display:flex;gap:6px;flex-wrap:wrap;font-size:.65rem;color:var(--text2)}
 .flight-legend span{display:flex;align-items:center;gap:4px;border-radius:4px;padding:1px 4px}
 .flight-legend span::before{content:'';display:inline-block;width:10px;height:3px;border-radius:1px}
-.flight-legend .fl-open::before{background:#00ff88}
-.flight-legend .fl-restricted::before{background:#ffe100}
-.flight-legend .fl-closed::before{background:#ff2d7b}
+.flight-legend .fl-open::before{background:var(--neon-green)}
+.flight-legend .fl-restricted::before{background:var(--neon-yellow)}
+.flight-legend .fl-closed::before{background:var(--neon-pink)}
 
 /* Gold price chart */
 .gold-chart-wrap{position:relative;width:100%;height:180px}
@@ -694,11 +694,11 @@ h2{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400}
 .esc-info{display:flex;flex-direction:column;align-items:flex-start;gap:0;line-height:1}
 .esc-level{font-size:1.1rem;font-weight:700;font-family:'DM Serif Display',serif;min-width:22px;text-align:center;line-height:1}
 .esc-label{font-size:.55rem;text-transform:uppercase;letter-spacing:.5px;color:var(--text2);line-height:1.1;white-space:nowrap}
-.esc-1,.esc-2{color:#00ff88}
-.esc-3,.esc-4{color:#00e5ff}
-.esc-5,.esc-6{color:#ffe100}
+.esc-1,.esc-2{color:var(--neon-green)}
+.esc-3,.esc-4{color:var(--neon-cyan)}
+.esc-5,.esc-6{color:var(--neon-yellow)}
 .esc-7,.esc-8{color:#ff9500}
-.esc-9,.esc-10{color:#ff2d7b}
+.esc-9,.esc-10{color:var(--neon-pink)}
 
 /* Infrastructure markers */
 .infra-toggle{cursor:pointer;padding:2px 6px;border-radius:4px;font-size:.65rem;transition:opacity .2s}
