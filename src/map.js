@@ -610,7 +610,7 @@ function _setupMapEvents() {
       selectCo(co);
       showCountryPopup(co, mx, my);
     } else {
-      closePopup();
+      if (hasFilter()) clearCo(); else closePopup();
     }
   });
 }
@@ -1250,12 +1250,19 @@ function showCountryPopup(co, px, py) {
 
 // ===== COUNTRY FILTER =====
 function selectCo(co) {
-  // If this country belongs to a currently-selected faction, no-op (deselect faction first)
   const canon = canonCo(co);
   const fi = countryFaction[co] || countryFaction[canon];
-  if (fi && selFactions.has(fi.faction)) return;
-  if (selCo.has(co)) selCo.delete(co);
-  else selCo.add(co);
+  if (fi && selFactions.has(fi.faction)) {
+    // Break out of faction mode — remove faction, select just this country
+    selFactions.delete(fi.faction);
+    Object.keys(countryFaction).forEach(c => {
+      if (countryFaction[c].faction === fi.faction) selCo.delete(c);
+    });
+    selCo.add(co);
+  } else {
+    if (selCo.has(co)) selCo.delete(co);
+    else selCo.add(co);
+  }
   _afterFilterChange();
 }
 function clearCo() {
@@ -1269,6 +1276,7 @@ function _afterFilterChange() {
   _updateFilterBadges();
   buildCal(); refresh(); drawMap(); updateTrend(); buildGantt(); renderParties(); renderCountryDetail(); renderNews();
   if (peoplePopupOpen) renderPeopleGrid();
+  _refreshCharts();
 }
 function _updateFilterBadges() {
   const badges = [];

@@ -88,7 +88,14 @@ function toggleFilters() {
   filtersOpen = !filtersOpen;
   document.querySelector('.top-row').classList.toggle('open', filtersOpen);
   document.getElementById('filterBtn').classList.toggle('active', filtersOpen);
-  if (filtersOpen) { if (peoplePopupOpen) togglePeoplePopup(); setTimeout(() => { drawCasualtyChart(); drawDisplacementChart(); drawOilPriceChart(); drawShippingChart(); drawFlightChart(); drawGoldChart(); drawInsuranceChart(); drawNotamChart(); }, 30); }
+  if (filtersOpen) { if (peoplePopupOpen) togglePeoplePopup(); setTimeout(_refreshCharts, 30); }
+}
+// Redraw all charts only when the filter panel is visible — avoids wasted work on every day/filter change
+function _refreshCharts() {
+  if (!filtersOpen) return;
+  drawCasualtyChart(); drawDisplacementChart(); drawOilPriceChart();
+  drawShippingChart(); drawFlightChart(); drawGoldChart();
+  drawInsuranceChart(); drawNotamChart();
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && filtersOpen) toggleFilters(); if (e.key === 'Escape' && calPopupOpen) toggleCalPopup(); if (e.key === 'Escape' && peoplePopupOpen) togglePeoplePopup(); });
 
@@ -153,12 +160,19 @@ function togNewsCat(cat) {
 }
 
 function togNewsCo(co) {
-  // If this country belongs to a currently-selected faction, no-op
   const canon = canonCo(co);
   const fi = countryFaction[co] || countryFaction[canon];
-  if (fi && selFactions.has(fi.faction)) return;
-  if (selCo.has(co)) selCo.delete(co);
-  else selCo.add(co);
+  if (fi && selFactions.has(fi.faction)) {
+    // Break out of faction mode — remove faction, select just this country
+    selFactions.delete(fi.faction);
+    Object.keys(countryFaction).forEach(c => {
+      if (countryFaction[c].faction === fi.faction) selCo.delete(c);
+    });
+    selCo.add(co);
+  } else {
+    if (selCo.has(co)) selCo.delete(co);
+    else selCo.add(co);
+  }
   _afterFilterChange();
 }
 
@@ -309,7 +323,7 @@ function calNav(dir) {
 }
 
 // ===== SELECT DAY =====
-function selectDay(ds) { selDay = ds; ganttSelPhase = null; selMilestoneIdx = null; buildCal(); refresh(); drawMap(); updateTrend(); buildGantt(); closePopup(); updateDayNav(); }
+function selectDay(ds) { selDay = ds; ganttSelPhase = null; selMilestoneIdx = null; buildCal(); refresh(); drawMap(); updateTrend(); buildGantt(); closePopup(); updateDayNav(); _refreshCharts(); }
 function updateDayNav() {
   const d = new Date(selDay + 'T12:00:00');
   document.getElementById('dayLabel').textContent = d.toLocaleDateString('en-US', {month:'short', day:'numeric'});
