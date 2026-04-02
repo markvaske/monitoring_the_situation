@@ -3475,13 +3475,14 @@ function getShippingData() {
     const suez = SUEZ_DATA[d] || 0;
     data[d] = {hormuz, redsea, suez};
   });
-  // Fill pre-conflict days with normal baseline
+  // Fill pre-conflict days with fixed normal baseline (midpoint of realistic range)
+  // Hormuz peacetime: ~22–28 transits/day → 25. Red Sea peacetime: ~32–38 → 35.
   for (let i=15; i<=27; i++) {
     const d = '2026-02-' + String(i).padStart(2,'0');
-    if (!data[d]) data[d] = {hormuz: 22 + Math.round(Math.random()*6), redsea: 32 + Math.round(Math.random()*6), suez: SUEZ_DATA[d] || 52};
+    if (!data[d]) data[d] = {hormuz: 25, redsea: 35, suez: SUEZ_DATA[d] || 52};
     else {
-      if (data[d].hormuz === 0 && d < '2026-02-28') data[d].hormuz = 22 + Math.round(Math.random()*6);
-      if (data[d].redsea === 0 && d < '2026-02-28') data[d].redsea = 32 + Math.round(Math.random()*6);
+      if (data[d].hormuz === 0 && d < '2026-02-28') data[d].hormuz = 25;
+      if (data[d].redsea === 0 && d < '2026-02-28') data[d].redsea = 35;
       if (!data[d].suez) data[d].suez = SUEZ_DATA[d] || 52;
     }
   }
