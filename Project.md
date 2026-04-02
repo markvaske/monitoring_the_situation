@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-A real-time conflict tracker for a hypothetical Iran-Israel-US war starting February 28, 2026. Visualizes airport closures, maritime activity (Strait of Hormuz, Red Sea), military operations, diplomatic developments, economic impacts, and humanitarian data across 20+ Middle East countries. Built as a single self-contained HTML file for sandboxed artifact deployment — no build step, no server, no CDN dependencies (except Google Fonts `@import`).
+A real-time conflict tracker for a hypothetical Iran-Israel-US war starting February 28, 2026. Visualizes airport closures, maritime activity (Strait of Hormuz, Red Sea), military operations, diplomatic developments, economic impacts, and humanitarian data across 20+ Middle East countries. Built as a static multi-file web app deployed to GitHub Pages — no build step, no server, no framework.
 
 **Target users:** Analysts, journalists, policy researchers tracking a multi-theater conflict scenario.
 **Core value:** Dense, interactive, multi-domain situational awareness in a single page.
@@ -13,39 +13,41 @@ A real-time conflict tracker for a hypothetical Iran-Israel-US war starting Febr
 
 | Layer | Technology | Notes |
 |-------|-----------|-------|
-| Languages | HTML5, CSS3, ES6+ JavaScript | Single file, no transpilation |
+| Languages | HTML5, CSS3, ES6+ JavaScript | No transpilation |
 | Rendering | Canvas 2D API | Maps, charts (8 chart types) |
-| Fonts | Google Fonts (DM Sans, DM Serif Display) | `@import` in `<style>` block |
+| Fonts | Google Fonts (DM Sans, DM Serif Display) | `@import` in `styles.css` |
 | Maps | Custom Mercator projection | Country polygons from Natural Earth 50m GeoJSON |
-| Hosting | Dia browser artifact sandbox | `upload_artifact` to preview |
-| External APIs | None | All data is embedded |
+| Hosting | GitHub Pages | Auto-deploys on push to `main` |
+| External APIs | None | All data is embedded in `src/data.js` |
 
-**No other dependencies.** No npm, no bundler, no framework. The sandbox blocks all network access except the Google Fonts import.
+**No other dependencies.** No npm, no bundler, no framework.
 
 ---
 
 ## Environment Setup
 
-1. File lives at `work/artifacts/middle_east_airport_closures/index.html`
-2. Edit the single HTML file directly
-3. Run `upload_artifact` after every edit to preview in browser
-4. No env vars, no config files, no `.env`
-5. Sandbox restrictions: no `curl`, `npm`, `python`, `git`, `rm`, `tail`, `head` — use `grep` and the `Read` tool instead
+1. Clone repo: `git clone https://github.com/markvaske/monitoring_the_situation`
+2. Open `index.html` directly in browser for local preview (no server needed)
+3. Edit source files in `src/` or `index.html`/`styles.css`
+4. Deploy: `git add -A && git commit -m "message" && git push` — Pages updates automatically
+5. Live site: https://markvaske.github.io/monitoring_the_situation
 
 ---
 
 ## Architecture
 
-### Single-File Structure
+### Multi-File Structure
 
-Everything lives in one `index.html` — CSS in `<style>`, JS in `<script>`, no external files.
-
-### Components (top to bottom in file)
-
-1. **Rebuild guide** — HTML comment block at top (lines 2–178)
-2. **CSS** — Theme variables, layout, responsive breakpoints (1100/768/480px)
-3. **HTML** — Nav bar, charts overlay, map container, news/factions sections
-4. **JavaScript** — Data structures → state → rendering → interaction handlers
+| File | Role |
+|------|------|
+| `index.html` | HTML shell — layout, nav, panels, script/style tags |
+| `styles.css` | All CSS — theme variables, layout, responsive breakpoints |
+| `src/data.js` | All data structures + rendering helpers + daily update functions |
+| `src/map.js` | Canvas map rendering — draw layers, hit testing, tooltips |
+| `src/main.js` | UI logic — charts, event handlers, calendar, news, filters, init |
+| `scripts/daily-update.js` | Node.js script for applying daily JSON update files |
+| `scripts/prep-update.js` | Node.js script for fetching current price data |
+| `updates/YYYY-MM-DD.json` | Daily update input files (one per day) |
 
 ### Canvas Map Architecture
 
@@ -55,14 +57,6 @@ Everything lives in one `index.html` — CSS in `<style>`, JS in `<script>`, no 
 - Viewport: `{lnMin:28, lnMax:67, ltMin:9, ltMax:45}`
 - Zoom/pan: `aZoom` (1–12), `aPanX`/`aPanY`, drag-to-pan, button zoom
 - DPR-aware hit testing via `hitTestCountries()` (paths in CSS space, test with `mx*dpr, my*dpr`)
-
-### Shared Map Utilities
-
-- `buildCountryHitPaths()` — builds Path2D hit paths, caches by canvas size
-- `hitTestCountries()` — DPR-aware country detection under cursor
-- `drawCountryPolygons()` — renders countries with hover/select borders, supports `getHoverBorder`/`getSelectBorder` callbacks
-- `getStatusBorder()` — conflict-status-matched border color (war=pink, attack=yellow, peace=green)
-- `drawRoutePath()` — shared route rendering for bypass routes + branches
 
 ### Draw Layer Order
 
@@ -84,7 +78,7 @@ Airports → mil bases → fleet → naval facilities → jamming zones → mari
 | `CP{}` | Conflict country polygons from Natural Earth 50m GeoJSON. MultiPolygon: Turkey (2 rings), Oman (2 rings). Bahrain hand-drawn. India and Pakistan included as neutral faction countries. |
 | `CP_CTX{}` | 26 context country polygons. MultiPolygon: Azerbaijan (Nakhchivan), Greece (Crete+mainland). All 50m resolution. |
 | `CTX_LABEL_POS{}` | Explicit label positions (lng/lat) for 26 context countries |
-| `countryFlags{}` | Country → emoji flag pair |
+| `countryFlags{}` | Country → emoji flag pair. **Only flag emojis — no other text.** |
 | `MIL_BASES[]` | 13 military bases with lat/lng/side/desc |
 | `FLEET_POS[]` | 9 fleet positions (carrier strike groups, task forces, IRGCN) |
 | `NAVAL_FACILITIES[]` | 11 naval bases/facilities |
@@ -100,7 +94,7 @@ Airports → mil bases → fleet → naval facilities → jamming zones → mari
 | `conflictPhases[]` | `['date', {country:'war'\|'attack'\|'peace'}]` |
 | `CONFLICT_PHASES_NAMED[]` | 5 named phases: Initial Strikes (Feb 28), Regional Escalation (Mar 1), Strait Crisis (Mar 6), Diplomatic Window (Mar 11), Widening War (Mar 15) |
 | `phases[]` | `['date', {IATA:'Closed'\|'Restricted'\|'Open'}]` |
-| `MILESTONES[]` | 41 curated key events: `{d, icon, label, kw, cats}` |
+| `MILESTONES[]` | Curated key events: `{d, icon, label, kw, cats, lat?, lng?}` |
 | `ESCALATION_SCORES{}` | Per-day 1-10 threat scores |
 | `ESC_LABELS{}` | Score → label mapping (LOW through MAXIMUM) |
 
@@ -108,13 +102,13 @@ Airports → mil bases → fleet → naval facilities → jamming zones → mari
 
 | Structure | Description |
 |-----------|------------|
-| `days[]` | Date strings array (Feb 25–Mar 26, 2026), `daysSet` for O(1) lookups |
-| `news[]` | ~432 items: `{d, d2?, cat, imp, t, tags, tx, l, s}` |
-| `DAILY_HEADLINES{}` | Per-date `{headline, sub}` (Feb 15–Mar 26) |
+| `days[]` | Date strings array (Feb 25–Apr 1, 2026), `daysSet` for O(1) lookups |
+| `news[]` | 500+ items: `{d, cat, imp, t, tags, tx, l?, s?}` |
+| `DAILY_HEADLINES{}` | Per-date `{headline, sub}` |
 | `CASUALTY_DATA{}` | Per-day cumulative: `{coalition/axis/civilian:{deaths,injuries}}` |
 | `DISPLACEMENT_DATA{}` | Per-day cumulative by country (Iran, Lebanon, Iraq, Syria, UAE, Kuwait) |
 | `OIL_PRICE_DATA{}` | Per-day `{brent, wti}` in USD/bbl |
-| `GOLD_PRICE_DATA{}` | Per-day gold spot price USD/oz. Baseline ~$4,920, peaked $5,321 (Mar 13), settled $4,398 (Mar 26) |
+| `GOLD_PRICE_DATA{}` | Per-day gold spot price USD/oz |
 | `SUEZ_DATA{}` | Per-day Suez Canal transit count |
 | `SHIPPING_DATA{}` | Computed from HZ_EVENTS passage entries |
 | `INSURANCE_DATA{}` | Per-day `{gulf, redsea, eastmed}` war risk % hull value |
@@ -124,7 +118,7 @@ Airports → mil bases → fleet → naval facilities → jamming zones → mari
 
 | Structure | Description |
 |-----------|------------|
-| `HZ_EVENTS[]` | Maritime events: `{d, type, desc, lat, lng, count}`. Types: mine, cleared, patrol, passage. Passages use `region:'redsea'` for Bab el-Mandeb |
+| `HZ_EVENTS[]` | Maritime events: `{d, type, desc, lat, lng, count, region?}`. Types: mine, cleared, patrol, passage. Passages use `region:'redsea'` for Bab el-Mandeb |
 | `HZ_LANES[]` | Shipping lane paths |
 | `HZ_LOCS[]` | Maritime location markers |
 | `HOUTHI_ZONES[]` | 3 threat zone circles |
@@ -139,10 +133,12 @@ Airports → mil bases → fleet → naval facilities → jamming zones → mari
 | `conflictSides{}` | 3 faction groups with `{label, countries[]}` — must match countryFaction membership |
 | `FACTION_DETAIL{}` | Per-country detail cards: `{name, flag, role, roleClass, body}` |
 | `COUNTRY_ECON{}` | 21 countries: GDP, oil revenue, sovereign fund, imports, war cost |
+| `KEY_PEOPLE[]` | Key figures: `{name, flag, faction, title, status, desc}`. Status: killed/active/unknown |
+| `maritimePosture{}` | Country → naval posture summary |
 
 > **Standing rule:** When adding a country to `countryFaction`, also add entries to `FACTION_DETAIL`, `COUNTRY_ECON`, `conflictSides`, `countryPosture`, and `countryFlags`. All five are required for full faction status.
-| `KEY_PEOPLE[]` | 21 key figures: `{name, flag, faction, title, status, desc}`. Status: killed/active/unknown |
-| `maritimePosture{}` | Country → naval posture summary |
+
+> **countryFlags warning:** Values must be emoji flag pairs only (e.g. `'\u{1F1FA}\u{1F1F8}'`). The `daily-update.js` script's `updatePosture()` previously matched keys file-wide and could corrupt this object — fixed 2026-04-01 to scope search to `countryPosture` block only.
 
 ### Color System
 
@@ -161,7 +157,7 @@ Airports → mil bases → fleet → naval facilities → jamming zones → mari
 ### Navigation & Controls
 - **Fixed nav bar** (52px): animated radar logo, "MTS" title, conflict status indicator, escalation indicator (1-10 scale), date navigation (◀ ▶), calendar popup, key people popup, charts toggle
 - **Date stepping**: `stepDay(±1)`, `updateDayNav()`, calendar popup with day cells colored by `getTrendColor()`
-- **Key people popup**: 21 figures in grid, status badges (killed/active/unknown)
+- **Key people popup**: key figures in grid, status badges (killed/active/unknown)
 
 ### Maps
 - **Unified canvas map** with Air and Sea layer groups
@@ -211,7 +207,9 @@ Airports → mil bases → fleet → naval facilities → jamming zones → mari
 ### Typography
 - Body/nav: DM Sans (400/500/600/700)
 - Headings/water labels: DM Serif Display (400)
-- Nav bar title + page tabs: `text-transform: uppercase`
+
+### Spacing Tokens
+`--sp-xs`(4px) `--sp-sm`(8px) `--sp-md`(12px) `--sp-lg`(16px) `--sp-xl`(20px) `--sp-2xl`(28px)
 
 ### Layout
 - Fixed nav bar → collapsible charts overlay (position:fixed, z:88) → single scrollable page
@@ -219,37 +217,25 @@ Airports → mil bases → fleet → naval facilities → jamming zones → mari
 - Charts: 3-per-row widget grid, fixed 120px chart height
 - Responsive breakpoints: 1100px, 768px, 480px
 
-### Component Patterns
-- Card: `.card` with border/radius/bg
-- Toggle: full color default, `.al-active` adds box-shadow glow in `--glow-color`
-- Legend panel: `.map-legend-panel` with `.ml-group` sections, `.ml-sub-header` categories, `.ml-row` toggles
-- News items: `.news-col-item` with discrete card styling
-- Faction badges: `.cp-faction-*` and `.cp-status-*` CSS classes
-
 ---
 
 ## Build & Deploy
 
-### Build
-No build step. Edit `index.html` directly.
+### Local Preview
+Open `index.html` directly in browser — no server needed.
 
-### Deploy / Preview
+### Deploy
+```bash
+git add -A && git commit -m "message" && git push
 ```
-upload_artifact(
-  site_root: "work/artifacts/middle_east_airport_closures",
-  relative_path: "index.html"
-)
-```
+GitHub Pages rebuilds automatically. Live at: https://markvaske.github.io/monitoring_the_situation
 
-### Extending Data (Daily Updates)
-When user says **"update"** → follow the full procedure in `memory/daily-update-skill.md`.
-
-Quick reference:
-1. Search web for real-world events from the next date
-2. Change date loop: `e = new Date(2026, 2, N)` in DATES section
-3. Add entries to all 17+ data structures (news, HZ_EVENTS, MILESTONES, DAILY_HEADLINES, CASUALTY_DATA, DISPLACEMENT_DATA, OIL_PRICE_DATA, GOLD_PRICE_DATA, SUEZ_DATA, INSURANCE_DATA, NOTAM_DATA, ESCALATION_SCORES, countryPosture, CONFLICT_PHASES_NAMED)
-4. Update `Project.md` changelog, `MEMORY.md` counts/ranges, and rebuild guide comment
-5. Upload artifact
+### Daily Update Workflow
+1. Create `updates/YYYY-MM-DD.json` (see `scripts/update-template.json` for format)
+2. Run `node scripts/prep-update.js` to fetch current prices (optional)
+3. Run `node scripts/daily-update.js updates/YYYY-MM-DD.json`
+4. Verify in browser, then commit and push
+5. Full procedure: `DAILY-UPDATE.md` or `memory/daily-update-skill.md`
 
 ### Adding New Countries
 Always use Natural Earth 50m GeoJSON (`ne_50m_admin_0_countries.geojson`). Never use 110m. Round coordinates to 3 decimals. Bahrain is the only hand-drawn country (too small for GeoJSON).
@@ -263,7 +249,6 @@ Always use Natural Earth 50m GeoJSON (`ne_50m_admin_0_countries.geojson`). Never
 - **daysSet**: Set version of `days[]` for O(1) `.has()` in `buildCal()`
 - **Resize debounce**: 80ms `setTimeout` on window resize
 - **Batched NFZ hatching**: single `beginPath()`/`stroke()` per zone
-- **Init**: only calls `buildCal()` + `selectDay()` — no unnecessary Gantt build
 
 ---
 
@@ -276,7 +261,6 @@ Always use Natural Earth 50m GeoJSON (`ne_50m_admin_0_countries.geojson`). Never
 - `PRESENT_DAY` is `let` — auto-computed as `days[days.length - 1]`
 - All layer toggles default to `false` — nothing visible until user activates
 - `hzShow{}` uses `if (hzShow.x) { }` pattern — completely hidden when off, no ghost/dimmed states
-- Mar 21-22 oil prices carry forward (weekend)
 - Canonical country naming: 'USA' and 'UK' throughout; `canonCo()` resolves aliases
 
 ---
@@ -285,11 +269,16 @@ Always use Natural Earth 50m GeoJSON (`ne_50m_admin_0_countries.geojson`). Never
 
 | Date | Summary |
 |------|---------|
-| 2026-03-23 | Created Project.md — merged existing rebuild guide (index.html comment block) and MEMORY.md into structured build guide format. No code changes. |
-| 2026-03-23 | Promoted India and Pakistan from CP_CTX{} to CP{} — now rendered as conflict countries with faction colors, posture cards, and interactive popups. Added countryFlags entries and CONFLICT_LABEL_POS positions. CP_CTX reduced from 28 to 26 countries. |
-| 2026-03-23 | Added missing FACTION_DETAIL entries for India and Pakistan. Added missing COUNTRY_ECON entries for India, Pakistan, Germany, Italy, Japan. Added India/Pakistan to conflictSides.neutral. Added standing note in rebuild guide: new faction countries require entries in all five data structures. |
-| 2026-03-23 | Daily update: Added 8 new news[] entries for Mar 23 (Trump postpones strikes, Iran denies negotiations, Pakistan/Egypt mediation, IRGC HQ strike, Beirut strikes, 82nd Airborne, ICRC warning, corrected oil crash data). Updated oil prices (Brent $99.94, WTI $88.13). Updated DAILY_HEADLINES. Added 3 new MILESTONES + 5 new HZ_EVENTS. Updated countryPosture for Iran, Israel, Lebanon, Saudi Arabia, Egypt, UK, Pakistan. Updated Widening War phase summary. Removed duplicate stocks entry. |
-| 2026-03-24 | Daily update: Extended date range to Mar 24. Added 21 new news[] entries total for Mar 24. First batch (11): Tel Aviv missile hits, Beirut strikes resumed, Epic Fury continues, Kuwait intercepts, Pakistan talks, Netanyahu-Trump call, Brent $103.94, Hormuz transits, global energy crisis, AWS Bahrain, HMS Dragon. Second batch (10 from evening reporting): US 15-point peace plan via Pakistan, Iran prefers Vance as negotiator, Iran tells UN/IMO on Hormuz transit rules, Kurdish Peshmerga killed in Erbil, Bahrain missile kills Moroccan contractor, Bushehr nuclear plant hit, Israel Lebanon security zone, MBS pushes war, 290 US troops wounded + Zolqadr replaces Larijani, Philippines energy emergency, 350 children among dead. Added 7 MILESTONES + 9 HZ_EVENTS. Updated all time-series data. Updated countryPosture for Israel, Lebanon, Kuwait, Pakistan, Iraq, Bahrain, Iran. Updated DAILY_HEADLINES and Widening War phase summary. |
-| 2026-03-25 | Design audit: Defined 6 CSS spacing tokens (--sp-xs through --sp-2xl), migrated ~25 CSS rules including responsive breakpoints. Documented color system and spacing tokens in Notion Design Guide. Extracted drawSeaLayers() and drawAirLayers() from drawMap(), reducing it from ~678 to ~190 lines. Updated rebuild guide with decomposed function documentation. |
-| 2026-03-25 | Daily update: Extended date range to Mar 25. Added 22 news[] entries: IRGC missiles at US bases in Gulf, south Tehran strike (12 killed), Kuwait Airport fuel tank hit, central Israel missile (9 wounded inc 6 children), IDF 600+ missile site strikes + IRGC morale collapse, Esfahan Optics/Malek Ashtar strikes, Nazeat Islands damage, 82nd Airborne deploying, Lebanon kills (Adloun/Sidon/Habboush), Iran mocks peace plan, Wang Yi urges peace talks, Trump says Vance/Rubio leading talks, GOP rejects war powers 47-53, Kim Jong Un on nukes, Cyprus UK bases, Brent crashes 6% to $94.42, Iran Hormuz non-hostile vessel policy, Iran charging $2M transit fees + mines confirmed, WTO fertilizer warning, Philippines energy emergency, Lebanon existential crisis, casualty update. Added 7 MILESTONES + 7 HZ_EVENTS. Updated all time-series: OIL $94.42, GOLD $4620, INSURANCE (gulf down to 12.50%), ESCALATION 10, SUEZ 9, CASUALTIES, DISPLACEMENT. Updated countryPosture for Iran, Israel, Kuwait, Lebanon, Pakistan. Updated Widening War phase summary. |
-| 2026-03-27 | Daily update: Extended date range to Mar 27 (two-day batch). Added 28 news[] entries across Mar 26-27: IDF kills IRGCN commander Tangsiri (Mar 26), Trump extends Hormuz deadline to Apr 6, 8 ships transit free as "show of sincerity", Wall Street worst day of war, Israel deploys 3rd division in Lebanon, Hezbollah record 94 ops, Pakistan confirms peace plan relay, Rubio "concrete progress", IDF strikes Arak Heavy Water and Ardakan Yellowcake plants (Mar 27), 12 US troops injured at Prince Sultan Air Base, Iran missile fire down 90% (330/470 launchers destroyed), CENTCOM strikes tunnel bulldozers, Houthis fire first missile from Yemen toward Israel, Iran formalizes $2M Hormuz toll, strikes on Isfahan/Ahvaz steel plants, Iran threatens Gulf industries, Abu Dhabi fires from debris, IAEA radiological warning, Ukraine-Saudi defense deal. Added 7 MILESTONES + 11 HZ_EVENTS. Yemen status changed to 'attack' (conflictPhases). Updated all time-series: OIL $105.85→$107.81, GOLD $4439→$4430, ESCALATION 9, SUEZ 10→9. Updated countryPosture for Iran, Israel, Lebanon, UAE, Saudi Arabia, Yemen. Updated Widening War phase summary through Mar 27. |
+| 2026-03-23 | Created Project.md — merged existing rebuild guide and MEMORY.md into structured format. |
+| 2026-03-23 | Promoted India and Pakistan from CP_CTX{} to CP{} as neutral faction countries. |
+| 2026-03-23 | Added missing FACTION_DETAIL, COUNTRY_ECON entries for India, Pakistan, Germany, Italy, Japan. |
+| 2026-03-23 | Daily update: Mar 23 data (Trump postpones strikes, Pakistan/Egypt mediation, IRGC HQ strike, oil $99.94). |
+| 2026-03-24 | Daily update: Mar 24 data (US 15-point peace plan, Erbil Peshmerga strike, Bahrain missile, Bushehr hit). |
+| 2026-03-25 | Design audit: defined 6 CSS spacing tokens, extracted drawSeaLayers()/drawAirLayers() from drawMap(). |
+| 2026-03-25 | Daily update: Mar 25 data (82nd Airborne deploying, Brent crashes to $94.42, Iran $2M Hormuz toll). |
+| 2026-03-27 | Daily update: Mar 26–27 data (IRGCN commander Tangsiri killed, Houthis fire first missile at Israel). |
+| 2026-03-28 | Migrated from Dia single-file artifact to multi-file repo on GitHub Pages. Split index.html into index.html + styles.css + src/data.js + src/map.js + src/main.js. |
+| 2026-03-28 | Daily update: Mar 28–30 data. |
+| 2026-04-01 | Added daily-update.js script + update JSON workflow. Added prep-update.js price fetcher. Added DAILY-UPDATE.md operator guide. |
+| 2026-04-01 | Daily update: Mar 31 + Apr 1 data (largest Iranian missile salvo, Trump ceasefire claim/denial, oil $105.20). |
+| 2026-04-01 | Fix: countryFlags corruption for Iran, Israel, Lebanon, UAE, Pakistan — posture text was written to wrong object by daily-update.js. Fixed updatePosture() to scope search to countryPosture block only. |
