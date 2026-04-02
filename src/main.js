@@ -754,7 +754,7 @@ function drawDisplacementChart() {
   if (legendEl && !legendEl.dataset.built) {
     legendEl.innerHTML = allCountries.map(c => {
       const col = DISPLACEMENT_COLORS[c] || '#888';
-      return '<span onclick="togDispCountry(\'' + c + '\')" class="dl-' + c.replace(/\s/g,'') + '" style="--dl-col:' + col + '"><span class="disp-dot" style="background:' + col + ';width:10px;height:10px;border-radius:50%;display:inline-block"></span>' + c + '</span>';
+      return '<span onclick="togDispCountry(\'' + c.replace(/'/g, "\\'") + '\')" class="dl-' + c.replace(/\s/g,'') + '" style="--dl-col:' + col + '"><span class="disp-dot" style="background:' + col + ';width:10px;height:10px;border-radius:50%;display:inline-block"></span>' + c + '</span>';
     }).join('');
     legendEl.dataset.built = '1';
   }
