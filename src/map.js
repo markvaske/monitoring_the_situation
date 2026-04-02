@@ -296,131 +296,322 @@ function toggleFleet() {
 
 // ===== MAP =====
 const mw = document.getElementById('mw');
-const canvas = document.getElementById('mc');
-const ctx2 = canvas.getContext('2d');
+const overlayCanvas = document.getElementById('mlOverlay');
+const ctx2 = overlayCanvas.getContext('2d');
 const tt = document.getElementById('tt');
 
 const VB = {lnMin: 28, lnMax: 67, ltMin: 9, ltMax: 45};
-function merc(lat) { return Math.log(Math.tan(Math.PI/4 + (lat * Math.PI/180)/2)); }
-const mercMin = merc(VB.ltMin), mercMax = merc(VB.ltMax);
-// Uniform-scale Mercator: ensure equal pixels-per-unit in both axes
-const _lngSpanRad = (VB.lnMax - VB.lnMin) * Math.PI / 180;
-const _mercSpan = mercMax - mercMin;
-let _ms = 1, _mox = 0, _moy = 0; // cached map scale + offsets
-function _updateMapScale(w, h) {
-  const sx = w / _lngSpanRad, sy = h / _mercSpan;
-  _ms = Math.min(sx, sy);
-  _mox = (w - _ms * _lngSpanRad) / 2;
-  _moy = (h - _ms * _mercSpan) / 2;
-}
-function lxBase(ln) { return _mox + (ln - VB.lnMin) * (Math.PI / 180) * _ms; }
-function lyBase(lt) { return _moy + (mercMax - merc(lt)) * _ms; }
-function lx(ln) { return lxBase(ln) * aZoom + aPanX; }
-function ly(lt) { return lyBase(lt) * aZoom + aPanY; }
 
-let hitPaths = {};
-let ctxHitPaths = {};
-let lastHitW = 0, lastHitH = 0;
+// MapLibre instance — initialized by _initMapLibre() at bottom of this file
+let mlMap = null;
+let _initialMapZoom = 4.5; // updated once map loads
 
-// ===== SHARED MAP UTILITIES =====
-// Build Path2D hit paths for a set of countries
-// toX(lng, w), toY(lat, h) — coordinate transform functions
-// countries — array of country names (or null for all keys in dataSource)
-// extraPolys — optional {regionName: [[lng,lat],...]} for supplemental polygons (e.g. HZ_COAST)
-// extraMapping — optional {regionName: countryName} to merge extra polys into country paths
-// dataSource — optional polygon data object (defaults to CP)
-function buildCountryHitPaths(countries, toX, toY, w, h, extraPolys, extraMapping, dataSource) {
-  const src = dataSource || CP;
-  const paths = {};
-  const coList = countries || Object.keys(src);
-  coList.forEach(co => {
-    const rings = src[co];
-    if (!rings) return;
-    const polyRings = Array.isArray(rings[0][0]) ? rings : [rings];
-    const p = new Path2D();
-    polyRings.forEach(ring => {
-      ring.forEach((pt, i) => {
-        const x = toX(pt[0], w), y = toY(pt[1], h);
-        i === 0 ? p.moveTo(x, y) : p.lineTo(x, y);
-      });
-      p.closePath();
-    });
-    paths[co] = p;
+// Coordinate transforms — delegate to MapLibre's Web Mercator projection.
+// In Mercator, X depends only on longitude and Y only on latitude,
+// so these single-axis wrappers are mathematically correct.
+function lx(lng) { return mlMap ? mlMap.project([lng, 0]).x : 0; }
+function ly(lat) { return mlMap ? mlMap.project([0, lat]).y : 0; }
+
+// ===== MAPLIBRE — SOURCE + FEATURE STATE MANAGEMENT =====
+
+// Push conflict status (war/attack/peace) into MapLibre feature states when selDay changes
+function _syncCountryColors() {
+  if (!mlMap || !mlMap.getSource('countries')) return;
+  if (_syncCountryColors._lastDay === selDay) return;
+  _syncCountryColors._lastDay = selDay;
+  CONFLICT_COUNTRY_NAMES.forEach(name => {
+    mlMap.setFeatureState(
+      { source: 'countries', id: name },
+      { status: getCStatus(name, selDay) }
+    );
   });
-  if (extraPolys && extraMapping) {
-    for (const [region, pts] of Object.entries(extraPolys)) {
-      const co = extraMapping[region];
-      if (!co) continue;
-      const p = new Path2D();
-      pts.forEach((pt, i) => {
-        const x = toX(pt[0], w), y = toY(pt[1], h);
-        i === 0 ? p.moveTo(x, y) : p.lineTo(x, y);
-      });
-      p.closePath();
-      if (paths[co]) paths[co].addPath(p); else paths[co] = p;
-    }
-  }
-  return paths;
 }
 
-// Hit-test mouse against country paths (handles DPR)
-function hitTestCountries(ctx, paths, mx, my) {
-  const dpr = window.devicePixelRatio || 1;
-  for (const [co, path] of Object.entries(paths)) {
-    if (ctx.isPointInPath(path, mx * dpr, my * dpr)) return co;
-  }
-  return null;
+// Push selected-country state into MapLibre feature states
+function _syncCountryFeatureStates() {
+  if (!mlMap || !mlMap.getSource('countries')) return;
+  CONFLICT_COUNTRY_NAMES.forEach(name => {
+    mlMap.setFeatureState(
+      { source: 'countries', id: name },
+      { selected: hasFilter() && isCoSelected(name) }
+    );
+  });
 }
 
-// Draw country polygons with hover/select highlighting
-// ctx — canvas context
-// countries — array of country names to draw (or null for all CP keys)
-// toX, toY — coordinate transforms
-// w, h — canvas CSS dimensions
-// opts.getFill(co) — returns fill color for country
-// opts.hovered — hovered country name or null
-// opts.selected — selected country name or null
-// opts.borderColor — default border color
-// opts.hoverBorder, opts.selectBorder — border colors on hover/select
-// opts.hoverOverlay, opts.selectOverlay — extra fill on hover/select
-// opts.selectedLineWidth, opts.hoveredLineWidth, opts.defaultLineWidth
-function drawCountryPolygons(ctx, countries, toX, toY, w, h, opts) {
-  const coList = countries || Object.keys(CP);
-  const borderColor = opts.borderColor || '#1a2a40';
-  const hoverBorder = opts.hoverBorder || 'rgba(0,229,255,0.6)';
-  const selectBorder = opts.selectBorder || hoverBorder;
-  const hoverOverlay = opts.hoverOverlay || 'rgba(255,255,255,0.06)';
-  const selectOverlay = opts.selectOverlay || 'rgba(0,229,255,0.12)';
-  const selLW = opts.selectedLineWidth || 1.2;
-  const hovLW = opts.hoveredLineWidth || 1.2;
-  const defLW = opts.defaultLineWidth || 0.6;
+// Build pattern ImageData for a faction stripe (used by MapLibre addImage)
+function _createPatternImage(faction) {
+  const sz = 10;
+  const pc = document.createElement('canvas');
+  pc.width = sz; pc.height = sz;
+  const pctx = pc.getContext('2d');
+  pctx.clearRect(0, 0, sz, sz);
+  const color = FACTION_PATTERN_COLORS[faction] || 'rgba(255,255,255,0.2)';
+  pctx.strokeStyle = color;
+  pctx.lineWidth = faction === 'axis' ? 2 : 1.5;
+  if (faction === 'axis') {
+    pctx.beginPath();
+    pctx.moveTo(0, 0); pctx.lineTo(sz, sz);
+    pctx.moveTo(sz, 0); pctx.lineTo(0, sz);
+    pctx.stroke();
+  } else if (faction === 'coalition') {
+    pctx.beginPath();
+    pctx.moveTo(-2, sz); pctx.lineTo(sz, -2);
+    pctx.moveTo(0, sz + 2); pctx.lineTo(sz + 2, 0);
+    pctx.stroke();
+  } else {
+    pctx.setLineDash([3, 3]);
+    pctx.beginPath();
+    pctx.moveTo(0, sz / 2); pctx.lineTo(sz, sz / 2);
+    pctx.stroke();
+  }
+  return { width: sz, height: sz, data: pctx.getImageData(0, 0, sz, sz).data };
+}
 
-  coList.forEach(co => {
-    const rings = CP[co];
-    if (!rings) return;
-    const polyRings = Array.isArray(rings[0][0]) ? rings : [rings];
-    const isHovered = opts.hovered === co;
-    const isSelected = opts.isSelected ? opts.isSelected(co) : (opts.selected === co);
-    const coHoverBorder = opts.getHoverBorder ? opts.getHoverBorder(co) : hoverBorder;
-    const coSelectBorder = opts.getSelectBorder ? opts.getSelectBorder(co) : selectBorder;
-    const savedJoin = ctx.lineJoin;
-    if (isSelected || isHovered) ctx.lineJoin = 'round';
-    polyRings.forEach(ring => {
-      ctx.beginPath();
-      ring.forEach((p, i) => {
-        const x = toX(p[0], w), y = toY(p[1], h);
-        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-      });
-      ctx.closePath();
-      ctx.fillStyle = opts.getFill(co);
-      ctx.fill();
-      if (isSelected) { ctx.fillStyle = selectOverlay; ctx.fill(); }
-      else if (isHovered) { ctx.fillStyle = hoverOverlay; ctx.fill(); }
-      ctx.strokeStyle = (isSelected || isHovered) ? (isSelected ? coSelectBorder : coHoverBorder) : borderColor;
-      ctx.lineWidth = isSelected ? selLW : isHovered ? hovLW : defLW;
-      ctx.stroke();
+// Initialize MapLibre map and add all country layers
+function _initMapLibre() {
+  mlMap = new maplibregl.Map({
+    container: 'mc',
+    style: {
+      version: 8,
+      sources: {},
+      layers: [{ id: 'bg', type: 'background', paint: { 'background-color': '#0a1628' } }]
+    },
+    bounds: [[VB.lnMin, VB.ltMin], [VB.lnMax, VB.ltMax]],
+    fitBoundsOptions: { padding: 20 },
+    dragRotate: false,
+    touchZoomRotate: false,
+    scrollZoom: false,
+    attributionControl: false
+  });
+
+  mlMap.on('load', () => {
+    _initialMapZoom = mlMap.getZoom();
+
+    // Single GeoJSON source — both conflict + ctx countries, split by mts_type filter per layer.
+    // promoteId uses mts_name so setFeatureState(id) works with our display names directly.
+    mlMap.addSource('countries', {
+      type: 'geojson',
+      data: 'src/countries.geojson',
+      promoteId: 'mts_name'
     });
-    if (isSelected || isHovered) ctx.lineJoin = savedJoin;
+
+    // Context country fill (dim background countries — filtered by mts_type)
+    mlMap.addLayer({ id: 'countries-ctx-fill', type: 'fill', source: 'countries',
+      filter: ['==', ['get', 'mts_type'], 'ctx'],
+      paint: {
+        'fill-color': ['case', ['boolean', ['feature-state', 'hover'], false],
+          'rgba(255,255,255,0.08)', 'rgba(255,255,255,0.04)']
+      }
+    });
+    mlMap.addLayer({ id: 'countries-ctx-border', type: 'line', source: 'countries',
+      filter: ['==', ['get', 'mts_type'], 'ctx'],
+      paint: {
+        'line-color': ['case', ['boolean', ['feature-state', 'hover'], false],
+          'rgba(255,255,255,0.3)', '#1a2a40'],
+        'line-width': ['case', ['boolean', ['feature-state', 'hover'], false], 1.2, 0.4]
+      }
+    });
+
+    // Conflict country fill — color driven by feature-state status, selected/hover variant
+    mlMap.addLayer({ id: 'countries-fill', type: 'fill', source: 'countries',
+      filter: ['==', ['get', 'mts_type'], 'conflict'],
+      paint: {
+        'fill-color': ['case',
+          ['boolean', ['feature-state', 'selected'], false],
+            ['match', ['feature-state', 'status'], 'war', 'rgba(255,45,123,0.35)', 'attack', 'rgba(255,225,0,0.28)', 'rgba(0,255,136,0.25)'],
+          ['boolean', ['feature-state', 'hover'], false],
+            ['match', ['feature-state', 'status'], 'war', 'rgba(255,45,123,0.28)', 'attack', 'rgba(255,225,0,0.22)', 'rgba(0,255,136,0.20)'],
+            ['match', ['feature-state', 'status'], 'war', 'rgba(255,45,123,0.22)', 'attack', 'rgba(255,225,0,0.16)', 'rgba(0,255,136,0.14)']
+        ]
+      }
+    });
+    mlMap.addLayer({ id: 'countries-border', type: 'line', source: 'countries',
+      filter: ['==', ['get', 'mts_type'], 'conflict'],
+      paint: {
+        'line-color': ['case',
+          ['boolean', ['feature-state', 'selected'], false],
+            ['match', ['feature-state', 'status'], 'war', '#ff2d7b', 'attack', '#ffe100', '#00ff88'],
+          ['boolean', ['feature-state', 'hover'], false],
+            ['match', ['feature-state', 'status'], 'war', '#ff2d7b', 'attack', '#ffe100', '#00ff88'],
+          '#1a2a40'
+        ],
+        'line-width': ['case',
+          ['boolean', ['feature-state', 'selected'], false], 2.5,
+          ['boolean', ['feature-state', 'hover'], false], 1.8,
+          0.8
+        ]
+      }
+    });
+
+    // Faction stripe patterns — registered as MapLibre images, rendered via fill-pattern layer
+    ['coalition', 'axis', 'neutral'].forEach(f => {
+      mlMap.addImage('pattern-' + f, _createPatternImage(f), { pixelRatio: 2 });
+    });
+    mlMap.addLayer({ id: 'factions-pattern', type: 'fill', source: 'countries',
+      filter: ['==', ['get', 'mts_type'], 'conflict'],
+      layout: { visibility: 'none' },
+      paint: {
+        'fill-pattern': ['match', ['get', 'faction'],
+          'coalition', 'pattern-coalition',
+          'axis',       'pattern-axis',
+          /* neutral + fallback */ 'pattern-neutral'
+        ]
+      }
+    });
+
+    // Redraw overlay canvas on every MapLibre render (zoom, pan, resize)
+    mlMap.on('render', drawMap);
+    mlMap.on('zoom', updateAirwaysZoomUI);
+
+    // Push initial status values into feature states
+    _syncCountryColors();
+    _syncCountryFeatureStates();
+
+    _setupMapEvents();
+    drawMap();
+    drawLegendSwatches();
+  });
+}
+
+// ===== MAPLIBRE HOVER / CLICK EVENTS =====
+function _setupMapEvents() {
+  let _hovCo = null;     // hovered conflict country name
+  let _hovCtx = null;    // hovered context country name
+
+  mlMap.on('mousemove', e => {
+    const nav = document.getElementById('mapLegend');
+    const azEl = document.getElementById('airZoom');
+    if ((nav && nav.matches(':hover')) || (azEl && azEl.matches(':hover'))) {
+      tt.style.display = 'none'; return;
+    }
+    const mx = e.point.x, my = e.point.y;
+
+    // Custom hit-testing for overlay elements (airports, bases, fleet, etc.)
+    let found = null;
+    AP.forEach(a => {
+      if (found) return;
+      if (hasFilter() && !coPassesFilter(a.co)) return;
+      const s = getStat(a.c, selDay);
+      if ((s === 'Open' && !showOpen) || (s === 'Restricted' && !showRestricted) || (s === 'Closed' && !showClosed)) return;
+      if (Math.hypot(mx - lx(a.lng), my - ly(a.lat)) < 12) found = {type: 'a', data: a};
+    });
+    if (!found) MIL_BASES.forEach(base => {
+      if (found) return;
+      const isIran = base.side === 'Iran';
+      if ((isIran && !showIranBases) || (!isIran && !showCoalitionBases)) return;
+      if (!itemMatchesCo(base.side)) return;
+      if (Math.hypot(mx - lx(base.lng), my - ly(base.lat)) < 10) found = {type: 'b', data: base};
+    });
+    if (!found && showFleet) FLEET_POS.forEach(fp => {
+      if (found) return;
+      if (!itemMatchesCo(fp.side)) return;
+      if (Math.hypot(mx - lx(fp.lng), my - ly(fp.lat)) < 12) found = {type: 'fleet', data: fp};
+    });
+    if (!found && hzShow.naval) NAVAL_FACILITIES.forEach(nf => {
+      if (found) return;
+      if (!itemMatchesCo(nf.side)) return;
+      if (Math.hypot(mx - lx(nf.lng), my - ly(nf.lat)) < 10) found = {type: 'naval', data: nf};
+    });
+    if (!found && showJamming) getJammingZones(selDay).forEach(jz => {
+      if (found) return;
+      const rPx = Math.abs(lx(jz.lng + jz.radius) - lx(jz.lng));
+      if (Math.hypot(mx - lx(jz.lng), my - ly(jz.lat)) < rPx) found = {type: 'j', data: jz};
+    });
+    if (!found) HZ_LOCS.forEach(loc => {
+      if (found) return;
+      if (Math.hypot(mx - lx(loc.lng), my - ly(loc.lat)) < 10) found = {type: 'loc', data: loc};
+    });
+
+    // Country hover via MapLibre feature query (if no overlay hit)
+    const features = mlMap.queryRenderedFeatures(e.point, { layers: ['countries-fill', 'countries-ctx-fill'] });
+    const feature = found ? null : features[0];
+    const newName = feature ? feature.properties.mts_name : null;
+
+    // Clear stale hover states
+    if (_hovCo && _hovCo !== newName) {
+      mlMap.setFeatureState({ source: 'countries', id: _hovCo }, { hover: false });
+      _hovCo = null;
+    }
+    if (_hovCtx && _hovCtx !== newName) {
+      mlMap.setFeatureState({ source: 'countries', id: _hovCtx }, { hover: false });
+      _hovCtx = null;
+    }
+
+    // Apply new hover state
+    if (feature) {
+      if (feature.layer.id === 'countries-fill') {
+        _hovCo = newName;
+        mlMap.setFeatureState({ source: 'countries', id: newName }, { hover: true });
+      } else {
+        _hovCtx = newName;
+        mlMap.setFeatureState({ source: 'countries', id: newName }, { hover: true });
+      }
+    }
+
+    const newHover = feature ? newName : null;
+    if (newHover !== hoveredCountry) { hoveredCountry = newHover; drawMap(); }
+
+    // Tooltip + cursor
+    const mapCanvas = mlMap.getCanvas();
+    if (found || feature) {
+      mapCanvas.style.cursor = 'pointer';
+      tt.style.display = 'block';
+      tt.style.left = (mx + 15) + 'px';
+      tt.style.top = (my - 10) + 'px';
+      if (found) {
+        if (found.type === 'a') {
+          const s = getStat(found.data.c, selDay);
+          tt.textContent = found.data.n + ' (' + found.data.c + ') \u2022 ' + s;
+        } else if (found.type === 'b') {
+          tt.textContent = '\ud83d\udccd ' + found.data.name + ' \u2022 ' + found.data.side + ' \u2022 ' + found.data.desc;
+        } else if (found.type === 'j') {
+          tt.textContent = '\u26a1 ' + found.data.name + ' \u2022 ' + found.data.severity + ' \u2022 ' + found.data.desc;
+        } else if (found.type === 'fleet') {
+          tt.textContent = '\u26f5 ' + found.data.name + ' \u2022 ' + found.data.side + ' \u2022 ' + found.data.desc;
+        } else if (found.type === 'naval') {
+          tt.textContent = '\u2693 ' + found.data.name + ' \u2022 ' + found.data.side + ' \u2022 ' + found.data.desc;
+        } else if (found.type === 'loc') {
+          tt.textContent = '\u2693 ' + found.data.name;
+        }
+      } else {
+        tt.textContent = newName + ' \u2022 ' + csLabel(getCStatus(newName, selDay)) + ' \u2022 Click for details';
+      }
+    } else {
+      mapCanvas.style.cursor = '';
+      tt.style.display = 'none';
+      if (hoveredCountry) { hoveredCountry = null; drawMap(); }
+    }
+  });
+
+  mlMap.on('mouseleave', () => {
+    tt.style.display = 'none';
+    hoveredCountry = null;
+    if (_hovCo) { mlMap.setFeatureState({ source: 'countries', id: _hovCo }, { hover: false }); _hovCo = null; }
+    if (_hovCtx) { mlMap.setFeatureState({ source: 'countries', id: _hovCtx }, { hover: false }); _hovCtx = null; }
+  });
+
+  mlMap.on('click', e => {
+    const popup = document.getElementById('airportPopup');
+    if (popup && popup.contains(e.originalEvent.target)) return;
+    const cpopup = document.getElementById('countryPopup');
+    if (cpopup && cpopup.contains(e.originalEvent.target)) return;
+    const mx = e.point.x, my = e.point.y;
+    // Airport click takes priority
+    let clickedAP = null;
+    AP.forEach(a => {
+      if (clickedAP) return;
+      if (Math.hypot(mx - lx(a.lng), my - ly(a.lat)) < 12) clickedAP = a;
+    });
+    if (clickedAP) { showPopup(clickedAP, mx, my); return; }
+    // Country click
+    const features = mlMap.queryRenderedFeatures(e.point, { layers: ['countries-fill'] });
+    if (features.length > 0) {
+      const co = features[0].properties.mts_name;
+      selectCo(co);
+      showCountryPopup(co, mx, my);
+    } else {
+      closePopup();
+    }
   });
 }
 
@@ -430,7 +621,7 @@ function drawSeaLayers(ctx, w, h, azs) {
     if (selDay >= '2026-02-28' && hzShow.houthi) {
       HOUTHI_ZONES.forEach(zone => {
         const cx = lx(zone.lng, w), cy = ly(zone.lat, h);
-        const rPx = zone.radius * (Math.PI / 180) * _ms * aZoom;
+        const rPx = Math.abs(lx(zone.lng + zone.radius) - lx(zone.lng));
         const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, rPx);
         grad.addColorStop(0, 'rgba(255,107,0,0.18)');
         grad.addColorStop(1, 'rgba(255,107,0,0)');
@@ -685,7 +876,7 @@ function drawAirLayers(ctx, w, h, azs) {
     const jzones = getJammingZones(selDay);
     jzones.forEach(jz => {
       const cx = lx(jz.lng, w), cy = ly(jz.lat, h);
-      const rPx = jz.radius * (Math.PI / 180) * _ms * aZoom;
+      const rPx = Math.abs(lx(jz.lng + jz.radius) - lx(jz.lng));
       const baseColor = jz.severity === 'heavy' ? [255,140,0] :
                          jz.severity === 'moderate' ? [255,200,0] : [200,200,100];
       const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, rPx);
@@ -827,7 +1018,7 @@ function drawAirLayers(ctx, w, h, azs) {
       ctx.font = (12*azs) + 'px serif';
       ctx.textAlign = 'center';
       ctx.fillText(icon, x, y + 4*azs);
-      if (aZoom >= 2) {
+      if (mlMap && mlMap.getZoom() > _initialMapZoom + 0.8) {
         ctx.font = '500 ' + (7*azs) + 'px "DM Sans",sans-serif';
         ctx.fillStyle = color; ctx.globalAlpha = 0.7;
         ctx.fillText(inf.name, x, y + 14*azs);
@@ -859,7 +1050,7 @@ function drawAirLayers(ctx, w, h, azs) {
       ctx.moveTo(x2, y2);
       ctx.lineTo(x2 - hl*Math.cos(angle+0.4), y2 - hl*Math.sin(angle+0.4));
       ctx.stroke();
-      if (aZoom >= 1.5) {
+      if (mlMap && mlMap.getZoom() > _initialMapZoom + 0.5) {
         const mx = (x1+x2)/2, my = (y1+y2)/2;
         ctx.font = '500 ' + (7*azs) + 'px "DM Sans",sans-serif';
         ctx.fillStyle = flow.color; ctx.globalAlpha = 0.6;
@@ -872,98 +1063,24 @@ function drawAirLayers(ctx, w, h, azs) {
 }
 
 function drawMap() {
+  if (!mlMap) return;
+  _syncCountryColors();
+  _syncCountryFeatureStates();
+
+  // Resize overlay canvas to match container (MapLibre handles its own canvas)
   const dpr = window.devicePixelRatio || 1;
   const w = mw.clientWidth, h = mw.clientHeight;
-  canvas.width = w * dpr;
-  canvas.height = h * dpr;
-  canvas.style.width = w + 'px';
-  canvas.style.height = h + 'px';
+  overlayCanvas.width = w * dpr;
+  overlayCanvas.height = h * dpr;
+  overlayCanvas.style.width = w + 'px';
+  overlayCanvas.style.height = h + 'px';
   ctx2.setTransform(dpr, 0, 0, dpr, 0, 0);
-  _updateMapScale(w, h);
-  const azs = Math.pow(aZoom, 0.4); // sub-linear text/icon scale
+  ctx2.clearRect(0, 0, w, h);
 
-  // Build hit paths (cached by canvas size + zoom/pan)
-  if (w !== lastHitW || h !== lastHitH || drawMap._lastZoom !== aZoom || drawMap._lastPanX !== aPanX || drawMap._lastPanY !== aPanY) {
-    hitPaths = buildCountryHitPaths(null, lx, ly, w, h);
-    ctxHitPaths = buildCountryHitPaths(null, lx, ly, w, h, null, null, CP_CTX);
-    lastHitW = w; lastHitH = h;
-    drawMap._lastZoom = aZoom; drawMap._lastPanX = aPanX; drawMap._lastPanY = aPanY;
-  }
+  // Sub-linear zoom scale for text/icons — mirrors the original aZoom^0.4 feel
+  const azs = Math.pow(Math.pow(2, Math.max(0, mlMap.getZoom() - _initialMapZoom)), 0.4);
 
-  const waterColor = '#0a1628';
-  const borderColor = '#1a2a40';
-  ctx2.fillStyle = waterColor;
-  ctx2.fillRect(0, 0, w, h);
-
-  const fills = CONFLICT_FILLS;
-  const fillsBold = CONFLICT_FILLS_BOLD;
-  const fillsHover = CONFLICT_FILLS_HOVER;
-
-  // Context countries (drawn first, underneath conflict countries) — interactive with hover
-  const ctxFill = 'rgba(255,255,255,0.04)';
-  const ctxHoverFill = 'rgba(255,255,255,0.08)';
-  const ctxBorderHover = 'rgba(255,255,255,0.3)';
-  for (const co of Object.keys(CP_CTX)) {
-    const rings = CP_CTX[co];
-    const isHovered = hoveredCountry === co;
-    const polyRings = Array.isArray(rings[0][0]) ? rings : [rings];
-    polyRings.forEach(ring => {
-      ctx2.beginPath();
-      ring.forEach((p, i) => { const x = lx(p[0], w), y = ly(p[1], h); i === 0 ? ctx2.moveTo(x, y) : ctx2.lineTo(x, y); });
-      ctx2.closePath();
-      ctx2.fillStyle = isHovered ? ctxHoverFill : ctxFill; ctx2.fill();
-      ctx2.strokeStyle = isHovered ? ctxBorderHover : borderColor;
-      ctx2.lineWidth = isHovered ? 1.2 : 0.4; ctx2.stroke();
-    });
-  }
-
-  // Country polygons via shared drawCountryPolygons
-  drawCountryPolygons(ctx2, null, lx, ly, w, h, {
-    getFill: co => {
-      const cs = getCStatus(co, selDay);
-      const isSelected = hasFilter() && isCoSelected(co);
-      const isHovered = !isSelected && hoveredCountry === co;
-      return isSelected ? (fillsBold[cs] || '#e8e0d5') : isHovered ? (fillsHover[cs] || '#e8e0d5') : (fills[cs] || '#e8e0d5');
-    },
-    hovered: hoveredCountry,
-    selected: null,
-    isSelected: co => hasFilter() && isCoSelected(co),
-    borderColor: borderColor,
-    getHoverBorder: co => getStatusBorder(co),
-    getSelectBorder: co => getStatusBorder(co),
-    hoverOverlay: 'transparent',
-    selectOverlay: 'transparent',
-    selectedLineWidth: 2.5,
-    hoveredLineWidth: 1.8,
-    defaultLineWidth: 0.8
-  });
-
-  // Faction overlay — diagonal stripe patterns over country polygons
-  if (showFactions) {
-    ctx2.save();
-    for (const co of Object.keys(CP)) {
-      const fi = countryFaction[co];
-      if (!fi) continue;
-      const rings = CP[co];
-      const polyRings = Array.isArray(rings[0][0]) ? rings : [rings];
-      const pat = getFactionPattern(ctx2, fi.faction);
-      if (!pat) continue;
-      polyRings.forEach(ring => {
-        ctx2.beginPath();
-        ring.forEach((p, i) => {
-          const x = lx(p[0], w), y = ly(p[1], h);
-          i === 0 ? ctx2.moveTo(x, y) : ctx2.lineTo(x, y);
-        });
-        ctx2.closePath();
-        ctx2.fillStyle = pat;
-        ctx2.fill();
-      });
-    }
-    ctx2.restore();
-  }
-
-  // Country labels (flags + names with faction colors)
-  // Explicit visual centroids — avoids polygon-averaging issues for concave shapes
+  // Country labels (faction color + name at explicit visual centroids)
   const CONFLICT_LABEL_POS = {
     'Turkey':[34.5,39.5],'Syria':[38.5,35.2],'Iraq':[43.5,33.5],
     'Iran':[54.0,33.0],'Saudi Arabia':[44.5,24.0],'UAE':[54.2,24.0],
@@ -972,19 +1089,11 @@ function drawMap() {
     'Lebanon':[35.5,34.0],'Egypt':[30.5,27.5],'Yemen':[47.5,15.5],
     'Pakistan':[67,29],'India':[76,23]
   };
-  for (const co of Object.keys(CP)) {
+  for (const co of CONFLICT_COUNTRY_NAMES) {
     const isSelected = hasFilter() && isCoSelected(co);
     const pos = CONFLICT_LABEL_POS[co];
-    let cx, cy;
-    if (pos) {
-      cx = lx(pos[0], w); cy = ly(pos[1], h);
-    } else {
-      const rings = CP[co];
-      const pts = Array.isArray(rings[0][0]) ? rings[0] : rings;
-      cx = 0; cy = 0;
-      pts.forEach(p => { cx += lx(p[0], w); cy += ly(p[1], h); });
-      cx /= pts.length; cy /= pts.length;
-    }
+    if (!pos) continue;
+    const cx = lx(pos[0]), cy = ly(pos[1]);
     const lc = getFactionColor(co);
     const isHov = hoveredCountry === co;
     if (isHov || isSelected) {
@@ -1000,7 +1109,7 @@ function drawMap() {
     }
   }
 
-  // Context country labels (dimmed, smaller — geographic context only)
+  // Context country labels (dimmed)
   const CTX_LABEL_POS = {
     'Sudan':[30,16],'Eritrea':[39.5,15.5],'Djibouti':[42.8,11.5],'Ethiopia':[40,9],
     'Somalia':[46,6],'Afghanistan':[66,34],
@@ -1017,7 +1126,7 @@ function drawMap() {
   const ctxLabelHover = 'rgba(255,255,255,0.45)';
   ctx2.textAlign = 'center';
   for (const [co, [lng, lat]] of Object.entries(CTX_LABEL_POS)) {
-    const x = lx(lng, w), y = ly(lat, h);
+    const x = lx(lng), y = ly(lat);
     if (x < -20 || x > w + 20 || y < -20 || y > h + 20) continue;
     const isHov = hoveredCountry === co;
     ctx2.font = (isHov ? '600 ' : '500 ') + (7.5*azs) + 'px "DM Sans",sans-serif';
@@ -1025,9 +1134,9 @@ function drawMap() {
     ctx2.fillText(co.toUpperCase(), x, y);
   }
 
-  // Water body labels (rendered early so overlays sit on top)
+  // Water body labels
   MAP_WATER_LABELS.forEach(wb => {
-    const x = lx(wb.lng, w), y = ly(wb.lat, h);
+    const x = lx(wb.lng), y = ly(wb.lat);
     if (x < -50 || x > w + 50 || y < -50 || y > h + 50) return;
     ctx2.save();
     ctx2.translate(x, y);
@@ -1045,15 +1154,13 @@ function drawMap() {
   // === AIR LAYERS (toggle-gated) ===
   drawAirLayers(ctx2, w, h, azs);
 
-  // Milestone emoji on map — just the icon at the geo position
+  // Milestone emoji marker
   if (selMilestoneIdx != null) {
     const ms = MILESTONES[selMilestoneIdx];
     if (ms && ms.lat != null && ms.lng != null) {
       ctx2.save();
       ctx2.globalAlpha = 1;
-      ctx2.globalCompositeOperation = 'source-over';
-      ctx2.shadowColor = 'transparent';
-      ctx2.shadowBlur = 0;
+      ctx2.shadowColor = 'transparent'; ctx2.shadowBlur = 0;
       ctx2.fillStyle = '#ffffff';
       const mx = lx(ms.lng), my = ly(ms.lat);
       const sz = Math.max(18, 22 * azs);
@@ -1063,167 +1170,7 @@ function drawMap() {
       ctx2.restore();
     }
   }
-
-  // end layers
 }
-
-// Hover
-mw.addEventListener('mousemove', e => {
-  if (aDragging) {
-    aPanX = aPanStartX + (e.clientX - aDragStartX);
-    aPanY = aPanStartY + (e.clientY - aDragStartY);
-    if (Math.hypot(e.clientX - aDragStartX, e.clientY - aDragStartY) > 4) mw._wasDrag = true;
-    aClampPan(mw.clientWidth, mw.clientHeight);
-    drawMap();
-    tt.style.display = 'none';
-    return;
-  }
-  const nav = document.getElementById('mapLegend');
-  const azEl = document.getElementById('airZoom');
-  if ((nav && nav.matches(':hover')) || (azEl && azEl.matches(':hover'))) { tt.style.display = 'none'; return; }
-  const rect = mw.getBoundingClientRect();
-  const mx = e.clientX - rect.left, my = e.clientY - rect.top;
-  const w = rect.width, h = rect.height;
-  let found = null;
-  // Airport hit-testing
-  AP.forEach(a => {
-      if (hasFilter() && !coPassesFilter(a.co)) return;
-      const s = getStat(a.c, selDay);
-      if ((s === 'Open' && !showOpen) || (s === 'Restricted' && !showRestricted) || (s === 'Closed' && !showClosed)) return;
-      const ax = lx(a.lng, w), ay = ly(a.lat, h);
-      if (Math.hypot(mx - ax, my - ay) < 12) found = {type: 'a', data: a};
-    });
-  if (!found) {
-      MIL_BASES.forEach(base => {
-        const isIran = base.side === 'Iran';
-        if ((isIran && !showIranBases) || (!isIran && !showCoalitionBases)) return;
-        if (!itemMatchesCo(base.side)) return;
-        const bx = lx(base.lng, w), by = ly(base.lat, h);
-        if (Math.hypot(mx - bx, my - by) < 10) found = {type: 'b', data: base};
-      });
-    }
-  if (!found && showFleet) {
-      FLEET_POS.forEach(fp => {
-        if (!itemMatchesCo(fp.side)) return;
-        const fx = lx(fp.lng, w), fy = ly(fp.lat, h);
-        if (Math.hypot(mx - fx, my - fy) < 12) found = {type: 'fleet', data: fp};
-      });
-    }
-  if (!found && hzShow.naval) {
-      NAVAL_FACILITIES.forEach(nf => {
-        if (!itemMatchesCo(nf.side)) return;
-        const nx = lx(nf.lng, w), ny = ly(nf.lat, h);
-        if (Math.hypot(mx - nx, my - ny) < 10) found = {type: 'naval', data: nf};
-      });
-    }
-  if (!found && showJamming) {
-      const jzones = getJammingZones(selDay);
-      jzones.forEach(jz => {
-        const jx = lx(jz.lng, w), jy = ly(jz.lat, h);
-        const rPx = jz.radius * (Math.PI / 180) * _ms * aZoom;
-        if (Math.hypot(mx - jx, my - jy) < rPx) found = {type: 'j', data: jz};
-      });
-    }
-  // Maritime location hit-testing
-  if (!found) {
-    HZ_LOCS.forEach(loc => {
-      const lxx = lx(loc.lng, w), lyy = ly(loc.lat, h);
-      if (Math.hypot(mx - lxx, my - lyy) < 10) found = {type: 'loc', data: loc};
-    });
-  }
-  // Country hit-testing (both modes)
-  if (!found) {
-    const hitCo = hitTestCountries(ctx2, hitPaths, mx, my);
-    if (hitCo) found = {type: 'c', data: hitCo};
-  }
-  if (!found) {
-    const hitCtx = hitTestCountries(ctx2, ctxHitPaths, mx, my);
-    if (hitCtx) found = {type: 'ctx', data: hitCtx};
-  }
-  if (found) {
-    tt.style.display = 'block';
-    tt.style.left = (mx + 15) + 'px'; tt.style.top = (my - 10) + 'px';
-    if (found.type === 'a') {
-      const a = found.data, s = getStat(a.c, selDay);
-      tt.textContent = a.n + ' (' + a.c + ') \u2022 ' + s;
-    } else if (found.type === 'b') {
-      tt.textContent = '\ud83d\udccd ' + found.data.name + ' \u2022 ' + found.data.side + ' \u2022 ' + found.data.desc;
-    } else if (found.type === 'j') {
-      tt.textContent = '\u26a1 ' + found.data.name + ' \u2022 ' + found.data.severity + ' \u2022 ' + found.data.desc;
-    } else if (found.type === 'fleet') {
-      tt.textContent = '\u26f5 ' + found.data.name + ' \u2022 ' + found.data.side + ' \u2022 ' + found.data.desc;
-    } else if (found.type === 'naval') {
-      tt.textContent = '\u2693 ' + found.data.name + ' \u2022 ' + found.data.side + ' \u2022 ' + found.data.desc;
-    } else if (found.type === 'loc') {
-      tt.textContent = '\u2693 ' + found.data.name;
-    } else if (found.type === 'ctx') {
-      tt.textContent = found.data + ' \u2022 Surrounding country';
-    } else {
-      // Country tooltip
-      const coName = found.data;
-      tt.textContent = coName + ' \u2022 ' + csLabel(getCStatus(coName, selDay)) + ' \u2022 Click for details';
-    }
-    mw.style.cursor = (found.type === 'c' || found.type === 'loc') ? 'pointer' : (found.type === 'ctx' ? 'default' : 'pointer');
-  } else { tt.style.display = 'none'; mw.style.cursor = aZoom > 1 ? 'grab' : 'crosshair'; }
-  const newHover = (found && (found.type === 'c' || found.type === 'ctx')) ? found.data : null;
-  if (newHover !== hoveredCountry) { hoveredCountry = newHover; drawMap(); }
-});
-mw.addEventListener('mouseleave', () => {
-  tt.style.display = 'none';
-  if (aDragging) { aDragging = false; }
-  if (hoveredCountry) { hoveredCountry = null; drawMap(); }
-});
-
-// Drag-to-pan (airways)
-mw.addEventListener('mousedown', e => {
-  const nav = document.getElementById('mapLegend');
-  if (nav && nav.contains(e.target)) return;
-  const popup = document.getElementById('airportPopup');
-  if (popup && popup.contains(e.target)) return;
-  const cpopup = document.getElementById('countryPopup');
-  if (cpopup && cpopup.contains(e.target)) return;
-  if (aZoom <= 1) return;
-  aDragging = true;
-  aDragStartX = e.clientX;
-  aDragStartY = e.clientY;
-  aPanStartX = aPanX;
-  aPanStartY = aPanY;
-  mw._wasDrag = false;
-  mw.style.cursor = 'grabbing';
-  e.preventDefault();
-});
-window.addEventListener('mouseup', e => {
-  if (aDragging) {
-    aDragging = false;
-    mw.style.cursor = aZoom > 1 ? 'grab' : 'crosshair';
-  }
-});
-
-// Click
-mw.addEventListener('click', e => {
-  if (mw._wasDrag) { mw._wasDrag = false; return; }
-  const popup = document.getElementById('airportPopup');
-  if (popup && popup.contains(e.target)) return;
-  const cpopup = document.getElementById('countryPopup');
-  if (cpopup && cpopup.contains(e.target)) return;
-  const rect = mw.getBoundingClientRect();
-  const mx = e.clientX - rect.left, my = e.clientY - rect.top;
-  const w = rect.width, h = rect.height;
-  // Airport click
-  let clickedAP = null;
-  AP.forEach(a => {
-    const ax = lx(a.lng, w), ay = ly(a.lat, h);
-    if (Math.hypot(mx - ax, my - ay) < 12) clickedAP = a;
-  });
-  if (clickedAP) { showPopup(clickedAP, mx, my); return; }
-  // Both modes: country click
-  const hitCo = hitTestCountries(ctx2, hitPaths, mx, my);
-  if (hitCo) {
-    selectCo(hitCo);
-    showCountryPopup(hitCo, mx, my); return;
-  }
-  closePopup();
-});
 
 function showPopup(a, px, py) {
   closePopup();
@@ -1356,47 +1303,24 @@ function updateLegendUI() {
   });
 }
 
-function updateZoomUIFor(resetId, pctId, zoom) {
-  const resetBtn = document.getElementById(resetId);
-  if (resetBtn) resetBtn.style.opacity = zoom > 1 ? '1' : '0.35';
-  const pct = document.getElementById(pctId);
-  if (pct) pct.textContent = Math.round(zoom * 100) + '%';
+// ===== ZOOM CONTROLS (wired to MapLibre) =====
+function aZoomIn() { if (mlMap) mlMap.zoomIn({ duration: 200 }); }
+function aZoomOut() { if (mlMap) mlMap.zoomOut({ duration: 200 }); }
+function aZoomResetFn() {
+  if (mlMap) mlMap.fitBounds([[VB.lnMin, VB.ltMin], [VB.lnMax, VB.ltMax]], { padding: 20, duration: 300 });
+}
+function updateAirwaysZoomUI() {
+  if (!mlMap) return;
+  const zoom = mlMap.getZoom();
+  const atInitial = zoom <= _initialMapZoom + 0.05;
+  const resetBtn = document.getElementById('aZoomReset');
+  if (resetBtn) resetBtn.style.opacity = atInitial ? '0.35' : '1';
+  const pct = document.getElementById('aZoomPct');
+  if (pct) pct.textContent = Math.round(Math.pow(2, zoom - _initialMapZoom) * 100) + '%';
 }
 
-// Airways map zoom/pan controls
-function aClampPan(w, h) {
-  const scaledW = w * aZoom, scaledH = h * aZoom;
-  aPanX = Math.min(0, Math.max(w - scaledW, aPanX));
-  aPanY = Math.min(0, Math.max(h - scaledH, aPanY));
-}
-function aZoomIn() {
-  const rect = mw.getBoundingClientRect();
-  const cx = rect.width / 2, cy = rect.height / 2;
-  const oldZoom = aZoom;
-  aZoom = Math.min(12, aZoom * 1.1);
-  aPanX = cx - (cx - aPanX) * (aZoom / oldZoom);
-  aPanY = cy - (cy - aPanY) * (aZoom / oldZoom);
-  aClampPan(rect.width, rect.height);
-  drawMap(); updateAirwaysZoomUI();
-}
-function aZoomOut() {
-  const rect = mw.getBoundingClientRect();
-  const cx = rect.width / 2, cy = rect.height / 2;
-  const oldZoom = aZoom;
-  aZoom = Math.max(1, aZoom / 1.1);
-  if (aZoom <= 1.01) { aZoom = 1; aPanX = 0; aPanY = 0; }
-  else {
-    aPanX = cx - (cx - aPanX) * (aZoom / oldZoom);
-    aPanY = cy - (cy - aPanY) * (aZoom / oldZoom);
-    aClampPan(rect.width, rect.height);
-  }
-  drawMap(); updateAirwaysZoomUI();
-}
-function aZoomResetFn() {
-  aZoom = 1; aPanX = 0; aPanY = 0;
-  drawMap(); updateAirwaysZoomUI();
-}
-function updateAirwaysZoomUI() { updateZoomUIFor('aZoomReset', 'aZoomPct', aZoom); }
+// Bootstrap MapLibre — called once when map.js loads (map.on('load') fires async after main.js)
+_initMapLibre();
 
 // ===== LEGEND SWATCHES (canvas-drawn to match actual map markers) =====
 function drawLegendSwatches() {

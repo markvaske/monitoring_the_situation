@@ -194,6 +194,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MTS — Monitoring The Situation</title>
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.css">
 </head>
 <body>
 <!-- NAV BAR -->
@@ -275,7 +276,7 @@
 <div class="map-card-header"><h2>Operations Theater</h2>
 </div>
 <!-- Map canvas -->
-<div class="map-wrap" id="mw"><canvas id="mc"></canvas><div class="map-tooltip" id="tt"></div>
+<div class="map-wrap" id="mw"><div id="mc"></div><canvas id="mlOverlay"></canvas><div class="map-tooltip" id="tt"></div>
 <div class="map-zoom" id="airZoom">
 <div class="aw-zoom-group">
 <button class="aw-zoom-btn aw-zoom-plus" onclick="aZoomIn()" title="Zoom in">+</button>
@@ -365,6 +366,7 @@
 
 </div><!-- end news -->
 
+<script src="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.js"></script>
 <script defer src="src/data.js"></script>
 <script defer src="src/map.js"></script>
 <script defer src="src/main.js"></script>
