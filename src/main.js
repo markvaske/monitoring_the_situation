@@ -1959,13 +1959,15 @@ function updateTrend() {
 // (Old STRAIT OF HORMUZ MAP section removed — sea layers now render in unified drawMap())
 
 // ===== INIT =====
-drawLegendSwatches();
-renderParties();
-buildCal();
-selectDay(days[days.length - 1]);
-renderCountryDetail();
-let resizeTimer;
-window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => {
-  drawMap(); buildGantt();
-  if (filtersOpen) { drawCasualtyChart(); drawDisplacementChart(); drawOilPriceChart(); drawShippingChart(); drawFlightChart(); drawGoldChart(); drawInsuranceChart(); drawNotamChart(); }
-}, 80); });
+DataStore.ready.then(() => {
+  drawLegendSwatches();
+  renderParties();
+  buildCal();
+  selectDay(days[days.length - 1]);
+  renderCountryDetail();
+  let resizeTimer;
+  window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => {
+    drawMap(); buildGantt();
+    if (filtersOpen) { drawCasualtyChart(); drawDisplacementChart(); drawOilPriceChart(); drawShippingChart(); drawFlightChart(); drawGoldChart(); drawInsuranceChart(); drawNotamChart(); }
+  }, 80); });
+});

@@ -1,0 +1,191 @@
+[
+  {
+    "c": "IKA",
+    "n": "Tehran Imam Khomeini",
+    "co": "Iran",
+    "lat": 35.416,
+    "lng": 51.152
+  },
+  {
+    "c": "IFN",
+    "n": "Isfahan Shahid Beheshti",
+    "co": "Iran",
+    "lat": 32.75,
+    "lng": 51.861
+  },
+  {
+    "c": "SYZ",
+    "n": "Shiraz Shahid Dastgheib",
+    "co": "Iran",
+    "lat": 29.539,
+    "lng": 52.59
+  },
+  {
+    "c": "MHD",
+    "n": "Mashhad Shahid Hashemi",
+    "co": "Iran",
+    "lat": 36.236,
+    "lng": 59.641
+  },
+  {
+    "c": "BGW",
+    "n": "Baghdad International",
+    "co": "Iraq",
+    "lat": 33.262,
+    "lng": 44.236
+  },
+  {
+    "c": "EBL",
+    "n": "Erbil International",
+    "co": "Iraq",
+    "lat": 36.238,
+    "lng": 43.963
+  },
+  {
+    "c": "BSR",
+    "n": "Basra International",
+    "co": "Iraq",
+    "lat": 30.549,
+    "lng": 47.662
+  },
+  {
+    "c": "TLV",
+    "n": "Ben Gurion (Tel Aviv)",
+    "co": "Israel",
+    "lat": 32.011,
+    "lng": 34.887
+  },
+  {
+    "c": "ETM",
+    "n": "Ramon Airport",
+    "co": "Israel",
+    "lat": 29.727,
+    "lng": 35.012
+  },
+  {
+    "c": "DXB",
+    "n": "Dubai International",
+    "co": "UAE",
+    "lat": 25.253,
+    "lng": 55.366
+  },
+  {
+    "c": "AUH",
+    "n": "Abu Dhabi International",
+    "co": "UAE",
+    "lat": 24.433,
+    "lng": 54.651
+  },
+  {
+    "c": "DWC",
+    "n": "Al Maktoum International",
+    "co": "UAE",
+    "lat": 24.896,
+    "lng": 55.172
+  },
+  {
+    "c": "DOH",
+    "n": "Hamad International",
+    "co": "Qatar",
+    "lat": 25.261,
+    "lng": 51.565
+  },
+  {
+    "c": "DMM",
+    "n": "King Fahd (Dammam)",
+    "co": "Saudi Arabia",
+    "lat": 26.471,
+    "lng": 49.798
+  },
+  {
+    "c": "JED",
+    "n": "King Abdulaziz (Jeddah)",
+    "co": "Saudi Arabia",
+    "lat": 21.67,
+    "lng": 39.156
+  },
+  {
+    "c": "RUH",
+    "n": "King Khalid (Riyadh)",
+    "co": "Saudi Arabia",
+    "lat": 24.958,
+    "lng": 46.699
+  },
+  {
+    "c": "AMM",
+    "n": "Queen Alia (Amman)",
+    "co": "Jordan",
+    "lat": 31.723,
+    "lng": 35.993
+  },
+  {
+    "c": "BEY",
+    "n": "Beirut-Rafic Hariri",
+    "co": "Lebanon",
+    "lat": 33.821,
+    "lng": 35.488
+  },
+  {
+    "c": "BAH",
+    "n": "Bahrain International",
+    "co": "Bahrain",
+    "lat": 26.27,
+    "lng": 50.634
+  },
+  {
+    "c": "KWI",
+    "n": "Kuwait International",
+    "co": "Kuwait",
+    "lat": 29.227,
+    "lng": 47.969
+  },
+  {
+    "c": "MCT",
+    "n": "Muscat International",
+    "co": "Oman",
+    "lat": 23.593,
+    "lng": 58.284
+  },
+  {
+    "c": "SLL",
+    "n": "Salalah Airport",
+    "co": "Oman",
+    "lat": 17.039,
+    "lng": 54.091
+  },
+  {
+    "c": "CAI",
+    "n": "Cairo International",
+    "co": "Egypt",
+    "lat": 30.122,
+    "lng": 31.406
+  },
+  {
+    "c": "DAM",
+    "n": "Damascus International",
+    "co": "Syria",
+    "lat": 33.411,
+    "lng": 36.515
+  },
+  {
+    "c": "IST",
+    "n": "Istanbul Airport",
+    "co": "Turkey",
+    "lat": 41.262,
+    "lng": 28.742
+  },
+  {
+    "c": "ESB",
+    "n": "Ankara Esenboğa",
+    "co": "Turkey",
+    "lat": 40.128,
+    "lng": 32.995
+  },
+  {
+    "c": "AYT",
+    "n": "Antalya Airport",
+    "co": "Turkey",
+    "lat": 36.899,
+    "lng": 30.801
+  }
+]

@@ -1,0 +1,182 @@
+{
+  "2026-02-25": {
+    "closed": 0,
+    "restricted": 4,
+    "total": 10
+  },
+  "2026-02-26": {
+    "closed": 0,
+    "restricted": 5,
+    "total": 12
+  },
+  "2026-02-27": {
+    "closed": 1,
+    "restricted": 6,
+    "total": 15
+  },
+  "2026-02-28": {
+    "closed": 5,
+    "restricted": 8,
+    "total": 28
+  },
+  "2026-03-01": {
+    "closed": 6,
+    "restricted": 10,
+    "total": 34
+  },
+  "2026-03-02": {
+    "closed": 6,
+    "restricted": 11,
+    "total": 36
+  },
+  "2026-03-03": {
+    "closed": 7,
+    "restricted": 11,
+    "total": 38
+  },
+  "2026-03-04": {
+    "closed": 7,
+    "restricted": 12,
+    "total": 40
+  },
+  "2026-03-05": {
+    "closed": 7,
+    "restricted": 12,
+    "total": 41
+  },
+  "2026-03-06": {
+    "closed": 8,
+    "restricted": 14,
+    "total": 48
+  },
+  "2026-03-07": {
+    "closed": 9,
+    "restricted": 15,
+    "total": 52
+  },
+  "2026-03-08": {
+    "closed": 9,
+    "restricted": 15,
+    "total": 54
+  },
+  "2026-03-09": {
+    "closed": 9,
+    "restricted": 14,
+    "total": 52
+  },
+  "2026-03-10": {
+    "closed": 9,
+    "restricted": 15,
+    "total": 54
+  },
+  "2026-03-11": {
+    "closed": 9,
+    "restricted": 15,
+    "total": 55
+  },
+  "2026-03-12": {
+    "closed": 9,
+    "restricted": 16,
+    "total": 56
+  },
+  "2026-03-13": {
+    "closed": 10,
+    "restricted": 16,
+    "total": 57
+  },
+  "2026-03-14": {
+    "closed": 10,
+    "restricted": 16,
+    "total": 58
+  },
+  "2026-03-15": {
+    "closed": 10,
+    "restricted": 17,
+    "total": 59
+  },
+  "2026-03-16": {
+    "closed": 10,
+    "restricted": 17,
+    "total": 60
+  },
+  "2026-03-17": {
+    "closed": 11,
+    "restricted": 17,
+    "total": 62
+  },
+  "2026-03-18": {
+    "closed": 11,
+    "restricted": 18,
+    "total": 65
+  },
+  "2026-03-19": {
+    "closed": 11,
+    "restricted": 19,
+    "total": 68
+  },
+  "2026-03-20": {
+    "closed": 11,
+    "restricted": 19,
+    "total": 70
+  },
+  "2026-03-21": {
+    "closed": 11,
+    "restricted": 19,
+    "total": 72
+  },
+  "2026-03-22": {
+    "closed": 11,
+    "restricted": 19,
+    "total": 74
+  },
+  "2026-03-23": {
+    "closed": 12,
+    "restricted": 19,
+    "total": 76
+  },
+  "2026-03-24": {
+    "closed": 12,
+    "restricted": 19,
+    "total": 78
+  },
+  "2026-03-25": {
+    "closed": 12,
+    "restricted": 19,
+    "total": 80
+  },
+  "2026-03-26": {
+    "closed": 12,
+    "restricted": 19,
+    "total": 82
+  },
+  "2026-03-27": {
+    "closed": 12,
+    "restricted": 19,
+    "total": 84
+  },
+  "2026-03-28": {
+    "closed": 12,
+    "restricted": 19,
+    "total": 86
+  },
+  "2026-03-29": {
+    "closed": 12,
+    "restricted": 19,
+    "total": 88
+  },
+  "2026-03-30": {
+    "closed": 12,
+    "restricted": 19,
+    "total": 88
+  },
+  "2026-03-31": {
+    "closed": 12,
+    "restricted": 20,
+    "total": 90
+  },
+  "2026-04-01": {
+    "closed": 12,
+    "restricted": 20,
+    "total": 91
+  }
+}

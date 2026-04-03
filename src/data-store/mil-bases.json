@@ -1,0 +1,174 @@
+{
+  "milBases": [
+    {
+      "name": "Al Udeid AB",
+      "lat": 25.12,
+      "lng": 51.31,
+      "side": "US/Qatar",
+      "desc": "CENTCOM forward HQ — Combined Air Ops Center"
+    },
+    {
+      "name": "Al Dhafra AB",
+      "lat": 24.25,
+      "lng": 54.55,
+      "side": "US/UAE",
+      "desc": "F-35 & tanker wing — air superiority ops"
+    },
+    {
+      "name": "Incirlik AB",
+      "lat": 37,
+      "lng": 35.43,
+      "side": "US/Turkey",
+      "desc": "NATO air base — B-1B deployments"
+    },
+    {
+      "name": "Camp Lemonnier",
+      "lat": 11.55,
+      "lng": 43.16,
+      "side": "US/Djibouti",
+      "desc": "AFRICOM — Red Sea & Bab el-Mandeb ops"
+    },
+    {
+      "name": "NSA Bahrain",
+      "lat": 26.24,
+      "lng": 50.61,
+      "side": "US/Bahrain",
+      "desc": "US 5th Fleet headquarters"
+    },
+    {
+      "name": "Prince Sultan AB",
+      "lat": 24.06,
+      "lng": 47.58,
+      "side": "US/Saudi",
+      "desc": "CAOC backup — Patriot battery site"
+    },
+    {
+      "name": "Muwaffaq Salti AB",
+      "lat": 31.83,
+      "lng": 36.78,
+      "side": "US/Jordan",
+      "desc": "F-16 ops — ISR & strike missions"
+    },
+    {
+      "name": "Nevatim AB",
+      "lat": 31.21,
+      "lng": 35.01,
+      "side": "Israel",
+      "desc": "IAF F-35I Adir — primary strike base"
+    },
+    {
+      "name": "Ramon AB",
+      "lat": 30.78,
+      "lng": 34.67,
+      "side": "Israel",
+      "desc": "IAF F-15I Ra'am — long-range strike"
+    },
+    {
+      "name": "Tabriz AB",
+      "lat": 38.13,
+      "lng": 46.24,
+      "side": "Iran",
+      "desc": "IRIAF Su-35 / F-14 — air defense"
+    },
+    {
+      "name": "Isfahan AB",
+      "lat": 32.75,
+      "lng": 51.86,
+      "side": "Iran",
+      "desc": "IRGCAF drone operations hub"
+    },
+    {
+      "name": "Bandar Abbas AB",
+      "lat": 27.22,
+      "lng": 56.37,
+      "side": "Iran",
+      "desc": "IRGCN coastal defense — anti-ship missiles"
+    },
+    {
+      "name": "Al Asad AB",
+      "lat": 33.79,
+      "lng": 42.44,
+      "side": "US/Iraq",
+      "desc": "Marine rotary wing — force protection"
+    }
+  ],
+  "navalFacilities": [
+    {
+      "name": "Bandar Abbas Naval Base",
+      "lat": 27.15,
+      "lng": 56.3,
+      "side": "Iran",
+      "desc": "IRGCN HQ — fast boats, mines, anti-ship missiles"
+    },
+    {
+      "name": "Jask Naval Base",
+      "lat": 25.6,
+      "lng": 57.8,
+      "side": "Iran",
+      "desc": "IRIN forward operating base — submarine pens"
+    },
+    {
+      "name": "Chabahar Naval Base",
+      "lat": 25.3,
+      "lng": 60.6,
+      "side": "Iran",
+      "desc": "Indian-built deep-water port — IRIN surface fleet"
+    },
+    {
+      "name": "Abu Musa Island Base",
+      "lat": 25.87,
+      "lng": 55.03,
+      "side": "Iran",
+      "desc": "IRGCN forward garrison — disputed island"
+    },
+    {
+      "name": "NSA Bahrain (NAVCENT)",
+      "lat": 26.24,
+      "lng": 50.61,
+      "side": "US",
+      "desc": "US Naval Forces Central Command — 5th Fleet HQ"
+    },
+    {
+      "name": "Duqm Naval Base",
+      "lat": 19.67,
+      "lng": 57.72,
+      "side": "US/Oman",
+      "desc": "Joint logistics hub — dry dock, fuel storage"
+    },
+    {
+      "name": "Assab Naval Base",
+      "lat": 13.07,
+      "lng": 42.74,
+      "side": "UAE/Eritrea",
+      "desc": "UAE military facility — fast boats & patrol craft"
+    },
+    {
+      "name": "HMS Juffair",
+      "lat": 26.22,
+      "lng": 50.6,
+      "side": "UK",
+      "desc": "Royal Navy shore facility — mine countermeasures"
+    },
+    {
+      "name": "Djibouti (Camp Lemonnier)",
+      "lat": 11.55,
+      "lng": 43.16,
+      "side": "US",
+      "desc": "Combined Joint Task Force — Horn of Africa"
+    },
+    {
+      "name": "King Faisal Naval Base",
+      "lat": 21.4,
+      "lng": 39.25,
+      "side": "Saudi",
+      "desc": "RSNF Western Fleet HQ — Red Sea patrol"
+    },
+    {
+      "name": "Ras al-Khaimah Coast Guard",
+      "lat": 25.79,
+      "lng": 55.95,
+      "side": "UAE",
+      "desc": "UAE Coast Guard — Strait of Hormuz monitoring"
+    }
+  ]
+}

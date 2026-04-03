@@ -1,0 +1,88 @@
+{
+  "phases": [
+    [
+      "2026-02-28",
+      {
+        "Iran": "war",
+        "Israel": "war",
+        "Syria": "war",
+        "Iraq": "attack",
+        "UAE": "peace",
+        "Qatar": "peace",
+        "Saudi Arabia": "peace",
+        "Jordan": "peace",
+        "Lebanon": "peace",
+        "Bahrain": "peace",
+        "Kuwait": "peace",
+        "Oman": "peace",
+        "Egypt": "peace",
+        "Turkey": "peace",
+        "Yemen": "peace"
+      }
+    ],
+    [
+      "2026-03-01",
+      {
+        "Iran": "war",
+        "Israel": "war",
+        "Syria": "war",
+        "Iraq": "attack",
+        "UAE": "attack",
+        "Qatar": "attack",
+        "Saudi Arabia": "attack",
+        "Jordan": "attack",
+        "Lebanon": "attack",
+        "Bahrain": "attack",
+        "Kuwait": "attack",
+        "Oman": "peace",
+        "Egypt": "peace",
+        "Turkey": "peace",
+        "Yemen": "peace"
+      }
+    ],
+    [
+      "2026-03-15",
+      {
+        "Oman": "attack"
+      }
+    ],
+    [
+      "2026-03-27",
+      {
+        "Yemen": "attack"
+      }
+    ]
+  ],
+  "named": [
+    {
+      "start": "2026-02-28",
+      "label": "Initial Strikes",
+      "desc": "Coalition strikes Iranian nuclear facilities; Khamenei killed",
+      "summary": "The United States and Israel launched coordinated strikes against Iran's nuclear program, air defenses, and military command structure. Supreme Leader Khamenei was killed in a bunker-buster strike within the first hours. Iran's air defense network was systematically dismantled, and CENTCOM declared air superiority over most of Iranian airspace by nightfall. The speed and scale of the opening salvo exceeded expectations, but Iran's retaliatory capacity remained largely intact."
+    },
+    {
+      "start": "2026-03-01",
+      "label": "Regional Escalation",
+      "desc": "Iran retaliates with missiles; Hormuz mined; Hezbollah enters war",
+      "summary": "Iran launched mass missile and drone salvos at US bases across the Gulf and at Israel. IRGCN forces mined the Strait of Hormuz, effectively shutting down 20% of global oil transit overnight. Hezbollah broke its ceasefire with a barrage of rockets into northern Israel, opening a second front. Oil prices surged past $100/bbl. The conflict expanded from a targeted strike into a multi-front regional war within 72 hours."
+    },
+    {
+      "start": "2026-03-06",
+      "label": "Strait Crisis",
+      "desc": "Hormuz contested; oil spikes; sustained exchange",
+      "summary": "The Strait of Hormuz became the conflict's center of gravity. Coalition minesweeping operations faced Iranian fast-boat harassment and shore-based missile threats. Two tankers struck mines. Oil spiked above $130/bbl as markets priced in a prolonged blockade. A sustained exchange of strikes continued across Iran, Lebanon, and the Gulf, with civilian casualties mounting on all sides. UAE airports briefly reopened for repatriation flights before closing again under renewed threat."
+    },
+    {
+      "start": "2026-03-11",
+      "label": "Diplomatic Window",
+      "desc": "Ceasefire talks in Muscat; Hormuz partially cleared; new Iranian leadership",
+      "summary": "Oman brokered backchannel ceasefire talks in Muscat, producing a fragile 48-hour reduction in hostilities. Coalition forces partially cleared the Hormuz shipping channel, and the first escorted convoy transited the strait. Iran's Assembly of Experts named Mojtaba Khamenei as successor, consolidating a new command structure. The diplomatic window proved brief—both sides used the pause to reposition forces, and hardliners on each side pushed to resume operations."
+    },
+    {
+      "start": "2026-03-15",
+      "label": "Widening War",
+      "desc": "War spreads to Kuwait, Oman, UAE; energy infrastructure struck",
+      "summary": "The conflict shattered its earlier geographic boundaries. Iranian missiles struck Kuwait, Oman, and deep into the UAE. Dubai International Airport was hit, and Abu Dhabi's Habshan gas complex sustained damage. Israel assassinated Ali Larijani and intelligence chief Khatib in rapid succession, provoking Iran to strike Gulf energy infrastructure directly—Ras Laffan LNG, Saudi refineries, Kuwait's Mina Al-Ahmadi, and South Pars became targets. Israel expanded the theater by striking Iranian naval vessels at a Caspian Sea port and launching overnight raids on Tehran and Beirut. On Mar 21, Iran fired two IRBMs at Diego Garcia—4,000 km away—revealing a previously unknown missile range capability. Neither hit. Iraq declared force majeure on all foreign-operated oilfields, crashing Basra production from 3.3M to 900K bpd. Coalition strikes hit Natanz nuclear facility on Mar 22 and again on Mar 23. ISW assessed Mojtaba Khamenei likely incapacitated. On Mar 23, Trump postponed power plant strikes for 5 days, naming Kushner and Witkoff as negotiators. Brent crashed 11% below $100. On Mar 24, Iranian ballistic missiles hit 4+ sites across Tel Aviv. Israel resumed heavy strikes on Beirut. The US sent Iran a formal 15-point peace plan via Pakistan. A projectile hit the premises of Bushehr Nuclear Power Plant. Israel announced a \"security zone\" occupation of southern Lebanon to the Litani River. The death toll exceeded 2,000 across the region, including nearly 350 children. On Mar 25, Iran's military publicly mocked the US peace plan. IRGC launched attacks on US bases in Kuwait, Jordan, and Bahrain. Oil crashed ~6% to $94.42 on peace plan hopes. On Mar 26, Israel killed IRGCN commander Alireza Tangsiri—architect of the Hormuz blockade. Trump extended the Hormuz deadline to April 6 \"per Iranian Government request.\" Iran allowed 8 ships through as a \"show of sincerity.\" Wall Street posted its worst day of the war. On Mar 27, IDF struck Arak Heavy Water Facility and Ardakan Yellowcake Plant—escalating to nuclear fuel cycle infrastructure. 12 US troops injured at Prince Sultan Air Base. US assessed 1/3 of Iran's missile stockpile destroyed, 330 of 470 launchers hit. Houthis fired their first missile from Yemen toward Israel, extending the conflict 2,000+ km south. Iran formalized a $2M toll system for Hormuz passage and threatened retaliation against Gulf industries with US shareholders. Rubio said the war would end in \"weeks not months.\" On Mar 28, the Washington Post reported the combined force had struck 4 key missile production facilities (Khojir, Shahroud, Parchin, Hakimiyeh) and 29 launch bases, with experts assessing \"severe damage\" had halted short- and medium-range missile production. SPND nuclear weapons research chief Ali Fuladvand was killed. Houthis conducted their second barrage toward Israel. Russia was revealed to be providing satellite imagery of coalition bases to Iran. A deepening rift emerged between President Pezeshkian and the IRGC over the war's economic costs. On Mar 29, Iranian missiles hit Beersheba chemical plant and Tel Aviv; Netanyahu expanded the Lebanon security zone with 1,200+ killed. US Rangers and SEALs arrived. Pakistan announced US-Iran peace talks \"in coming days\" while Trump simultaneously threatened infrastructure strikes if talks fail."
+    }
+  ]
+}

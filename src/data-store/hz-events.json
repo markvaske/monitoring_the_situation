@@ -1,0 +1,1791 @@
+[
+  {
+    "d": "2026-02-26",
+    "type": "patrol",
+    "desc": "All US ships leave Bahrain port as fleet evacuates to open water",
+    "lat": 26.2,
+    "lng": 50.6,
+    "count": 6
+  },
+  {
+    "d": "2026-02-28",
+    "type": "mine",
+    "desc": "IRGCN lays mines near Strait western approach",
+    "lat": 26.15,
+    "lng": 55.8,
+    "count": 12
+  },
+  {
+    "d": "2026-02-28",
+    "type": "mine",
+    "desc": "Mines detected near Larak Island channel",
+    "lat": 26.7,
+    "lng": 56.3,
+    "count": 8
+  },
+  {
+    "d": "2026-02-28",
+    "type": "patrol",
+    "desc": "USN 5th Fleet deploys minesweepers to Strait",
+    "lat": 26,
+    "lng": 56.1,
+    "count": 4
+  },
+  {
+    "d": "2026-02-28",
+    "type": "passage",
+    "desc": "Commercial shipping halted through Strait",
+    "lat": 26.2,
+    "lng": 56,
+    "count": 0
+  },
+  {
+    "d": "2026-02-28",
+    "type": "passage",
+    "desc": "Bab el-Mandeb crossings drop sharply — 14 transits",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 14,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-02-28",
+    "type": "houthi",
+    "desc": "Houthis declare Red Sea a war zone for US/Israeli-linked vessels",
+    "lat": 14.5,
+    "lng": 42.5,
+    "count": 0,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-01",
+    "type": "mine",
+    "desc": "Second wave of mines laid near Musandam",
+    "lat": 26.08,
+    "lng": 56.2,
+    "count": 15
+  },
+  {
+    "d": "2026-03-01",
+    "type": "patrol",
+    "desc": "Royal Navy HMS Montrose joins mine countermeasures",
+    "lat": 25.8,
+    "lng": 56.4,
+    "count": 2
+  },
+  {
+    "d": "2026-03-01",
+    "type": "passage",
+    "desc": "All tanker traffic diverted via Fujairah pipeline",
+    "lat": 25.2,
+    "lng": 56.4,
+    "count": 0
+  },
+  {
+    "d": "2026-03-01",
+    "type": "passage",
+    "desc": "Bab el-Mandeb traffic — 11 crossings amid Houthi threats",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 11,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-01",
+    "type": "houthi",
+    "desc": "Anti-ship ballistic missile fired at container ship south of Mocha",
+    "lat": 13.5,
+    "lng": 43.1,
+    "count": 1,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-01",
+    "type": "houthi",
+    "desc": "Drone swarm targets tanker near Bab el-Mandeb",
+    "lat": 12.8,
+    "lng": 43.4,
+    "count": 3,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-02",
+    "type": "cleared",
+    "desc": "USN MCM clears 4 mines from western channel",
+    "lat": 26.1,
+    "lng": 55.9,
+    "count": 4
+  },
+  {
+    "d": "2026-03-02",
+    "type": "patrol",
+    "desc": "French frigate Languedoc patrols eastern approach",
+    "lat": 25.9,
+    "lng": 57.2,
+    "count": 1
+  },
+  {
+    "d": "2026-03-02",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 9 crossings, major carriers suspended",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 9,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-02",
+    "type": "houthi",
+    "desc": "Houthi missile near-miss on bulk carrier off Hodeidah",
+    "lat": 14.9,
+    "lng": 42.8,
+    "count": 1,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-02",
+    "type": "patrol",
+    "desc": "USS Eisenhower CSG intercepts 2 drones over Red Sea",
+    "lat": 16,
+    "lng": 41.5,
+    "count": 2,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-03",
+    "type": "mine",
+    "desc": "Additional mines found drifting near Qeshm",
+    "lat": 26.75,
+    "lng": 55.8,
+    "count": 6
+  },
+  {
+    "d": "2026-03-03",
+    "type": "cleared",
+    "desc": "Coalition clears mines from outbound lane",
+    "lat": 26.2,
+    "lng": 56.3,
+    "count": 7
+  },
+  {
+    "d": "2026-03-03",
+    "type": "patrol",
+    "desc": "Combined Task Force 152 sweeps intensify",
+    "lat": 26,
+    "lng": 55.7,
+    "count": 6
+  },
+  {
+    "d": "2026-03-03",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 7 crossings as Cape rerouting accelerates",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 7,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-03",
+    "type": "houthi",
+    "desc": "Two drones hit commercial tanker — crew evacuated",
+    "lat": 13.2,
+    "lng": 43.3,
+    "count": 2,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-03",
+    "type": "patrol",
+    "desc": "EUNAVFOR Aspides deploys to southern Red Sea",
+    "lat": 14,
+    "lng": 42,
+    "count": 3,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-04",
+    "type": "cleared",
+    "desc": "Eastern approach partially cleared",
+    "lat": 26,
+    "lng": 56.8,
+    "count": 5
+  },
+  {
+    "d": "2026-03-04",
+    "type": "passage",
+    "desc": "First escorted tanker convoy transits Strait",
+    "lat": 26.15,
+    "lng": 56.2,
+    "count": 3
+  },
+  {
+    "d": "2026-03-04",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 6 crossings, Saudi Yanbu pivot begins",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 6,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-04",
+    "type": "patrol",
+    "desc": "USN establishes minesweeping corridor",
+    "lat": 26.1,
+    "lng": 56,
+    "count": 8
+  },
+  {
+    "d": "2026-03-04",
+    "type": "houthi",
+    "desc": "Houthi ASBM targets destroyer — intercepted by SM-2",
+    "lat": 15.5,
+    "lng": 42,
+    "count": 1,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-04",
+    "type": "houthi",
+    "desc": "Uncrewed surface vessel detected near Bab el-Mandeb",
+    "lat": 12.6,
+    "lng": 43.2,
+    "count": 1,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-05",
+    "type": "cleared",
+    "desc": "Western approach declared partially navigable",
+    "lat": 26.15,
+    "lng": 55.7,
+    "count": 6
+  },
+  {
+    "d": "2026-03-05",
+    "type": "passage",
+    "desc": "Limited escorted convoys resume — 5 tankers transit",
+    "lat": 26.2,
+    "lng": 56.1,
+    "count": 5
+  },
+  {
+    "d": "2026-03-05",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 8 crossings, VLCCs heading to Yanbu",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 8,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-05",
+    "type": "houthi",
+    "desc": "Missile barrage targets three vessels in Bab el-Mandeb",
+    "lat": 12.7,
+    "lng": 43.3,
+    "count": 4,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-05",
+    "type": "patrol",
+    "desc": "Coalition air patrols over central Red Sea intensify",
+    "lat": 18,
+    "lng": 40,
+    "count": 6,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-06",
+    "type": "mine",
+    "desc": "New mines discovered along inbound lane",
+    "lat": 26.25,
+    "lng": 55.5,
+    "count": 4
+  },
+  {
+    "d": "2026-03-06",
+    "type": "passage",
+    "desc": "Convoy operations continue under escort",
+    "lat": 26.15,
+    "lng": 56,
+    "count": 4
+  },
+  {
+    "d": "2026-03-06",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 10 crossings, Saudi crude tankers dominate",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 10,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-06",
+    "type": "patrol",
+    "desc": "Multinational force expands sweep zone",
+    "lat": 25.8,
+    "lng": 56,
+    "count": 10
+  },
+  {
+    "d": "2026-03-06",
+    "type": "houthi",
+    "desc": "Suicide drone boat detonates near tanker off Mocha",
+    "lat": 13.4,
+    "lng": 43.2,
+    "count": 1,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-07",
+    "type": "cleared",
+    "desc": "Coalition clears newly laid mines from inbound lane",
+    "lat": 26.25,
+    "lng": 55.5,
+    "count": 4
+  },
+  {
+    "d": "2026-03-07",
+    "type": "passage",
+    "desc": "8 tankers transit in two convoy groups",
+    "lat": 26.18,
+    "lng": 56.1,
+    "count": 8
+  },
+  {
+    "d": "2026-03-07",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 12 crossings, Saudi Red Sea export at record",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 12,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-07",
+    "type": "houthi",
+    "desc": "Two ASBMs launched at Red Sea — both intercepted",
+    "lat": 15,
+    "lng": 42.5,
+    "count": 2,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-07",
+    "type": "patrol",
+    "desc": "Djibouti-based P-8 maritime patrol flights doubled",
+    "lat": 11.5,
+    "lng": 43,
+    "count": 4,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-08",
+    "type": "mine",
+    "desc": "IRGCN speedboats spotted laying mines at night",
+    "lat": 26.5,
+    "lng": 55.6,
+    "count": 7
+  },
+  {
+    "d": "2026-03-08",
+    "type": "patrol",
+    "desc": "USN helicopter patrols detect mine-laying activity",
+    "lat": 26.4,
+    "lng": 55.7,
+    "count": 5
+  },
+  {
+    "d": "2026-03-08",
+    "type": "passage",
+    "desc": "Convoy paused pending new mine clearance",
+    "lat": 26.1,
+    "lng": 56,
+    "count": 0
+  },
+  {
+    "d": "2026-03-08",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 15 crossings, 27 VLCCs en route to Yanbu",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 15,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-08",
+    "type": "houthi",
+    "desc": "Houthi drone swarm — 5 drones attack container ship",
+    "lat": 14.2,
+    "lng": 42.8,
+    "count": 5,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-08",
+    "type": "houthi",
+    "desc": "Mine-like object reported near Hanish Islands",
+    "lat": 13.7,
+    "lng": 42.9,
+    "count": 1,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-09",
+    "type": "cleared",
+    "desc": "MH-53E helicopters clear contact mines",
+    "lat": 26.5,
+    "lng": 55.6,
+    "count": 7
+  },
+  {
+    "d": "2026-03-09",
+    "type": "passage",
+    "desc": "Convoys resume after 24hr pause",
+    "lat": 26.15,
+    "lng": 56.1,
+    "count": 6
+  },
+  {
+    "d": "2026-03-09",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 18 crossings, Saudi export pivot in full effect",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 18,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-09",
+    "type": "houthi",
+    "desc": "Lull in Houthi attacks — back-channel talks reported",
+    "lat": 14.8,
+    "lng": 42.9,
+    "count": 0,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-10",
+    "type": "passage",
+    "desc": "12 tankers transit — highest since conflict began",
+    "lat": 26.2,
+    "lng": 56,
+    "count": 12
+  },
+  {
+    "d": "2026-03-10",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 16 crossings, below 21/day average",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 16,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-10",
+    "type": "patrol",
+    "desc": "CTF-152 declares outbound lane 90% cleared",
+    "lat": 26.2,
+    "lng": 56.5,
+    "count": 12
+  },
+  {
+    "d": "2026-03-10",
+    "type": "houthi",
+    "desc": "Houthi resumes attacks — ASBM hits Greek-owned tanker",
+    "lat": 15.3,
+    "lng": 42.2,
+    "count": 1,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-10",
+    "type": "patrol",
+    "desc": "Combined Maritime Force escorts Red Sea convoy",
+    "lat": 16.5,
+    "lng": 41,
+    "count": 5,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-11",
+    "type": "mine",
+    "desc": "Drifting mines found near Hormuz Island",
+    "lat": 26.9,
+    "lng": 56.4,
+    "count": 3
+  },
+  {
+    "d": "2026-03-11",
+    "type": "passage",
+    "desc": "10 vessel convoy transits safely",
+    "lat": 26.18,
+    "lng": 56,
+    "count": 10
+  },
+  {
+    "d": "2026-03-11",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 19 crossings, Yanbu at max berth capacity",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 19,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-11",
+    "type": "houthi",
+    "desc": "Two missiles target Suez-bound vessel — one hit, minor damage",
+    "lat": 14,
+    "lng": 42.6,
+    "count": 2,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-12",
+    "type": "cleared",
+    "desc": "Hormuz Island mines neutralized",
+    "lat": 26.9,
+    "lng": 56.4,
+    "count": 3
+  },
+  {
+    "d": "2026-03-12",
+    "type": "passage",
+    "desc": "Escorted convoys now routine — 9 transits",
+    "lat": 26.15,
+    "lng": 56.1,
+    "count": 9
+  },
+  {
+    "d": "2026-03-12",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 14 crossings, Suez volume down 32%",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 14,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-12",
+    "type": "patrol",
+    "desc": "Mine countermeasure ops continue 24/7",
+    "lat": 26,
+    "lng": 56.2,
+    "count": 14
+  },
+  {
+    "d": "2026-03-12",
+    "type": "houthi",
+    "desc": "Major Houthi attack: 8 drones + 2 missiles at convoy",
+    "lat": 13.5,
+    "lng": 43,
+    "count": 10,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-12",
+    "type": "patrol",
+    "desc": "USS Bataan ARG provides Red Sea air defense",
+    "lat": 14.5,
+    "lng": 42.5,
+    "count": 8,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-13",
+    "type": "passage",
+    "desc": "11 tankers transit in three convoy windows",
+    "lat": 26.2,
+    "lng": 56,
+    "count": 11
+  },
+  {
+    "d": "2026-03-13",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 17 crossings, Saudi crude tankers + container ships",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 17,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-13",
+    "type": "patrol",
+    "desc": "No new mines detected — sweeps continue",
+    "lat": 26.1,
+    "lng": 55.8,
+    "count": 12
+  },
+  {
+    "d": "2026-03-13",
+    "type": "houthi",
+    "desc": "Houthi fires at two vessels — both miss wide",
+    "lat": 13.8,
+    "lng": 43.1,
+    "count": 2,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-14",
+    "type": "passage",
+    "desc": "Steady convoy ops — 10 transits today",
+    "lat": 26.18,
+    "lng": 56.1,
+    "count": 10
+  },
+  {
+    "d": "2026-03-14",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 16 crossings, below pre-war ~35/day normal",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 16,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-14",
+    "type": "patrol",
+    "desc": "Coalition maintains 24/7 minesweeping posture",
+    "lat": 26,
+    "lng": 56,
+    "count": 14
+  },
+  {
+    "d": "2026-03-14",
+    "type": "mine",
+    "desc": "2 drifting mines detected south of Qeshm",
+    "lat": 26.6,
+    "lng": 55.75,
+    "count": 2
+  },
+  {
+    "d": "2026-03-14",
+    "type": "houthi",
+    "desc": "Houthi claims responsibility for tanker fire off Hodeidah",
+    "lat": 14.6,
+    "lng": 42.7,
+    "count": 1,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-14",
+    "type": "patrol",
+    "desc": "EUNAVFOR Aspides intercepts drone near Bab el-Mandeb",
+    "lat": 12.8,
+    "lng": 43.2,
+    "count": 1,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-15",
+    "type": "patrol",
+    "desc": "IRGC declares full control of Strait — \"any transit will be targeted\"",
+    "lat": 26.5,
+    "lng": 56.3,
+    "count": 0
+  },
+  {
+    "d": "2026-03-15",
+    "type": "passage",
+    "desc": "Near-zero commercial transit; de facto blockade continues",
+    "lat": 26.2,
+    "lng": 56,
+    "count": 0
+  },
+  {
+    "d": "2026-03-15",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — minimal crossings amid expanded IRGC warnings",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 3,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-15",
+    "type": "mine",
+    "desc": "Drifting mines reported south of Qeshm — sweeps ongoing",
+    "lat": 26.55,
+    "lng": 55.8,
+    "count": 3
+  },
+  {
+    "d": "2026-03-15",
+    "type": "patrol",
+    "desc": "Trump calls for multinational naval coalition to secure strait",
+    "lat": 25.5,
+    "lng": 56.5,
+    "count": 0
+  },
+  {
+    "d": "2026-03-15",
+    "type": "patrol",
+    "desc": "UK exploring options to help reopen Strait of Hormuz",
+    "lat": 25.8,
+    "lng": 56.8,
+    "count": 0
+  },
+  {
+    "d": "2026-03-16",
+    "type": "passage",
+    "desc": "Pakistan-flagged tanker Karachi transits strait with AIS — first non-Iranian transit",
+    "lat": 26.2,
+    "lng": 56,
+    "count": 1
+  },
+  {
+    "d": "2026-03-16",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — minimal crossings; Houthis holding fire",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 3,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-16",
+    "type": "patrol",
+    "desc": "Iran FM: Strait closed only to US, Israel and their allies",
+    "lat": 26.5,
+    "lng": 56.3,
+    "count": 0
+  },
+  {
+    "d": "2026-03-16",
+    "type": "patrol",
+    "desc": "EU discusses expanding Operation Aspides to Persian Gulf",
+    "lat": 25.5,
+    "lng": 56.5,
+    "count": 0
+  },
+  {
+    "d": "2026-03-16",
+    "type": "mine",
+    "desc": "Mine-sweeping operations continue south of Qeshm",
+    "lat": 26.55,
+    "lng": 55.8,
+    "count": 1
+  },
+  {
+    "d": "2026-03-16",
+    "type": "patrol",
+    "desc": "CENTCOM: Kharg Island strike destroyed mine/missile bunkers",
+    "lat": 25.3,
+    "lng": 50.3,
+    "count": 0
+  },
+  {
+    "d": "2026-03-16",
+    "type": "passage",
+    "desc": "India: 2 LPG tankers transit Hormuz after freeing seized Iranian ships",
+    "lat": 26.3,
+    "lng": 56.2,
+    "count": 2
+  },
+  {
+    "d": "2026-03-16",
+    "type": "passage",
+    "desc": "Iran still exporting ~1M bpd from Kharg Island; 6 VLCCs with AIS off",
+    "lat": 29.2,
+    "lng": 50.3,
+    "count": 3
+  },
+  {
+    "d": "2026-03-17",
+    "type": "patrol",
+    "desc": "Tanker struck by projectile 23nm east of Fujairah — first in 5 days",
+    "lat": 25.2,
+    "lng": 56.7,
+    "count": 1
+  },
+  {
+    "d": "2026-03-17",
+    "type": "patrol",
+    "desc": "Fujairah Oil Industry Zone hit by drone — fire reported, no casualties",
+    "lat": 25.15,
+    "lng": 56.35,
+    "count": 1
+  },
+  {
+    "d": "2026-03-17",
+    "type": "passage",
+    "desc": "Tankers \"dribble\" through Hormuz via Iran-controlled Larak-Qeshm gap — Pakistan, India, Turkey ships transit",
+    "lat": 26.5,
+    "lng": 56.3,
+    "count": 5
+  },
+  {
+    "d": "2026-03-17",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — minimal crossings; Houthis holding fire",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 2,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-17",
+    "type": "patrol",
+    "desc": "Macron begins talks with India, Arab states on independent Hormuz escort",
+    "lat": 25.5,
+    "lng": 56.5,
+    "count": 0
+  },
+  {
+    "d": "2026-03-17",
+    "type": "patrol",
+    "desc": "Trump: NATO allies refuse Hormuz role — \"I'm disappointed\"",
+    "lat": 26.5,
+    "lng": 56.3,
+    "count": 0
+  },
+  {
+    "d": "2026-03-17",
+    "type": "patrol",
+    "desc": "UAE signals willingness to join US-led Hormuz coalition — first Gulf state",
+    "lat": 24.5,
+    "lng": 54.6,
+    "count": 0
+  },
+  {
+    "d": "2026-03-17",
+    "type": "patrol",
+    "desc": "Iraq formally requests Iran for oil tanker safe passage through Hormuz",
+    "lat": 29.5,
+    "lng": 48,
+    "count": 0
+  },
+  {
+    "d": "2026-03-17",
+    "type": "patrol",
+    "desc": "USS Gerald Ford heading to Souda Bay, Crete for fire repairs — at least one week",
+    "lat": 35.5,
+    "lng": 24.1,
+    "count": 0
+  },
+  {
+    "d": "2026-03-18",
+    "type": "mine",
+    "desc": "US drops GBU-72 5,000-lb bunker-buster bombs on Iranian anti-ship missile sites along Hormuz coast",
+    "lat": 26.6,
+    "lng": 56.2,
+    "count": 3
+  },
+  {
+    "d": "2026-03-18",
+    "type": "patrol",
+    "desc": "IRGC threatens imminent strikes on Saudi, UAE, Qatar energy facilities",
+    "lat": 25.5,
+    "lng": 52,
+    "count": 0
+  },
+  {
+    "d": "2026-03-18",
+    "type": "patrol",
+    "desc": "US-Israeli strikes hit South Pars gas field and Asaluyeh refineries — shared with Qatar",
+    "lat": 27.5,
+    "lng": 52.5,
+    "count": 2
+  },
+  {
+    "d": "2026-03-18",
+    "type": "passage",
+    "desc": "~90 ships crossed Hormuz since war began — 16 oil tankers; mostly Iran-linked, some India/Pakistan/Turkey",
+    "lat": 26.5,
+    "lng": 56.3,
+    "count": 4
+  },
+  {
+    "d": "2026-03-18",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — minimal crossings continue; Houthis holding fire",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 2,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-18",
+    "type": "patrol",
+    "desc": "Iraq resumes pipeline oil exports to Turkey's Ceyhan port after Baghdad-KRG deal",
+    "lat": 36.7,
+    "lng": 36.1,
+    "count": 0
+  },
+  {
+    "d": "2026-03-18",
+    "type": "patrol",
+    "desc": "Iran projectile lands near UAE base hosting Australian troops",
+    "lat": 24.2,
+    "lng": 54.8,
+    "count": 1
+  },
+  {
+    "d": "2026-03-18",
+    "type": "patrol",
+    "desc": "Renewed drone/rocket attacks on US Embassy Baghdad — rockets intercepted",
+    "lat": 33.3,
+    "lng": 44.4,
+    "count": 2
+  },
+  {
+    "d": "2026-03-18",
+    "type": "mine",
+    "desc": "Iranian missiles cause extensive damage to Qatar's Ras Laffan LNG hub — world's largest",
+    "lat": 25.9,
+    "lng": 51.6,
+    "count": 3
+  },
+  {
+    "d": "2026-03-18",
+    "type": "patrol",
+    "desc": "Saudi Arabia intercepts 4 ballistic missiles headed toward Riyadh; Aramco evacuates Samref",
+    "lat": 24.7,
+    "lng": 46.7,
+    "count": 4
+  },
+  {
+    "d": "2026-03-18",
+    "type": "mine",
+    "desc": "Vessel struck by \"unknown projectile\" 11nm east of Khor Fakkan — fire onboard (UKMTO)",
+    "lat": 25.35,
+    "lng": 56.45,
+    "count": 1
+  },
+  {
+    "d": "2026-03-18",
+    "type": "patrol",
+    "desc": "UAE: Habshan gas facilities and Bab oil field hit by interception debris — operations suspended",
+    "lat": 23.8,
+    "lng": 53.8,
+    "count": 2
+  },
+  {
+    "d": "2026-03-18",
+    "type": "mine",
+    "desc": "Second Iranian missile strike on Ras Laffan — \"sizeable fires and extensive further damage\" (early Thu)",
+    "lat": 25.95,
+    "lng": 51.55,
+    "count": 3
+  },
+  {
+    "d": "2026-03-19",
+    "type": "mine",
+    "desc": "Iranian missiles hit Kuwait Mina Al-Ahmadi and Mina Abdullah refineries — first strikes on Kuwait",
+    "lat": 29,
+    "lng": 48.15,
+    "count": 3
+  },
+  {
+    "d": "2026-03-19",
+    "type": "mine",
+    "desc": "Follow-up strikes on UAE Habshan gas complex — ADNOC suspends all operations",
+    "lat": 23.8,
+    "lng": 53.8,
+    "count": 2
+  },
+  {
+    "d": "2026-03-19",
+    "type": "mine",
+    "desc": "Iranian missiles hit Saudi Yanbu refinery complex on Red Sea coast",
+    "lat": 24.1,
+    "lng": 38,
+    "count": 2
+  },
+  {
+    "d": "2026-03-19",
+    "type": "mine",
+    "desc": "Vessel struck near Ras Laffan LNG terminal — taking on water",
+    "lat": 25.85,
+    "lng": 51.55,
+    "count": 1
+  },
+  {
+    "d": "2026-03-19",
+    "type": "mine",
+    "desc": "Vessel struck 15nm off Khor Fakkan — fire and damage",
+    "lat": 25.35,
+    "lng": 56.5,
+    "count": 1
+  },
+  {
+    "d": "2026-03-19",
+    "type": "passage",
+    "desc": "Hormuz transits further reduced — 3 non-Iranian vessels detected, mostly Chinese-flagged",
+    "lat": 26.5,
+    "lng": 56.3,
+    "count": 3
+  },
+  {
+    "d": "2026-03-19",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — Houthi activity low; 2 crossings detected",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 2,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-19",
+    "type": "patrol",
+    "desc": "UKMTO emergency advisory: all commercial shipping avoid central Gulf until further notice",
+    "lat": 26,
+    "lng": 53,
+    "count": 0
+  },
+  {
+    "d": "2026-03-19",
+    "type": "mine",
+    "desc": "UKMTO: vessel hit by unknown projectile 4nm east of Ras Laffan — threat zone expanding to LNG terminals",
+    "lat": 25.9,
+    "lng": 51.6,
+    "count": 1
+  },
+  {
+    "d": "2026-03-19",
+    "type": "patrol",
+    "desc": "UK/France/Germany/Italy/Netherlands/Japan: ready to contribute to Hormuz safe passage efforts",
+    "lat": 26.5,
+    "lng": 56.3,
+    "count": 0
+  },
+  {
+    "d": "2026-03-19",
+    "type": "patrol",
+    "desc": "IDF confirms strikes on Iranian naval vessels at Caspian Sea military port",
+    "lat": 37.5,
+    "lng": 49.5,
+    "count": 0
+  },
+  {
+    "d": "2026-03-20",
+    "type": "mine",
+    "desc": "IDF destroys 16+ IRGCN fast-attack boats at Bandar Lengeh — key Hormuz staging point ablaze",
+    "lat": 26.53,
+    "lng": 54.88,
+    "count": 16
+  },
+  {
+    "d": "2026-03-20",
+    "type": "mine",
+    "desc": "Two drone waves hit Kuwait Mina Al-Ahmadi refinery again — fires reignited",
+    "lat": 29,
+    "lng": 48.15,
+    "count": 4
+  },
+  {
+    "d": "2026-03-20",
+    "type": "mine",
+    "desc": "Dubai area air defense intercepts — explosions over Al Minhad",
+    "lat": 25.03,
+    "lng": 55.37,
+    "count": 2
+  },
+  {
+    "d": "2026-03-20",
+    "type": "passage",
+    "desc": "Iran vetting system allows ~9 ships through Hormuz safe corridor — up from 3",
+    "lat": 26.5,
+    "lng": 56.3,
+    "count": 9
+  },
+  {
+    "d": "2026-03-20",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 3 transits detected, Houthi activity minimal",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 3,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-20",
+    "type": "patrol",
+    "desc": "Macron begins UNSC consultations on multilateral Hormuz navigation framework",
+    "lat": 26.5,
+    "lng": 56.3,
+    "count": 0
+  },
+  {
+    "d": "2026-03-20",
+    "type": "patrol",
+    "desc": "Saudi intercepts 10 drones from east + 1 from north — debris hits Bahrain warehouse",
+    "lat": 26.2,
+    "lng": 50.5,
+    "count": 11
+  },
+  {
+    "d": "2026-03-20",
+    "type": "mine",
+    "desc": "IDF strikes Bandar Anzali on Caspian Sea — IRIS Deylaman frigate and dozens of vessels destroyed",
+    "lat": 37.47,
+    "lng": 49.46,
+    "count": 20
+  },
+  {
+    "d": "2026-03-20",
+    "type": "patrol",
+    "desc": "USS Boxer ARG with 11th MEU deploying from California; USS Tripoli arriving from Japan",
+    "lat": 25,
+    "lng": 58,
+    "count": 0
+  },
+  {
+    "d": "2026-03-20",
+    "type": "mine",
+    "desc": "Hezbollah long-range missile hits Ashkelon area — 200km range marks new escalation",
+    "lat": 31.67,
+    "lng": 34.57,
+    "count": 1
+  },
+  {
+    "d": "2026-03-21",
+    "type": "mine",
+    "desc": "Iran fires 2 IRBMs at Diego Garcia — 4,000km range shock; neither missile hits",
+    "lat": -7.3,
+    "lng": 72.4,
+    "count": 2
+  },
+  {
+    "d": "2026-03-21",
+    "type": "mine",
+    "desc": "IDF overnight strikes hit regime targets in Tehran and Hezbollah targets in Beirut",
+    "lat": 35.7,
+    "lng": 51.4,
+    "count": 5
+  },
+  {
+    "d": "2026-03-21",
+    "type": "mine",
+    "desc": "Saudi intercepts 22+ drones targeting eastern oil infrastructure overnight",
+    "lat": 26.2,
+    "lng": 50.5,
+    "count": 22
+  },
+  {
+    "d": "2026-03-21",
+    "type": "mine",
+    "desc": "Kuwait air defense engages incoming threats targeting Al-Ahmadi area",
+    "lat": 29,
+    "lng": 48.15,
+    "count": 3
+  },
+  {
+    "d": "2026-03-21",
+    "type": "passage",
+    "desc": "Hormuz vetting expanded — ~10 ships through corridor, Japan offer widens access",
+    "lat": 26.5,
+    "lng": 56.3,
+    "count": 10
+  },
+  {
+    "d": "2026-03-21",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 3 transits detected, Houthi activity minimal",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 3,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-21",
+    "type": "patrol",
+    "desc": "UK approves US use of RAF Akrotiri and Indian Ocean bases for Hormuz operations",
+    "lat": 34.6,
+    "lng": 32.98,
+    "count": 0
+  },
+  {
+    "d": "2026-03-21",
+    "type": "patrol",
+    "desc": "Coalition mine clearance continues — no major incidents reported",
+    "lat": 26.5,
+    "lng": 56.3,
+    "count": 0
+  },
+  {
+    "d": "2026-03-22",
+    "type": "mine",
+    "desc": "Coalition strikes hit Natanz nuclear enrichment facility overnight — IAEA confirms no leaks",
+    "lat": 33.7,
+    "lng": 51.7,
+    "count": 8
+  },
+  {
+    "d": "2026-03-22",
+    "type": "mine",
+    "desc": "Saudi intercepts 47+ drones — 38 in concentrated barrage targeting Ras Tanura terminal",
+    "lat": 26.6,
+    "lng": 50.2,
+    "count": 47
+  },
+  {
+    "d": "2026-03-22",
+    "type": "mine",
+    "desc": "Drone strikes Iraqi intelligence HQ in Baghdad — 1 killed, 1 wounded",
+    "lat": 33.3,
+    "lng": 44.4,
+    "count": 1
+  },
+  {
+    "d": "2026-03-22",
+    "type": "mine",
+    "desc": "Hezbollah-IDF 4-hour ground battle at Khiam — heaviest infantry engagement of conflict",
+    "lat": 33.35,
+    "lng": 35.55,
+    "count": 0
+  },
+  {
+    "d": "2026-03-22",
+    "type": "passage",
+    "desc": "Hormuz — ~8 ships through vetting corridor; parliament debates transit fees",
+    "lat": 26.5,
+    "lng": 56.3,
+    "count": 8
+  },
+  {
+    "d": "2026-03-22",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 4 transits, Houthi activity low",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 4,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-22",
+    "type": "patrol",
+    "desc": "22-nation Hormuz safe passage statement signed — UAE first Arab Gulf state to join",
+    "lat": 26.5,
+    "lng": 56.3,
+    "count": 0
+  },
+  {
+    "d": "2026-03-22",
+    "type": "patrol",
+    "desc": "Panama Canal at max capacity (36-38 vessels/day) from LNG rerouting",
+    "lat": 9.1,
+    "lng": -79.7,
+    "count": 0
+  },
+  {
+    "d": "2026-03-23",
+    "type": "mine",
+    "desc": "Saudi intercepts ~60 drones + 3 BMs toward Riyadh — expels Iranian diplomats persona non grata",
+    "lat": 26.6,
+    "lng": 50.2,
+    "count": 60
+  },
+  {
+    "d": "2026-03-23",
+    "type": "mine",
+    "desc": "Iranian missiles hit Dimona and Arad — 160+ injured near Negev nuclear facility; IAEA confirms no damage",
+    "lat": 30.6,
+    "lng": 35,
+    "count": 8
+  },
+  {
+    "d": "2026-03-23",
+    "type": "mine",
+    "desc": "IDF destroys bridges over Litani River — Lebanon president calls it \"prelude to ground invasion\"",
+    "lat": 33.3,
+    "lng": 35.3,
+    "count": 0
+  },
+  {
+    "d": "2026-03-23",
+    "type": "mine",
+    "desc": "US bunker busters hit Natanz again (2nd strike in 48 hours) + coastal missile storage facility",
+    "lat": 33.7,
+    "lng": 51.7,
+    "count": 5
+  },
+  {
+    "d": "2026-03-23",
+    "type": "mine",
+    "desc": "Iraq: Islamic Resistance claims 21 attacks on US bases; 3 drones intercepted near Erbil airport",
+    "lat": 36.2,
+    "lng": 44,
+    "count": 3
+  },
+  {
+    "d": "2026-03-23",
+    "type": "mine",
+    "desc": "IDF kills IRGC Drone Commander BG Saeed Agha Jani — directed drone ops for Russia and proxies",
+    "lat": 35.7,
+    "lng": 51.4,
+    "count": 0
+  },
+  {
+    "d": "2026-03-23",
+    "type": "passage",
+    "desc": "Hormuz — ~7 ships through vetting corridor; IRGC threatens \"complete closure\" if power plants hit",
+    "lat": 26.5,
+    "lng": 56.3,
+    "count": 7
+  },
+  {
+    "d": "2026-03-23",
+    "type": "passage",
+    "desc": "Bab el-Mandeb — 3 transits; Houthis warn Bahrain/UAE they \"will be first to lose\"",
+    "lat": 12.6,
+    "lng": 43.3,
+    "count": 3,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-23",
+    "type": "patrol",
+    "desc": "2,500 additional Marines with amphibious capability dispatched — Kharg Island speculation",
+    "lat": 29.2,
+    "lng": 50.3,
+    "count": 0
+  },
+  {
+    "d": "2026-03-23",
+    "type": "patrol",
+    "desc": "5 Gulf nations + UK/France/Germany condemn Iran's \"de facto closure\" of Hormuz",
+    "lat": 26.5,
+    "lng": 56.3,
+    "count": 0
+  },
+  {
+    "d": "2026-03-23",
+    "type": "mine",
+    "desc": "IDF strikes IRGC main HQ compound in central Tehran + Hezbollah infrastructure in southern Beirut",
+    "lat": 35.69,
+    "lng": 51.39,
+    "count": 0
+  },
+  {
+    "d": "2026-03-23",
+    "type": "mine",
+    "desc": "3 massive explosions in Beirut southern suburbs — Hezbollah infrastructure hit",
+    "lat": 33.85,
+    "lng": 35.49,
+    "count": 0
+  },
+  {
+    "d": "2026-03-23",
+    "type": "patrol",
+    "desc": "UK deploying Rapid Sentry air defense to Bahrain, Kuwait, Saudi; HMS Dragon to eastern Med",
+    "lat": 26.2,
+    "lng": 50.6,
+    "count": 0
+  },
+  {
+    "d": "2026-03-23",
+    "type": "patrol",
+    "desc": "USS Ford arrives Souda Bay, Crete for repairs after laundry fire",
+    "lat": 35.49,
+    "lng": 24.09,
+    "count": 0
+  },
+  {
+    "d": "2026-03-23",
+    "type": "patrol",
+    "desc": "Pentagon weighing 82nd Airborne (3,000 paratroopers) — 2nd MEU departs California",
+    "lat": 29.2,
+    "lng": 50.3,
+    "count": 0
+  },
+  {
+    "d": "2026-03-24",
+    "type": "passage",
+    "desc": "Two tankers bound for India transit Hormuz",
+    "lat": 26.6,
+    "lng": 56.3,
+    "count": 2
+  },
+  {
+    "d": "2026-03-24",
+    "type": "patrol",
+    "desc": "HMS Dragon arrives eastern Mediterranean",
+    "lat": 34.5,
+    "lng": 33,
+    "count": 0
+  },
+  {
+    "d": "2026-03-24",
+    "type": "mine",
+    "desc": "Kuwait intercepts Iranian missiles twice — 7 power lines knocked out",
+    "lat": 29.3,
+    "lng": 47.8,
+    "count": 0
+  },
+  {
+    "d": "2026-03-24",
+    "type": "mine",
+    "desc": "Saudi intercepts 5 drones overnight; Bahrain sirens multiple times",
+    "lat": 26,
+    "lng": 50.5,
+    "count": 0
+  },
+  {
+    "d": "2026-03-24",
+    "type": "passage",
+    "desc": "Two tankers transit Red Sea southbound under escort",
+    "lat": 13.5,
+    "lng": 42.8,
+    "count": 2,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-24",
+    "type": "passage",
+    "desc": "Iran tells UN/IMO: \"non-hostile\" ships may transit Hormuz with coordination — 6 vessels openly transit",
+    "lat": 26.6,
+    "lng": 56.3,
+    "count": 6
+  },
+  {
+    "d": "2026-03-24",
+    "type": "mine",
+    "desc": "Iranian missiles hit Kurdish Peshmerga base near Erbil — 6 killed, 30 wounded",
+    "lat": 36.2,
+    "lng": 44,
+    "count": 6
+  },
+  {
+    "d": "2026-03-24",
+    "type": "mine",
+    "desc": "Iranian missile kills Moroccan contractor in Bahrain, wounds 5 Emirati service members",
+    "lat": 26.1,
+    "lng": 50.5,
+    "count": 1
+  },
+  {
+    "d": "2026-03-24",
+    "type": "mine",
+    "desc": "Projectile hits Bushehr Nuclear Power Plant premises — IAEA confirms no reactor damage",
+    "lat": 28.83,
+    "lng": 50.89,
+    "count": 1
+  },
+  {
+    "d": "2026-03-25",
+    "type": "passage",
+    "desc": "5 vessels transit Hormuz via Tehran-approved route past Larak Island",
+    "lat": 26.52,
+    "lng": 56.35,
+    "count": 5
+  },
+  {
+    "d": "2026-03-25",
+    "type": "passage",
+    "desc": "Red Sea escort convoy: 2 tankers northbound toward Suez under coalition guard",
+    "lat": 14.8,
+    "lng": 42.5,
+    "count": 2,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-25",
+    "type": "mine",
+    "desc": "US officials confirm ~dozen Maham 3/7 limpet mines laid by Iran in Strait of Hormuz",
+    "lat": 26.55,
+    "lng": 56.3,
+    "count": 12
+  },
+  {
+    "d": "2026-03-25",
+    "type": "patrol",
+    "desc": "82nd Airborne deployment: 1,000 paratroopers preparing to deploy to Middle East",
+    "lat": 29,
+    "lng": 48,
+    "count": 1
+  },
+  {
+    "d": "2026-03-25",
+    "type": "mine",
+    "desc": "Kuwait Airport fuel tank hit by drone — fire at site",
+    "lat": 29.23,
+    "lng": 47.97,
+    "count": 1
+  },
+  {
+    "d": "2026-03-25",
+    "type": "patrol",
+    "desc": "IRGC charging $2M transit fees at Larak Island checkpoint",
+    "lat": 26.86,
+    "lng": 56.35,
+    "count": 1
+  },
+  {
+    "d": "2026-03-25",
+    "type": "passage",
+    "desc": "Chinese state-owned feeder tanker pays $2M fee for Hormuz safe passage",
+    "lat": 26.6,
+    "lng": 56.4,
+    "count": 1
+  },
+  {
+    "d": "2026-03-26",
+    "type": "passage",
+    "desc": "8 vessels transit Hormuz free of charge as Iran \"show of sincerity\"",
+    "lat": 26.52,
+    "lng": 56.35,
+    "count": 8
+  },
+  {
+    "d": "2026-03-26",
+    "type": "passage",
+    "desc": "Red Sea escort convoy: 3 tankers southbound under coalition guard",
+    "lat": 14.5,
+    "lng": 42.3,
+    "count": 3,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-26",
+    "type": "patrol",
+    "desc": "IDF targeted strike kills IRGCN commander Tangsiri — Hormuz blockade architect",
+    "lat": 27.1,
+    "lng": 56.2,
+    "count": 1
+  },
+  {
+    "d": "2026-03-26",
+    "type": "mine",
+    "desc": "Intense evening bombardment of Tehran — residential areas and command facilities hit",
+    "lat": 35.69,
+    "lng": 51.39,
+    "count": 1
+  },
+  {
+    "d": "2026-03-27",
+    "type": "mine",
+    "desc": "Missile and drone attack on Prince Sultan Air Base — 12 US troops injured, KC-135s damaged",
+    "lat": 24.06,
+    "lng": 47.58,
+    "count": 12
+  },
+  {
+    "d": "2026-03-27",
+    "type": "passage",
+    "desc": "Hormuz toll system formalized — $2M per vessel; 3 ships warned not to pass",
+    "lat": 26.52,
+    "lng": 56.35,
+    "count": 4
+  },
+  {
+    "d": "2026-03-27",
+    "type": "passage",
+    "desc": "Red Sea escort convoy: 2 tankers northbound under coalition guard",
+    "lat": 15,
+    "lng": 42.5,
+    "count": 2,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-27",
+    "type": "mine",
+    "desc": "Houthi ballistic missile launched from Yemen toward Israel — intercepted",
+    "lat": 15.3,
+    "lng": 44.2,
+    "count": 1,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-27",
+    "type": "mine",
+    "desc": "Intercepted Iranian ballistic missile debris causes fires in Abu Dhabi",
+    "lat": 24.45,
+    "lng": 54.65,
+    "count": 1
+  },
+  {
+    "d": "2026-03-27",
+    "type": "mine",
+    "desc": "Strikes on Isfahan and Ahvaz steel plants — civilian industrial targets",
+    "lat": 32.65,
+    "lng": 51.68,
+    "count": 1
+  },
+  {
+    "d": "2026-03-28",
+    "type": "passage",
+    "desc": "Iran approves 20 Pakistani vessels for Hormuz — 2 per day via Larak route",
+    "lat": 26.52,
+    "lng": 56.35,
+    "count": 8
+  },
+  {
+    "d": "2026-03-28",
+    "type": "patrol",
+    "desc": "IRGCN fast attack craft patrolling Larak-Qeshm gap as \"toll collectors\"",
+    "lat": 26.6,
+    "lng": 56.2,
+    "count": 4
+  },
+  {
+    "d": "2026-03-28",
+    "type": "passage",
+    "desc": "Red Sea: 3 vessels escorted northbound under coalition guard",
+    "lat": 15,
+    "lng": 42.5,
+    "count": 3,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-28",
+    "type": "mine",
+    "desc": "USS Tripoli amphibious assault ship arrives in CENTCOM AOR",
+    "lat": 25,
+    "lng": 55,
+    "count": 1
+  },
+  {
+    "d": "2026-03-28",
+    "type": "mine",
+    "desc": "Houthi second barrage toward Israel — ballistic missiles, drones intercepted",
+    "lat": 15.3,
+    "lng": 44.2,
+    "count": 1,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-28",
+    "type": "mine",
+    "desc": "Bahrain intercepts 6 more drones — 391 total drones since Feb 28",
+    "lat": 26.07,
+    "lng": 50.55,
+    "count": 6
+  },
+  {
+    "d": "2026-03-29",
+    "type": "passage",
+    "desc": "20+ vessels cross Hormuz since Mar 28; 50+ containerships stranded west of strait",
+    "lat": 26.52,
+    "lng": 56.35,
+    "count": 12
+  },
+  {
+    "d": "2026-03-29",
+    "type": "patrol",
+    "desc": "MARAD advisory: AIS used for targeting in Red Sea",
+    "lat": 13.5,
+    "lng": 43,
+    "count": 1,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-29",
+    "type": "mine",
+    "desc": "10 Kuwaiti military personnel injured in Iranian attack",
+    "lat": 29.3,
+    "lng": 47.9,
+    "count": 10
+  },
+  {
+    "d": "2026-03-29",
+    "type": "mine",
+    "desc": "Kuwait desalination plant attacked — Indian worker killed",
+    "lat": 29.2,
+    "lng": 48,
+    "count": 1
+  },
+  {
+    "d": "2026-03-29",
+    "type": "mine",
+    "desc": "COSCO ULCCs initially denied then completed Hormuz crossing",
+    "lat": 26.5,
+    "lng": 56.3,
+    "count": 2
+  },
+  {
+    "d": "2026-03-30",
+    "type": "passage",
+    "desc": "8 vessels transit Hormuz — small increase but still under 10% of pre-war average; two Chinese-flagged tankers complete crossings",
+    "lat": 26.52,
+    "lng": 56.35,
+    "count": 8
+  },
+  {
+    "d": "2026-03-30",
+    "type": "patrol",
+    "desc": "Hegseth says Hormuz \"not blockaded\" — CENTCOM data shows 48 vessels in 7 days vs 138/day historical average",
+    "lat": 26.1,
+    "lng": 56,
+    "count": 3
+  },
+  {
+    "d": "2026-03-30",
+    "type": "passage",
+    "desc": "Red Sea escort convoy: 2 vessels northbound under EUNAVFOR Aspides guard",
+    "lat": 15,
+    "lng": 42.5,
+    "count": 2,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-03-31",
+    "type": "mine",
+    "desc": "Kuwaiti VLCC Al Salmi struck by Iranian drone at Port of Dubai — fire breaks out; first attack on UAE port facility",
+    "lat": 25.27,
+    "lng": 55.3,
+    "count": 1
+  },
+  {
+    "d": "2026-03-31",
+    "type": "passage",
+    "desc": "8 vessels transit Hormuz — majority Iranian-linked; non-Iranian traffic remains under 10% of pre-war average",
+    "lat": 26.52,
+    "lng": 56.35,
+    "count": 8
+  },
+  {
+    "d": "2026-03-31",
+    "type": "patrol",
+    "desc": "IRGCN fast attack craft enforce IRGC toll system; vessels required to submit cargo manifests for clearance",
+    "lat": 26.6,
+    "lng": 56.2,
+    "count": 4
+  },
+  {
+    "d": "2026-03-31",
+    "type": "passage",
+    "desc": "Red Sea: 2 vessels northbound under EUNAVFOR Aspides escort",
+    "lat": 15,
+    "lng": 42.5,
+    "count": 2,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-04-01",
+    "type": "passage",
+    "desc": "7 vessels transit Hormuz — IRGC declares strait 'fully under our control'; 201 total crossings in March, down 95% from peacetime",
+    "lat": 26.52,
+    "lng": 56.35,
+    "count": 7
+  },
+  {
+    "d": "2026-04-01",
+    "type": "patrol",
+    "desc": "IRGCN maintains toll-booth operations; cargo manifest verification required for non-Iranian vessels",
+    "lat": 26.6,
+    "lng": 56.2,
+    "count": 5
+  },
+  {
+    "d": "2026-04-01",
+    "type": "houthi",
+    "desc": "Houthi missile and drone barrage toward Red Sea coalition vessels — 3rd large attack this week",
+    "lat": 14.5,
+    "lng": 42.5,
+    "count": 3,
+    "region": "redsea"
+  },
+  {
+    "d": "2026-04-01",
+    "type": "passage",
+    "desc": "Red Sea: 1 vessel northbound under coalition escort — traffic remains near historic lows",
+    "lat": 15,
+    "lng": 42.5,
+    "count": 1,
+    "region": "redsea"
+  }
+]

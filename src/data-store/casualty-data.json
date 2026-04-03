@@ -1,0 +1,464 @@
+{
+  "2026-02-28": {
+    "coalition": {
+      "deaths": 4,
+      "injuries": 12
+    },
+    "axis": {
+      "deaths": 42,
+      "injuries": 63
+    },
+    "civilian": {
+      "deaths": 14,
+      "injuries": 25
+    }
+  },
+  "2026-03-01": {
+    "coalition": {
+      "deaths": 8,
+      "injuries": 28
+    },
+    "axis": {
+      "deaths": 110,
+      "injuries": 165
+    },
+    "civilian": {
+      "deaths": 38,
+      "injuries": 70
+    }
+  },
+  "2026-03-02": {
+    "coalition": {
+      "deaths": 12,
+      "injuries": 42
+    },
+    "axis": {
+      "deaths": 185,
+      "injuries": 278
+    },
+    "civilian": {
+      "deaths": 72,
+      "injuries": 131
+    }
+  },
+  "2026-03-03": {
+    "coalition": {
+      "deaths": 15,
+      "injuries": 52
+    },
+    "axis": {
+      "deaths": 248,
+      "injuries": 372
+    },
+    "civilian": {
+      "deaths": 105,
+      "injuries": 191
+    }
+  },
+  "2026-03-04": {
+    "coalition": {
+      "deaths": 19,
+      "injuries": 64
+    },
+    "axis": {
+      "deaths": 320,
+      "injuries": 480
+    },
+    "civilian": {
+      "deaths": 150,
+      "injuries": 273
+    }
+  },
+  "2026-03-05": {
+    "coalition": {
+      "deaths": 22,
+      "injuries": 74
+    },
+    "axis": {
+      "deaths": 380,
+      "injuries": 570
+    },
+    "civilian": {
+      "deaths": 190,
+      "injuries": 346
+    }
+  },
+  "2026-03-06": {
+    "coalition": {
+      "deaths": 24,
+      "injuries": 82
+    },
+    "axis": {
+      "deaths": 428,
+      "injuries": 642
+    },
+    "civilian": {
+      "deaths": 225,
+      "injuries": 410
+    }
+  },
+  "2026-03-07": {
+    "coalition": {
+      "deaths": 28,
+      "injuries": 96
+    },
+    "axis": {
+      "deaths": 502,
+      "injuries": 753
+    },
+    "civilian": {
+      "deaths": 268,
+      "injuries": 488
+    }
+  },
+  "2026-03-08": {
+    "coalition": {
+      "deaths": 31,
+      "injuries": 106
+    },
+    "axis": {
+      "deaths": 558,
+      "injuries": 837
+    },
+    "civilian": {
+      "deaths": 305,
+      "injuries": 556
+    }
+  },
+  "2026-03-09": {
+    "coalition": {
+      "deaths": 33,
+      "injuries": 114
+    },
+    "axis": {
+      "deaths": 610,
+      "injuries": 915
+    },
+    "civilian": {
+      "deaths": 340,
+      "injuries": 619
+    }
+  },
+  "2026-03-10": {
+    "coalition": {
+      "deaths": 35,
+      "injuries": 122
+    },
+    "axis": {
+      "deaths": 660,
+      "injuries": 990
+    },
+    "civilian": {
+      "deaths": 378,
+      "injuries": 688
+    }
+  },
+  "2026-03-11": {
+    "coalition": {
+      "deaths": 38,
+      "injuries": 136
+    },
+    "axis": {
+      "deaths": 740,
+      "injuries": 1110
+    },
+    "civilian": {
+      "deaths": 430,
+      "injuries": 783
+    }
+  },
+  "2026-03-12": {
+    "coalition": {
+      "deaths": 40,
+      "injuries": 148
+    },
+    "axis": {
+      "deaths": 810,
+      "injuries": 1215
+    },
+    "civilian": {
+      "deaths": 490,
+      "injuries": 892
+    }
+  },
+  "2026-03-13": {
+    "coalition": {
+      "deaths": 42,
+      "injuries": 158
+    },
+    "axis": {
+      "deaths": 875,
+      "injuries": 1313
+    },
+    "civilian": {
+      "deaths": 545,
+      "injuries": 992
+    }
+  },
+  "2026-03-14": {
+    "coalition": {
+      "deaths": 44,
+      "injuries": 170
+    },
+    "axis": {
+      "deaths": 950,
+      "injuries": 1425
+    },
+    "civilian": {
+      "deaths": 620,
+      "injuries": 1128
+    }
+  },
+  "2026-03-15": {
+    "coalition": {
+      "deaths": 46,
+      "injuries": 190
+    },
+    "axis": {
+      "deaths": 1080,
+      "injuries": 1620
+    },
+    "civilian": {
+      "deaths": 740,
+      "injuries": 1347
+    }
+  },
+  "2026-03-16": {
+    "coalition": {
+      "deaths": 48,
+      "injuries": 213
+    },
+    "axis": {
+      "deaths": 1280,
+      "injuries": 1920
+    },
+    "civilian": {
+      "deaths": 890,
+      "injuries": 1624
+    }
+  },
+  "2026-03-17": {
+    "coalition": {
+      "deaths": 55,
+      "injuries": 240
+    },
+    "axis": {
+      "deaths": 1500,
+      "injuries": 2200
+    },
+    "civilian": {
+      "deaths": 1020,
+      "injuries": 1850
+    }
+  },
+  "2026-03-18": {
+    "coalition": {
+      "deaths": 57,
+      "injuries": 255
+    },
+    "axis": {
+      "deaths": 1620,
+      "injuries": 2380
+    },
+    "civilian": {
+      "deaths": 1120,
+      "injuries": 2010
+    }
+  },
+  "2026-03-19": {
+    "coalition": {
+      "deaths": 61,
+      "injuries": 278
+    },
+    "axis": {
+      "deaths": 1780,
+      "injuries": 2580
+    },
+    "civilian": {
+      "deaths": 1250,
+      "injuries": 2230
+    }
+  },
+  "2026-03-20": {
+    "coalition": {
+      "deaths": 41,
+      "injuries": 310
+    },
+    "axis": {
+      "deaths": 2120,
+      "injuries": 21500
+    },
+    "civilian": {
+      "deaths": 1520,
+      "injuries": 4100
+    }
+  },
+  "2026-03-21": {
+    "coalition": {
+      "deaths": 44,
+      "injuries": 328
+    },
+    "axis": {
+      "deaths": 2280,
+      "injuries": 22800
+    },
+    "civilian": {
+      "deaths": 1640,
+      "injuries": 4420
+    }
+  },
+  "2026-03-22": {
+    "coalition": {
+      "deaths": 47,
+      "injuries": 341
+    },
+    "axis": {
+      "deaths": 2450,
+      "injuries": 23600
+    },
+    "civilian": {
+      "deaths": 1720,
+      "injuries": 4680
+    }
+  },
+  "2026-03-23": {
+    "coalition": {
+      "deaths": 50,
+      "injuries": 512
+    },
+    "axis": {
+      "deaths": 2620,
+      "injuries": 24800
+    },
+    "civilian": {
+      "deaths": 1850,
+      "injuries": 5100
+    }
+  },
+  "2026-03-24": {
+    "coalition": {
+      "deaths": 52,
+      "injuries": 530
+    },
+    "axis": {
+      "deaths": 2780,
+      "injuries": 25800
+    },
+    "civilian": {
+      "deaths": 1940,
+      "injuries": 5350
+    }
+  },
+  "2026-03-25": {
+    "coalition": {
+      "deaths": 55,
+      "injuries": 560
+    },
+    "axis": {
+      "deaths": 2920,
+      "injuries": 26800
+    },
+    "civilian": {
+      "deaths": 2040,
+      "injuries": 5620
+    }
+  },
+  "2026-03-26": {
+    "coalition": {
+      "deaths": 56,
+      "injuries": 575
+    },
+    "axis": {
+      "deaths": 3050,
+      "injuries": 27400
+    },
+    "civilian": {
+      "deaths": 2130,
+      "injuries": 5840
+    }
+  },
+  "2026-03-27": {
+    "coalition": {
+      "deaths": 56,
+      "injuries": 587
+    },
+    "axis": {
+      "deaths": 3150,
+      "injuries": 27800
+    },
+    "civilian": {
+      "deaths": 2210,
+      "injuries": 6050
+    }
+  },
+  "2026-03-28": {
+    "coalition": {
+      "deaths": 56,
+      "injuries": 599
+    },
+    "axis": {
+      "deaths": 3350,
+      "injuries": 28600
+    },
+    "civilian": {
+      "deaths": 2420,
+      "injuries": 6350
+    }
+  },
+  "2026-03-29": {
+    "coalition": {
+      "deaths": 57,
+      "injuries": 625
+    },
+    "axis": {
+      "deaths": 3520,
+      "injuries": 29400
+    },
+    "civilian": {
+      "deaths": 2600,
+      "injuries": 6650
+    }
+  },
+  "2026-03-30": {
+    "coalition": {
+      "deaths": 57,
+      "injuries": 632
+    },
+    "axis": {
+      "deaths": 3620,
+      "injuries": 30100
+    },
+    "civilian": {
+      "deaths": 2680,
+      "injuries": 6800
+    }
+  },
+  "2026-03-31": {
+    "coalition": {
+      "deaths": 59,
+      "injuries": 645
+    },
+    "axis": {
+      "deaths": 3780,
+      "injuries": 31200
+    },
+    "civilian": {
+      "deaths": 2880,
+      "injuries": 7100
+    }
+  },
+  "2026-04-01": {
+    "coalition": {
+      "deaths": 62,
+      "injuries": 658
+    },
+    "axis": {
+      "deaths": 3940,
+      "injuries": 32000
+    },
+    "civilian": {
+      "deaths": 3080,
+      "injuries": 7600
+    }
+  }
+}

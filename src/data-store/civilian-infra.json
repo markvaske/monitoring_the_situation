@@ -1,0 +1,142 @@
+[
+  {
+    "lat": 35.7,
+    "lng": 51.4,
+    "type": "hospital",
+    "name": "Tehran Medical Complex",
+    "co": "Iran"
+  },
+  {
+    "lat": 33.9,
+    "lng": 35.5,
+    "type": "hospital",
+    "name": "AUBMC Beirut",
+    "co": "Lebanon"
+  },
+  {
+    "lat": 33.3,
+    "lng": 44.4,
+    "type": "hospital",
+    "name": "Baghdad Medical City",
+    "co": "Iraq"
+  },
+  {
+    "lat": 32.1,
+    "lng": 34.8,
+    "type": "hospital",
+    "name": "Sheba Medical Center",
+    "co": "Israel"
+  },
+  {
+    "lat": 25.2,
+    "lng": 55.3,
+    "type": "hospital",
+    "name": "Dubai Hospital",
+    "co": "UAE"
+  },
+  {
+    "lat": 35.3,
+    "lng": 52.1,
+    "type": "power",
+    "name": "Shahid Rajaee Power Plant",
+    "co": "Iran"
+  },
+  {
+    "lat": 33.8,
+    "lng": 35.6,
+    "type": "power",
+    "name": "Zouk Mosbeh Power Station",
+    "co": "Lebanon"
+  },
+  {
+    "lat": 29.1,
+    "lng": 48.1,
+    "type": "power",
+    "name": "Az-Zour Power Plant",
+    "co": "Kuwait"
+  },
+  {
+    "lat": 25.1,
+    "lng": 55.1,
+    "type": "power",
+    "name": "Jebel Ali Power Complex",
+    "co": "UAE"
+  },
+  {
+    "lat": 24.5,
+    "lng": 39.6,
+    "type": "power",
+    "name": "Yanbu Power Plant",
+    "co": "Saudi Arabia"
+  },
+  {
+    "lat": 26.3,
+    "lng": 50.2,
+    "type": "desal",
+    "name": "Ras Al Khair Desal (world's largest)",
+    "co": "Saudi Arabia"
+  },
+  {
+    "lat": 29.1,
+    "lng": 48.2,
+    "type": "desal",
+    "name": "Az-Zour Desal Plant",
+    "co": "Kuwait"
+  },
+  {
+    "lat": 25,
+    "lng": 55.1,
+    "type": "desal",
+    "name": "Jebel Ali Desal Plant",
+    "co": "UAE"
+  },
+  {
+    "lat": 26.2,
+    "lng": 50.5,
+    "type": "desal",
+    "name": "Al Dur Desal Plant",
+    "co": "Bahrain"
+  },
+  {
+    "lat": 25.3,
+    "lng": 51.5,
+    "type": "desal",
+    "name": "Ras Abu Fontas Desal",
+    "co": "Qatar"
+  },
+  {
+    "lat": 25.3,
+    "lng": 55.4,
+    "type": "cable",
+    "name": "FLAG/SEA-ME-WE Landing (Fujairah)",
+    "co": "UAE"
+  },
+  {
+    "lat": 32.1,
+    "lng": 34.8,
+    "type": "cable",
+    "name": "IMEWE Cable Landing (Tel Aviv)",
+    "co": "Israel"
+  },
+  {
+    "lat": 30,
+    "lng": 48.5,
+    "type": "cable",
+    "name": "FALCON Cable Landing (Al Faw)",
+    "co": "Iraq"
+  },
+  {
+    "lat": 25.6,
+    "lng": 54.6,
+    "type": "cable",
+    "name": "2Africa Cable Landing (Kalba)",
+    "co": "UAE"
+  },
+  {
+    "lat": 12.8,
+    "lng": 45,
+    "type": "cable",
+    "name": "AAE-1 Cable Landing (Aden)",
+    "co": "Yemen"
+  }
+]

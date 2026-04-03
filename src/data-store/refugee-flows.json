@@ -1,0 +1,98 @@
+[
+  {
+    "from": {
+      "lat": 35.7,
+      "lng": 51.4
+    },
+    "to": {
+      "lat": 38,
+      "lng": 44
+    },
+    "label": "Iran → Turkey",
+    "color": "#ff2d7b"
+  },
+  {
+    "from": {
+      "lat": 35.7,
+      "lng": 51.4
+    },
+    "to": {
+      "lat": 39,
+      "lng": 51.5
+    },
+    "label": "Iran → Azerbaijan",
+    "color": "#ff2d7b"
+  },
+  {
+    "from": {
+      "lat": 33.9,
+      "lng": 35.5
+    },
+    "to": {
+      "lat": 33.5,
+      "lng": 36.3
+    },
+    "label": "Lebanon → Syria",
+    "color": "#ff6b4a"
+  },
+  {
+    "from": {
+      "lat": 33.9,
+      "lng": 35.5
+    },
+    "to": {
+      "lat": 35,
+      "lng": 33
+    },
+    "label": "Lebanon → Cyprus",
+    "color": "#ff6b4a"
+  },
+  {
+    "from": {
+      "lat": 33.3,
+      "lng": 44.4
+    },
+    "to": {
+      "lat": 36.2,
+      "lng": 44
+    },
+    "label": "Iraq → Kurdistan",
+    "color": "#ffe100"
+  },
+  {
+    "from": {
+      "lat": 33.3,
+      "lng": 44.4
+    },
+    "to": {
+      "lat": 33,
+      "lng": 36
+    },
+    "label": "Iraq → Jordan",
+    "color": "#ffe100"
+  },
+  {
+    "from": {
+      "lat": 25.2,
+      "lng": 55.3
+    },
+    "to": {
+      "lat": 25.3,
+      "lng": 56.3
+    },
+    "label": "UAE → Oman",
+    "color": "#00e5ff"
+  },
+  {
+    "from": {
+      "lat": 29.4,
+      "lng": 47.9
+    },
+    "to": {
+      "lat": 29.5,
+      "lng": 48.5
+    },
+    "label": "Kuwait → Iraq",
+    "color": "#00ff88"
+  }
+]
