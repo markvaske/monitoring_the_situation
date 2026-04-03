@@ -2433,7 +2433,7 @@ function renderParties() {
     group.countries.forEach(co => {
       const flag = countryFlags[co] || '';
       const isSel = isCoSelected(co);
-      html += '<div class="w1-co w1c-' + key + (isSel ? ' w1-sel' : '') + '" onclick="selectCo(\'' + co + '\')">';
+      html += '<div class="w1-co w1c-' + key + (isSel ? ' w1-sel' : '') + '" data-action="select-co" data-co="' + co + '">';
       html += '<span class="w1-flag">' + flag + '</span>' + co + '</div>';
     });
     html += '</div></div>';
@@ -2701,7 +2701,7 @@ function refresh() {
   function coLink(name) {
     const cs = getCStatus(name, selDay);
     const cls = cs === 'war' ? 'ctx-war' : cs === 'attack' ? 'ctx-attack' : 'ctx-peace';
-    return '<span class="co-link ' + cls + '" onclick="selectCo(\'' + name.replace(/'/g, "\\'") + '\')">' + name + '</span>';
+    return '<span class="co-link ' + cls + '" data-action="select-co" data-co="' + name + '">' + name + '</span>';
   }
 
   // Category mapping: news cat → summary tab
@@ -2892,7 +2892,7 @@ function renderNews() {
       const flag = countryFlags[co] || '';
       const isActive = isCoSelected(co);
       const isSel = isCoSelected(co);
-      return '<button class="nf-btn nf-co' + (isActive ? ' active' : '') + (isSel ? ' nf-sel' : '') + '" data-co="' + co + '" onclick="togNewsCo(\'' + co + '\')">' + (flag ? flag + ' ' : '') + co + '</button>';
+      return '<button class="nf-btn nf-co' + (isActive ? ' active' : '') + (isSel ? ' nf-sel' : '') + '" data-action="tog-news-co" data-co="' + co + '">' + (flag ? flag + ' ' : '') + co + '</button>';
     };
     const factionOrder = [
       {key:'coalition', label:conflictSides.coalition.label, cls:'nf-fl-coalition', box:'nfb-coalition'},
@@ -2904,7 +2904,7 @@ function renderNews() {
       const items = fGroups[fg.key] || [];
       const isActive = selFactions.has(fg.key);
       html += '<div class="nf-faction-box ' + fg.box + (isActive ? ' nfb-active' : '') + '">' +
-        '<div class="nf-faction-header" onclick="togNewsFaction(\'' + fg.key + '\')">' +
+        '<div class="nf-faction-header" data-action="tog-news-faction" data-faction="' + fg.key + '">' +
         '<span class="nf-faction-label ' + fg.cls + '">' + fg.label + '</span></div>' +
         '<div class="nf-faction-btns">' +
         (items.length ? items.map(coBtn).join('') : '<span style="font-size:.68rem;color:var(--text3)">\u2014</span>') + '</div></div>';
@@ -2916,7 +2916,7 @@ function renderNews() {
   const catEl = document.getElementById('catFilters');
   if (catEl) {
     catEl.innerHTML = Object.entries(newsCats).map(([k, v]) =>
-      '<button class="cat-chip' + (newsCatFilter === k ? ' cc-active' : '') + '" onclick="togNewsCat(\'' + k + '\')">' + v + '</button>'
+      '<button class="cat-chip' + (newsCatFilter === k ? ' cc-active' : '') + '" data-action="tog-news-cat" data-cat="' + k + '">' + v + '</button>'
     ).join('');
   }
 

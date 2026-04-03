@@ -145,7 +145,7 @@ function switchDsTab(tab) {
   activeDsTab = tab;
   document.querySelectorAll('.ds-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.ds-pane').forEach(p => p.classList.remove('active'));
-  document.querySelector('.ds-tab[onclick*="' + tab + '"]').classList.add('active');
+  document.querySelector('.ds-tab[data-tab="' + tab + '"]').classList.add('active');
   const paneMap = {conflict:'dsConflict', logistics:'dsLogistics', diplomacy:'dsDiplomacy', markets:'dsMarkets', humanitarian:'dsHumanitarian'};
   document.getElementById(paneMap[tab]).classList.add('active');
 }
@@ -389,7 +389,7 @@ function buildGantt() {
     const dt = new Date(d + 'T12:00:00');
     const label = (dt.getMonth()+1) + '/' + dt.getDate();
     const isSel = d === selDay;
-    html += '<div class="gantt-dh' + (isSel ? ' sel' : '') + '" onclick="selectDay(\'' + d + '\')" title="' + d + '">' + label + (isSel ? '<div class="gantt-marker"></div>' : '') + '</div>';
+    html += '<div class="gantt-dh' + (isSel ? ' sel' : '') + '" data-action="select-day" data-day="' + d + '" title="' + d + '">' + label + (isSel ? '<div class="gantt-marker"></div>' : '') + '</div>';
   });
   html += '</div></div>';
 
@@ -403,7 +403,7 @@ function buildGantt() {
     const span = nextStart - startIdx;
     const widthPct = (span / numDays * 100).toFixed(2);
     const isSel = pi === curPhase;
-    html += '<div class="gantt-phase-seg' + (isSel ? ' gps-selected' : '') + '" style="width:' + widthPct + '%;background:' + getPhaseColor(pi) + '" onclick="selectPhase(' + pi + ')" title="' + phase.label + '">';
+    html += '<div class="gantt-phase-seg' + (isSel ? ' gps-selected' : '') + '" style="width:' + widthPct + '%;background:' + getPhaseColor(pi) + '" data-action="select-phase" data-phase="' + pi + '" title="' + phase.label + '">';
     if (span >= 3) html += '<span class="gps-label">' + phase.label + '</span>';
     html += '</div>';
   });
@@ -452,7 +452,7 @@ function buildGantt() {
         const dayLabel = mdt.toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric'});
         const dayNum = Math.floor((mdt - new Date('2026-02-28T12:00:00')) / 86400000) + 1;
         const isDaySel = d === selDay;
-        html += '<div class="pb-ms-day' + (isDaySel ? ' pb-ms-day-sel' : '') + '" onclick="selectDay(\'' + d + '\')">';
+        html += '<div class="pb-ms-day' + (isDaySel ? ' pb-ms-day-sel' : '') + '" data-action="select-day" data-day="' + d + '">';
         html += '<div class="pb-ms-day-header"><span class="pb-ms-date">' + dayLabel + '</span>' +
           (dayNum > 0 ? '<span class="pb-ms-daynum">Day ' + dayNum + '</span>' : '') + '</div>';
         html += '<div class="pb-ms-events">';
@@ -460,7 +460,7 @@ function buildGantt() {
           const gi = MILESTONES.indexOf(ms);
           const isActive = selMilestoneIdx === gi;
           const hasGeo = ms.lat != null && ms.lng != null;
-          html += '<div class="pb-ms-event' + (isActive ? ' pb-ms-event-active' : '') + (hasGeo ? ' pb-ms-geo' : '') + '" onclick="event.stopPropagation();selectMilestone(' + gi + ')"><span class="pb-ms-icon">' + ms.icon + '</span><span class="pb-ms-label">' + ms.label + '</span>' + (hasGeo ? '<span class="pb-ms-pin">\u{1F4CD}</span>' : '') + '</div>';
+          html += '<div class="pb-ms-event' + (isActive ? ' pb-ms-event-active' : '') + (hasGeo ? ' pb-ms-geo' : '') + '" data-action="select-milestone" data-milestone="' + gi + '"><span class="pb-ms-icon">' + ms.icon + '</span><span class="pb-ms-label">' + ms.label + '</span>' + (hasGeo ? '<span class="pb-ms-pin">\u{1F4CD}</span>' : '') + '</div>';
         });
         html += '</div></div>';
       });
@@ -767,7 +767,7 @@ function drawDisplacementChart() {
   if (legendEl && !legendEl.dataset.built) {
     legendEl.innerHTML = allCountries.map(c => {
       const col = DISPLACEMENT_COLORS[c] || '#888';
-      return '<span onclick="togDispCountry(\'' + c.replace(/'/g, "\\'") + '\')" class="dl-' + c.replace(/\s/g,'') + '" style="--dl-col:' + col + '"><span class="disp-dot" style="background:' + col + ';width:10px;height:10px;border-radius:50%;display:inline-block"></span>' + c + '</span>';
+      return '<span data-action="tog-disp-country" data-country="' + c + '" class="dl-' + c.replace(/\s/g,'') + '" style="--dl-col:' + col + '"><span class="disp-dot" style="background:' + col + ';width:10px;height:10px;border-radius:50%;display:inline-block"></span>' + c + '</span>';
     }).join('');
     legendEl.dataset.built = '1';
   }
@@ -1972,6 +1972,22 @@ function updateTrend() {
 
 // (Old STRAIT OF HORMUZ MAP section removed — sea layers now render in unified drawMap())
 
+// ===== DATA-ACTION DELEGATED LISTENER =====
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-action]');
+  if (!el) return;
+  const a = el.dataset;
+  if      (a.action === 'select-co')          { e.stopPropagation(); selectCo(a.co); }
+  else if (a.action === 'tog-news-co')         togNewsCo(a.co);
+  else if (a.action === 'tog-news-faction')    togNewsFaction(a.faction);
+  else if (a.action === 'tog-news-cat')        togNewsCat(a.cat);
+  else if (a.action === 'tog-filter-faction')  { e.stopPropagation(); togFilterFaction(a.faction); }
+  else if (a.action === 'select-day')          selectDay(a.day);
+  else if (a.action === 'select-phase')        selectPhase(+a.phase);
+  else if (a.action === 'select-milestone')    { e.stopPropagation(); selectMilestone(+a.milestone); }
+  else if (a.action === 'tog-disp-country')    togDispCountry(a.country);
+});
+
 // ===== INIT =====
 drawLegendSwatches();
 renderParties();
@@ -1983,3 +1999,56 @@ window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer
   drawMap(); buildGantt();
   if (filtersOpen) { drawCasualtyChart(); drawDisplacementChart(); drawOilPriceChart(); drawShippingChart(); drawFlightChart(); drawGoldChart(); drawInsuranceChart(); drawNotamChart(); }
 }, 80); });
+
+// ===== EVENT WIRING =====
+// Nav bar
+document.getElementById('dayPrev').addEventListener('click', () => stepDay(-1));
+document.getElementById('dayNext').addEventListener('click', () => stepDay(1));
+document.getElementById('calPopupSvg').addEventListener('click', toggleCalPopup);
+document.getElementById('calUp').addEventListener('click', () => calNav(-1));
+document.getElementById('calDown').addEventListener('click', () => calNav(1));
+document.getElementById('peoplePopupBtn').addEventListener('click', togglePeoplePopup);
+document.getElementById('filterBtn').addEventListener('click', toggleFilters);
+// Casualty chart controls
+document.getElementById('casModeAll').addEventListener('click', () => setCasMode('all'));
+document.getElementById('casModeDeaths').addEventListener('click', () => setCasMode('deaths'));
+document.getElementById('casModeInjuries').addEventListener('click', () => setCasMode('injuries'));
+document.getElementById('casLegCoalition').addEventListener('click', () => togCasFaction('coalition'));
+document.getElementById('casLegAxis').addEventListener('click', () => togCasFaction('axis'));
+document.getElementById('casLegCivilian').addEventListener('click', () => togCasFaction('civilian'));
+// Daily Summary tabs
+document.querySelectorAll('.ds-tab').forEach(btn => {
+  btn.addEventListener('click', () => switchDsTab(btn.dataset.tab));
+});
+// Map zoom
+document.getElementById('aZoomInBtn').addEventListener('click', aZoomIn);
+document.getElementById('aZoomOutBtn').addEventListener('click', aZoomOut);
+document.getElementById('aZoomReset').addEventListener('click', aZoomResetFn);
+// Popup close buttons
+document.getElementById('airportPopupClose').addEventListener('click', closePopup);
+document.getElementById('countryPopupClose').addEventListener('click', closePopup);
+// Map legend — airport filters
+document.getElementById('togOpen').addEventListener('click', () => toggleAirportFilter('open'));
+document.getElementById('togRestricted').addEventListener('click', () => toggleAirportFilter('restricted'));
+document.getElementById('togClosed').addEventListener('click', () => toggleAirportFilter('closed'));
+// Map legend — base filters
+document.getElementById('togCoalition').addEventListener('click', toggleCoalitionBases);
+document.getElementById('togIran').addEventListener('click', toggleIranBases);
+// Map legend — air overlays
+document.getElementById('togNFZ').addEventListener('click', toggleNFZ);
+document.getElementById('togRoutes').addEventListener('click', toggleRoutes);
+document.getElementById('togJamming').addEventListener('click', toggleJamming);
+document.getElementById('togFleet').addEventListener('click', toggleFleet);
+document.getElementById('togInfra').addEventListener('click', toggleInfra);
+document.getElementById('togRefugee').addEventListener('click', toggleRefugeeFlows);
+document.getElementById('togFactions').addEventListener('click', toggleFactions);
+// Map legend — sea filters
+document.getElementById('togHouthi').addEventListener('click', () => togHzFilter('houthi'));
+document.getElementById('togMine').addEventListener('click', () => togHzFilter('mine'));
+document.getElementById('togChokepoints').addEventListener('click', () => togHzFilter('chokepoints'));
+document.getElementById('togLanes').addEventListener('click', () => togHzFilter('lanes'));
+document.getElementById('togCorridors').addEventListener('click', () => togHzFilter('corridors'));
+document.getElementById('togPatrol').addEventListener('click', () => togHzFilter('patrol'));
+document.getElementById('togCleared').addEventListener('click', () => togHzFilter('cleared'));
+document.getElementById('togPassage').addEventListener('click', () => togHzFilter('passage'));
+document.getElementById('togNaval').addEventListener('click', () => togHzFilter('naval'));

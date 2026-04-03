@@ -1282,13 +1282,13 @@ function _updateFilterBadges() {
   const badges = [];
   for (const f of selFactions) {
     const label = {coalition:'Coalition', axis:'Axis', neutral:'Neutral'}[f] || f;
-    badges.push('<span class="fb fb-faction" data-f="' + f + '">' + label + ' <span onclick="event.stopPropagation();togFilterFaction(\'' + f + '\')">&times;</span></span>');
+    badges.push('<span class="fb fb-faction" data-f="' + f + '">' + label + ' <span data-action="tog-filter-faction" data-faction="' + f + '">&times;</span></span>');
   }
   for (const co of selCo) {
     // Skip countries already covered by a selected faction
     const fi = countryFaction[co] || countryFaction[canonCo(co)];
     if (fi && selFactions.has(fi.faction)) continue;
-    badges.push('<span class="fb">' + co + ' <span onclick="event.stopPropagation();selectCo(\'' + co.replace(/'/g, "\\'") + '\')">&times;</span></span>');
+    badges.push('<span class="fb">' + co + ' <span data-action="select-co" data-co="' + co + '">&times;</span></span>');
   }
   const html = badges.length ? badges.join('') : '';
   const el1 = document.getElementById('nBadge');
