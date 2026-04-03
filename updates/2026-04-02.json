@@ -1,0 +1,54 @@
+{
+  "_instructions": [
+    "Fill in all empty/zero fields. Remove _instructions before running the script.",
+    "Prices are pre-filled (live).",
+    "All casualty and displacement figures are CUMULATIVE — never decrease.",
+    "See scripts/update-template.json for field documentation."
+  ],
+  "date": "2026-04-02",
+  "escalation_score": 0,
+  "headline": "",
+  "sub": "",
+  "oil": {
+    "brent": 109.05,
+    "wti": 112.06
+  },
+  "gold": 4702.7,
+  "suez": 0,
+  "insurance": {
+    "gulf": 0,
+    "redsea": 0,
+    "eastmed": 0
+  },
+  "notam": {
+    "closed": 0,
+    "restricted": 0,
+    "total": 0
+  },
+  "casualties": {
+    "coalition": {
+      "deaths": 0,
+      "injuries": 0
+    },
+    "axis": {
+      "deaths": 0,
+      "injuries": 0
+    },
+    "civilian": {
+      "deaths": 0,
+      "injuries": 0
+    }
+  },
+  "displacement": {
+    "Iran": 0,
+    "Lebanon": 0,
+    "Iraq": 0,
+    "Syria": 0,
+    "UAE": 0,
+    "Kuwait": 0
+  },
+  "news": [],
+  "hz_events": [],
+  "milestones": [],
+  "posture_updates": {}
+}
