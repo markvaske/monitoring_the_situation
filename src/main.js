@@ -1989,16 +1989,18 @@ document.addEventListener('click', e => {
 });
 
 // ===== INIT =====
-drawLegendSwatches();
-renderParties();
-buildCal();
-selectDay(days[days.length - 1]);
-renderCountryDetail();
-let resizeTimer;
-window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => {
-  drawMap(); buildGantt();
-  if (filtersOpen) { drawCasualtyChart(); drawDisplacementChart(); drawOilPriceChart(); drawShippingChart(); drawFlightChart(); drawGoldChart(); drawInsuranceChart(); drawNotamChart(); }
-}, 80); });
+DataStore.ready.then(() => {
+  drawLegendSwatches();
+  renderParties();
+  buildCal();
+  selectDay(days[days.length - 1]);
+  renderCountryDetail();
+  let resizeTimer;
+  window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => {
+    drawMap(); buildGantt();
+    if (filtersOpen) { drawCasualtyChart(); drawDisplacementChart(); drawOilPriceChart(); drawShippingChart(); drawFlightChart(); drawGoldChart(); drawInsuranceChart(); drawNotamChart(); }
+  }, 80); });
+});
 
 // ===== EVENT WIRING =====
 // Nav bar

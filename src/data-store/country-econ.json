@@ -1,0 +1,177 @@
+{
+  "USA": {
+    "gdp": "$28.8T",
+    "oilRev": "N/A (net exporter)",
+    "sovFund": "N/A",
+    "imports": "Minimal ME oil dependency",
+    "warCost": "$2.1B/week est. operational cost"
+  },
+  "Israel": {
+    "gdp": "$564B",
+    "oilRev": "None",
+    "sovFund": "N/A",
+    "imports": "98% energy imported",
+    "warCost": "$1.5B/week in defense spending"
+  },
+  "Saudi Arabia": {
+    "gdp": "$1.1T",
+    "oilRev": "$222B/yr (62% budget)",
+    "sovFund": "PIF: $930B",
+    "imports": "Food: 80% imported",
+    "warCost": "Oil export disruption: ~$1.2B/day lost if Hormuz stays closed"
+  },
+  "Bahrain": {
+    "gdp": "$44B",
+    "oilRev": "$5.8B/yr",
+    "sovFund": "Mumtalakat: $18B",
+    "imports": "90% food imported",
+    "warCost": "Tourism + banking sector paralyzed"
+  },
+  "Qatar": {
+    "gdp": "$235B",
+    "oilRev": "$50B LNG/yr",
+    "sovFund": "QIA: $510B",
+    "imports": "90% food imported",
+    "warCost": "Ras Laffan LNG hub damaged — $180M/day exports at risk"
+  },
+  "Iran": {
+    "gdp": "$368B",
+    "oilRev": "$40B/yr (pre-sanctions)",
+    "sovFund": "NDFI: ~$140B (est.)",
+    "imports": "Food subsidies: $15B/yr",
+    "warCost": "Infrastructure damage: $50B+ estimated"
+  },
+  "Lebanon": {
+    "gdp": "$22B",
+    "oilRev": "None",
+    "sovFund": "None (bankrupt since 2020)",
+    "imports": "85% food imported",
+    "warCost": "GDP contraction: 15-20% projected"
+  },
+  "Syria": {
+    "gdp": "$11B",
+    "oilRev": "Minimal",
+    "sovFund": "None",
+    "imports": "60% food aid-dependent",
+    "warCost": "Already in humanitarian crisis"
+  },
+  "Yemen": {
+    "gdp": "$21B",
+    "oilRev": "Minimal (civil war)",
+    "sovFund": "None",
+    "imports": "90% food imported",
+    "warCost": "Red Sea disruption affecting aid shipments"
+  },
+  "Iraq": {
+    "gdp": "$267B",
+    "oilRev": "$85B/yr (95% budget)",
+    "sovFund": "DFI: ~$20B",
+    "imports": "Massive food imports via Hormuz",
+    "warCost": "Pipeline to Turkey compensating for Hormuz closure"
+  },
+  "Oman": {
+    "gdp": "$105B",
+    "oilRev": "$18B/yr",
+    "sovFund": "OIA: $50B",
+    "imports": "Moderate",
+    "warCost": "Mediator role; port revenue up from diverted shipping"
+  },
+  "Egypt": {
+    "gdp": "$397B",
+    "oilRev": "$8B/yr",
+    "sovFund": "EIDF: $12B",
+    "imports": "World's largest wheat importer",
+    "warCost": "Suez Canal revenue down 32% from Red Sea diversions"
+  },
+  "Turkey": {
+    "gdp": "$1.1T",
+    "oilRev": "Minimal",
+    "sovFund": "TWF: $85B",
+    "imports": "Energy: 72% imported (Iran pipeline at risk)",
+    "warCost": "Tourism boost from diverted Gulf traffic"
+  },
+  "UAE": {
+    "gdp": "$509B",
+    "oilRev": "$65B/yr",
+    "sovFund": "ADIA: $990B",
+    "imports": "85% food imported",
+    "warCost": "Fujairah hub damaged; flight bans costing $200M/week"
+  },
+  "Kuwait": {
+    "gdp": "$184B",
+    "oilRev": "$45B/yr (90% budget)",
+    "sovFund": "KIA: $920B",
+    "imports": "95% food imported",
+    "warCost": "Oil exports rerouted to Iraq pipeline — $50M/day cost"
+  },
+  "Jordan": {
+    "gdp": "$47B",
+    "oilRev": "None",
+    "sovFund": "N/A",
+    "imports": "96% energy imported from Iraq/Egypt",
+    "warCost": "Hosting refugee overflow; economy strained"
+  },
+  "Azerbaijan": {
+    "gdp": "$79B",
+    "oilRev": "$15B/yr (BTC pipeline)",
+    "sovFund": "SOFAZ: $56B",
+    "imports": "Moderate (grain from Russia)",
+    "warCost": "Nakhchivan airport damaged; southern airspace closed; humanitarian transit costs"
+  },
+  "Russia": {
+    "gdp": "$2.0T",
+    "oilRev": "$180B/yr",
+    "sovFund": "NWF: $150B",
+    "imports": "Minimal ME dependency",
+    "warCost": "Benefiting from oil price spike; providing intel + drone tech to Iran"
+  },
+  "UK": {
+    "gdp": "$3.1T",
+    "oilRev": "$25B/yr (North Sea)",
+    "sovFund": "N/A",
+    "imports": "17% oil from ME",
+    "warCost": "Carrier strike group deployment: ~$40M/week; mine clearance ops ongoing"
+  },
+  "France": {
+    "gdp": "$2.8T",
+    "oilRev": "Minimal",
+    "sovFund": "N/A",
+    "imports": "17% LNG from Qatar",
+    "warCost": "Charles de Gaulle deployment: ~$35M/week; independent Hormuz operation costs"
+  },
+  "Germany": {
+    "gdp": "$4.5T",
+    "oilRev": "Minimal",
+    "sovFund": "N/A",
+    "imports": "30% oil from ME/Russia",
+    "warCost": "ECB warned \"material impact\" on inflation; energy shock to manufacturing sector"
+  },
+  "Italy": {
+    "gdp": "$2.3T",
+    "oilRev": "Minimal",
+    "sovFund": "CDP Equity: ~$35B",
+    "imports": "25% oil + 12% gas from ME",
+    "warCost": "Mediterranean trade route disruption; co-signed EU infrastructure moratorium"
+  },
+  "Japan": {
+    "gdp": "$4.2T",
+    "oilRev": "None",
+    "sovFund": "GPIF: $1.6T",
+    "imports": "90% oil from ME (4th-largest importer)",
+    "warCost": "Shipping rates doubled; factory shutdowns from supply delays"
+  },
+  "India": {
+    "gdp": "$3.9T",
+    "oilRev": "Minimal",
+    "sovFund": "N/A",
+    "imports": "60% oil from Gulf; 9M workers in Gulf states",
+    "warCost": "Energy import bill up $18B/yr at current prices; $31B Gulf remittances at risk"
+  },
+  "Pakistan": {
+    "gdp": "$340B",
+    "oilRev": "Minimal",
+    "sovFund": "N/A",
+    "imports": "35% oil from Gulf; $31B/yr Gulf remittances",
+    "warCost": "Gwadar port (CPEC) disrupted; fuel subsidy burden rising; border security costs"
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "USA": {
+    "name": "United States",
+    "flag": "🇺🇸",
+    "role": "Lead",
+    "roleClass": "fm-role-lead",
+    "body": "<p>Initiated joint strikes on Iranian nuclear enrichment facilities at Fordow, Natanz, and Isfahan. Deployed carrier strike groups USS Eisenhower and USS Lincoln to the Gulf. Conducting mine countermeasure operations and escorting commercial shipping through the Strait of Hormuz.</p><div><span class=\"fm-stat fm-stat-blue\">CENTCOM forward: Al Udeid, Qatar</span><span class=\"fm-stat fm-stat-blue\">5th Fleet: NSA Bahrain</span><span class=\"fm-stat fm-stat-blue\">2 carrier strike groups</span></div><div class=\"fm-casualties\"><span class=\"fm-stat fm-stat-red\">13 service members killed</span><span class=\"fm-stat fm-stat-yellow\">~150 wounded</span></div><div class=\"fm-objectives\"><strong>Objectives</strong>Deny Iran nuclear breakout capability. Maintain freedom of navigation in the Strait of Hormuz. Protect Gulf state partners from Iranian retaliation. Avoid ground commitment or regime change.</div>"
+  },
+  "Israel": {
+    "name": "Israel",
+    "flag": "🇮🇱",
+    "role": "Lead",
+    "roleClass": "fm-role-lead",
+    "body": "<p>Co-planned and executed precision strikes using F-35I Adir stealth fighters from Nevatim and Ramon air bases. Operating under sustained Iranian ballistic missile retaliation — Arrow and Iron Dome intercepting most inbound threats. Ben Gurion Airport restricted to military and repatriation flights.</p><div><span class=\"fm-stat fm-stat-blue\">F-35I + F-15I Ra’am strike wings</span><span class=\"fm-stat fm-stat-blue\">Arrow-3 / Iron Dome active</span></div><div class=\"fm-casualties\"><span class=\"fm-stat fm-stat-red\">15 killed</span><span class=\"fm-stat fm-stat-yellow\">3,138 injured</span></div><div class=\"fm-objectives\"><strong>Objectives</strong>Eliminate Iran’s nuclear weapons potential before it crosses the enrichment threshold. Degrade Hezbollah and Syrian proxy launch capability. Maintain deterrence posture against future threats.</div>"
+  },
+  "Saudi Arabia": {
+    "name": "Saudi Arabia",
+    "flag": "🇸🇦",
+    "role": "Silent partner",
+    "roleClass": "fm-role-partner",
+    "body": "<p>Officially neutral, but quietly permitting US overflights and hosting coalition logistics at Prince Sultan Air Base. Eastern Fleet guarding oil terminal approaches. Riyadh proposed as neutral negotiation venue — rejected by Tehran.</p><div><span class=\"fm-stat fm-stat-green\">Overflight rights: granted</span><span class=\"fm-stat fm-stat-yellow\">Dammam: restricted</span></div><div class=\"fm-casualties\"><span class=\"fm-stat fm-stat-red\">2 killed</span><span class=\"fm-stat fm-stat-yellow\">12 injured</span></div><div class=\"fm-objectives\"><strong>Interest</strong>Contain Iranian influence without direct military exposure. Protect oil infrastructure and shipping. Position itself as mediator if talks materialize.</div>"
+  },
+  "Bahrain": {
+    "name": "Bahrain",
+    "flag": "🇧🇭",
+    "role": "Host nation",
+    "roleClass": "fm-role-partner",
+    "body": "<p>Hosts US 5th Fleet headquarters and Naval Support Activity. Airport closed after missile debris found near approach paths. Managing coalition escort operations and shallow-water mine clearance.</p><div><span class=\"fm-stat fm-stat-red\">Airport: closed</span><span class=\"fm-stat fm-stat-blue\">5th Fleet HQ: active</span></div><div class=\"fm-casualties\"><span class=\"fm-stat fm-stat-red\">2 killed</span></div>"
+  },
+  "Qatar": {
+    "name": "Qatar",
+    "flag": "🇶🇦",
+    "role": "Host nation",
+    "roleClass": "fm-role-partner",
+    "body": "<p>Houses CENTCOM forward headquarters at Al Udeid Air Base — the nerve center for coalition air operations. Hamad International closed then limited to repatriation. Attempted to mediate between Washington and Tehran.</p><div><span class=\"fm-stat fm-stat-red\">Airport: restricted</span><span class=\"fm-stat fm-stat-blue\">Al Udeid CAOC: operational</span></div><div class=\"fm-casualties\"><span class=\"fm-stat fm-stat-yellow\">16 injured</span></div>"
+  },
+  "Iran": {
+    "name": "Iran",
+    "flag": "🇮🇷",
+    "role": "Primary",
+    "roleClass": "fm-role-primary",
+    "body": "<p>Nuclear facilities struck by coalition on Feb 28. Retaliating with ballistic missile barrages against Israeli and Gulf targets. IRGC Navy has mined the Strait of Hormuz and deployed anti-ship missile batteries at Bandar Abbas. Fast-attack craft harassing commercial shipping. All civilian airports closed.</p><div><span class=\"fm-stat fm-stat-red\">Hormuz: mined</span><span class=\"fm-stat fm-stat-red\">Ballistic missiles: launched</span><span class=\"fm-stat fm-stat-red\">All airports: closed</span></div><div class=\"fm-casualties\"><span class=\"fm-stat fm-stat-red\">1,444+ killed</span><span class=\"fm-stat fm-stat-yellow\">18,551 injured</span></div><div class=\"fm-objectives\"><strong>Objectives</strong>Inflict maximum economic pain through Strait of Hormuz disruption. Demonstrate that strikes on Iranian soil carry unacceptable costs. Rally regional proxies. Force international pressure for ceasefire on favorable terms.</div>"
+  },
+  "Lebanon": {
+    "name": "Lebanon (Hezbollah)",
+    "flag": "🇱🇧",
+    "role": "Proxy",
+    "roleClass": "fm-role-proxy",
+    "body": "<p>Iran’s most capable proxy force. Creating a secondary front threat on Israel’s northern border. Rocket arsenals in southern Lebanon ready for activation. Beirut airport restricted as precaution. Lebanese government publicly distancing itself from Hezbollah actions, but unable to exercise control.</p><div><span class=\"fm-stat fm-stat-yellow\">Beirut: restricted</span><span class=\"fm-stat fm-stat-red\">Rocket threat: elevated</span></div><div class=\"fm-casualties\"><span class=\"fm-stat fm-stat-red\">826 killed</span><span class=\"fm-stat fm-stat-yellow\">2,000+ injured</span></div><div class=\"fm-objectives\"><strong>Objectives</strong>Pin down Israeli northern defenses. Demonstrate willingness to open second front as deterrent. Avoid full Israeli ground response that would devastate Lebanon’s fragile infrastructure.</div>"
+  },
+  "Syria": {
+    "name": "Syria",
+    "flag": "🇸🇾",
+    "role": "Staging ground",
+    "roleClass": "fm-role-proxy",
+    "body": "<p>Iranian weapons convoys and missile depots targeted by Israeli and US strikes. Damascus airport closed since conflict onset. Serving as logistics corridor between Iran and Hezbollah. Assad government unable to prevent use of Syrian territory by either side.</p><div><span class=\"fm-stat fm-stat-red\">Damascus airport: closed</span><span class=\"fm-stat fm-stat-red\">Weapons depots: struck</span></div><div class=\"fm-objectives\"><strong>Objectives</strong>Survive without being drawn into direct combat. Maintain Iranian alliance while avoiding further Israeli strikes on state infrastructure.</div>"
+  },
+  "Yemen": {
+    "name": "Yemen (Houthis)",
+    "flag": "🇾🇪",
+    "role": "Proxy",
+    "roleClass": "fm-role-proxy",
+    "body": "<p>Ansar Allah (Houthi) forces launching anti-ship missiles and kamikaze drones at Red Sea commercial shipping — extending the conflict theater 2,000 km south of the Strait of Hormuz. Targeting vessels regardless of flag state. Sana’a airport non-functional from prior civil war.</p><div><span class=\"fm-stat fm-stat-red\">Red Sea: active attacks</span><span class=\"fm-stat fm-stat-red\">Drone + missile strikes</span></div><div class=\"fm-casualties\"><span class=\"fm-stat fm-stat-red\">16 ships struck</span></div><div class=\"fm-objectives\"><strong>Objectives</strong>Disrupt global shipping chokepoint at Bab el-Mandeb. Demonstrate solidarity with Iran and raise own profile. Force coalition to divert naval resources south, thinning coverage at Hormuz.</div>"
+  },
+  "Iraq": {
+    "name": "Iraq (PMF Militias)",
+    "flag": "🇮🇶",
+    "role": "Irregular",
+    "roleClass": "fm-role-support",
+    "body": "<p>Iranian-backed Popular Mobilization Forces (PMF) operating alongside but distinct from the Iraqi state. Facilitating missile transit corridors through Iraqi airspace. Launching drone and rocket attacks on US bases at Al Asad. Iraqi government caught between its security partnership with the US and Iranian militia pressure.</p><div><span class=\"fm-stat fm-stat-yellow\">Baghdad: disrupted</span><span class=\"fm-stat fm-stat-yellow\">Erbil: disrupted</span></div><div class=\"fm-casualties\"><span class=\"fm-stat fm-stat-red\">27 killed</span></div><div class=\"fm-objectives\"><strong>Objectives</strong>Pressure US to withdraw forces from Iraq. Support Iranian retaliation through Iraqi territory without provoking a direct US response against the Iraqi state.</div>"
+  },
+  "Oman": {
+    "name": "Oman — The Mediator",
+    "flag": "🇴🇲",
+    "role": "Neutral",
+    "roleClass": "fm-role-partner",
+    "body": "<p>Oman’s Sultan Haitham is running back-channel talks between Washington and Tehran — the same role Oman played in the 2015 nuclear deal. Muscat’s airspace remains the only reliable southern bypass corridor. The port is operating as a safe harbor for diverted commercial vessels. Oman’s neutrality is strategic capital it has spent decades accumulating.</p><div class=\"fm-casualties\"><span class=\"fm-stat fm-stat-red\">3 killed</span><span class=\"fm-stat fm-stat-yellow\">15 injured</span></div>"
+  },
+  "Egypt": {
+    "name": "Egypt — The Gatekeeper",
+    "flag": "🇪🇬",
+    "role": "Neutral",
+    "roleClass": "fm-role-partner",
+    "body": "<p>Controls the Suez Canal, through which 12% of global trade flows. Cairo is keeping the canal open and Egyptian Navy is increasing Red Sea patrols, but Egypt refuses to take sides. Its southern airspace bypass is now handling 3x normal commercial traffic as airlines avoid the Gulf.</p>"
+  },
+  "Turkey": {
+    "name": "Turkey — The Hedge",
+    "flag": "🇹🇷",
+    "role": "Neutral",
+    "roleClass": "fm-role-partner",
+    "body": "<p>NATO member refusing to pick a side. Istanbul airports operating normally. Ankara has closed airspace to belligerent military overflights while allowing civilian transit — threading the needle between alliance obligations and regional relationships. Watching for opportunities to expand influence in the post-conflict order.</p>"
+  },
+  "UAE": {
+    "name": "UAE — Exposed",
+    "flag": "🇦🇪",
+    "role": "Affected",
+    "roleClass": "fm-role-support",
+    "body": "<p>Sitting directly across the Gulf from Iran, within range of every weapon system Tehran possesses. Suspended civilian flights after falling debris incidents forced emergency ground stops. Ports of Fujairah and Jebel Ali — critical global transshipment hubs — operating under severe restrictions.</p><div class=\"fm-casualties\"><span class=\"fm-stat fm-stat-red\">6 killed</span><span class=\"fm-stat fm-stat-yellow\">141 injured</span></div>"
+  },
+  "Kuwait": {
+    "name": "Kuwait — Locked Down",
+    "flag": "🇰🇼",
+    "role": "Affected",
+    "roleClass": "fm-role-support",
+    "body": "<p>Airport closed after intercepted Iranian drone wreckage found on the runway — not targeted, just caught in the crossfire. Hosting US military logistics while trying not to antagonize Iran. Mina al-Ahmadi oil terminal on high alert.</p><div class=\"fm-casualties\"><span class=\"fm-stat fm-stat-red\">6 killed</span></div>"
+  },
+  "Jordan": {
+    "name": "Jordan — Host Nation",
+    "flag": "🇯🇴",
+    "role": "Host nation",
+    "roleClass": "fm-role-partner",
+    "body": "<p>Hosting coalition F-16 operations from Muwaffaq Salti Air Base while managing humanitarian corridor access. Amman restricted after intercepted drone fragments found near approach paths. Strategic geography makes it the physical buffer between the conflict’s western and eastern theaters, but Jordan’s hosting of coalition strike assets places it firmly in the coalition camp.</p><div><span class=\"fm-stat fm-stat-blue\">Muwaffaq Salti AB: F-16 ops</span><span class=\"fm-stat fm-stat-yellow\">Amman: restricted</span></div><div class=\"fm-casualties\"><span class=\"fm-stat fm-stat-yellow\">28 injured</span></div>"
+  },
+  "Azerbaijan": {
+    "name": "Azerbaijan — Affected / Transit",
+    "flag": "🇦🇿",
+    "role": "Affected / Transit",
+    "roleClass": "fm-role-support",
+    "body": "<p>Nakhchivan exclave airport struck by Iranian drones on Mar 5 — the first spillover of the conflict into the Caucasus. Azerbaijan closed all southern airspace. Now serving as a key humanitarian transit corridor: Russia airlifted 13 tons of medicine through Azerbaijan for overland delivery to Iran. Baku is balancing its Turkey/NATO alignment against economic ties to Moscow and Tehran.</p><div><span class=\"fm-stat fm-stat-red\">Nakhchivan airport: struck</span><span class=\"fm-stat fm-stat-yellow\">Southern airspace: closed</span></div><div class=\"fm-objectives\"><strong>Interest</strong>Avoid being drawn into the conflict. Maintain neutrality between its Turkish NATO alignment and its economic dependency on Russian energy transit. Keep the Baku–Tbilisi–Ceyhan pipeline operating.</div>"
+  },
+  "Russia": {
+    "name": "Russia — Iran Supporter",
+    "flag": "🇷🇺",
+    "role": "Iran supporter",
+    "roleClass": "fm-role-support",
+    "body": "<p>Not a direct combatant, but clearly aligned with Tehran. Per Wall Street Journal reporting, Moscow is sharing satellite imagery and improved drone technology with Iran to aid targeting of US forces. Russia airlifted 13+ tons of medicine to Iran via Azerbaijan. Putin congratulated Mojtaba Khamenei and pledged \"full solidarity.\" Economically benefiting from oil price spike and Trump’s lifting of Russian oil sanctions at sea.</p><div><span class=\"fm-stat fm-stat-yellow\">Intel sharing: confirmed (WSJ)</span><span class=\"fm-stat fm-stat-yellow\">Drone tech: transferred</span><span class=\"fm-stat fm-stat-green\">Oil windfall: sanctions lifted</span></div><div class=\"fm-objectives\"><strong>Interest</strong>Keep Iran in the fight to distract US attention and resources from Ukraine. Benefit from oil price spike. Prolong conflict that weakens US–Gulf relationships. Expand influence in post-conflict Iran.</div>"
+  },
+  "UK": {
+    "name": "United Kingdom",
+    "flag": "🇬🇧",
+    "role": "Naval support",
+    "roleClass": "fm-role-partner",
+    "body": "<p>HMS Queen Elizabeth carrier strike group deployed to the Gulf of Oman with embarked F-35B Lightning II fighters. Royal Navy mine countermeasure vessels operating from HMS Juffair shore facility in Bahrain. Conducting joint escort operations with US 5th Fleet through the Strait of Hormuz. UK forces also present at RAF Akrotiri, Cyprus.</p><div><span class=\"fm-stat fm-stat-blue\">HMS Queen Elizabeth CSG: Gulf of Oman</span><span class=\"fm-stat fm-stat-blue\">HMS Juffair: mine countermeasures</span><span class=\"fm-stat fm-stat-blue\">RAF Akrotiri: strike support</span></div><div class=\"fm-casualties\"><span class=\"fm-stat fm-stat-red\">1 killed (drone, Iraq)</span></div><div class=\"fm-objectives\"><strong>Objectives</strong>Maintain freedom of navigation in the Strait of Hormuz. Support US-led coalition operations under existing Five Eyes framework. Protect British-flagged commercial shipping. Demonstrate post-Brexit strategic relevance in the Gulf.</div>"
+  },
+  "France": {
+    "name": "France",
+    "flag": "🇫🇷",
+    "role": "Naval support",
+    "roleClass": "fm-role-partner",
+    "body": "<p>FS Charles de Gaulle carrier operating Rafale-M strike fighters from the Gulf of Aden. Paris announced a \"defensive\" operation to open the Strait of Hormuz on Mar 10 — the only European power to declare an independent operational mandate. One soldier killed by drone at a Kurdish base in Iraq on Mar 12. Maintaining independent command but coordinating with US/UK naval forces.</p><div><span class=\"fm-stat fm-stat-blue\">FS Charles de Gaulle: Gulf of Aden</span><span class=\"fm-stat fm-stat-blue\">Rafale-M: strike ops</span><span class=\"fm-stat fm-stat-yellow\">Independent command</span></div><div class=\"fm-casualties\"><span class=\"fm-stat fm-stat-red\">1 killed (drone, Iraq)</span></div><div class=\"fm-objectives\"><strong>Objectives</strong>Demonstrate French strategic autonomy with independent Hormuz mandate. Protect French-flagged shipping and energy imports (France imports 17% of LNG from Qatar). Maintain influence in the Eastern Mediterranean and Gulf.</div>"
+  },
+  "Germany": {
+    "name": "Germany",
+    "flag": "🇩🇪",
+    "role": "Reluctant ally",
+    "roleClass": "fm-role-support",
+    "body": "<p>Berlin initially declared \"this is not our war\" and declined to send warships when Trump demanded NATO participation. Reversed course by Mar 19, joining a six-nation joint statement expressing readiness to help secure Strait of Hormuz passage. The EU’s largest economy is bearing the brunt of energy price shocks — the ECB warned of \"material impact\" on European inflation. No military assets deployed to the theater.</p><div><span class=\"fm-stat fm-stat-yellow\">No military assets deployed</span><span class=\"fm-stat fm-stat-yellow\">ECB: material inflation risk</span></div><div class=\"fm-objectives\"><strong>Interest</strong>Minimize economic fallout from energy disruption. Avoid direct military involvement while supporting diplomatic efforts to reopen Hormuz. Maintain European unity on conflict response.</div>"
+  },
+  "Italy": {
+    "name": "Italy",
+    "flag": "🇮🇹",
+    "role": "Reluctant ally",
+    "roleClass": "fm-role-support",
+    "body": "<p>Declined Trump’s initial call for NATO warships alongside Germany and other European allies. Joined the six-nation joint statement on Mar 19 pledging readiness to help secure Hormuz. Co-signed EU statement demanding a moratorium on energy and water infrastructure strikes. Part of the five-nation group (France, Germany, UK, Italy, Spain) that called Israel’s Bint Jbeil offensive a \"red line.\"</p><div><span class=\"fm-stat fm-stat-yellow\">No military assets deployed</span><span class=\"fm-stat fm-stat-yellow\">EU infrastructure moratorium: co-signed</span></div><div class=\"fm-objectives\"><strong>Interest</strong>Protect Mediterranean trade routes and energy imports. Support European diplomatic unity. Avoid being drawn into military operations beyond NATO treaty obligations.</div>"
+  },
+  "Japan": {
+    "name": "Japan",
+    "flag": "🇯🇵",
+    "role": "Economic stakeholder",
+    "roleClass": "fm-role-support",
+    "body": "<p>The world’s fourth-largest oil importer, heavily dependent on Gulf energy. Container shipping rates from Asia to Europe doubled; factory shutdowns reported due to delayed raw materials. Iran offered to let Japanese-flagged vessels through Hormuz on Mar 21, expanding its selective vetting system. Joined the six-nation joint statement on Hormuz. Trump drew a \"Pearl Harbor\" comparison in a call with the PM, drawing criticism from historians. Bank of Japan held rates with hawkish tone.</p><div><span class=\"fm-stat fm-stat-yellow\">Iran: Hormuz passage offered</span><span class=\"fm-stat fm-stat-red\">Shipping rates: doubled</span><span class=\"fm-stat fm-stat-red\">Factory shutdowns reported</span></div><div class=\"fm-objectives\"><strong>Interest</strong>Secure energy imports through the Strait of Hormuz. Avoid antagonizing Iran while maintaining US alliance. Explore diplomatic channels for de-escalation. Manage economic fallout from supply chain disruption.</div>"
+  },
+  "India": {
+    "name": "India — Independent Transit",
+    "flag": "🇮🇳",
+    "role": "Independent transit",
+    "roleClass": "fm-role-support",
+    "body": "<p>The world’s third-largest oil importer, sourcing 60% from the Gulf. New Delhi is charting its own path — refusing to join US-led escort operations while negotiating bilateral passage guarantees with Tehran. India released three seized Iranian oil tankers on Mar 16 in exchange for safe passage of two Indian LPG tankers through Hormuz. India’s Quad partnership with the US complicates its neutrality, but Modi is prioritizing energy security over alliance signaling. Indian Navy deployed INS Vikrant carrier group to the Arabian Sea for \"presence operations.\"</p><div><span class=\"fm-stat fm-stat-green\">Iran: bilateral passage deal</span><span class=\"fm-stat fm-stat-blue\">INS Vikrant CSG: Arabian Sea</span><span class=\"fm-stat fm-stat-yellow\">60% oil from Gulf</span></div><div class=\"fm-objectives\"><strong>Interest</strong>Secure uninterrupted energy imports from the Gulf. Maintain strategic autonomy between US and Iran. Protect 9 million Indian workers in Gulf states. Avoid being drawn into coalition operations that would jeopardize the Iran passage deal.</div>"
+  },
+  "Pakistan": {
+    "name": "Pakistan — Mediator",
+    "flag": "🇵🇰",
+    "role": "Mediator",
+    "roleClass": "fm-role-partner",
+    "body": "<p>Emerging as a potential mediator alongside Turkey and Egypt. Islamabad’s unique position — a nuclear-armed Muslim-majority state with ties to both Iran and Saudi Arabia — gives it diplomatic leverage neither Washington nor Beijing can match. The Gwadar port (China’s CPEC gateway) sits just east of the Strait of Hormuz and faces direct economic exposure from the blockade. Pakistan’s ISI maintains intelligence channels with IRGC counterparts from the Afghan border era. Pakistani ships have transited Hormuz via negotiated safe passages.</p><div><span class=\"fm-stat fm-stat-blue\">Mediator: ceasefire framework</span><span class=\"fm-stat fm-stat-yellow\">Gwadar port: CPEC exposure</span><span class=\"fm-stat fm-stat-yellow\">ISI–IRGC channels: active</span></div><div class=\"fm-objectives\"><strong>Interest</strong>Broker a ceasefire to stabilize energy prices and protect Gulf remittances ($31B/yr from Gulf workers). Prevent conflict spillover along the Iran–Balochistan border. Demonstrate diplomatic relevance to counter Indian regional influence.</div>"
+  }
+}

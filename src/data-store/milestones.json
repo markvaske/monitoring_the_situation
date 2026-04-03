@@ -1,0 +1,1435 @@
+[
+  {
+    "d": "2026-02-28",
+    "icon": "💥",
+    "label": "Strikes begin",
+    "kw": [
+      "strike",
+      "strikes",
+      "CENTCOM",
+      "operation",
+      "nuclear"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 32.4,
+    "lng": 51.7
+  },
+  {
+    "d": "2026-02-28",
+    "icon": "💀",
+    "label": "Khamenei killed",
+    "kw": [
+      "Khamenei",
+      "killed",
+      "supreme leader",
+      "slain"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 35.7,
+    "lng": 51.4
+  },
+  {
+    "d": "2026-03-01",
+    "icon": "💣",
+    "label": "Hormuz mined",
+    "kw": [
+      "mine",
+      "mines",
+      "Hormuz"
+    ],
+    "cats": [
+      "maritime",
+      "military"
+    ],
+    "lat": 26.5,
+    "lng": 56.3
+  },
+  {
+    "d": "2026-03-02",
+    "icon": "🔥",
+    "label": "Hezbollah enters war",
+    "kw": [
+      "Hezbollah",
+      "ceasefire",
+      "rocket",
+      "Lebanon",
+      "Beirut"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 33.9,
+    "lng": 35.5
+  },
+  {
+    "d": "2026-03-03",
+    "icon": "🚢",
+    "label": "Tanker struck",
+    "kw": [
+      "tanker",
+      "mine",
+      "Hormuz",
+      "shipping",
+      "Pelagia",
+      "Libra"
+    ],
+    "cats": [
+      "maritime"
+    ],
+    "lat": 26.4,
+    "lng": 56.4
+  },
+  {
+    "d": "2026-03-04",
+    "icon": "🚢",
+    "label": "USS Charlotte sinks IRIS Dena",
+    "kw": [
+      "Dena",
+      "submarine",
+      "torpedo",
+      "Charlotte",
+      "sunk",
+      "warship",
+      "Indian Ocean",
+      "Sri Lanka"
+    ],
+    "cats": [
+      "maritime",
+      "military"
+    ],
+    "lat": 6,
+    "lng": 79.9
+  },
+  {
+    "d": "2026-03-05",
+    "icon": "💥",
+    "label": "Nakhchivan airport hit",
+    "kw": [
+      "Azerbaijan",
+      "Nakhchivan",
+      "drone",
+      "airport",
+      "spillover",
+      "Caucasus"
+    ],
+    "cats": [
+      "aviation",
+      "military"
+    ],
+    "lat": 39.2,
+    "lng": 45.5
+  },
+  {
+    "d": "2026-03-06",
+    "icon": "✈",
+    "label": "UAE airports reopen",
+    "kw": [
+      "reopen",
+      "UAE",
+      "airport",
+      "repatriation"
+    ],
+    "cats": [
+      "aviation"
+    ],
+    "lat": 25.25,
+    "lng": 55.36
+  },
+  {
+    "d": "2026-03-07",
+    "icon": "🏴",
+    "label": "Houthis threaten Red Sea",
+    "kw": [
+      "Houthi",
+      "Red Sea",
+      "Yemen",
+      "solidarity",
+      "Ansar Allah"
+    ],
+    "cats": [
+      "maritime",
+      "military"
+    ],
+    "lat": 15.3,
+    "lng": 42.6
+  },
+  {
+    "d": "2026-03-08",
+    "icon": "🌍",
+    "label": "UN emergency session",
+    "kw": [
+      "UN",
+      "emergency",
+      "international",
+      "session",
+      "General Assembly"
+    ],
+    "cats": [
+      "diplomatic",
+      "general"
+    ]
+  },
+  {
+    "d": "2026-03-08",
+    "icon": "👑",
+    "label": "Mojtaba named successor",
+    "kw": [
+      "Mojtaba",
+      "successor",
+      "supreme leader",
+      "Assembly of Experts"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 35.7,
+    "lng": 51.4
+  },
+  {
+    "d": "2026-03-09",
+    "icon": "✊",
+    "label": "Pro-Mojtaba rallies in Tehran",
+    "kw": [
+      "rally",
+      "Mojtaba",
+      "Tehran",
+      "support",
+      "solidarity",
+      "march"
+    ],
+    "cats": [
+      "general"
+    ],
+    "lat": 35.7,
+    "lng": 51.4
+  },
+  {
+    "d": "2026-03-10",
+    "icon": "💣",
+    "label": "B-2 hits IRGC naval bases",
+    "kw": [
+      "B-2",
+      "Bandar Abbas",
+      "Bushehr",
+      "naval",
+      "stealth",
+      "bomber",
+      "IRGC"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 27.2,
+    "lng": 56.3
+  },
+  {
+    "d": "2026-03-11",
+    "icon": "⚓",
+    "label": "Hormuz partial clearing",
+    "kw": [
+      "clear",
+      "Hormuz",
+      "mine",
+      "strait",
+      "IRIS Dena"
+    ],
+    "cats": [
+      "maritime",
+      "military"
+    ],
+    "lat": 26.5,
+    "lng": 56.3
+  },
+  {
+    "d": "2026-03-12",
+    "icon": "✈️",
+    "label": "Beqaa Valley air campaign",
+    "kw": [
+      "Beqaa",
+      "Lebanon",
+      "Hezbollah",
+      "strike",
+      "IAF",
+      "campaign"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 33.8,
+    "lng": 36
+  },
+  {
+    "d": "2026-03-13",
+    "icon": "🛩️",
+    "label": "KC-135 crash; 6 crew killed",
+    "kw": [
+      "KC-135",
+      "crash",
+      "Iraq",
+      "crew",
+      "refueling",
+      "tanker",
+      "killed"
+    ],
+    "cats": [
+      "military",
+      "aviation"
+    ],
+    "lat": 33,
+    "lng": 42
+  },
+  {
+    "d": "2026-03-14",
+    "icon": "🛢",
+    "label": "Convoy escorts begin",
+    "kw": [
+      "convoy",
+      "escort",
+      "Hormuz",
+      "cleared",
+      "ceasefire"
+    ],
+    "cats": [
+      "maritime",
+      "diplomatic"
+    ],
+    "lat": 26.5,
+    "lng": 56.3
+  },
+  {
+    "d": "2026-03-15",
+    "icon": "🔥",
+    "label": "Kuwait hit; Oman attacked",
+    "kw": [
+      "Kuwait",
+      "Oman",
+      "drone",
+      "missile",
+      "intercept",
+      "radar",
+      "al-Jaber"
+    ],
+    "cats": [
+      "military",
+      "aviation"
+    ],
+    "lat": 28.9,
+    "lng": 47.8
+  },
+  {
+    "d": "2026-03-16",
+    "icon": "💥",
+    "label": "Dubai airport struck",
+    "kw": [
+      "Dubai",
+      "airport",
+      "fuel tank",
+      "Fujairah",
+      "Abu Dhabi"
+    ],
+    "cats": [
+      "aviation",
+      "military"
+    ],
+    "lat": 25.25,
+    "lng": 55.36
+  },
+  {
+    "d": "2026-03-17",
+    "icon": "💀",
+    "label": "Larijani killed",
+    "kw": [
+      "Larijani",
+      "killed",
+      "security",
+      "Basij",
+      "Soleimani",
+      "de facto"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 35.7,
+    "lng": 51.4
+  },
+  {
+    "d": "2026-03-17",
+    "icon": "🚪",
+    "label": "Kent resigns over war",
+    "kw": [
+      "Kent",
+      "resign",
+      "counterterrorism",
+      "quit",
+      "NCTC"
+    ],
+    "cats": [
+      "diplomatic"
+    ]
+  },
+  {
+    "d": "2026-03-18",
+    "icon": "💀",
+    "label": "Intel chief Khatib killed",
+    "kw": [
+      "Khatib",
+      "intelligence",
+      "minister",
+      "killed",
+      "assassin"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 35.7,
+    "lng": 51.4
+  },
+  {
+    "d": "2026-03-18",
+    "icon": "🛢",
+    "label": "South Pars gas field struck",
+    "kw": [
+      "South Pars",
+      "Asaluyeh",
+      "gas",
+      "refinery",
+      "Qatar",
+      "energy"
+    ],
+    "cats": [
+      "military",
+      "stocks"
+    ],
+    "lat": 27.5,
+    "lng": 52.5
+  },
+  {
+    "d": "2026-03-18",
+    "icon": "💥",
+    "label": "Ras Laffan LNG hub hit",
+    "kw": [
+      "Ras Laffan",
+      "LNG",
+      "Qatar",
+      "missile",
+      "energy",
+      "damage"
+    ],
+    "cats": [
+      "military",
+      "maritime",
+      "stocks"
+    ],
+    "lat": 25.9,
+    "lng": 51.6
+  },
+  {
+    "d": "2026-03-18",
+    "icon": "🛢",
+    "label": "Oil surges past $110",
+    "kw": [
+      "oil",
+      "$110",
+      "brent",
+      "surge",
+      "energy",
+      "infrastructure"
+    ],
+    "cats": [
+      "stocks"
+    ]
+  },
+  {
+    "d": "2026-03-18",
+    "icon": "🕯",
+    "label": "First West Bank fatalities",
+    "kw": [
+      "Beit Awwa",
+      "West Bank",
+      "Palestinian",
+      "killed",
+      "missile",
+      "women"
+    ],
+    "cats": [
+      "military",
+      "humanitarian"
+    ],
+    "lat": 31.5,
+    "lng": 34.9
+  },
+  {
+    "d": "2026-03-19",
+    "icon": "🔥",
+    "label": "Kuwait refineries struck",
+    "kw": [
+      "Kuwait",
+      "Mina Al-Ahmadi",
+      "Mina Abdullah",
+      "refinery",
+      "strike",
+      "fire"
+    ],
+    "cats": [
+      "military",
+      "stocks"
+    ],
+    "lat": 29,
+    "lng": 48.15
+  },
+  {
+    "d": "2026-03-19",
+    "icon": "🛢",
+    "label": "Brent spikes to $118",
+    "kw": [
+      "oil",
+      "$118",
+      "$111",
+      "brent",
+      "surge",
+      "Yanbu",
+      "energy",
+      "crude",
+      "settle"
+    ],
+    "cats": [
+      "stocks"
+    ]
+  },
+  {
+    "d": "2026-03-19",
+    "icon": "💰",
+    "label": "Pentagon seeks $200B",
+    "kw": [
+      "Pentagon",
+      "$200B",
+      "supplemental",
+      "budget",
+      "Congress",
+      "funding"
+    ],
+    "cats": [
+      "military",
+      "diplomatic"
+    ]
+  },
+  {
+    "d": "2026-03-19",
+    "icon": "🚢",
+    "label": "Six nations pledge Hormuz action",
+    "kw": [
+      "Hormuz",
+      "UK",
+      "France",
+      "Germany",
+      "Italy",
+      "Japan",
+      "Netherlands",
+      "safe passage",
+      "joint statement",
+      "naval"
+    ],
+    "cats": [
+      "diplomatic",
+      "maritime"
+    ]
+  },
+  {
+    "d": "2026-03-20",
+    "icon": "🔥",
+    "label": "Bandar Lengeh port destroyed",
+    "kw": [
+      "Bandar Lengeh",
+      "boats",
+      "fire",
+      "IRGCN",
+      "port",
+      "naval",
+      "Hormuz"
+    ],
+    "cats": [
+      "military",
+      "maritime"
+    ],
+    "lat": 26.53,
+    "lng": 54.88
+  },
+  {
+    "d": "2026-03-20",
+    "icon": "🇮🇷",
+    "label": "IRGC spokesman killed",
+    "kw": [
+      "IRGC",
+      "spokesman",
+      "killed",
+      "airstrike",
+      "missile production"
+    ],
+    "cats": [
+      "military"
+    ]
+  },
+  {
+    "d": "2026-03-20",
+    "icon": "🇺🇳",
+    "label": "UNSC adopts Iran resolution",
+    "kw": [
+      "Security Council",
+      "resolution",
+      "Bahrain",
+      "condemn",
+      "Russia",
+      "veto",
+      "UNSC"
+    ],
+    "cats": [
+      "diplomatic"
+    ]
+  },
+  {
+    "d": "2026-03-20",
+    "icon": "⚓",
+    "label": "Bandar Anzali Caspian strike",
+    "kw": [
+      "Bandar Anzali",
+      "Caspian",
+      "frigate",
+      "Deylaman",
+      "vessels",
+      "Russia",
+      "supply line"
+    ],
+    "cats": [
+      "military",
+      "maritime"
+    ],
+    "lat": 37.47,
+    "lng": 49.46
+  },
+  {
+    "d": "2026-03-20",
+    "icon": "🛡",
+    "label": "85% of Iran SAMs destroyed",
+    "kw": [
+      "SAM",
+      "air defense",
+      "Shahroud",
+      "Khorgu",
+      "Borazjan",
+      "85%",
+      "missile"
+    ],
+    "cats": [
+      "military"
+    ]
+  },
+  {
+    "d": "2026-03-20",
+    "icon": "💵",
+    "label": "$23B arms sales bypasses Congress",
+    "kw": [
+      "$23B",
+      "weapons",
+      "arms",
+      "UAE",
+      "Kuwait",
+      "Jordan",
+      "Congress",
+      "emergency"
+    ],
+    "cats": [
+      "diplomatic",
+      "military"
+    ]
+  },
+  {
+    "d": "2026-03-20",
+    "icon": "🛢",
+    "label": "US lifts sanctions on 140M bbl Iranian oil",
+    "kw": [
+      "sanctions",
+      "oil",
+      "140 million",
+      "barrels",
+      "Iranian",
+      "lift"
+    ],
+    "cats": [
+      "stocks",
+      "diplomatic"
+    ]
+  },
+  {
+    "d": "2026-03-20",
+    "icon": "🏳",
+    "label": "Trump claims US has \"won\"",
+    "kw": [
+      "winding down",
+      "won",
+      "Trump",
+      "victory",
+      "considering"
+    ],
+    "cats": [
+      "diplomatic"
+    ]
+  },
+  {
+    "d": "2026-03-21",
+    "icon": "🚀",
+    "label": "Iran fires IRBMs at Diego Garcia",
+    "kw": [
+      "Diego Garcia",
+      "IRBM",
+      "4,000km",
+      "range",
+      "Indian Ocean",
+      "missile"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": -7.3,
+    "lng": 72.4
+  },
+  {
+    "d": "2026-03-21",
+    "icon": "🛢",
+    "label": "Iraq declares force majeure on oil",
+    "kw": [
+      "Iraq",
+      "force majeure",
+      "Basra",
+      "oilfield",
+      "production",
+      "bpd"
+    ],
+    "cats": [
+      "stocks",
+      "military"
+    ]
+  },
+  {
+    "d": "2026-03-21",
+    "icon": "💥",
+    "label": "Israel strikes Tehran overnight",
+    "kw": [
+      "Tehran",
+      "overnight",
+      "regime",
+      "IDF",
+      "strike",
+      "Beirut"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 35.7,
+    "lng": 51.4
+  },
+  {
+    "d": "2026-03-22",
+    "icon": "☢",
+    "label": "Natanz nuclear facility struck",
+    "kw": [
+      "Natanz",
+      "nuclear",
+      "enrichment",
+      "IAEA",
+      "centrifuge",
+      "uranium"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 33.7,
+    "lng": 51.7
+  },
+  {
+    "d": "2026-03-22",
+    "icon": "💬",
+    "label": "22 nations sign Hormuz passage statement",
+    "kw": [
+      "Hormuz",
+      "passage",
+      "statement",
+      "22",
+      "nations",
+      "UAE",
+      "safe"
+    ],
+    "cats": [
+      "diplomatic",
+      "maritime"
+    ]
+  },
+  {
+    "d": "2026-03-22",
+    "icon": "🔍",
+    "label": "ISW: Mojtaba Khamenei likely incapacitated",
+    "kw": [
+      "Mojtaba",
+      "Khamenei",
+      "incapacitated",
+      "Supreme Leader",
+      "missing",
+      "ISW"
+    ],
+    "cats": [
+      "military",
+      "diplomatic"
+    ]
+  },
+  {
+    "d": "2026-03-23",
+    "icon": "⚡",
+    "label": "Trump 48-hour Hormuz ultimatum",
+    "kw": [
+      "Trump",
+      "48",
+      "ultimatum",
+      "Hormuz",
+      "power plants",
+      "obliterate",
+      "escalate"
+    ],
+    "cats": [
+      "diplomatic",
+      "military"
+    ]
+  },
+  {
+    "d": "2026-03-23",
+    "icon": "🕊",
+    "label": "Trump postpones strikes, claims Iran talks",
+    "kw": [
+      "Trump",
+      "postpone",
+      "delay",
+      "talks",
+      "Kushner",
+      "Witkoff",
+      "negotiations",
+      "5 days",
+      "15 points"
+    ],
+    "cats": [
+      "diplomatic"
+    ]
+  },
+  {
+    "d": "2026-03-23",
+    "icon": "💥",
+    "label": "Iranian missiles hit Dimona & Arad",
+    "kw": [
+      "Dimona",
+      "Arad",
+      "missiles",
+      "nuclear",
+      "160",
+      "injured",
+      "Negev"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 31.07,
+    "lng": 35.21
+  },
+  {
+    "d": "2026-03-23",
+    "icon": "🕹",
+    "label": "IRGC Drone Commander Agha Jani killed",
+    "kw": [
+      "Agha Jani",
+      "drone",
+      "IRGC",
+      "commander",
+      "killed",
+      "Russia",
+      "$10M"
+    ],
+    "cats": [
+      "military"
+    ]
+  },
+  {
+    "d": "2026-03-23",
+    "icon": "🏢",
+    "label": "IDF strikes IRGC main HQ in Tehran",
+    "kw": [
+      "IRGC",
+      "headquarters",
+      "Tehran",
+      "heart",
+      "9000",
+      "strikes",
+      "140",
+      "naval"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 35.69,
+    "lng": 51.39
+  },
+  {
+    "d": "2026-03-23",
+    "icon": "🌉",
+    "label": "IDF destroys Litani River bridges",
+    "kw": [
+      "Litani",
+      "bridges",
+      "Lebanon",
+      "ground invasion",
+      "prelude",
+      "Aoun"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 33.35,
+    "lng": 35.25
+  },
+  {
+    "d": "2026-03-23",
+    "icon": "🪂",
+    "label": "Pentagon weighs 82nd Airborne for Kharg",
+    "kw": [
+      "82nd",
+      "Airborne",
+      "Kharg",
+      "paratroopers",
+      "Pentagon",
+      "amphibious"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 29.23,
+    "lng": 50.33
+  },
+  {
+    "d": "2026-03-24",
+    "icon": "🚀",
+    "label": "Iranian missiles hit Tel Aviv",
+    "kw": [
+      "Tel Aviv",
+      "Iran",
+      "missiles",
+      "ballistic",
+      "impact",
+      "buildings",
+      "wounded"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 32.07,
+    "lng": 34.78
+  },
+  {
+    "d": "2026-03-24",
+    "icon": "🤝",
+    "label": "Pakistan to host Iran-US direct talks",
+    "kw": [
+      "Pakistan",
+      "Islamabad",
+      "talks",
+      "Vance",
+      "Witkoff",
+      "Kushner",
+      "Iran",
+      "negotiations"
+    ],
+    "cats": [
+      "diplomatic"
+    ],
+    "lat": 33.69,
+    "lng": 73.04
+  },
+  {
+    "d": "2026-03-24",
+    "icon": "💥",
+    "label": "Israel resumes Beirut strikes",
+    "kw": [
+      "Beirut",
+      "Hezbollah",
+      "suburbs",
+      "IDF",
+      "strikes",
+      "Lebanon",
+      "Bshamoun"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 33.85,
+    "lng": 35.47
+  },
+  {
+    "d": "2026-03-24",
+    "icon": "⛽",
+    "label": "Slovenia first EU state to ration fuel",
+    "kw": [
+      "Slovenia",
+      "fuel",
+      "rationing",
+      "EU",
+      "energy",
+      "crisis",
+      "Australia"
+    ],
+    "cats": [
+      "stocks",
+      "general"
+    ]
+  },
+  {
+    "d": "2026-03-24",
+    "icon": "📜",
+    "label": "US sends 15-point peace plan to Iran via Pakistan",
+    "kw": [
+      "peace",
+      "plan",
+      "15-point",
+      "Pakistan",
+      "Vance",
+      "Rubio",
+      "negotiations",
+      "deal"
+    ],
+    "cats": [
+      "diplomatic"
+    ]
+  },
+  {
+    "d": "2026-03-24",
+    "icon": "☢️",
+    "label": "Projectile hits Bushehr nuclear plant premises",
+    "kw": [
+      "Bushehr",
+      "nuclear",
+      "IAEA",
+      "Grossi",
+      "power plant",
+      "reactor"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 28.83,
+    "lng": 50.89
+  },
+  {
+    "d": "2026-03-24",
+    "icon": "🏗️",
+    "label": "Israel announces Lebanon security zone to Litani",
+    "kw": [
+      "Litani",
+      "Lebanon",
+      "occupation",
+      "security zone",
+      "Katz",
+      "IDF"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 33.35,
+    "lng": 35.25
+  },
+  {
+    "d": "2026-03-25",
+    "icon": "🚨",
+    "label": "IRGC fires missiles at US bases across Gulf",
+    "kw": [
+      "IRGC",
+      "missiles",
+      "Kuwait",
+      "Jordan",
+      "Bahrain",
+      "bases",
+      "US",
+      "attacks"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 29.38,
+    "lng": 47.99
+  },
+  {
+    "d": "2026-03-25",
+    "icon": "📉",
+    "label": "Brent crashes 6% to $94 on peace plan hopes",
+    "kw": [
+      "oil",
+      "Brent",
+      "crash",
+      "prices",
+      "markets",
+      "peace",
+      "ceasefire"
+    ],
+    "cats": [
+      "stocks"
+    ]
+  },
+  {
+    "d": "2026-03-25",
+    "icon": "🇨🇳",
+    "label": "China urges Iran to initiate peace talks",
+    "kw": [
+      "China",
+      "Wang Yi",
+      "Araghchi",
+      "peace",
+      "talks",
+      "negotiations",
+      "Beijing"
+    ],
+    "cats": [
+      "diplomatic"
+    ]
+  },
+  {
+    "d": "2026-03-25",
+    "icon": "⚓",
+    "label": "Iran charging Hormuz transit fees — $2M per vessel",
+    "kw": [
+      "Hormuz",
+      "transit",
+      "fees",
+      "Larak",
+      "Iran",
+      "shipping",
+      "mines"
+    ],
+    "cats": [
+      "maritime"
+    ]
+  },
+  {
+    "d": "2026-03-25",
+    "icon": "💣",
+    "label": "Drones hit Kuwait Airport fuel tank",
+    "kw": [
+      "Kuwait",
+      "airport",
+      "drones",
+      "fuel",
+      "fire",
+      "attack"
+    ],
+    "cats": [
+      "military",
+      "aviation"
+    ],
+    "lat": 29.23,
+    "lng": 47.97
+  },
+  {
+    "d": "2026-03-25",
+    "icon": "🌍",
+    "label": "WTO warns Hormuz closure threatens global food supply",
+    "kw": [
+      "WTO",
+      "fertilizer",
+      "food",
+      "Hormuz",
+      "crisis",
+      "supply"
+    ],
+    "cats": [
+      "general",
+      "maritime"
+    ]
+  },
+  {
+    "d": "2026-03-26",
+    "icon": "🎯",
+    "label": "IDF kills IRGCN commander Tangsiri",
+    "kw": [
+      "Tangsiri",
+      "IRGCN",
+      "navy",
+      "commander",
+      "killed",
+      "Hormuz",
+      "blockade"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 27.1,
+    "lng": 56.2
+  },
+  {
+    "d": "2026-03-26",
+    "icon": "⏳",
+    "label": "Trump extends Hormuz deadline to April 6",
+    "kw": [
+      "Trump",
+      "Hormuz",
+      "deadline",
+      "extension",
+      "April",
+      "Iran",
+      "diplomacy"
+    ],
+    "cats": [
+      "diplomatic"
+    ]
+  },
+  {
+    "d": "2026-03-26",
+    "icon": "📉",
+    "label": "Wall Street posts largest single-day drop since war began",
+    "kw": [
+      "stocks",
+      "Wall Street",
+      "crash",
+      "S&P",
+      "market",
+      "decline"
+    ],
+    "cats": [
+      "stocks"
+    ]
+  },
+  {
+    "d": "2026-03-27",
+    "icon": "☢️",
+    "label": "IDF strikes Arak and Ardakan nuclear facilities",
+    "kw": [
+      "Arak",
+      "Ardakan",
+      "nuclear",
+      "heavy water",
+      "yellowcake",
+      "IAEA",
+      "strikes"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 34.05,
+    "lng": 49.25
+  },
+  {
+    "d": "2026-03-27",
+    "icon": "🇾🇪",
+    "label": "Houthis launch first missile from Yemen toward Israel",
+    "kw": [
+      "Houthi",
+      "Yemen",
+      "missile",
+      "Israel",
+      "intercepted",
+      "Ansar Allah"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 15.3,
+    "lng": 44.2
+  },
+  {
+    "d": "2026-03-27",
+    "icon": "💥",
+    "label": "12 US troops injured at Prince Sultan Air Base",
+    "kw": [
+      "Prince Sultan",
+      "PSAB",
+      "US",
+      "troops",
+      "injured",
+      "Saudi",
+      "attack",
+      "KC-135"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 24.06,
+    "lng": 47.58
+  },
+  {
+    "d": "2026-03-28",
+    "icon": "🏭",
+    "label": "Combined force hits 4 missile production facilities, 29 launch bases",
+    "kw": [
+      "missile",
+      "production",
+      "Khojir",
+      "Shahroud",
+      "Parchin",
+      "Hakimiyeh",
+      "facilities",
+      "launch",
+      "bases",
+      "halted"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 35.7,
+    "lng": 51.5
+  },
+  {
+    "d": "2026-03-28",
+    "icon": "☢️",
+    "label": "SPND nuclear weapons research chief Fuladvand killed",
+    "kw": [
+      "Fuladvand",
+      "SPND",
+      "nuclear",
+      "weapons",
+      "research",
+      "killed",
+      "Borujerd"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 33.9,
+    "lng": 48.8
+  },
+  {
+    "d": "2026-03-28",
+    "icon": "🇾🇪",
+    "label": "Houthis conduct second attack on Israel",
+    "kw": [
+      "Houthi",
+      "Yemen",
+      "second",
+      "attack",
+      "Israel",
+      "ballistic",
+      "drones"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 15.3,
+    "lng": 44.2
+  },
+  {
+    "d": "2026-03-29",
+    "icon": "💣",
+    "label": "Iranian missiles hit Beersheba chemical plant — 11 wounded",
+    "kw": [
+      "Beersheba",
+      "chemical",
+      "ADAMA",
+      "Makhteshim",
+      "missiles",
+      "Israel",
+      "wounded"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 31.25,
+    "lng": 34.8
+  },
+  {
+    "d": "2026-03-29",
+    "icon": "🇱🇧",
+    "label": "Netanyahu expands Lebanon security zone; 1,200+ killed",
+    "kw": [
+      "Netanyahu",
+      "Lebanon",
+      "security zone",
+      "expansion",
+      "Litani",
+      "killed"
+    ],
+    "cats": [
+      "military"
+    ],
+    "lat": 33.3,
+    "lng": 35.4
+  },
+  {
+    "d": "2026-03-29",
+    "icon": "🤝",
+    "label": "Pakistan announces US-Iran peace talks \"in coming days\"",
+    "kw": [
+      "Pakistan",
+      "peace",
+      "talks",
+      "negotiations",
+      "US",
+      "Iran",
+      "Islamabad"
+    ],
+    "cats": [
+      "diplomatic"
+    ],
+    "lat": 33.7,
+    "lng": 73.1
+  },
+  {
+    "d": "2026-03-31",
+    "icon": "🚢",
+    "label": "Kuwaiti VLCC struck at Port of Dubai — first attack on UAE port facility",
+    "kw": [
+      "Al Salmi",
+      "VLCC",
+      "Dubai",
+      "port",
+      "tanker",
+      "drone",
+      "Kuwait"
+    ],
+    "cats": [
+      "maritime"
+    ],
+    "lat": 25.27,
+    "lng": 55.3
+  },
+  {
+    "d": "2026-03-31",
+    "icon": "⏳",
+    "label": "Trump signals war could end in '2–3 weeks'; Iran doesn't need to make a deal",
+    "kw": [
+      "Trump",
+      "weeks",
+      "end",
+      "war",
+      "ceasefire",
+      "withdrawal"
+    ],
+    "cats": [
+      "diplomatic"
+    ],
+    "lat": 38.9,
+    "lng": -77
+  },
+  {
+    "d": "2026-04-01",
+    "icon": "🕊️",
+    "label": "Trump claims Iran ceasefire request — Iran denies it; largest Iranian missile salvo of war",
+    "kw": [
+      "ceasefire",
+      "Trump",
+      "Pezeshkian",
+      "denied",
+      "false",
+      "salvo",
+      "largest"
+    ],
+    "cats": [
+      "diplomatic",
+      "military"
+    ],
+    "lat": 32,
+    "lng": 53
+  }
+]

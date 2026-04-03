@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Ali Khamenei",
+    "flag": "🇮🇷",
+    "faction": "axis",
+    "title": "Supreme Leader of Iran (deceased)",
+    "status": "killed",
+    "desc": "Killed in the Feb 28 initial strikes along with much of Iran's senior leadership. His death triggered the succession of his son Mojtaba and transformed the conflict from a nuclear standoff into an existential war for the Islamic Republic."
+  },
+  {
+    "name": "Mojtaba Khamenei",
+    "flag": "🇮🇷",
+    "faction": "axis",
+    "title": "Supreme Leader of Iran (status unknown)",
+    "status": "unknown",
+    "desc": "Assumed power after his father's assassination. ISW assessed with moderate-to-high confidence that he has been incapacitated — no public appearance in three weeks, only written statements and recycled imagery. A senior Israeli official told Axios: \"We have no evidence that he is really the one giving orders.\" IRGC command structure appears to be operating autonomously."
+  },
+  {
+    "name": "Hossein Salami",
+    "flag": "🇮🇷",
+    "faction": "axis",
+    "title": "Commander-in-Chief, IRGC",
+    "status": "active",
+    "desc": "Directing Iran's retaliatory campaign — escalating from military targets to Gulf energy infrastructure. Ordered strikes on Ras Laffan, Yanbu, Habshan, and Kuwaiti refineries. Oversees Hormuz \"vetting system\" restricting shipping."
+  },
+  {
+    "name": "Esmail Qaani",
+    "flag": "🇮🇷",
+    "faction": "axis",
+    "title": "Commander, IRGC Quds Force",
+    "status": "active",
+    "desc": "Coordinates Iran's proxy network across Iraq, Syria, Lebanon, and Yemen. Successor to Qasem Soleimani. Managing PMF operations in Iraq and Hezbollah coordination from Lebanon."
+  },
+  {
+    "name": "Mohammad-Hossein Khatib",
+    "flag": "🇮🇷",
+    "faction": "axis",
+    "title": "Intelligence Minister (deceased)",
+    "status": "killed",
+    "desc": "Killed by Israeli precision airstrike on Mar 18. His death represents the systematic dismantling of Iran's intelligence apparatus. Fourth senior Iranian official eliminated since the conflict began."
+  },
+  {
+    "name": "Esmail Ahmadi",
+    "flag": "🇮🇷",
+    "faction": "axis",
+    "title": "Basij Intelligence Chief (deceased)",
+    "status": "killed",
+    "desc": "Killed by Israeli Air Force precision strike on a command facility in Isfahan on Mar 22. Most senior Basij official killed since the conflict began. Believed to coordinate domestic surveillance and militia mobilization across Iran."
+  },
+  {
+    "name": "Benjamin Netanyahu",
+    "flag": "🇮🇱",
+    "faction": "coalition",
+    "title": "Prime Minister of Israel",
+    "status": "active",
+    "desc": "Co-architect of the Feb 28 strikes. Expanded the Israeli strike envelope from nuclear sites to Caspian naval bases and the Nur facility. Agreed to pause energy infrastructure strikes under US pressure but continues assassinating Iranian military leaders."
+  },
+  {
+    "name": "Israel Katz",
+    "flag": "🇮🇱",
+    "faction": "coalition",
+    "title": "Minister of Defense, Israel",
+    "status": "active",
+    "desc": "Overseeing IDF operations on two fronts — Iran and Lebanon. Greenlit reinforcement deployments to the northern border after Hezbollah escalated with 200km-range missiles. Managing the air campaign that has destroyed 85% of Iran's SAM systems."
+  },
+  {
+    "name": "Donald Trump",
+    "flag": "🇺🇸",
+    "faction": "coalition",
+    "title": "President of the United States",
+    "status": "active",
+    "desc": "Authorized the Feb 28 joint strikes. Intervened to restrain Netanyahu from further energy infrastructure attacks. Balancing maximum pressure on Iran with preventing the conflict from collapsing global energy markets."
+  },
+  {
+    "name": "Pete Hegseth",
+    "flag": "🇺🇸",
+    "faction": "coalition",
+    "title": "Secretary of Defense",
+    "status": "active",
+    "desc": "Directing US military operations from CENTCOM. Overseeing carrier strike groups in the Gulf, coalition escort operations through Hormuz, and the air campaign against Iranian military targets. Managing force protection across multiple theaters."
+  },
+  {
+    "name": "Hassan Nasrallah",
+    "flag": "🇱🇧",
+    "faction": "axis",
+    "title": "Secretary-General, Hezbollah",
+    "status": "active",
+    "desc": "Opened the northern front with rocket barrages into Israel, deploying 200km-range missiles to strike Ashkelon. Over 1,000 killed in Israeli counter-strikes. Continuing to escalate despite devastating losses to Hezbollah's command structure — 20+ commanders killed."
+  },
+  {
+    "name": "Abdul-Malik al-Houthi",
+    "flag": "🇾🇪",
+    "faction": "axis",
+    "title": "Leader, Ansar Allah (Houthis)",
+    "status": "active",
+    "desc": "Directing anti-shipping operations in the Red Sea and Bab el-Mandeb. Launching kamikaze drones and anti-ship missiles at commercial vessels, extending the conflict 2,000 km south. Currently holding fire as Iran shifts focus to Gulf energy targets."
+  },
+  {
+    "name": "Mohammed bin Salman",
+    "flag": "🇸🇦",
+    "faction": "coalition",
+    "title": "Crown Prince of Saudi Arabia",
+    "status": "active",
+    "desc": "Declared trust with Iran \"completely shattered\" after Yanbu refinery struck. Reserves right to take direct military action. Hosting coalition logistics at Prince Sultan Air Base while coordinating GCC defensive response."
+  },
+  {
+    "name": "Mohammed bin Zayed",
+    "flag": "🇦🇪",
+    "faction": "neutral",
+    "title": "President of the UAE",
+    "status": "active",
+    "desc": "Managing the UAE's exposure as its energy infrastructure — Habshan, Bab oil field — takes repeated hits. ADNOC has suspended all operations. Intercepted 327+ ballistic missiles and 1,700+ drones. Cooperating with Mossad on Iranian network arrests."
+  },
+  {
+    "name": "Tamim bin Hamad Al Thani",
+    "flag": "🇶🇦",
+    "faction": "coalition",
+    "title": "Emir of Qatar",
+    "status": "active",
+    "desc": "Qatar's Ras Laffan LNG hub — world's largest — devastated by Iranian strikes. Expelled Iran's military attachés. Pivoted from attempted mediation to firm coalition alignment. Hosts CENTCOM forward HQ at Al Udeid."
+  },
+  {
+    "name": "Haitham bin Tariq",
+    "flag": "🇴🇲",
+    "faction": "neutral",
+    "title": "Sultan of Oman",
+    "status": "active",
+    "desc": "Running backchannel ceasefire talks between Washington and Tehran — the only diplomatic channel still functioning. Oman's airspace is the sole reliable southern bypass for commercial aviation. Muscat serving as safe harbor for diverted vessels."
+  },
+  {
+    "name": "Abdel Fattah el-Sisi",
+    "flag": "🇪🇬",
+    "faction": "neutral",
+    "title": "President of Egypt",
+    "status": "active",
+    "desc": "Keeping the Suez Canal open but transits have dropped from ~52/day to ~11/day. Increasing Egyptian Navy Red Sea patrols. Reopened Rafah crossing for humanitarian aid. Balancing US alliance with regional stability concerns."
+  },
+  {
+    "name": "Recep Tayyip Erdoğan",
+    "flag": "🇹🇷",
+    "faction": "neutral",
+    "title": "President of Turkey",
+    "status": "active",
+    "desc": "NATO member refusing to pick a side. Closed airspace to belligerent military overflights while allowing civilian transit. Istanbul airports operating normally. Threading the needle between alliance obligations and regional relationships."
+  },
+  {
+    "name": "Vladimir Putin",
+    "flag": "🇷🇺",
+    "faction": "neutral",
+    "title": "President of Russia",
+    "status": "active",
+    "desc": "Providing satellite imagery, drone technology, and intelligence to Iran. Airlifted medicine via Azerbaijan. Congratulated Mojtaba Khamenei and pledged solidarity. Economically benefiting from oil price spike. Not a combatant but clearly aligned with Tehran."
+  },
+  {
+    "name": "Marco Rubio",
+    "flag": "🇺🇸",
+    "faction": "coalition",
+    "title": "Secretary of State",
+    "status": "active",
+    "desc": "Leading US diplomatic efforts. Warned publicly that Iran was pursuing ICBMs before the conflict began. Managing allied coordination and the diplomatic fallout from strikes on neutral Gulf states' infrastructure."
+  },
+  {
+    "name": "Emmanuel Macron",
+    "flag": "🇫🇷",
+    "faction": "coalition",
+    "title": "President of France",
+    "status": "active",
+    "desc": "Deployed FS Charles de Gaulle carrier to Gulf of Aden. Announced independent operation to open Hormuz. Now consulting UNSC members on a multilateral navigation framework. One French soldier killed in Iraq drone strike."
+  }
+]

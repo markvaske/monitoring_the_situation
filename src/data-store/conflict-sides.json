@@ -1,0 +1,42 @@
+{
+  "coalition": {
+    "label": "Coalition",
+    "countries": [
+      "USA",
+      "Israel",
+      "Saudi Arabia",
+      "Qatar",
+      "Bahrain",
+      "Jordan",
+      "UK",
+      "France",
+      "Germany",
+      "Italy"
+    ]
+  },
+  "axis": {
+    "label": "Axis of Resistance",
+    "countries": [
+      "Iran",
+      "Syria",
+      "Yemen",
+      "Lebanon",
+      "Iraq"
+    ]
+  },
+  "neutral": {
+    "label": "Non-Aligned",
+    "countries": [
+      "UAE",
+      "Kuwait",
+      "Oman",
+      "Egypt",
+      "Turkey",
+      "Azerbaijan",
+      "Russia",
+      "Japan",
+      "India",
+      "Pakistan"
+    ]
+  }
+}

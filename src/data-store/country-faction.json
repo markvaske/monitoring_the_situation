@@ -1,0 +1,102 @@
+{
+  "Iran": {
+    "faction": "axis",
+    "role": "Primary"
+  },
+  "Israel": {
+    "faction": "coalition",
+    "role": "Lead"
+  },
+  "Syria": {
+    "faction": "axis",
+    "role": "Staging ground"
+  },
+  "Iraq": {
+    "faction": "axis",
+    "role": "Irregular (PMF)"
+  },
+  "UAE": {
+    "faction": "neutral",
+    "role": "Exposed"
+  },
+  "Qatar": {
+    "faction": "coalition",
+    "role": "Host nation"
+  },
+  "Saudi Arabia": {
+    "faction": "coalition",
+    "role": "Silent partner"
+  },
+  "Jordan": {
+    "faction": "coalition",
+    "role": "Host nation"
+  },
+  "Lebanon": {
+    "faction": "axis",
+    "role": "Proxy (Hezbollah)"
+  },
+  "Bahrain": {
+    "faction": "coalition",
+    "role": "Host nation"
+  },
+  "Kuwait": {
+    "faction": "neutral",
+    "role": "Locked down"
+  },
+  "Oman": {
+    "faction": "neutral",
+    "role": "Bypass corridor"
+  },
+  "Egypt": {
+    "faction": "neutral",
+    "role": "Mediator / Gatekeeper"
+  },
+  "Turkey": {
+    "faction": "neutral",
+    "role": "Mediator"
+  },
+  "Yemen": {
+    "faction": "axis",
+    "role": "Proxy (Houthis)"
+  },
+  "USA": {
+    "faction": "coalition",
+    "role": "Lead"
+  },
+  "UK": {
+    "faction": "coalition",
+    "role": "Naval support"
+  },
+  "France": {
+    "faction": "coalition",
+    "role": "Naval support"
+  },
+  "Azerbaijan": {
+    "faction": "neutral",
+    "role": "Affected / Transit"
+  },
+  "Russia": {
+    "faction": "neutral",
+    "role": "Iran supporter"
+  },
+  "Germany": {
+    "faction": "coalition",
+    "role": "Reluctant ally"
+  },
+  "Italy": {
+    "faction": "coalition",
+    "role": "Reluctant ally"
+  },
+  "Japan": {
+    "faction": "neutral",
+    "role": "Economic stakeholder"
+  },
+  "India": {
+    "faction": "neutral",
+    "role": "Independent transit"
+  },
+  "Pakistan": {
+    "faction": "neutral",
+    "role": "Mediator"
+  }
+}

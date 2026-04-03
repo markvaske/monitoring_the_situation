@@ -1,0 +1,74 @@
+[
+  {
+    "name": "CSG-3 (USS Abraham Lincoln)",
+    "lat": 24.8,
+    "lng": 58.5,
+    "side": "US",
+    "type": "carrier",
+    "desc": "Carrier Strike Group 3 — F/A-18E/F air superiority, Arabian Sea"
+  },
+  {
+    "name": "CSG-12 (USS Gerald R. Ford)",
+    "lat": 22.5,
+    "lng": 38,
+    "side": "US",
+    "type": "carrier",
+    "desc": "Carrier Strike Group 12 — Red Sea air & missile defense"
+  },
+  {
+    "name": "ESG-1 (USS Bataan ARG)",
+    "lat": 25.5,
+    "lng": 55.5,
+    "side": "US",
+    "type": "amphib",
+    "desc": "Amphibious Ready Group — MEU embarked, Persian Gulf"
+  },
+  {
+    "name": "HMS Queen Elizabeth CSG",
+    "lat": 23,
+    "lng": 60.5,
+    "side": "UK",
+    "type": "carrier",
+    "desc": "UK Carrier Strike Group — F-35B, Gulf of Oman"
+  },
+  {
+    "name": "FS Charles de Gaulle",
+    "lat": 14.5,
+    "lng": 44.5,
+    "side": "France",
+    "type": "carrier",
+    "desc": "French carrier — Rafale-M ops, Gulf of Aden"
+  },
+  {
+    "name": "CTF-153 (Red Sea Patrol)",
+    "lat": 17.5,
+    "lng": 40.5,
+    "side": "US",
+    "type": "taskforce",
+    "desc": "Combined Task Force 153 — Red Sea security"
+  },
+  {
+    "name": "CTF-150 (Arabian Sea)",
+    "lat": 20,
+    "lng": 62,
+    "side": "US",
+    "type": "taskforce",
+    "desc": "Combined Task Force 150 — counter-piracy & smuggling"
+  },
+  {
+    "name": "IRGCN Fast Boat Flotilla",
+    "lat": 26.5,
+    "lng": 55,
+    "side": "Iran",
+    "type": "flotilla",
+    "desc": "IRGCN fast attack craft — Strait of Hormuz patrol"
+  },
+  {
+    "name": "IRIN Submarine Group",
+    "lat": 25.8,
+    "lng": 57.5,
+    "side": "Iran",
+    "type": "submarine",
+    "desc": "IRIN Kilo-class & Fateh-class — Hormuz chokepoint"
+  }
+]
