@@ -197,15 +197,3 @@ function updateAirwaysZoomUI() {
   if (pct) pct.textContent = Math.round(Math.pow(2, zoom - _initialMapZoom) * 100) + '%';
 }
 
-// ===== WATER BODY LABELS =====
-const MAP_WATER_LABELS = [
-  {name:'Persian Gulf', lng:51.5, lat:27.0, rotate:-0.15, size:9},
-  {name:'Arabian Sea', lng:62.0, lat:18.0, rotate:0, size:10},
-  {name:'Gulf of Oman', lng:58.0, lat:23.5, rotate:-0.1, size:8},
-  {name:'Red Sea', lng:36.5, lat:21.5, rotate:-0.55, size:9},
-  {name:'Gulf of Aden', lng:46.0, lat:12.0, rotate:-0.05, size:8},
-  {name:'Mediterranean Sea', lng:30.5, lat:33.8, rotate:0, size:9},
-  {name:'Caspian Sea', lng:51.0, lat:41.5, rotate:-0.2, size:8},
-];
-
-const HZ_WATER_LABELS = MAP_WATER_LABELS; // alias used in draw-sea.js

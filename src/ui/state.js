@@ -7,10 +7,6 @@ let selCo = new Set();       // selected countries (empty = all)
 let selFactions = new Set(); // selected factions (empty = all)
 let hoveredCountry = null;
 let hzHoveredCountry = null; // hovered country on maritime map
-let showNFZ = false, showRoutes = false, showJamming = false;
-let showOpen = false, showRestricted = false, showClosed = false;
-let showCoalitionBases = false, showIranBases = false;
-let showFleet = false;
 // Airways map zoom/pan state (now managed by MapLibre — vars kept for compatibility)
 let aZoom = 1;
 const hzShow = {mine:false, cleared:false, patrol:false, passage:false, houthi:false, lanes:false, corridors:false, naval:false, chokepoints:false};
