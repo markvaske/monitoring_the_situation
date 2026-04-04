@@ -11,12 +11,11 @@ Follow V3.0 Spec (Notes DB) for all standard procedures.
 - If a data point cannot be verified, omit it rather than estimate.
 
 ### Architecture
-- Multi-file structure: `index.html` (HTML shell), `styles.css`, `src/data.js`, `src/map.js`, `src/main.js`.
+- Current: `index.html` (HTML shell), `styles.css`, `src/data.js`, `src/map.js`, `src/main.js`.
+- **Planned (DataStore overhaul in progress):** `src/data.js` → async DataStore loader; time-series data → `src/data-store/*.json`; `src/map.js` → `src/map/` modules; `src/main.js` → `src/ui/` modules. See plan: `/Users/mpvaske/.claude/plans/transient-honking-swan.md`.
 - Canvas context variable is `ctx2` (NOT `ctx` — conflicts with DOM element `#ctx`).
-- Country polygons from Natural Earth 50m GeoJSON (real data). Bahrain hand-drawn (too small).
-- Uniform-scale Mercator projection. `lx(ln)`/`ly(lt)` for coordinate transforms.
+- Map: MapLibre GL JS v4. Feature-state for hover/selected/status; fill-pattern for faction overlays.
 - `drawMap()` delegates to `drawSeaLayers()` and `drawAirLayers()`.
-- DPR-aware hit-testing encapsulated in `hitTestCountries()`.
 
 ### CSS Namespace
 - Spacing tokens: `--sp-xs`(4) `--sp-sm`(8) `--sp-md`(12) `--sp-lg`(16) `--sp-xl`(20) `--sp-2xl`(28).
@@ -32,6 +31,8 @@ Follow V3.0 Spec (Notes DB) for all standard procedures.
 ### Daily Updates
 - When user says "update" → follow `memory/daily-update-skill.md`.
 - After data updates, also update `countryPosture{}` (one paragraph per country max).
+- Scripts: `prep-update.js` (fetches live prices) → `research-update.js` (Haiku 4.5 + web search, draft JSON) → human review → `daily-update.js` (applies to data.js).
+- `research-update.js` requires `ANTHROPIC_API_KEY` env var and Anthropic web search beta enabled.
 
 ### Deployment
 - Live at: https://markvaske.github.io/monitoring_the_situation
