@@ -9,15 +9,13 @@
  * See scripts/update-template.json for the full format.
  *
  * What this script does:
- *   1. Extends the days[] date range
- *   2. Appends entries to all time-series objects
- *   3. Appends news[], HZ_EVENTS[], MILESTONES[] items
- *   4. Inserts the DAILY_HEADLINES entry
- *   5. Replaces countryPosture entries for changed countries
+ *   1. Extends the days[] date range in src/data.js (one small regex)
+ *   2. Appends/updates entries in src/data-store/ JSON files
+ *      — no more regex surgery on JS source code
  *
  * What it does NOT do:
- *   - conflictPhases[] / phases[] changes (too rare; do manually)
- *   - conflictSides{} or FACTION_DETAIL{} (structural changes; do manually)
+ *   - conflictPhases[] / phases[] changes (too rare; edit data.js manually)
+ *   - conflictSides{} or FACTION_DETAIL{} (structural; edit data.js manually)
  */
 
 'use strict';
@@ -25,116 +23,44 @@
 const fs   = require('fs');
 const path = require('path');
 
-const DATA_FILE = path.resolve(__dirname, '../src/data.js');
+const ROOT       = path.resolve(__dirname, '..');
+const DATA_FILE  = path.join(ROOT, 'src', 'data.js');
+const STORE_DIR  = path.join(ROOT, 'src', 'data-store');
 
-// ── File I/O ──────────────────────────────────────────────────────────────────
+// ── JSON helpers ──────────────────────────────────────────────────────────────
 
-function readData()      { return fs.readFileSync(DATA_FILE, 'utf8'); }
-function writeData(c)    { fs.writeFileSync(DATA_FILE, c, 'utf8'); }
-
-// ── Core: find closing bracket of a named const ───────────────────────────────
-
-/**
- * Returns the index of the closing } or ] of `const name = { ... }` / `= [ ... ]`.
- * Correctly skips strings (single, double, template-literal).
- */
-function findCloseIdx(content, name) {
-  const re = new RegExp(`const\\s+${name}\\s*=\\s*([\\[{])`);
-  const m  = re.exec(content);
-  if (!m) throw new Error(`Structure not found in data.js: ${name}`);
-
-  const openCh  = m[1];
-  const closeCh = openCh === '[' ? ']' : '}';
-  let depth = 0, inStr = false, strCh = '';
-
-  for (let i = m.index + m[0].length - 1; i < content.length; i++) {
-    const c = content[i];
-
-    if (inStr) {
-      if (c === '\\')    { i++; continue; }   // escaped char — skip both
-      if (c === strCh)   inStr = false;
-      continue;
-    }
-
-    if (c === '"' || c === "'" || c === '`') { inStr = true; strCh = c; continue; }
-    if (c === openCh)  depth++;
-    else if (c === closeCh && --depth === 0) return i;
-  }
-
-  throw new Error(`Cannot find closing bracket for: ${name}`);
+function readJson(filename) {
+  const p = path.join(STORE_DIR, filename);
+  return JSON.parse(fs.readFileSync(p, 'utf8'));
 }
 
-/** Insert text just before the closing bracket of the named structure. */
-function insertBeforeClose(content, name, text) {
-  const idx = findCloseIdx(content, name);
-  return content.slice(0, idx) + text + content.slice(idx);
+function writeJson(filename, data) {
+  const p = path.join(STORE_DIR, filename);
+  fs.writeFileSync(p, JSON.stringify(data, null, 2) + '\n', 'utf8');
 }
 
-// ── Extend days[] end date ────────────────────────────────────────────────────
+function updateJson(filename, updaterFn) {
+  const data = readJson(filename);
+  updaterFn(data);
+  writeJson(filename, data);
+}
 
-function extendDays(content, dateStr) {
+// ── Extend days[] end date in data.js ─────────────────────────────────────────
+// This is the ONE remaining regex touch on data.js — the rest is pure JSON.
+
+function extendDays(dateStr) {
   const [y, m, d] = dateStr.split('-').map(Number);
-  // JS months are 0-indexed
-  return content.replace(
+  let content = fs.readFileSync(DATA_FILE, 'utf8');
+  const updated = content.replace(
     /const s = new Date\(\d+, \d+, \d+\), e = new Date\(\d+, \d+, \d+\)/,
     `const s = new Date(${y}, 1, 25), e = new Date(${y}, ${m - 1}, ${d})`
   );
-}
-
-// ── countryPosture replace ────────────────────────────────────────────────────
-
-function updatePosture(content, country, newText) {
-  // Anchor the search to within countryPosture to avoid clobbering countryFlags
-  // (countryFlags is defined before countryPosture and shares many key names)
-  const startRe = /const\s+countryPosture\s*=\s*\{/;
-  const sm = startRe.exec(content);
-  if (!sm) throw new Error('countryPosture not found in data.js');
-  const postureStart = sm.index + sm[0].length;
-  const postureEnd   = findCloseIdx(content, 'countryPosture');
-  const slice        = content.slice(postureStart, postureEnd);
-
-  const safeKey = country.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const keyRe   = new RegExp(`'${safeKey}'\\s*:\\s*'`);
-  const km      = keyRe.exec(slice);
-  if (!km) {
-    console.warn(`  [WARN] countryPosture key not found: ${country} — skipping`);
-    return content;
+  if (updated === content) {
+    console.warn('  [WARN] extendDays: date range pattern not found in data.js — skipping');
+    return false;
   }
-
-  // Scan forward from after the opening quote to find the unescaped closing quote
-  let i = km.index + km[0].length;
-  while (i < slice.length) {
-    if (slice[i] === '\\') { i += 2; continue; }
-    if (slice[i] === "'")  break;
-    i++;
-  }
-
-  const escaped  = newText.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-  const newSlice = slice.slice(0, km.index) + `'${country}': '${escaped}'` + slice.slice(i + 1);
-  return content.slice(0, postureStart) + newSlice + content.slice(postureEnd);
-}
-
-// ── Formatters ────────────────────────────────────────────────────────────────
-
-function fmtNews(d, n) {
-  const tags = JSON.stringify(n.tags);
-  const src  = (n.l && n.s) ? `\n   l:'${n.l}',s:'${n.s}'` : '';
-  return (
-    `  {d:'${d}',cat:'${n.cat}',imp:'${n.imp}',t:${JSON.stringify(n.t)},tags:${tags},\n` +
-    `   tx:${JSON.stringify(n.tx)},${src}},\n`
-  );
-}
-
-function fmtHzEvent(d, e) {
-  const region = e.region ? `,region:'${e.region}'` : '';
-  return `  {d:'${d}',type:'${e.type}',desc:${JSON.stringify(e.desc)},lat:${e.lat},lng:${e.lng},count:${e.count}${region}},\n`;
-}
-
-function fmtMilestone(d, ms) {
-  const kw   = JSON.stringify(ms.kw);
-  const cats = JSON.stringify(ms.cats);
-  const ll   = (ms.lat != null) ? `, lat:${ms.lat}, lng:${ms.lng}` : '';
-  return `  {d:'${d}', icon:'${ms.icon}', label:${JSON.stringify(ms.label)}, kw:${kw}, cats:${cats}${ll}},\n`;
+  fs.writeFileSync(DATA_FILE, updated, 'utf8');
+  return true;
 }
 
 // ── Validation ────────────────────────────────────────────────────────────────
@@ -145,16 +71,37 @@ function validate(update) {
   if (!update.date || !/^\d{4}-\d{2}-\d{2}$/.test(update.date))
     errors.push('Missing or invalid date (must be YYYY-MM-DD)');
 
+  if (update._draft || update._instructions)
+    errors.push('File still has _draft or _instructions fields — review and remove before applying');
+
   const required = ['escalation_score', 'headline', 'sub', 'oil', 'gold',
                     'suez', 'insurance', 'notam', 'casualties', 'displacement'];
   for (const k of required)
     if (update[k] == null) errors.push(`Missing required field: ${k}`);
 
-  if (update.escalation_score < 1 || update.escalation_score > 10)
+  if (update.escalation_score != null &&
+      (update.escalation_score < 1 || update.escalation_score > 10))
     errors.push('escalation_score must be 1–10');
 
-  // Verify casualty figures don't decrease (check against last entry in file)
-  // (Just a reminder — full check would require parsing the file)
+  // Verify casualty figures don't decrease against last known entry
+  try {
+    const cas = readJson('casualty-data.json');
+    const dates = Object.keys(cas).sort();
+    const lastDate = dates[dates.length - 1];
+    if (lastDate && update.casualties) {
+      const last = cas[lastDate];
+      const sides = ['coalition', 'axis', 'civilian'];
+      const fields = ['deaths', 'injuries'];
+      for (const s of sides) {
+        for (const f of fields) {
+          const prev = last[s]?.[f] ?? 0;
+          const next = update.casualties[s]?.[f] ?? 0;
+          if (next < prev)
+            errors.push(`casualties.${s}.${f} decreased: ${prev} → ${next} (figures must be cumulative)`);
+        }
+      }
+    }
+  } catch { /* casualty-data.json not readable — skip check */ }
 
   if (errors.length) {
     console.error('\nValidation errors:');
@@ -176,102 +123,145 @@ function run() {
   const update = JSON.parse(fs.readFileSync(path.resolve(inputPath), 'utf8'));
   validate(update);
 
-  const d = update.date;
-  console.log(`\nApplying MTS daily update for ${d}...\n`);
-
-  let content = readData();
-
-  // 1. Extend days[]
-  console.log('  [1/8] Extending days[] to', d);
-  content = extendDays(content, d);
-
-  // 2. Time-series objects (insert before closing }; of each)
+  const d   = update.date;
   const cas = update.casualties;
   const dis = update.displacement;
+  console.log(`\nApplying MTS daily update for ${d}...\n`);
 
-  const tsUpdates = [
-    ['ESCALATION_SCORES',
-      `  '${d}':${update.escalation_score},\n`],
+  // 1. Extend days[] in data.js
+  process.stdout.write('  [1/9] Extending days[] in data.js ... ');
+  console.log(extendDays(d) ? 'ok' : 'skipped');
 
-    ['OIL_PRICE_DATA',
-      `  '${d}':{brent:${update.oil.brent},wti:${update.oil.wti}},\n`],
+  // 2. Time-series scalar/object entries
+  console.log('  [2/9] Time-series JSON files');
 
-    ['GOLD_PRICE_DATA',
-      `  '${d}':${update.gold},\n`],
+  process.stdout.write('         escalation-scores.json ... ');
+  updateJson('escalation-scores.json', obj => { obj[d] = update.escalation_score; });
+  console.log('ok');
 
-    ['SUEZ_DATA',
-      `  '${d}':${update.suez},\n`],
+  process.stdout.write('         oil-prices.json ... ');
+  updateJson('oil-prices.json', obj => { obj[d] = { brent: update.oil.brent, wti: update.oil.wti }; });
+  console.log('ok');
 
-    ['INSURANCE_DATA',
-      `  '${d}':{gulf:${update.insurance.gulf},redsea:${update.insurance.redsea},eastmed:${update.insurance.eastmed}},\n`],
+  process.stdout.write('         gold-prices.json ... ');
+  updateJson('gold-prices.json', obj => { obj[d] = update.gold; });
+  console.log('ok');
 
-    ['NOTAM_DATA',
-      `  '${d}':{closed:${update.notam.closed},restricted:${update.notam.restricted},total:${update.notam.total}},\n`],
+  process.stdout.write('         suez-data.json ... ');
+  updateJson('suez-data.json', obj => { obj[d] = update.suez; });
+  console.log('ok');
 
-    ['CASUALTY_DATA',
-      `  '${d}': {coalition:{deaths:${cas.coalition.deaths},injuries:${cas.coalition.injuries}}, ` +
-      `axis:{deaths:${cas.axis.deaths},injuries:${cas.axis.injuries}}, ` +
-      `civilian:{deaths:${cas.civilian.deaths},injuries:${cas.civilian.injuries}}},\n`],
+  process.stdout.write('         insurance-data.json ... ');
+  updateJson('insurance-data.json', obj => {
+    obj[d] = { gulf: update.insurance.gulf, redsea: update.insurance.redsea, eastmed: update.insurance.eastmed };
+  });
+  console.log('ok');
 
-    ['DISPLACEMENT_DATA',
-      `  '${d}': {${Object.entries(dis).map(([k,v]) => `${k}:${v}`).join(', ')}},\n`],
-  ];
+  process.stdout.write('         notam-data.json ... ');
+  updateJson('notam-data.json', obj => {
+    obj[d] = { closed: update.notam.closed, restricted: update.notam.restricted, total: update.notam.total };
+  });
+  console.log('ok');
 
-  console.log('  [2/8] Updating time-series objects');
-  for (const [name, entry] of tsUpdates) {
-    process.stdout.write(`         ${name} ... `);
-    content = insertBeforeClose(content, name, entry);
-    console.log('ok');
-  }
+  process.stdout.write('         casualty-data.json ... ');
+  updateJson('casualty-data.json', obj => {
+    obj[d] = {
+      coalition: { deaths: cas.coalition.deaths, injuries: cas.coalition.injuries },
+      axis:      { deaths: cas.axis.deaths,      injuries: cas.axis.injuries      },
+      civilian:  { deaths: cas.civilian.deaths,  injuries: cas.civilian.injuries  },
+    };
+  });
+  console.log('ok');
 
-  // 3. DAILY_HEADLINES
-  console.log('  [3/8] DAILY_HEADLINES');
-  const hlEntry =
-    `  '${d}':{headline:${JSON.stringify(update.headline)},sub:${JSON.stringify(update.sub)}},\n`;
-  content = insertBeforeClose(content, 'DAILY_HEADLINES', hlEntry);
+  process.stdout.write('         displacement-data.json ... ');
+  updateJson('displacement-data.json', obj => { obj[d] = { ...dis }; });
+  console.log('ok');
+
+  // 3. Daily headlines
+  process.stdout.write('  [3/9] daily-headlines.json ... ');
+  updateJson('daily-headlines.json', obj => {
+    obj[d] = { headline: update.headline, sub: update.sub };
+  });
+  console.log('ok');
 
   // 4. news[]
   const newsItems = update.news || [];
-  console.log(`  [4/8] news[] — ${newsItems.length} item(s)`);
+  console.log(`  [4/9] news.json — ${newsItems.length} item(s)`);
   if (newsItems.length) {
-    const newsText = newsItems.map(n => fmtNews(d, n)).join('');
-    content = insertBeforeClose(content, 'news', newsText);
+    updateJson('news.json', arr => {
+      for (const n of newsItems) {
+        const entry = { d, cat: n.cat, imp: n.imp, t: n.t, tags: n.tags, tx: n.tx };
+        if (n.l) entry.l = n.l;
+        if (n.s) entry.s = n.s;
+        arr.push(entry);
+      }
+    });
   }
 
-  // 5. HZ_EVENTS[]
+  // 5. HZ events
   const hzItems = update.hz_events || [];
-  console.log(`  [5/8] HZ_EVENTS[] — ${hzItems.length} item(s)`);
+  console.log(`  [5/9] hz-events.json — ${hzItems.length} item(s)`);
   if (hzItems.length) {
-    const hzText = '\n' + hzItems.map(e => fmtHzEvent(d, e)).join('');
-    content = insertBeforeClose(content, 'HZ_EVENTS', hzText);
+    updateJson('hz-events.json', arr => {
+      for (const e of hzItems) {
+        const entry = { d, type: e.type, desc: e.desc, lat: e.lat, lng: e.lng, count: e.count };
+        if (e.region) entry.region = e.region;
+        arr.push(entry);
+      }
+    });
   }
 
-  // 6. MILESTONES[]
+  // 6. Milestones
   const msItems = update.milestones || [];
-  console.log(`  [6/8] MILESTONES[] — ${msItems.length} item(s)`);
+  console.log(`  [6/9] milestones.json — ${msItems.length} item(s)`);
   if (msItems.length) {
-    const msText = msItems.map(m => fmtMilestone(d, m)).join('');
-    content = insertBeforeClose(content, 'MILESTONES', msText);
+    updateJson('milestones.json', arr => {
+      for (const m of msItems) {
+        const entry = { d, icon: m.icon, label: m.label, kw: m.kw, cats: m.cats };
+        if (m.lat != null) { entry.lat = m.lat; entry.lng = m.lng; }
+        arr.push(entry);
+      }
+    });
   }
 
-  // 7. countryPosture updates
+  // 7. countryPosture
   const posture = update.posture_updates || {};
   const postureKeys = Object.keys(posture);
-  console.log(`  [7/8] countryPosture — ${postureKeys.length} country update(s)`);
-  for (const [country, text] of Object.entries(posture)) {
-    process.stdout.write(`         '${country}' ... `);
-    content = updatePosture(content, country, text);
-    console.log('ok');
+  console.log(`  [7/9] country-posture.json — ${postureKeys.length} country update(s)`);
+  if (postureKeys.length) {
+    updateJson('country-posture.json', obj => {
+      for (const [country, text] of Object.entries(posture)) {
+        if (!(country in obj)) {
+          console.warn(`  [WARN] country-posture.json: key not found: '${country}' — adding new entry`);
+        }
+        obj[country] = text;
+      }
+    });
   }
 
-  // 8. Write back
-  console.log('  [8/8] Writing src/data.js');
-  writeData(content);
+  // 8. Verify all touched JSON files still parse
+  process.stdout.write('  [8/9] Verifying JSON integrity ... ');
+  const touched = [
+    'escalation-scores.json', 'oil-prices.json', 'gold-prices.json', 'suez-data.json',
+    'insurance-data.json', 'notam-data.json', 'casualty-data.json', 'displacement-data.json',
+    'daily-headlines.json',
+    ...(newsItems.length  ? ['news.json']       : []),
+    ...(hzItems.length    ? ['hz-events.json']  : []),
+    ...(msItems.length    ? ['milestones.json'] : []),
+    ...(postureKeys.length ? ['country-posture.json'] : []),
+  ];
+  for (const f of touched) {
+    try { readJson(f); }
+    catch (err) { console.error(`\n  ✗ ${f}: ${err.message}`); process.exit(1); }
+  }
+  console.log('ok');
 
-  console.log(`\n✓ Done — src/data.js updated for ${d}`);
+  // 9. Done
+  console.log('  [9/9] Complete\n');
+  console.log(`✓ Done — MTS updated for ${d}`);
   console.log('\nNext steps:');
   console.log('  1. Open the site and verify the new day looks correct');
-  console.log('  2. git add src/data.js');
+  console.log('  2. git add src/data.js src/data-store/');
   console.log(`  3. git commit -m "Daily update: ${d}"`);
   console.log('  4. git push\n');
 }

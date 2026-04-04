@@ -204,15 +204,15 @@
 <div class="nav-right">
 <div class="conflict-indicator" id="conflictInd" title="Overall conflict status"><span class="ci-dot" id="ciDot"></span><span class="ci-label" id="ciLabel"></span></div>
 <div class="esc-indicator" id="escInd" title="Days since conflict began"><div style="background:rgba(255,255,255,0.06);border:1px solid var(--border);border-radius:6px;padding:2px 8px;font-size:.65rem;font-weight:600;color:var(--text2);font-family:'DM Sans',sans-serif;letter-spacing:.3px;display:flex;align-items:center;gap:4px"><span style="opacity:.5">DAY</span><span id="conflictDayNum" style="color:var(--text);font-size:.75rem;font-weight:700">—</span></div></div>
-<div class="date-nav"><button class="date-nav-btn" id="dayPrev" onclick="stepDay(-1)" title="Previous day">&#9664;</button><span class="date-nav-label" id="dayLabel"></span><button class="date-nav-btn" id="dayNext" onclick="stepDay(1)" title="Next day">&#9654;</button></div>
-<div class="cal-popup-btn" id="calPopupBtn" title="Calendar"><svg onclick="toggleCalPopup()" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="cursor:pointer"><rect x="2" y="3" width="12" height="11" rx="2"/><line x1="2" y1="7" x2="14" y2="7"/><line x1="5" y1="1" x2="5" y2="4"/><line x1="11" y1="1" x2="11" y2="4"/></svg>
+<div class="date-nav"><button class="date-nav-btn" id="dayPrev" title="Previous day">&#9664;</button><span class="date-nav-label" id="dayLabel"></span><button class="date-nav-btn" id="dayNext" title="Next day">&#9654;</button></div>
+<div class="cal-popup-btn" id="calPopupBtn" title="Calendar"><svg id="calPopupSvg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="cursor:pointer"><rect x="2" y="3" width="12" height="11" rx="2"/><line x1="2" y1="7" x2="14" y2="7"/><line x1="5" y1="1" x2="5" y2="4"/><line x1="11" y1="1" x2="11" y2="4"/></svg>
 <div class="cal-popup" id="calPopup">
-<h2 style="margin:0 0 8px;font-size:.95rem;display:flex;align-items:center;gap:8px">Calendar <div class="cal-nav"><span id="calUp" onclick="calNav(-1)" title="Previous week">&#9664;</span><span id="calDown" onclick="calNav(1)" title="Next week">&#9654;</span></div></h2>
+<h2 style="margin:0 0 8px;font-size:.95rem;display:flex;align-items:center;gap:8px">Calendar <div class="cal-nav"><span id="calUp" title="Previous week">&#9664;</span><span id="calDown" title="Next week">&#9654;</span></div></h2>
 <div class="cal-wrap"><div class="cg" id="calG"></div></div>
 </div>
 </div>
-<div class="people-popup-btn" id="peoplePopupBtn" title="Key People" onclick="togglePeoplePopup()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="cursor:pointer"><circle cx="8" cy="5" r="3"/><path d="M2 15 C2 11 5 9 8 9 C11 9 14 11 14 15"/></svg></div>
-<button class="filter-btn" id="filterBtn" onclick="toggleFilters()" title="Charts"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,13 5,9 8,11 14,3"/><polyline points="10,3 14,3 14,7"/></svg></button>
+<div class="people-popup-btn" id="peoplePopupBtn" title="Key People"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="cursor:pointer"><circle cx="8" cy="5" r="3"/><path d="M2 15 C2 11 5 9 8 9 C11 9 14 11 14 15"/></svg></div>
+<button class="filter-btn" id="filterBtn" title="Charts"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,13 5,9 8,11 14,3"/><polyline points="10,3 14,3 14,7"/></svg></button>
 </div>
 </div>
 
@@ -224,7 +224,7 @@
 <!-- TOP ROW: Charts overlay -->
 <div class="top-row">
 <div class="widget-row" style="grid-column:1/-1">
-<div class="card widget-placeholder" style="min-height:180px"><h2 style="font-size:.85rem">Casualties <span class="cas-selection" id="casSelection"></span></h2><div class="cas-chart-wrap" style="height:120px;min-height:0"><canvas id="casChart"></canvas><div class="cas-tooltip" id="casTooltip"></div></div><div class="cas-nav"><div class="cas-mode-toggle"><button class="cas-mode-btn active" id="casModeAll" onclick="setCasMode('all')">All</button><button class="cas-mode-btn" id="casModeDeaths" onclick="setCasMode('deaths')">Deaths</button><button class="cas-mode-btn" id="casModeInjuries" onclick="setCasMode('injuries')">Injuries</button></div><div class="cas-legend"><div class="cl-row"><span class="cl-coalition" onclick="togCasFaction('coalition')">Coalition</span><span class="cl-axis" onclick="togCasFaction('axis')">Axis</span><span class="cl-civilian" onclick="togCasFaction('civilian')">Civilian</span></div></div></div></div>
+<div class="card widget-placeholder" style="min-height:180px"><h2 style="font-size:.85rem">Casualties <span class="cas-selection" id="casSelection"></span></h2><div class="cas-chart-wrap" style="height:120px;min-height:0"><canvas id="casChart"></canvas><div class="cas-tooltip" id="casTooltip"></div></div><div class="cas-nav"><div class="cas-mode-toggle"><button class="cas-mode-btn active" id="casModeAll">All</button><button class="cas-mode-btn" id="casModeDeaths">Deaths</button><button class="cas-mode-btn" id="casModeInjuries">Injuries</button></div><div class="cas-legend"><div class="cl-row"><span class="cl-coalition" id="casLegCoalition">Coalition</span><span class="cl-axis" id="casLegAxis">Axis</span><span class="cl-civilian" id="casLegCivilian">Civilian</span></div></div></div></div>
 <div class="card widget-placeholder" style="min-height:180px"><h2 style="font-size:.85rem">Displaced &amp; Refugees</h2><div class="disp-chart-wrap" style="height:120px;min-height:0"><canvas id="dispChart"></canvas><div class="disp-tooltip" id="dispTooltip"></div></div><div class="disp-nav"><div class="disp-legend" id="dispLegend"></div></div></div>
 <div class="card widget-placeholder" style="min-height:180px"><h2 style="font-size:.85rem">Oil Prices <span class="oil-selection" id="oilSelection"></span></h2><div class="oil-chart-wrap" style="height:120px;min-height:0"><canvas id="oilChart"></canvas><div class="oil-tooltip" id="oilTooltip"></div></div><div class="oil-nav"><div class="oil-legend"><span class="ol-brent">Brent</span><span class="ol-wti">WTI</span></div></div></div>
 </div>
@@ -247,11 +247,11 @@
 <div class="news-top-row">
 <div class="context-card" style="flex:1;min-width:0"><h2>Daily Summary</h2>
 <div class="ds-tabs">
-<button class="ds-tab active" onclick="switchDsTab('conflict')">Conflict</button>
-<button class="ds-tab" onclick="switchDsTab('logistics')">Logistics</button>
-<button class="ds-tab" onclick="switchDsTab('diplomacy')">Diplomacy</button>
-<button class="ds-tab" onclick="switchDsTab('markets')">Markets</button>
-<button class="ds-tab" onclick="switchDsTab('humanitarian')">Humanitarian</button>
+<button class="ds-tab active" data-tab="conflict">Conflict</button>
+<button class="ds-tab" data-tab="logistics">Logistics</button>
+<button class="ds-tab" data-tab="diplomacy">Diplomacy</button>
+<button class="ds-tab" data-tab="markets">Markets</button>
+<button class="ds-tab" data-tab="humanitarian">Humanitarian</button>
 </div>
 <div class="ds-pane active" id="dsConflict"><div class="context-body" id="dsConflictBody"></div></div>
 <div class="ds-pane" id="dsLogistics"><div class="context-body" id="dsLogisticsBody"></div></div>
@@ -279,14 +279,14 @@
 <div class="map-wrap" id="mw"><div id="mc"></div><canvas id="mlOverlay"></canvas><div class="map-tooltip" id="tt"></div>
 <div class="map-zoom" id="airZoom">
 <div class="aw-zoom-group">
-<button class="aw-zoom-btn aw-zoom-plus" onclick="aZoomIn()" title="Zoom in">+</button>
-<button class="aw-zoom-btn aw-zoom-minus" onclick="aZoomOut()" title="Zoom out">&minus;</button>
+<button class="aw-zoom-btn aw-zoom-plus" id="aZoomInBtn" title="Zoom in">+</button>
+<button class="aw-zoom-btn aw-zoom-minus" id="aZoomOutBtn" title="Zoom out">&minus;</button>
 </div>
 <span class="zoom-pct" id="aZoomPct">100%</span>
-<button class="aw-zoom-btn aw-zoom-reset" id="aZoomReset" onclick="aZoomResetFn()" title="Reset zoom" style="opacity:0.35">&#8634;</button>
+<button class="aw-zoom-btn aw-zoom-reset" id="aZoomReset" title="Reset zoom" style="opacity:0.35">&#8634;</button>
 </div>
-<div id="airportPopup"><button class="pc" onclick="closePopup()">&times;</button><h3 id="pT"></h3><div class="ps" id="pS"></div><div id="pH"></div><div class="pn" id="pN"></div></div>
-<div id="countryPopup"><button class="pc" onclick="closePopup()">&times;</button><h3 id="cpT"></h3><div class="cp-tags" id="cpTags"></div><div class="cp-posture" id="cpPosture"></div><div id="cpGrid"></div></div>
+<div id="airportPopup"><button class="pc" id="airportPopupClose">&times;</button><h3 id="pT"></h3><div class="ps" id="pS"></div><div id="pH"></div><div class="pn" id="pN"></div></div>
+<div id="countryPopup"><button class="pc" id="countryPopupClose">&times;</button><h3 id="cpT"></h3><div class="cp-tags" id="cpTags"></div><div class="cp-posture" id="cpPosture"></div><div id="cpGrid"></div></div>
 </div>
 </div>
 <!-- Legend panel: right side -->
@@ -296,45 +296,45 @@
 <div class="ml-group-header">Air</div>
 <div class="ml-sub-header">Airports</div>
 <div class="ml-row">
-<span class="al-open al-toggle" id="togOpen" onclick="toggleAirportFilter('open')" data-swatch="airport-open">Open</span>
-<span class="al-restricted al-toggle" id="togRestricted" onclick="toggleAirportFilter('restricted')" data-swatch="airport-restricted">Restricted</span>
-<span class="al-closed al-toggle" id="togClosed" onclick="toggleAirportFilter('closed')" data-swatch="airport-closed">Closed</span>
+<span class="al-open al-toggle" id="togOpen" data-swatch="airport-open">Open</span>
+<span class="al-restricted al-toggle" id="togRestricted" data-swatch="airport-restricted">Restricted</span>
+<span class="al-closed al-toggle" id="togClosed" data-swatch="airport-closed">Closed</span>
 </div>
 <div class="ml-sub-header">Bases</div>
 <div class="ml-row">
-<span class="al-base-us al-toggle" id="togCoalition" onclick="toggleCoalitionBases()" data-swatch="base-us">Coalition</span>
-<span class="al-base-ir al-toggle" id="togIran" onclick="toggleIranBases()" data-swatch="base-ir">Iran</span>
+<span class="al-base-us al-toggle" id="togCoalition" data-swatch="base-us">Coalition</span>
+<span class="al-base-ir al-toggle" id="togIran" data-swatch="base-ir">Iran</span>
 </div>
 <div class="ml-sub-header">Overlays</div>
 <div class="ml-row">
-<span class="al-nfz al-toggle" id="togNFZ" onclick="toggleNFZ()" data-swatch="nfz">No-Fly Zones</span>
-<span class="al-routes al-toggle" id="togRoutes" onclick="toggleRoutes()" data-swatch="routes">Bypass Routes</span>
-<span class="al-jamming al-toggle" id="togJamming" onclick="toggleJamming()" data-swatch="jamming">GPS Jamming</span>
-<span class="al-fleet al-toggle" id="togFleet" onclick="toggleFleet()" data-swatch="fleet">Fleet Positions</span>
-<span class="al-toggle infra-toggle" id="togInfra" onclick="toggleInfra()" style="--glow-color:#ff6b6b" data-swatch="infra">Infrastructure</span>
-<span class="al-toggle infra-toggle" id="togRefugee" onclick="toggleRefugeeFlows()" style="--glow-color:#ff9500" data-swatch="refugee">Refugee Flows</span>
-<span class="al-toggle" id="togFactions" onclick="toggleFactions()" style="--glow-color:#a78bfa" data-swatch="factions">Factions</span>
+<span class="al-nfz al-toggle" id="togNFZ" data-swatch="nfz">No-Fly Zones</span>
+<span class="al-routes al-toggle" id="togRoutes" data-swatch="routes">Bypass Routes</span>
+<span class="al-jamming al-toggle" id="togJamming" data-swatch="jamming">GPS Jamming</span>
+<span class="al-fleet al-toggle" id="togFleet" data-swatch="fleet">Fleet Positions</span>
+<span class="al-toggle infra-toggle" id="togInfra" style="--glow-color:#ff6b6b" data-swatch="infra">Infrastructure</span>
+<span class="al-toggle infra-toggle" id="togRefugee" style="--glow-color:#ff9500" data-swatch="refugee">Refugee Flows</span>
+<span class="al-toggle" id="togFactions" style="--glow-color:#a78bfa" data-swatch="factions">Factions</span>
 </div>
 </div>
 <div class="ml-group">
 <div class="ml-group-header">Sea</div>
 <div class="ml-sub-header">Threats</div>
 <div class="ml-row">
-<span class="hl-houthi al-toggle" id="togHouthi" onclick="togHzFilter('houthi')" data-swatch="houthi">Houthi Zones</span>
-<span class="hl-mine al-toggle" id="togMine" onclick="togHzFilter('mine')" data-swatch="mine">Mines</span>
+<span class="hl-houthi al-toggle" id="togHouthi" data-swatch="houthi">Houthi Zones</span>
+<span class="hl-mine al-toggle" id="togMine" data-swatch="mine">Mines</span>
 </div>
 <div class="ml-sub-header">Routes</div>
 <div class="ml-row">
-<span class="hl-chokepoint al-toggle" id="togChokepoints" onclick="togHzFilter('chokepoints')" style="--glow-color:#ffe100" data-swatch="chokepoint">Chokepoints</span>
-<span class="hl-lanes al-toggle" id="togLanes" onclick="togHzFilter('lanes')" data-swatch="lanes">Shipping Lanes</span>
-<span class="hl-corridor al-toggle" id="togCorridors" onclick="togHzFilter('corridors')" data-swatch="corridors">Safe Corridors</span>
+<span class="hl-chokepoint al-toggle" id="togChokepoints" style="--glow-color:#ffe100" data-swatch="chokepoint">Chokepoints</span>
+<span class="hl-lanes al-toggle" id="togLanes" data-swatch="lanes">Shipping Lanes</span>
+<span class="hl-corridor al-toggle" id="togCorridors" data-swatch="corridors">Safe Corridors</span>
 </div>
 <div class="ml-sub-header">Assets</div>
 <div class="ml-row">
-<span class="hl-patrol al-toggle" id="togPatrol" onclick="togHzFilter('patrol')" data-swatch="patrol">Naval Patrol</span>
-<span class="hl-cleared al-toggle" id="togCleared" onclick="togHzFilter('cleared')" data-swatch="cleared">Cleared Areas</span>
-<span class="hl-passage al-toggle" id="togPassage" onclick="togHzFilter('passage')" data-swatch="passages">Passages</span>
-<span class="hl-naval al-toggle" id="togNaval" onclick="togHzFilter('naval')" data-swatch="naval">Naval Bases</span>
+<span class="hl-patrol al-toggle" id="togPatrol" data-swatch="patrol">Naval Patrol</span>
+<span class="hl-cleared al-toggle" id="togCleared" data-swatch="cleared">Cleared Areas</span>
+<span class="hl-passage al-toggle" id="togPassage" data-swatch="passages">Passages</span>
+<span class="hl-naval al-toggle" id="togNaval" data-swatch="naval">Naval Bases</span>
 </div>
 </div>
 </div>
@@ -368,7 +368,12 @@
 
 <script src="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.js"></script>
 <script defer src="src/data.js"></script>
-<script defer src="src/map.js"></script>
+<script defer src="src/map/core.js"></script>
+<script defer src="src/map/draw-sea.js"></script>
+<script defer src="src/map/draw-air.js"></script>
+<script defer src="src/map/popups.js"></script>
+<script defer src="src/map/selection.js"></script>
+<script defer src="src/map/index.js"></script>
 <script defer src="src/ui/state.js"></script>
 <script defer src="src/ui/filters.js"></script>
 <script defer src="src/ui/calendar.js"></script>
